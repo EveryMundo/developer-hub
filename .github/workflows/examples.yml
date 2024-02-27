@@ -1,9 +1,9 @@
-name: Build and Deploy Modified Examples
+name: Examples / Build and deploy modified
 
 on:
   push:
     paths:
-      - 'examples/**'
+      - "examples/**"
 
 jobs:
   build-and-deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Get changed examples
         id: get_changed_examples
