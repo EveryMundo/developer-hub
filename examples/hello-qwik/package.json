@@ -14,6 +14,6 @@
   },
   "dependencies": {
     "@builder.io/qwik": "^1.4.5",
-    "@everymundo/registry-script": "^0.1.0"
+    "@everymundo/registry-script": "latest"
   }
 }

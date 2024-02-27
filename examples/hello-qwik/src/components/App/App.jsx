@@ -1,7 +1,7 @@
 import { component$, useSignal } from "@builder.io/qwik";
 
 import qwikLogo from "../../assets/qwik.svg";
-import viteLogo from "../../assets/vite.svg";
+import viteLogo from "/vite.svg";
 import "./App.css";
 
 export const App = component$((props) => {
