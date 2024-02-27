@@ -7,8 +7,10 @@ const withNextra = require("nextra")({
 });
 
 module.exports = withNextra({
-  basePath: isProd ? "/registry/docs" : undefined,
-  assetPrefix: isProd ? "/registry/docs" : undefined,
+  output: "export",
+  distDir: 'build/docs',
+  basePath: isProd ? "/developer-hub/docs" : undefined,
+  assetPrefix: isProd ? "/developer-hub/docs" : undefined,
   images: {
     unoptimized: true,
   },
