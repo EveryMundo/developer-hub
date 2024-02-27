@@ -20,7 +20,18 @@ jobs:
       - name: Get changed examples
         id: get_changed_examples
         run: |
-          echo "CHANGED_EXAMPLES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^examples/' | awk 'BEGIN {FS="/"} {print $1 "/" $2}' | uniq)" >> $GITHUB_ENV
+          BEFORE_SHA=${{ github.event.before }}
+          if git cat-file -e $BEFORE_SHA^{commit}; then
+            echo "Valid previous SHA"
+            CHANGED_DIRS=$(git diff --name-only $BEFORE_SHA ${{ github.sha }} | grep '^examples/' | awk 'BEGIN {FS="/"} {print $1 "/" $2}' | uniq)
+            echo "CHANGED_EXAMPLES=${CHANGED_DIRS}" >> $GITHUB_ENV
+          else
+            echo "Invalid previous SHA, using last commit"
+            CHANGED_DIRS=$(git diff --name-only HEAD~1 ${{ github.sha }} | grep '^examples/' | awk 'BEGIN {FS="/"} {print $1 "/" $2}' | uniq)
+            echo "CHANGED_EXAMPLES=${CHANGED_DIRS}" >> $GITHUB_ENV
+          fi
+          echo "Changed examples:"
+          echo "${CHANGED_DIRS}"
 
       - name: Install and Build Changed Examples
         run: |
