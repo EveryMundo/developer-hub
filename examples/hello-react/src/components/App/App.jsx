@@ -3,7 +3,8 @@ import reactLogo from "../../assets/react.svg";
 import viteLogo from "../../assets/vite.svg";
 import "./App.css";
 
-function App({ payload = {} }) {
+function App(props) {
+  const { payload = {} } = props;
   const { settings, styles, i18n } = payload;
 
   // Using settings
