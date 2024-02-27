@@ -1,0 +1,619 @@
+{
+  "$id": "https://everymundo.github.io/registry/playground/setup-schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "metaDataDefinition": {
+      "type": "object"
+    },
+    "contextDefinition": {
+      "title": "Context Schema",
+      "type": ["object", "null"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["airline", "hospitality"]
+        },
+        "airline": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": ["code"],
+          "additionalProperties": false
+        },
+        "datasource": {
+          "type": "object",
+          "properties": {
+            "step": {
+              "type": "string"
+            }
+          },
+          "required": ["step"],
+          "additionalProperties": true
+        },
+        "geo": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "object",
+              "properties": {
+                "lang": {
+                  "type": "string"
+                },
+                "site_edition": {
+                  "type": "string"
+                },
+                "languageBeforeMarket": {
+                  "type": "boolean"
+                },
+                "separator": {
+                  "type": "string"
+                },
+                "siteEditionLanguage": {
+                  "type": "string"
+                },
+                "siteEditionMarket": {
+                  "type": "string"
+                },
+                "site_edition_country_geo_id": {
+                  "type": "string"
+                },
+                "textDirection": {
+                  "type": "string",
+                  "default": "LTR",
+                  "enum": ["LTR", "RTL"]
+                },
+                "uppercaseLanguage": {
+                  "type": "boolean"
+                },
+                "uppercaseMarket": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["lang", "site_edition"],
+              "additionalProperties": false
+            },
+            "location": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": true
+            }
+          },
+          "required": ["language"],
+          "additionalProperties": false
+        },
+        "audience": {
+          "type": "object",
+          "properties": {
+            "device_category": {
+              "type": "string",
+              "enum": ["desktop", "mobile", "tablet"]
+            }
+          },
+          "required": ["device_category"],
+          "additionalProperties": true
+        },
+        "extra_info": {
+          "type": "object",
+          "properties": {
+            "airports": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": true
+        },
+        "dynamicContext": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false,
+      "required": [],
+      "examples": [
+        {
+          "airline": {
+            "code": "<tenant-code>"
+          },
+          "datasource": {
+            "step": "<step-name>"
+          },
+          "geo": {
+            "language": {
+              "lang": "en",
+              "site_edition": "en"
+            }
+          },
+          "audience": {
+            "device_category": "desktop"
+          },
+          "extra_info": {}
+        }
+      ]
+    },
+    "settingsSchemaDefinition": {
+      "type": "object",
+      "title": "An object containing your app's settings.",
+      "description": "",
+      "additionalProperties": {
+        "required": ["type"],
+        "oneOf": [
+          {
+            "required": ["type"]
+          }
+        ],
+        "type": "object",
+        "title": "The key which your option will be defined under.",
+        "description": "",
+        "default": {
+          "type": "string",
+          "title": ""
+        },
+        "examples": [
+          {
+            "type": "string",
+            "title": ""
+          },
+          {
+            "type": "object",
+            "title": "",
+            "properties": {}
+          },
+          {
+            "type": "boolean",
+            "title": ""
+          },
+          {
+            "type": "integer",
+            "title": ""
+          },
+          {
+            "type": "number",
+            "title": ""
+          },
+          {
+            "type": "array",
+            "title": "",
+            "items": {}
+          }
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "The title related to your form field.",
+            "description": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "The description which appears next to your form field.",
+            "description": ""
+          },
+          "help": {
+            "type": "string",
+            "title": "Extra instructions or context to the setup process.",
+            "description": ""
+          },
+          "showIf": {
+            "type": ["boolean", "object"],
+            "title": "Conditionally show a field",
+            "description": "",
+            "additionalProperties": {
+              "title": "A string matching another defined option key",
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "op": {
+                      "type": "string",
+                      "title": "JavaScript operator",
+                      "enum": ["==", "!=", "<", ">", "<=", ">="]
+                    },
+                    "value": {
+                      "title": "Expected value",
+                      "type": ["null", "boolean", "string", "number", "integer"]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["op", "value"]
+                }
+              ]
+            }
+          },
+          "required": {
+            "type": "array",
+            "title": "Required fields",
+            "items": { "type": "string" },
+            "uniqueItems": true,
+            "default": []
+          },
+          "enum": {
+            "type": "array",
+            "title": "Declare a list of values to select from",
+            "description": "",
+            "items": {
+              "type": ["string", "number", "integer", "boolean"]
+            }
+          },
+          "enumNames": {
+            "type": "array",
+            "title": "Declare human readable names",
+            "description": "",
+            "items": {
+              "type": "string"
+            }
+          },
+          "properties": {
+            "$ref": "#/definitions/settingsSchemaDefinition"
+          },
+          "minimum": {
+            "title": "The minimum number allowed in the field.",
+            "type": "number"
+          },
+          "maximum": {
+            "title": "The maximum number allowed in the field.",
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "title": "Declares the type of the setting",
+            "default": "string",
+            "enum": [
+              "array",
+              "boolean",
+              "integer",
+              "number",
+              "object",
+              "string",
+              "help"
+            ]
+          },
+          "placeholder": {
+            "type": "string",
+            "title": "A value that describes what should be provided in the form field.",
+            "description": ""
+          },
+          "default": {
+            "title": "A default value that appears the form field.",
+            "description": ""
+          },
+          "format": {
+            "type": "string",
+            "title": "The format your input will appear as in the form.",
+            "enum": [
+              "code",
+              "date",
+              "email",
+              "number",
+              "password",
+              "radio",
+              "checkbox",
+              "chip",
+              "textarea",
+              "color",
+              "uri",
+              "json",
+              "tabs",
+              "collapse",
+              "collapse:opened",
+              "collapse:closed",
+              "plain",
+              "group",
+              "dialog"
+            ]
+          },
+          "items": {
+            "title": "Declarations for each item in an array.",
+            "type": ["string", "object"],
+            "description": "",
+            "default": {
+              "type": "object",
+              "properties": {}
+            },
+            "properties": {
+              "properties": {
+                "$ref": "#/definitions/settingsSchemaDefinition"
+              }
+            }
+          }
+        }
+      },
+      "default": {}
+    },
+    "stylesDefinition": {
+      "type": "object",
+      "oneOf": [
+        {
+          "title": "Codeless",
+          "properties": {
+            "service": {
+              "type": "string",
+              "const": "codeless"
+            },
+            "options": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["eds"],
+                  "default": "eds"
+                },
+                "format": {
+                  "type": "string",
+                  "enum": ["json", "css"],
+                  "default": "json"
+                },
+                "output": {
+                  "type": "string",
+                  "enum": ["inline", "link"],
+                  "default": "content"
+                }
+              },
+              "required": ["type"],
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false,
+          "required": ["service", "options"]
+        },
+        {
+          "title": "Template",
+          "properties": {
+            "service": {
+              "type": "string",
+              "const": "template"
+            },
+            "options": {
+              "type": "object",
+              "properties": {
+                "template": {
+                  "type": ["string", "object"],
+                  "default": {}
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["eds"],
+                  "default": "eds"
+                },
+                "format": {
+                  "type": "string",
+                  "enum": ["json", "css"],
+                  "default": "json"
+                },
+                "output": {
+                  "type": "string",
+                  "enum": ["inline", "link"],
+                  "default": "content"
+                }
+              },
+              "required": ["template", "type"],
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false,
+          "required": ["service", "options"]
+        },
+        {
+          "title": "External Hook",
+          "properties": {
+            "service": {
+              "type": "string",
+              "const": "hook"
+            },
+            "options": {
+              "type": "object",
+              "properties": {
+                "link": {
+                  "type": "string",
+                  "default": ""
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["eds"],
+                  "default": "eds"
+                },
+                "format": {
+                  "type": "string",
+                  "enum": ["json", "css"],
+                  "default": "json"
+                },
+                "output": {
+                  "type": "string",
+                  "enum": ["inline", "link"],
+                  "default": "content"
+                }
+              },
+              "required": ["link", "type", "format"],
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false,
+          "required": ["service", "options"]
+        }
+      ],
+      "required": ["service", "options"],
+      "default": {
+        "service": "codeless",
+        "options": {
+          "type": "eds",
+          "format": "json"
+        }
+      },
+      "examples": [
+        {
+          "service": "codeless",
+          "options": {
+            "type": "eds",
+            "format": "json"
+          }
+        },
+        {
+          "service": "template",
+          "options": {
+            "template": {
+              "my-token": "{{eds.colors.primary}}"
+            },
+            "type": "eds",
+            "format": "json"
+          }
+        },
+        {
+          "service": "hook",
+          "options": {
+            "link": "https://some-style-service.com",
+            "type": "eds",
+            "format": "json"
+          }
+        }
+      ]
+    },
+    "i18nDefinition": {
+      "type": "object",
+      "properties": {
+        "rtl": {
+          "type": "boolean",
+          "default": false
+        },
+        "language": {
+          "type": "string",
+          "default": "*",
+          "examples": ["*", "en", "es", "fr", "de", "zh", "hi", "ar"]
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "default": {
+        "rtl": false,
+        "language": "*",
+        "labels": {
+          "label-key-0": "English Value"
+        }
+      }
+    },
+    "tokensDefinition": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {},
+      "examples": [
+        {},
+        {
+          "apiKey": ""
+        }
+      ]
+    },
+    "servicesDefinition": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "endpoint": {
+            "type": ["string", "object"],
+            "default": ""
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": ["string", "boolean", "number", "integer", "object"]
+            },
+            "default": {}
+          }
+        },
+        "required": ["endpoint"],
+        "additionalProperties": false,
+        "default": {
+          "endpoint": "",
+          "parameters": {}
+        }
+      },
+      "default": {},
+      "examples": [
+        {},
+        {
+          "endpoint": "",
+          "parameters": {}
+        }
+      ]
+    }
+  },
+  "properties": {
+    "metaData": {
+      "$ref": "#/definitions/metaDataDefinition"
+    },
+    "context": {
+      "$ref": "#/definitions/contextDefinition"
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "title": "Declares the type of the setting",
+              "default": "object",
+              "enum": ["object"]
+            },
+            "properties": {
+              "$ref": "#/definitions/settingsSchemaDefinition"
+            },
+            "required": {
+              "type": "array",
+              "title": "Required fields",
+              "items": { "type": "string" },
+              "uniqueItems": true,
+              "default": []
+            }
+          },
+          "additionalProperties": false,
+          "required": ["properties"]
+        },
+        "additionalProperties": false
+      },
+      "default": {
+        "schema": {}
+      },
+      "required": ["schema"]
+    },
+    "styles": {
+      "$ref": "#/definitions/stylesDefinition"
+    },
+    "i18n": {
+      "$ref": "#/definitions/i18nDefinition"
+    },
+    "tokens": {
+      "$ref": "#/definitions/tokensDefinition"
+    },
+    "services": {
+      "$ref": "#/definitions/servicesDefinition"
+    }
+  },
+  "additionalProperties": false
+}

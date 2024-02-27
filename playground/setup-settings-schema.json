@@ -1,0 +1,269 @@
+{
+  "$id": "https://everymundo.github.io/registry/playground/setup-settings-schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "settingsSchemaDefinition": {
+      "type": "object",
+      "title": "An object containing your app's settings.",
+      "description": "",
+      "additionalProperties": {
+        "required": [
+          "type"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "type"
+            ]
+          }
+        ],
+        "type": "object",
+        "title": "The key which your option will be defined under.",
+        "description": "",
+        "default": {
+          "type": "string",
+          "title": ""
+        },
+        "examples": [
+          {
+            "type": "string",
+            "title": ""
+          },
+          {
+            "type": "object",
+            "title": "",
+            "properties": {}
+          },
+          {
+            "type": "boolean",
+            "title": ""
+          },
+          {
+            "type": "integer",
+            "title": ""
+          },
+          {
+            "type": "number",
+            "title": ""
+          },
+          {
+            "type": "array",
+            "title": "",
+            "items": {}
+          }
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "The title related to your form field.",
+            "description": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "The description which appears next to your form field.",
+            "description": ""
+          },
+          "help": {
+            "type": "string",
+            "title": "Extra instructions or context to the setup process.",
+            "description": ""
+          },
+          "showIf": {
+            "type": [
+              "boolean",
+              "object"
+            ],
+            "title": "Conditionally show a field",
+            "description": "",
+            "additionalProperties": {
+              "title": "A string matching another defined option key",
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "op": {
+                      "type": "string",
+                      "title": "JavaScript operator",
+                      "enum": [
+                        "==",
+                        "!=",
+                        "<",
+                        ">",
+                        "<=",
+                        ">="
+                      ]
+                    },
+                    "value": {
+                      "title": "Expected value",
+                      "type": [
+                        "null",
+                        "boolean",
+                        "string",
+                        "number",
+                        "integer"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "op",
+                    "value"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": {
+            "type": "array",
+            "title": "Required fields",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "default": []
+          },
+          "enum": {
+            "type": "array",
+            "title": "Declare a list of values to select from",
+            "description": "",
+            "items": {
+              "type": [
+                "string",
+                "number",
+                "integer",
+                "boolean"
+              ]
+            }
+          },
+          "enumNames": {
+            "type": "array",
+            "title": "Declare human readable names",
+            "description": "",
+            "items": {
+              "type": "string"
+            }
+          },
+          "properties": {
+            "$ref": "#/definitions/settingsSchemaDefinition"
+          },
+          "minimum": {
+            "title": "The minimum number allowed in the field.",
+            "type": "number"
+          },
+          "maximum": {
+            "title": "The maximum number allowed in the field.",
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "title": "Declares the type of the setting",
+            "default": "string",
+            "enum": [
+              "array",
+              "boolean",
+              "integer",
+              "number",
+              "object",
+              "string",
+              "help"
+            ]
+          },
+          "placeholder": {
+            "type": "string",
+            "title": "A value that describes what should be provided in the form field.",
+            "description": ""
+          },
+          "default": {
+            "title": "A default value that appears the form field.",
+            "description": ""
+          },
+          "format": {
+            "type": "string",
+            "title": "The format your input will appear as in the form.",
+            "enum": [
+              "code",
+              "date",
+              "email",
+              "number",
+              "password",
+              "radio",
+              "checkbox",
+              "chip",
+              "textarea",
+              "color",
+              "uri",
+              "json",
+              "tabs",
+              "collapse",
+              "collapse:opened",
+              "collapse:closed",
+              "plain",
+              "group",
+              "dialog"
+            ]
+          },
+          "items": {
+            "title": "Declarations for each item in an array.",
+            "type": [
+              "string",
+              "object"
+            ],
+            "description": "",
+            "default": {
+              "type": "object",
+              "properties": {}
+            },
+            "properties": {
+              "properties": {
+                "$ref": "#/definitions/settingsSchemaDefinition"
+              }
+            }
+          }
+        }
+      },
+      "default": {}
+    }
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "title": "Declares the type of the setting",
+      "default": "object",
+      "enum": [
+        "object"
+      ]
+    },
+    "properties": {
+      "$ref": "#/definitions/settingsSchemaDefinition"
+    },
+    "required": {
+      "type": "array",
+      "title": "Required fields",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "default": []
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "properties"
+  ]
+}
