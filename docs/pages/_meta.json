@@ -42,12 +42,12 @@
     "items": {
       "playground": {
         "title": "Playground",
-        "href": "https://everymundo.github.io/registry/playground",
+        "href": "https://everymundo.github.io/developer-hub/playground",
         "newWindow": true
       },
       "editor": {
         "title": "Editor",
-        "href": "https://everymundo.github.io/registry/editor",
+        "href": "https://everymundo.github.io/developer-hub/editor",
         "newWindow": true
       },
       "eds": {
@@ -57,7 +57,7 @@
       },
       "adnetify": {
         "title": "Adnetify Simulator",
-        "href": "https://everymundo.github.io/registry/adnetify",
+        "href": "https://everymundo.github.io/developer-hub/adnetify",
         "newWindow": true
       }
     }
