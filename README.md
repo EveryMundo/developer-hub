@@ -4,7 +4,7 @@
   <h1 align="center">DEVELOPER HUB</h1>
 
   <p align="center">
-    ⚡ Ecosystem for the creation and distribution of modules.
+    ⚡ PROS Enterprise Ecosystem for the creation and distribution of modules.
     <br />
     <a href="https://everymundo.github.io/developer-hub/docs"><strong>Explore the docs »</strong></a>
     <br />
