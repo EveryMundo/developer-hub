@@ -1,0 +1,60 @@
+name: Build and Deploy Modified Examples
+
+on:
+  push:
+    paths:
+      - 'examples/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Get changed examples
+        id: get_changed_examples
+        run: |
+          echo "CHANGED_EXAMPLES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^examples/' | awk 'BEGIN {FS="/"} {print $1 "/" $2}' | uniq)" >> $GITHUB_ENV
+
+      - name: Install and Build Changed Examples
+        run: |
+          for DIR in $CHANGED_EXAMPLES; do
+            if [ -d "$DIR" ]; then
+              echo "Building $DIR..."
+              cd $DIR
+              npm install
+              npm run build
+              cd -
+            fi
+          done
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git fetch --depth=1 origin gh-pages
+          git checkout -b gh-pages origin/gh-pages
+          for DIR in $CHANGED_EXAMPLES; do
+            if [ -d "$DIR" ]; then
+              TARGET_DIR=${DIR/examples\//}
+              
+              if [ -d "$DIR/dist" ]; then
+                rm -rf .gh-pages/$TARGET_DIR
+                mkdir -p .gh-pages/$TARGET_DIR
+                cp -r $DIR/dist/* .gh-pages/$TARGET_DIR/
+              elif [ -d "$DIR/build" ]; then
+                rm -rf .gh-pages/$TARGET_DIR
+                mkdir -p .gh-pages/$TARGET_DIR
+                cp -r $DIR/build/* .gh-pages/$TARGET_DIR/
+              fi
+            fi
+          done
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add .
+          git commit -m "Deploy updated examples"
+          git push origin gh-pages
