@@ -20,7 +20,9 @@ jobs:
       - name: Get changed examples
         id: get_changed_examples
         run: |
-          CHANGED_DIRS=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^examples/' | awk 'BEGIN {FS="/"} {print $1 "/" $2}' | uniq)
+          echo "Before SHA: ${{ github.event.before }}"
+          echo "Current SHA: ${{ github.sha }}"
+          CHANGED_DIRS=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" | grep '^examples/' | awk 'BEGIN {FS="/"} {print $1 "/" $2}' | uniq)
           echo "CHANGED_EXAMPLES=$CHANGED_DIRS" >> $GITHUB_ENV
           echo "Changed examples:"
           echo "${CHANGED_DIRS}"
