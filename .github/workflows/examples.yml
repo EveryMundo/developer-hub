@@ -18,6 +18,7 @@ jobs:
       run: | # Install npm packages and build
         for D in examples/*; do
           if [ -d "$D" ]; then
+            echo "Building project in $D"
             cd "$D"
             npm install
             npm run build
@@ -25,11 +26,24 @@ jobs:
           fi
         done
 
+    - name: Prepare Deployment Directory
+      run: |
+        mkdir -p .deploy/examples
+        for D in examples/*; do
+          if [ -d "$D" ]; then
+            if [ -d "$D/build" ]; then
+              cp -R "$D/build" ".deploy/examples/$(basename $D)"
+            elif [ -d "$D/dist" ]; then
+              cp -R "$D/dist" ".deploy/examples/$(basename $D)"
+            fi
+          fi
+        done
+
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages # The branch the action should deploy to.
-        folder: examples # The folder the action should deploy.
+        folder: .deploy # The folder the action should deploy.
         clean: true # Automatically remove deleted files from the deploy branch
         clean-exclude: |
           /.nojekyll
