@@ -1,0 +1,63 @@
+---
+---
+
+import PlaygroundDemo from "@/components/PlaygroundDemo";
+import {
+  FileTree,
+} from "nextra-theme-docs";
+
+<br />
+
+# Examples
+
+[https://github.com/EveryMundo/registry/tree/develop/examples](https://github.com/EveryMundo/registry/tree/develop/examples)
+
+<FileTree>
+  <FileTree.Folder name="examples/">
+    <FileTree.Folder name="hello-plain-js/" />
+    <FileTree.Folder name="hello-react/" />
+    <FileTree.Folder name="hello-angular/" />
+    <FileTree.Folder name="hello-svelte/" />
+    <FileTree.Folder name="hello-vue/" />
+    <FileTree.Folder name="react-with-services/" />
+    <FileTree.Folder name="react-with-settings/" />
+    <FileTree.Folder name="react-with-styles-css-modules/" />
+    <FileTree.Folder name="react-with-styles-custom-service/" />
+    <FileTree.Folder name="react-with-styles-custom-template/" />
+    <FileTree.Folder name="react-with-styles-emotion-js/" />
+    <FileTree.Folder name="react-with-styles-linaria/" />
+    <FileTree.Folder name="react-with-styles-tailwind/" />
+    <FileTree.Folder name=".../" />
+  </FileTree.Folder>
+</FileTree>
+
+## Live
+
+Basic hello world in React
+
+<PlaygroundDemo
+  src="https://everymundo.github.io/registry/playground/?url=https://everymundo.github.io/registry/examples/hello-react"
+  repo="https://github.com/EveryMundo/registry/tree/develop/examples/hello-react"
+  title="Hello React"
+  aspectRatio={16 / 9}
+/>
+
+Airlines Standard Fares module demo using Fares services and EDS
+
+<PlaygroundDemo
+  src="https://everymundo.github.io/registry/playground/?url=https://everymundo.github.io/registry/examples/airlines-standard-fares"
+  title="Airlines Standard Fares"
+  aspectRatio={16 / 9}
+  name="Airlines Fares Demo"
+  repo=""
+/>
+
+Hospitality Low Rates Calendar module demo using Rates services and EDS
+
+<PlaygroundDemo
+  src="https://everymundo.github.io/registry/playground/?url=https://everymundo.github.io/registry/examples/hospitality-low-rates-calendar"
+  title="Hospitality Low Rates Calendar"
+  aspectRatio={16 / 9}
+  name="Hospitality Rates Demo"
+  repo=""
+/>

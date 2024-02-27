@@ -1,0 +1,55 @@
+---
+---
+
+import {
+  Cards,
+  Card,
+  FileTree,
+} from "nextra-theme-docs";
+
+# Create a module
+
+A module, called _airModule_ in our system, is technically a web application with specific requirements that will be embedded through an Iframe.
+
+For correct integration with the ecosystem all the modules, independent of the technology and frameworks that are decided to use, must have the existence of an `index.html` file, a `setup.json` file and the use of the **Registry Script** library. In addition to this, you must have the **Registry CLI** package installed, which will allow you to interact with the ecosystem: create, deploy and promote the modules.
+
+All modules must also have non-functional requirements associated mostly with performance or security.
+
+To create your first module using the **EveryMundo Developer Hub** you have two useful shortcuts that will help you quickly acclimate to the ecosystem:
+
+- **Tutorial**: Follow our getting started tutorial step by step (using React).
+- **Examples**: Clone any of our examples from the most basic _hello tech_, or those specialized in areas to the complete demo modules.
+
+
+## Tutorial
+
+<Cards>
+  <Card
+    title="Go to Tutorial"
+    arrow
+    href="https://everymundo.github.io/registry/docs/tutorial"
+  />
+</Cards>
+
+## Examples
+
+[https://github.com/EveryMundo/registry/tree/develop/examples](https://github.com/EveryMundo/registry/tree/develop/examples)
+
+<FileTree>
+  <FileTree.Folder name="examples/" defaultOpen>
+    <FileTree.Folder name="hello-plain-js/" />
+    <FileTree.Folder name="hello-react/" />
+    <FileTree.Folder name="hello-angular/" />
+    <FileTree.Folder name="hello-svelte/" />
+    <FileTree.Folder name="hello-vue/" />
+    <FileTree.Folder name="react-with-services/" />
+    <FileTree.Folder name="react-with-settings/" />
+    <FileTree.Folder name="react-with-styles-css-modules/" />
+    <FileTree.Folder name="react-with-styles-custom-service/" />
+    <FileTree.Folder name="react-with-styles-custom-template/" />
+    <FileTree.Folder name="react-with-styles-emotion-js/" />
+    <FileTree.Folder name="react-with-styles-linaria/" />
+    <FileTree.Folder name="react-with-styles-tailwind/" />
+    <FileTree.Folder name=".../" />
+  </FileTree.Folder>
+</FileTree>

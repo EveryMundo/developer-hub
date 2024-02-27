@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "title": "Settings",
+    "theme": {
+      "layout": "full",
+      "breadcrumb": true,
+      "toc": false
+    }
+  }
+}

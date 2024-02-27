@@ -1,0 +1,16 @@
+{
+  "*": {
+    "theme": {
+      "sidebar": true,
+      "breadcrumb": false,
+      "toc": true,
+      "pagination": false
+    },
+    "display": "hidden"
+  },
+  "index": {
+    "title": "Tutorial",
+    "display": "normal",
+    "type": "hidden"
+  }
+}

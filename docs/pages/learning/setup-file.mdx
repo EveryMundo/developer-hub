@@ -1,0 +1,257 @@
+---
+---
+
+import { Callout } from 'nextra-theme-docs'
+
+# Setup.json
+
+Setup JSON represents a digital contract of a module. It is a file (or groups of files) and it defines everything critical from the point of view of business or development that can be expressed in declarative language understood by machines. Allows speeding up the development, part of the QA, distribution and finally the configuration by the client.
+
+EveryMundo has chosen to define the schema using the [JSON Schema](https://json-schema.org) specification, and by doing so provides an open source way of annotating and validating this contract for it's partners and customers.
+
+<Callout type="warning" header="Warning">
+
+The Setup.json file is a work in progress. Some specifications are subject to change. Specifically, as EveryMundo expands it's airModule™ offerings to support customer verticals, this file will reflect the different definitions required for partners to support this evolution.
+
+Current [setup.json schema](https://everymundo.github.io/registry/playground/setup-schema.json).
+
+</Callout>
+
+## What is Setup JSON
+
+Setup JSON represents a digital contract of a module. It is a file (or groups of files) and it defines everything critical from the point of view of business or development that can be expressed in declarative language understood by machines.
+
+Allows speeding up the development, part of the QA, distribution and finally the configuration by the client.
+
+The `setup.json` is closely related to the structure and the data that the module will receive to initialize, called in our ecosystem: _Module Payload_.
+
+### Workflow
+
+TODO: Details about uses in development, QA and production
+
+### General structure
+
+<Callout type="warning" header="Warning">
+
+The `setup.json` file is a work in progress. Some specifications are subject to change.
+
+</Callout>
+
+All Modules include an `setup.json` file. Here's the general file structure. The specification of each of the sections is explained in detail later in this document.
+
+```json
+{
+  "context": {},
+  "settings": {
+    "schema": {}
+  },
+  "styles": {},
+  "i18n": {},
+  "tokens": {
+    "em:apiKey": "<value>"
+  },
+  "services": {},
+  "metaData": {}
+}
+```
+
+### How to create and validate
+
+<Callout type="info" header="Info">
+
+You can test your `setup.json` file anytime in the [Registry Editor Tool](https://everymundo.github.io/registry/editor/)
+
+</Callout>
+
+The `setup.json` file is defined by a JSON Schema: [setup.json schema.](https://everymundo.github.io/registry/playground/setup-schema.json)
+
+All validations to the `setup.json` that happens in the Registry Ecosystem, including the Registry Editor Tool, follow this specification.
+
+### Backward compatibility
+
+Lorem ipsum lorem
+
+### Module Payload
+
+The Module Payload is the initial input that the module receives to render. The data included depends on what is configured in the Setup JSON.
+
+In general, it follows this structure.
+
+```json
+{
+  "context": {},
+  "settings": {},
+  "styles": {
+    "value": {}
+  },
+  "i18n": {
+    "labels": {}
+  },
+  "tokens": {
+    "em:apiKey": "<value>"
+  },
+  "services": {}
+}
+```
+
+## Setup JSON Sections
+
+None of the sections (keywords) listed below are required.
+
+By specifying and configuring a section, you are telling the system that the module needs the resource represented by that section and the shape.
+
+Something to keep in mind, although all the sections represent settings or configurations necessary to render the module, the section specifically called **Settings** is so called because it defines the settings that will be exposed to being configured by the customer.
+
+### Context
+
+This defines some valid context used to load the module.
+
+Example:
+
+```json
+{
+  "context": {
+    "airline": {
+      "code": "cm"
+    },
+    "datasource": {
+      "step": "airModule"
+    },
+    "geo": {
+      "language": {
+        "lang": "en",
+        "site_edition": "en"
+      }
+    },
+    "audience": {
+      "device_category": "desktop"
+    }
+  }
+}
+```
+
+_Module Payload_ → In the mock environment you will receive that exact context as part of the Module Payload. In the live environment, that context will be replaced with other values ​​and according to where the module is rendered.
+
+### Settings
+
+Defines the settings that will be exposed to being configured by the user and is more associated to the point of view of business, behavior or user interface.
+
+```json
+{
+  "settings": {
+    "schema": {
+      "properties": {}
+    }
+  }
+}
+```
+
+The `setup.json` file uses the [JSON Schema](https://json-schema.org/) format to define **settings schema**. That schema must have default values in all the settings values ​​required by the module. The specification in details is explained on the [_Settings Schema_](/learning/setup-file/settings) page.
+
+_Module Payload_ → In the mock environment you will receive in the settings of the Module Payload an object generated with default values ​​specified in the schema. In the live environment, that settings will be replaced by actual values ​​entered by the customer.
+
+### Styles
+
+Defines the styles settings for the module.
+
+```json
+{
+  "styles": {
+    "service": "<styles-service-name>",
+    "options": {
+      "type": "eds",
+      "format": "json"
+    }
+  }
+}
+```
+
+### Internationalization (i18n)
+
+Configuration related to internationalization
+
+```json
+{
+  "i18n": {
+    "rtl": false,
+    "a11y": "WCAG 2.1 AA",
+    "language": "*",
+    "labels": {
+      "label-key-1": "English value for key 1",
+      "label-key-2": "English value for key 2"
+    }
+  }
+}
+```
+
+Structure:
+
+| Key        | Description / Values                                                                                                                                                                                                                           | Default value |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `rtl`      | If the module supports text direction RTL (right to left)                                                                                                                                                                                      | _false_       |
+| `a11y`     | Accessibility level supported by the module.                                                                                                                                                                                                   | _"none"_      |
+| `language` | This key describes whether the module supports multi-language or is designed with hard coded labels.                                                                                                                                           | _"en"_        |
+| `labels`   | In case the module accepts multi-language, this key will contain an object (key values), where the key will be a unique key in our label system (prioritize labels that already exist) and the value will be the corresponding text in English | _{}_          |
+
+_Module Payload_ → In case the module is multi-language: in the simulated environment, the exact configured labels will be received through the Module Payload. In the live environment, the labels defined in the system by the customer will be received.
+
+### Tokens
+
+Security tokens.
+
+```json
+{
+  "tokens": {
+    "em:apiKey": "<some-very-very-secret-token>"
+  }
+}
+```
+
+### Services
+
+<Callout type="warning" header="Warning">
+
+We need a documentation of the services with the list of each one of those available to be used by the Registry
+
+</Callout>
+
+Specification of all services used by the module. The urls can be obtained from the official documentation of the APIs.
+
+```json
+{
+  "services": {
+    "some-unique-and-well-known-key": {
+      "endpoint": "https://services-url/path-to-services"
+    },
+    "em:sputnik:search": {
+      "endpoint": "https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%airlineCode%%/fares/search"
+    }
+  }
+}
+```
+
+Available services:
+
+| Service Key         | Endpoint    |     |
+| ------------------- | --- | --- |
+| `em:sputnik:search` | `https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%tenantCode%%/fares/search`    |     |
+| `em:sputnik:aggregation` | `https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%tenantCode%%/fares/aggregation`    |     |
+| `em:sputnik:grouped-routes` | `https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%tenantCode%%/fares/grouped-routes`    |     |
+| `em:sputnik:histogram` | `https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%tenantCode%%/fares/histogram`    |     |
+| `em:sputnik:popular-destinations` | `https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%tenantCode%%/fares/popular-destinations`    |     |
+| `em:hangar:search`  | `https://openair-dev.airtrfx.com/hangar-service/v2/%%tenantCode%%/airports/search`    |     |
+| `em:deeplink`       | `https://openair-dev.airtrfx.com/deeplink-service/v2/%%tenantCode%%/deeplinks`    |     |
+| `em:location:search`       | `https://openair-dev.airtrfx.com/location-service/v3/%%tenantCode%%/hierarchies/search`    |     |
+| `em:location:multi-aggregation`       | `https://openair-dev.airtrfx.com/location-service/v3/%%tenantCode%%/hierarchies/language/%%languageCode%%/multi-aggregation`    |     |
+| `em:location:categories`       | `https://openair-dev.airtrfx.com/location-service/v3/%%tenantCode%%/categories/%%categoryId%%/language/%%languageCode%%`    |     |
+| `em:hospitality:rates-histogram`       | `https://openair-dev.airtrfx.com/hospitality-service/v1/%%tenantCode%%/rates/histogram`    |     |
+| `em:hospitality:rates-aggregation`       | `https://openair-dev.airtrfx.com/hospitality-service/v1/%%tenantCode%%/rates/aggregation`    |     |
+| ...                 |     |     |
+
+### Metadata
+
+<Callout type="warning" header="Warning">
+
+Coming soon. This section would define aspects associated with the module title, version, description, links to documentation, etc etc. Most likely, it is not necessary for the MVP.
+
+</Callout>

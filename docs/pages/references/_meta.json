@@ -1,0 +1,10 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": true
+    }
+  },
+  "iframes": "Iframes",
+  "design-system": "Design System (EDS)",
+  "services-layer": "Service Layer"
+}

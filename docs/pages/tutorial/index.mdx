@@ -1,0 +1,266 @@
+---
+---
+
+import {
+  Callout,
+  Tab,
+  Tabs,
+  Steps,
+  Cards,
+  Card,
+  FileTree,
+} from "nextra-theme-docs";
+import PlaygroundDemo from "@/components/PlaygroundDemo";
+
+# Tutorial
+
+The following tutorial lays out a basic initial path to start using the **EveryMundo Developer Hub**. Alternate paths are omitted to simplify familiarization with the environment.
+
+![EveryMundo Developer Hub](@/assets/images/tutorial/cover.jpg)
+
+## TL;DR
+
+Below is the live example of what will be achieved by the end of this tutorial and the source code.
+
+<PlaygroundDemo
+  src="https://everymundo.github.io/registry/playground/?url=https://everymundo.github.io/registry/examples/hello-react"
+  repo="https://github.com/EveryMundo/registry/tree/develop/examples/hello-react"
+  title="Hello React"
+  aspectRatio={16 / 9}
+/>
+
+## Let's start coding
+
+<Steps>
+
+### Create new module
+
+To start we are going to use **React** as technology and create the project with the tool [Create React App](https://create-react-app.dev/) using a basic template adapted to the EveryMundo Developer Hub: [@everymundo/registry-module](https://www.npmjs.com/package/@everymundo/cra-template-registry-module).
+
+Run the following command to build the project: (`hello-react` will be used as the project name and folder)
+
+```console copy filename="Terminal"
+npx create-react-app hello-react --template=@everymundo/registry-module
+```
+
+**Note**: This started template also has _Craco_ and _Storybook_ configured.
+
+#### Project structure
+
+When the project `hello-react` has been generated you'll see the following folders and files:
+
+<FileTree>
+  <FileTree.Folder name="hello-react/" defaultOpen>
+    <FileTree.Folder name=".storybook/" />
+    <FileTree.Folder name="public/" defaultOpen>
+      <FileTree.File name="index.html" />
+      <FileTree.File name="robots.txt" />
+      <FileTree.File name="setup.json" active />
+    </FileTree.Folder>
+    <FileTree.Folder name="src/" defaultOpen>
+      <FileTree.Folder name="components/" defaultOpen>
+        <FileTree.Folder name="App/">
+          <FileTree.File name="App.css" />
+          <FileTree.File name="App.jsx" />
+          <FileTree.File name="App.stories.js" />
+          <FileTree.File name="App.test.js" />
+          <FileTree.File name="index.js" />
+        </FileTree.Folder>
+        <FileTree.Folder name="Button/" />
+      </FileTree.Folder>
+      <FileTree.Folder name="context/" />
+      <FileTree.Folder name="hooks/" />
+      <FileTree.Folder name="utils/" />
+      <FileTree.File name="index.js" active />
+    </FileTree.Folder>
+    <FileTree.File name="package.json" active />
+    <FileTree.File name="..." />
+  </FileTree.Folder>
+</FileTree>
+
+Three files have been highlighted because they are closely associated in the integration with the **Registry Ecosystem**:
+
+- `public/setup.json`
+- `package.json`
+- `src/index.js`
+
+#### Setup.json file
+
+The `Setup.json` is the module contract. This file defines the needs of the module and its behavior with respect to the **EveryMundo Developer Hub**.
+
+In this tutorial the module will define some configuration in the `setup.json`:
+
+- A dynamic settings `title` of type _string_.
+- A _label_ has been used with the key `example-label-key`.
+- Also it is specified that the module will consumed dynamic styles tokens from EDS Design System.
+
+```json filename="hello-react/public/setup.json" {8, 20, 30}
+{
+  "metaData": {},
+  "context": {},
+
+  "settings": {
+    "schema": {
+      "properties": {
+        "title": {
+          "title": "Title",
+          "description": "Description, lorem ipsum lorem ..",
+          "help": "Hint: Text next to a field to guide the end user filling it",
+          "placeholder": "Placeholder ..",
+          "type": "string",
+          "default": "Hello React"
+        }
+      }
+    }
+  },
+
+  "styles": {
+    "service": "codeless",
+    "options": {
+      "type": "eds",
+      "format": "json"
+    }
+  },
+
+  "i18n": {
+    "labels": {
+      "example-label-key": "Primary color"
+    }
+  },
+
+  "tokens": {},
+  "services": {}
+}
+```
+
+**Note**: When you build the project, you must make sure that this `setup.json` file goes to the root of the generated folder.
+
+#### Package.json (with `@everymundo/registry-script`)
+
+It is important that you include `@everymundo/registry-script` library as a dependency. _Registry Script_ is the library that allows communication with the **EveryMundo Developer Hub**.
+
+```json filename="hello-react/package.json" {6}
+{
+  "name": "hello-react",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@everymundo/registry-script": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": { ... },
+  "browserslist": { ... },
+  "homepage": ".",
+  "devDependencies": { ... }
+}
+```
+
+#### Registry Script in `index.js`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia, turpis eu sodales efficitur, justo nibh molestie orci, id malesuada odio velit eu lacus.
+
+```js filename="hello-react/src/index.js" {1,8}
+import { isReady } from "@everymundo/registry-script";
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./components/App";
+
+isReady().then(async (payload) => {
+  ReactDOM.render(<App payload={payload} />, document.getElementById("root"));
+});
+```
+
+### Develop your module
+
+Super, the new module has been created in the `hello-react/` folder. Access that folder and start the development server.
+
+```console copy filename="Terminal"
+cd hello-react
+npm start
+```
+
+At this point you can familiarize yourself with the code and add the functionality you need. Here are some suggestions.
+
+#### Enrich `setup.json` using Registry Editor
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia, turpis eu sodales efficitur, justo nibh molestie orci, id malesuada odio velit eu lacus.
+
+#### Develop and test with Registry Playground
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia, turpis eu sodales efficitur, justo nibh molestie orci, id malesuada odio velit eu lacus.
+
+**Note:** that in order to view the project you must open it using the Registry Playground: https://everymundo.github.io/registry/playground/?url=http://localhost:3000/
+
+### Deploy module
+
+Once the module is ready, it is time to deploy it. For this we will use the [**Registry CLI**](/learning/registry-cli)
+
+![Registry CLI](@/assets/images/learning/hero-registry-cli.png)
+
+#### Install Registry CLI
+
+The following command installs the **Registry CLI** globally:
+
+```console copy filename="Terminal"
+npm i -g @everymundo/em-registry-cli
+```
+
+#### Set your Credentials
+
+Then, let's authenticate to the Ecosystem. You must enter the credentials provided, if you do not yet have them, request them before.
+
+```console copy filename="Terminal"
+registry configure
+
+? What's the accountId [] ABCD
+? "What's the userId [] user1"
+? "What's the userId [] user1"
+```
+
+#### Define a new module
+
+This step is to associate your local module with a new module registered in the **EveryMundo Developer Hub**. To run the following command you must be inside the project folder (in this `hello-react` tutorial).
+
+```console copy filename="Terminal"
+registry create
+
+? Module name <Some name>
+? What companies are you building this module for? *
+? What's the build directory? build
+? What's the pre package command? npm run build
+```
+
+You will notice that if everything happens correctly an `em-module.json` file will be created
+
+#### Push the module
+
+Once your module has been registered you can deploy the code.
+
+```console copy filename="Terminal"
+registry package --build --push
+```
+
+This step will build the module and upload it to the servers. A preview URL of the module is returned, you can view it using the **Registry Playground**. You will be able to do as many pushes as you need, and you will always get a different preview URL.
+
+</Steps>
+
+## Whats Next?
+
+<Cards num={2}>
+  <Card title="Learning in deep" arrow href="/learning" />
+  <Card title="Understand Setup.json" arrow href="/learning/setup-file" />
+  <Card title="Get clear with FAQ" arrow href="/get-started/faqs" />
+  <Card title="View more examples" arrow href="/examples" />
+</Cards>
