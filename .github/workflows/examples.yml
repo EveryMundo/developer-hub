@@ -20,13 +20,13 @@ jobs:
       - name: Get changed examples
         id: get_changed_examples
         run: |
-          if git rev-parse ${{ github.event.before }} >/dev/null 2>&1; then
-            echo "Using SHA from the event: ${{ github.event.before }}"
-            PREV_SHA=${{ github.event.before }}
-          else
-            echo "Invalid previous SHA, using last commit."
-            PREV_SHA=$(git rev-parse HEAD^)
+          PREV_SHA=$(git rev-parse HEAD^ || echo "")
+          if [[ -z "$PREV_SHA" ]]; then
+            echo "Fallback to using the last commit."
+            PREV_SHA=$(git rev-parse HEAD~1)
           fi
+          echo "Previous SHA: $PREV_SHA"
+          
           CHANGED_DIRS=$(git diff --name-only $PREV_SHA ${{ github.sha }} | grep '^examples/' | awk 'BEGIN {FS="/"} {print $1 "/" $2}' | uniq)
           echo "CHANGED_EXAMPLES=$CHANGED_DIRS" >> $GITHUB_ENV
           echo "Changed examples:"
