@@ -1,1 +1,0 @@
-# New Registry Documentation
