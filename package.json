@@ -1,0 +1,9 @@
+{
+  "name": "developer-hub",
+  "private": true,
+  "scripts": {},
+  "workspaces": [
+    "docs",
+    "examples/*"
+  ]
+}
