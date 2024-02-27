@@ -8,7 +8,7 @@ export default () => (
   >
     <div className={styles.innerPanel}>
       Discover the world's top offer marketing technology
-      <span className={styles.markeplace}>PROS Marketplace</span>
+      <span className={styles.marketplace}>PROS Marketplace</span>
     </div>
   </a>
 );
