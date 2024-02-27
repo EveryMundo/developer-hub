@@ -1003,7 +1003,7 @@ function NewScenario(_ref) {
 }
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/TestAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const TestAddon_module = ({"panel":"p","modulePayloadBar":"q"});
+/* harmony default export */ const TestAddon_module = ({"panel":"r","modulePayloadBar":"s"});
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/TestAddon.jsx
 
 

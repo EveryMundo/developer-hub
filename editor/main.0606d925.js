@@ -44886,7 +44886,7 @@ var compat_module = __webpack_require__(88763);
 var Store = __webpack_require__(91342);
 ;// CONCATENATED MODULE: ./src/addons/OverviewAddon/components/ContextSummary/ContextSummary.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const ContextSummary_module = ({"tempTitle":"h","container":"i"});
+/* harmony default export */ const ContextSummary_module = ({"tempTitle":"k","container":"l"});
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Text/Text.js + 1 modules
 var Text = __webpack_require__(99826);
 ;// CONCATENATED MODULE: ./src/addons/OverviewAddon/components/ContextSummary/ContextSummary.jsx
@@ -65317,7 +65317,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("00790bc03951a234d4c0")
+/******/ 		__webpack_require__.h = () => ("0606d925b3ec09700fd5")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
