@@ -1,10 +1,9 @@
 import { useState } from "react";
 import reactLogo from "../../assets/react.svg";
-import viteLogo from "../../assets/vite.svg";
+import viteLogo from "/vite.svg";
 import "./App.css";
 
-function App(props) {
-  const { payload = {} } = props;
+function App({ payload = {} }) {
   const { settings, styles, i18n } = payload;
 
   // Using settings
