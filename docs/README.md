@@ -1,1 +1,1 @@
-# New Registry Documentation
+# Developer Hub Documentation
