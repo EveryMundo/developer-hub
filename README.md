@@ -42,7 +42,7 @@ Visit [https://everymundo.github.io/developer-hub/docs](https://everymundo.githu
 
 Review our [examples](./examples) developed with different technologies and needs.
 
-To scaffold your project with one of the examples you can use the following command, just replace `hello-react` with the name of the example you need:
+To scaffold your project with one of the examples you can use the following command (just replace `hello-react` with the name of the example you need):
 
 ```
 npx degit Everymundo/developer-hub/examples/hello-react your-project-folder-name
