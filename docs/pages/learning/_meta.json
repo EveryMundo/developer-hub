@@ -1,0 +1,14 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": true
+    }
+  },
+  "architecture": "Architecture",
+  "setup-file": "Setup.json",
+  "editor": "Editor",
+  "playground": "Playground",
+  "registry-cli": "Registry CLI",
+  "registry-script": "Registry Script",
+  "workflow": "Workflow"
+}

@@ -1,0 +1,10 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": true
+    }
+  },
+  "overview": "Overview",
+  "create-a-module": "Create a module",
+  "faq": "FAQ"
+}

@@ -1,0 +1,28 @@
+.panel {
+  display: block;
+  background-image: linear-gradient(165deg, #64e1ff, #b483ff 81.25%);
+  padding: 1px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.innerPanel {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+html[class~="dark"] .innerPanel {
+  background-color: #111;
+}
+
+.markeplace {
+  display: block;
+  color: #14acdc;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 4px;
+  white-space: nowrap;
+}

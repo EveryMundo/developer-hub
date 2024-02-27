@@ -1,0 +1,54 @@
+.Group {
+  margin-top: 1.5rem;
+}
+
+.GroupRight {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .ContainerGroup {
+    position: relative;
+  }
+
+  .ContainerGroup > :not(.Group) {
+    width: calc(50% - 2rem);
+  }
+
+  .ContainerGroup:before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    content: "";
+    border-left: 1px dashed rgba(0, 0, 0, 0.1);
+  }
+
+  .Group {
+    display: flex;
+  }
+
+  .GroupLeft {
+    position: relative;
+    flex: 0 0 calc(50%);
+    padding-right: 2rem;
+  }
+
+  .GroupRight {
+    position: relative;
+    flex: 0 0 calc(50%);
+    padding-left: 2rem;
+    overflow: auto;
+    margin-top: 0;
+  }
+
+  .GroupLeft h1:first-child,
+  .GroupLeft h2:first-child,
+  .GroupLeft h3:first-child,
+  .GroupLeft h4:first-child,
+  .GroupLeft h5:first-child,
+  .GroupLeft h6:first-child {
+    margin-top: 0 !important;
+  }
+}

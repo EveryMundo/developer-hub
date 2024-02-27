@@ -1,0 +1,281 @@
+---
+---
+
+import ContainerGroup, { Group } from "@/components/Group";
+
+<br />
+
+<div class="nextra-breadcrumb nx-mt-1.5 nx-flex nx-items-center nx-gap-1 nx-overflow-hidden nx-text-sm nx-text-gray-500 contrast-more:nx-text-current">
+  <div
+    class="nx-whitespace-nowrap nx-transition-colors nx-min-w-[24px] nx-overflow-hidden nx-text-ellipsis hover:nx-text-gray-900 dark:hover:nx-text-gray-200"
+    title="Learning"
+  >
+    <a href="/learning">Learning</a>
+  </div>
+  <svg
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    class="nx-w-3.5 nx-shrink-0"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M9 5l7 7-7 7"
+    ></path>
+  </svg>
+  <div
+    class="nx-whitespace-nowrap nx-transition-colors nx-min-w-[24px] nx-overflow-hidden nx-text-ellipsis hover:nx-text-gray-900 dark:hover:nx-text-gray-200"
+    title="Setup.json"
+  >
+    <a href="/learning/setup-file">Setup.json</a>
+  </div>
+  <svg
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    class="nx-w-3.5 nx-shrink-0"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M9 5l7 7-7 7"
+    ></path>
+  </svg>
+  <div
+    class="nx-whitespace-nowrap nx-transition-colors nx-font-medium nx-text-gray-700 contrast-more:nx-font-bold contrast-more:nx-text-current dark:nx-text-gray-400 contrast-more:dark:nx-text-current"
+    title="Settings"
+  >
+    Settings
+  </div>
+</div>
+
+# Settings
+
+<ContainerGroup>
+
+<Group>
+  <Group.Left>
+    Defines the settings that will be exposed to being configured by the user and is more associated to the point of view of business, behavior or user interface.
+
+    The `setup.json` file uses the JSON Schema format to define settings schema. That schema must have default values in all the settings values ​​required by the module.
+
+  </Group.Left>
+  <Group.Right>
+```json
+{
+  "settings": {
+    "schema": {
+      "properties": {}
+    }
+  }
+}
+```
+  </Group.Right>
+</Group>
+
+### General Attributes
+
+<Group>
+<Group.Left>
+All field types accept the following attributes:
+
+`type`: Declares the type of the setting field. It can contain these values:
+
+- string
+- boolean
+- integer
+- number
+- array
+- object
+
+`title`: A text label to accompany the setting field. (e.g. “Initial dates”)
+
+`description`: A longer description of the setting field. (e.g. “Initial
+dates pre populated by default…“)
+
+`default` The default value to be used for the setting field.
+
+Keep in mind the default value must be of the `type` specified by the field. So for example, the `default` for an `array` of `string` type would be `["Item one", "Item two"]`.
+
+`help`: Useful indications related to the field (e.g. “'Ctrl + click' to select more than one.”)
+
+</Group.Left>
+<Group.Right>
+```json
+{
+  "settings": {
+    "schema": {
+      "properties": {
+        "some-property": {
+          "type": "string",
+          "title": "Title",
+          "description": ""
+        }
+      }
+    }
+  }
+}
+```
+</Group.Right>
+</Group>
+
+### Primitive types
+
+<Group>
+  <Group.Left>
+    #### String
+    
+    **string**: Presented as a text input
+
+    `maxLength`: String types accept a maxLength property which defines the maximum number of characters the field should allow.
+
+`placeholder`: String types allow you to specify the placeholder value which will appear as lighter-than-normal text in the input when it is empty. This is a useful place to include an example of how a value to be placed in that field should look.
+
+  </Group.Left>
+  <Group.Right>
+```json
+{
+  "title": "Some simple title",
+  "type": "string",
+  "default": "Some default value"
+}
+```
+  </Group.Right>
+</Group>
+  
+  <Group>
+  <Group.Left>
+    #### Long string
+
+    **string/textarea**: Presented as a text input with validation to ensure the customer provides an email address. The default placeholder can be overridden.
+
+  </Group.Left>
+  <Group.Right>
+```json
+{
+  "title": "Textarea Example",
+  "type": "string",
+  "format": "textarea",
+  "default": "When the Internet first came, I thought it was just the beacon of freedom. People could communicate with anyone, anywhere, and nobody could stop it.\n\n-Steve Wozniak"
+}
+```
+  </Group.Right>
+</Group>
+
+<Group>
+  <Group.Left>
+    #### URL String
+
+    **string/url**: Presented as a text input with validation to ensure the customer provides a URL. The default placeholder can be overridden.
+
+  </Group.Left>
+  <Group.Right>
+```json
+{
+  "title": "URL String Example",
+  "type": "string",
+  "format": "url"
+}
+```
+  </Group.Right>
+</Group>
+
+<Group>
+  <Group.Left>
+    #### Email String
+
+    **string/email**: Presented as a text input with validation to ensure the customer provides an email address. The default placeholder can be overridden.
+
+  </Group.Left>
+  <Group.Right>
+```json
+{
+  "title": "Email String Example",
+  "type": "string",
+  "format": "email"
+}
+```
+  </Group.Right>
+</Group>
+
+<Group>
+  <Group.Left>
+    #### Date
+
+    **string/date**: Presented to the customer with a date picker. The resulting date value is provided to the app in a format understood by new Date.
+
+  </Group.Left>
+  <Group.Right>
+```json filename="Date example"
+{
+  "title": "Date Example",
+  "type": "string",
+  "format": "date",
+  "default": "2015-10-10"
+}
+```
+  </Group.Right>
+</Group>
+
+<Group>
+  <Group.Left>
+    #### Integer number
+
+    **integer**: Presented as a number-style text input which only accepts an integer.
+
+    Both integers and floating-point numbers can set a `minimum` and `maximum` value.
+
+  </Group.Left>
+  <Group.Right>
+```json
+{
+  "title": "Integer Example",
+  "description": "Input a number between 5 and 50.",
+  "type": "integer",
+  "default": 5,
+  "minimum": 5,
+  "maximum": 50
+}
+```
+  </Group.Right>
+</Group>
+
+<Group>
+  <Group.Left>
+    #### Floating-point number
+
+    **number**: Presented as a number-style text input.
+
+  </Group.Left>
+  <Group.Right>
+```json
+{
+  "default": 0.5,
+  "title": "Number Example",
+  "type": "number"
+}
+```
+  </Group.Right>
+</Group>
+
+<Group>
+  <Group.Left>
+    #### True or false value
+
+    **boolean**: Presented as a checkbox
+
+  </Group.Left>
+  <Group.Right>
+```json
+{
+  "title": "Boolean Example",
+  "type": "boolean"
+}
+```
+  </Group.Right>
+</Group>
+
+</ContainerGroup>

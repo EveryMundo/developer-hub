@@ -1,0 +1,21 @@
+{
+  "name": "registry-docs",
+  "version": "0.0.1",
+  "description": "..",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o docs/",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^4.5.15",
+    "@next/font": "^13.1.6",
+    "next": "^13.1.6",
+    "nextra": "^2.2.15",
+    "nextra-theme-docs": "^2.2.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.31.3"
+  }
+}
