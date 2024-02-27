@@ -1,5 +1,4 @@
 ---
-order: 2
 ---
 
-# EDS
+# Design System (EDS)

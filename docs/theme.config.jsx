@@ -7,20 +7,20 @@ export default {
     const { asPath } = useRouter();
     if (asPath !== "/") {
       return {
-        titleTemplate: "%s | Developer Hub Documentation | Everymundo",
+        titleTemplate: "%s | Developer Hub Documentation | PROS",
       };
     }
   },
   logo: <HeaderLogo />,
   logoLink: false,
   project: {
-    link: "https://github.com/EveryMundo/registry",
+    link: "https://github.com/EveryMundo/developer-hub",
   },
   // chat: {
   //   link: "https://discord.com",
   // },
   docsRepositoryBase:
-    "https://github.com/EveryMundo/registry/blob/develop/packages/registry-docs2",
+    "https://github.com/EveryMundo/developer-hub/blob/main/docs",
   footer: { component: null },
   banner: {
     key: "docs2.0-alpha",

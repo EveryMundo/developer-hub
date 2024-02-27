@@ -1,4 +1,0 @@
----
----
-
-# Design System (EDS)
