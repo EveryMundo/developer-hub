@@ -9,13 +9,11 @@
     <a href="https://everymundo.github.io/developer-hub/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://everymundo.github.io/developer-hub/playground">Playground</a>
-    ·
-    <a href="https://everymundo.github.io/developer-hub/editor">Editor</a>
-    ·
     <a href="https://github.com/EveryMundo/developer-hub/issues">Report Bug</a>
     ·
     <a href="https://github.com/EveryMundo/developer-hub/issues">Request Feature</a>
+    ·
+    <a href="#contributing">Contributing</a>
   </p>
 </div>
 
@@ -37,6 +35,14 @@ Used by some of the world's largest companies, **DEVELOPER HUB** empowers you to
 ## Documentation
 
 Visit [https://everymundo.github.io/developer-hub/docs](https://everymundo.github.io/developer-hub/docs) to view the full documentation.
+
+## Tools and libraries
+
+- [Playground](https://everymundo.github.io/developer-hub/docs/learning/playground)
+- [Editor](https://everymundo.github.io/developer-hub/docs/learning/editor)
+- [Registry CLI](https://everymundo.github.io/developer-hub/docs/learning/registry-cli)
+- [Registry Script](https://everymundo.github.io/developer-hub/docs/learning/registry-script)
+
 
 ## Examples and Demos
 
