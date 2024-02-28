@@ -3,7 +3,8 @@ import { isReady } from "@everymundo/registry-script";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import App from "./components/App";
+import '@/styles/global.css'
+import App from "@/components/App";
 
 isReady().then(async (payload) => {
   ReactDOM.createRoot(document.getElementById("root")).render(

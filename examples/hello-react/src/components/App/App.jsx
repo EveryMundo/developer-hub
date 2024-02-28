@@ -1,6 +1,8 @@
-import { useState } from "react";
-import reactLogo from "../../assets/react.svg";
+import Button from "@/components/Button";
+
+import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
+
 import "./App.css";
 
 function App({ payload = {} }) {
@@ -10,12 +12,10 @@ function App({ payload = {} }) {
   const title = settings?.title || "No title";
 
   // Using labels
-  const label = i18n?.labels["example-label-key"] || "Error";
+  const label = i18n?.labels["example-label-key"] || "No label";
 
   // Using styles
   const color = styles?.value?.colors?.primary || "#333";
-
-  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -33,11 +33,9 @@ function App({ payload = {} }) {
         <span>{label}</span>
       </div>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <Button />
         <p>
-          Edit <code>src/components/App.jsx</code> and save to test HMR
+          Edit <code>@/components/App.jsx</code> and save to test HMR
         </p>
       </div>
       <p className="read-the-docs">
