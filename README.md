@@ -56,4 +56,4 @@ npx degit Everymundo/developer-hub/examples/hello-react your-project-folder-name
 
 ## Contributing
 
-Contributions to Developer Hub are welcome and highly appreciated.
+Contributions to **DEVELOPER HUB** are welcome and highly appreciated.
