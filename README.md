@@ -23,6 +23,8 @@
 
 [![Examples / Build and deploy](https://github.com/EveryMundo/developer-hub/actions/workflows/examples.yml/badge.svg)](https://github.com/EveryMundo/developer-hub/actions/workflows/examples.yml)
 
+[![Playground / Build and deploy](https://github.com/EveryMundo/registry/actions/workflows/playground.yml/badge.svg)](https://github.com/EveryMundo/registry/actions/workflows/playground.yml)
+
 <br>
 
 ## Getting Started
