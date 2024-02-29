@@ -14,6 +14,9 @@ By Technology:
 - [Hello Angular](hello-angular)
 - [Hello Vue](hello-vue)
 - [Hello Svelte](hello-svelte)
+- [Hello Preact](hello-preact)
+- [Hello Solid](hello-solid)
+- [Hello Qwik](hello-qwik)
 
 <br>
 
