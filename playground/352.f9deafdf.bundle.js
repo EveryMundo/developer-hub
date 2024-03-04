@@ -1,6 +1,6 @@
-(self["webpackChunk_everymundo_registry_playground"] = self["webpackChunk_everymundo_registry_playground"] || []).push([[267],{
+(self["webpackChunk_everymundo_registry_playground"] = self["webpackChunk_everymundo_registry_playground"] || []).push([[352],{
 
-/***/ 45267:
+/***/ 91352:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -10,8 +10,8 @@ __webpack_require__.d(__webpack_exports__, {
   A: () => (/* reexport */ components_Form_Form)
 });
 
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
+var compat_module = __webpack_require__(88763);
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
 var prop_types = __webpack_require__(5556);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
@@ -3231,10 +3231,10 @@ function IconButton(props) {
       className = props.className,
       otherProps = _objectWithoutPropertiesLoose(props, ["type", "icon", "className"]);
 
-  return /*#__PURE__*/react.createElement("button", _extends({
+  return /*#__PURE__*/compat_module["default"].createElement("button", _extends({
     type: "button",
     className: "btn btn-" + type + " " + className
-  }, otherProps), /*#__PURE__*/react.createElement("i", {
+  }, otherProps), /*#__PURE__*/compat_module["default"].createElement("i", {
     className: "glyphicon glyphicon-" + icon
   }));
 }
@@ -3243,11 +3243,11 @@ function AddButton(_ref) {
   var className = _ref.className,
       onClick = _ref.onClick,
       disabled = _ref.disabled;
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "row"
-  }, /*#__PURE__*/react.createElement("p", {
+  }, /*#__PURE__*/compat_module["default"].createElement("p", {
     className: "col-xs-3 col-xs-offset-9 text-right " + className
-  }, /*#__PURE__*/react.createElement(IconButton, {
+  }, /*#__PURE__*/compat_module["default"].createElement(IconButton, {
     type: "info",
     icon: "plus",
     className: "btn-add col-xs-12",
@@ -3738,7 +3738,7 @@ function getWidget(schema, widget, registeredWidgets) {
             options = _ref$options === void 0 ? {} : _ref$options,
             props = _objectWithoutPropertiesLoose(_ref, ["options"]);
 
-        return /*#__PURE__*/react.createElement(Widget, _extends({
+        return /*#__PURE__*/compat_module["default"].createElement(Widget, _extends({
           options: _extends({}, defaultOptions, options)
         }, props));
       };
@@ -3747,7 +3747,7 @@ function getWidget(schema, widget, registeredWidgets) {
     return Widget.MergedWidget;
   }
 
-  if (typeof widget === "function" || (0,react_is.isForwardRef)(react.createElement(widget)) || (0,react_is.isMemo)(widget)) {
+  if (typeof widget === "function" || (0,react_is.isForwardRef)(compat_module["default"].createElement(widget)) || (0,react_is.isMemo)(widget)) {
     return mergeOptions(widget);
   }
 
@@ -5026,7 +5026,7 @@ function ArrayFieldTitle(_ref) {
   }
 
   var id = idSchema.$id + "__title";
-  return /*#__PURE__*/react.createElement(TitleField, {
+  return /*#__PURE__*/compat_module["default"].createElement(TitleField, {
     id: id,
     title: title,
     required: required
@@ -5043,7 +5043,7 @@ function ArrayFieldDescription(_ref2) {
   }
 
   var id = idSchema.$id + "__description";
-  return /*#__PURE__*/react.createElement(DescriptionField, {
+  return /*#__PURE__*/compat_module["default"].createElement(DescriptionField, {
     id: id,
     description: description
   });
@@ -5057,20 +5057,20 @@ function DefaultArrayItem(props) {
     paddingRight: 6,
     fontWeight: "bold"
   };
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     key: props.key,
     className: props.className
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     className: props.hasToolbar ? "col-xs-9" : "col-xs-12"
-  }, props.children), props.hasToolbar && /*#__PURE__*/react.createElement("div", {
+  }, props.children), props.hasToolbar && /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "col-xs-3 array-item-toolbox"
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "btn-group",
     style: {
       display: "flex",
       justifyContent: "space-around"
     }
-  }, (props.hasMoveUp || props.hasMoveDown) && /*#__PURE__*/react.createElement(IconButton, {
+  }, (props.hasMoveUp || props.hasMoveDown) && /*#__PURE__*/compat_module["default"].createElement(IconButton, {
     icon: "arrow-up",
     "aria-label": "Move up",
     className: "array-item-move-up",
@@ -5078,7 +5078,7 @@ function DefaultArrayItem(props) {
     style: btnStyle,
     disabled: props.disabled || props.readonly || !props.hasMoveUp,
     onClick: props.onReorderClick(props.index, props.index - 1)
-  }), (props.hasMoveUp || props.hasMoveDown) && /*#__PURE__*/react.createElement(IconButton, {
+  }), (props.hasMoveUp || props.hasMoveDown) && /*#__PURE__*/compat_module["default"].createElement(IconButton, {
     icon: "arrow-down",
     className: "array-item-move-down",
     "aria-label": "Move down",
@@ -5086,7 +5086,7 @@ function DefaultArrayItem(props) {
     style: btnStyle,
     disabled: props.disabled || props.readonly || !props.hasMoveDown,
     onClick: props.onReorderClick(props.index, props.index + 1)
-  }), props.hasRemove && /*#__PURE__*/react.createElement(IconButton, {
+  }), props.hasRemove && /*#__PURE__*/compat_module["default"].createElement(IconButton, {
     type: "danger",
     icon: "remove",
     "aria-label": "Remove",
@@ -5099,22 +5099,22 @@ function DefaultArrayItem(props) {
 }
 
 function DefaultFixedArrayFieldTemplate(props) {
-  return /*#__PURE__*/react.createElement("fieldset", {
+  return /*#__PURE__*/compat_module["default"].createElement("fieldset", {
     className: props.className,
     id: props.idSchema.$id
-  }, /*#__PURE__*/react.createElement(ArrayFieldTitle, {
+  }, /*#__PURE__*/compat_module["default"].createElement(ArrayFieldTitle, {
     key: "array-field-title-" + props.idSchema.$id,
     TitleField: props.TitleField,
     idSchema: props.idSchema,
     title: props.uiSchema["ui:title"] || props.title,
     required: props.required
-  }), (props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/react.createElement("div", {
+  }), (props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "field-description",
     key: "field-description-" + props.idSchema.$id
-  }, props.uiSchema["ui:description"] || props.schema.description), /*#__PURE__*/react.createElement("div", {
+  }, props.uiSchema["ui:description"] || props.schema.description), /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "row array-item-list",
     key: "array-item-list-" + props.idSchema.$id
-  }, props.items && props.items.map(DefaultArrayItem)), props.canAdd && /*#__PURE__*/react.createElement(AddButton, {
+  }, props.items && props.items.map(DefaultArrayItem)), props.canAdd && /*#__PURE__*/compat_module["default"].createElement(AddButton, {
     className: "array-item-add",
     onClick: props.onAddClick,
     disabled: props.disabled || props.readonly
@@ -5122,26 +5122,26 @@ function DefaultFixedArrayFieldTemplate(props) {
 }
 
 function DefaultNormalArrayFieldTemplate(props) {
-  return /*#__PURE__*/react.createElement("fieldset", {
+  return /*#__PURE__*/compat_module["default"].createElement("fieldset", {
     className: props.className,
     id: props.idSchema.$id
-  }, /*#__PURE__*/react.createElement(ArrayFieldTitle, {
+  }, /*#__PURE__*/compat_module["default"].createElement(ArrayFieldTitle, {
     key: "array-field-title-" + props.idSchema.$id,
     TitleField: props.TitleField,
     idSchema: props.idSchema,
     title: props.uiSchema["ui:title"] || props.title,
     required: props.required
-  }), (props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/react.createElement(ArrayFieldDescription, {
+  }), (props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/compat_module["default"].createElement(ArrayFieldDescription, {
     key: "array-field-description-" + props.idSchema.$id,
     DescriptionField: props.DescriptionField,
     idSchema: props.idSchema,
     description: props.uiSchema["ui:description"] || props.schema.description
-  }), /*#__PURE__*/react.createElement("div", {
+  }), /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "row array-item-list",
     key: "array-item-list-" + props.idSchema.$id
   }, props.items && props.items.map(function (p) {
     return DefaultArrayItem(p);
-  })), props.canAdd && /*#__PURE__*/react.createElement(AddButton, {
+  })), props.canAdd && /*#__PURE__*/compat_module["default"].createElement(AddButton, {
     className: "array-item-add",
     onClick: props.onAddClick,
     disabled: props.disabled || props.readonly
@@ -5418,7 +5418,7 @@ var ArrayField = /*#__PURE__*/function (_Component) {
     if (!schema.hasOwnProperty("items")) {
       var fields = registry.fields;
       var UnsupportedField = fields.UnsupportedField;
-      return /*#__PURE__*/react.createElement(UnsupportedField, {
+      return /*#__PURE__*/compat_module["default"].createElement(UnsupportedField, {
         schema: schema,
         idSchema: idSchema,
         reason: "Missing items definition"
@@ -5518,7 +5518,7 @@ var ArrayField = /*#__PURE__*/function (_Component) {
     }; // Check if a custom render function was passed in
 
     var Component = uiSchema["ui:ArrayFieldTemplate"] || ArrayFieldTemplate || DefaultNormalArrayFieldTemplate;
-    return /*#__PURE__*/react.createElement(Component, arrayProps);
+    return /*#__PURE__*/compat_module["default"].createElement(Component, arrayProps);
   };
 
   _proto.renderCustomWidget = function renderCustomWidget() {
@@ -5547,7 +5547,7 @@ var ArrayField = /*#__PURE__*/function (_Component) {
         options = _objectWithoutPropertiesLoose(_getUiOptions2, ["widget"]);
 
     var Widget = getWidget(schema, widget, widgets);
-    return /*#__PURE__*/react.createElement(Widget, {
+    return /*#__PURE__*/compat_module["default"].createElement(Widget, {
       id: idSchema && idSchema.$id,
       multiple: true,
       onChange: this.onSelectChange,
@@ -5602,7 +5602,7 @@ var ArrayField = /*#__PURE__*/function (_Component) {
         options = _objectWithoutPropertiesLoose(_getUiOptions$enumOpt, ["widget"]);
 
     var Widget = getWidget(schema, widget, widgets);
-    return /*#__PURE__*/react.createElement(Widget, {
+    return /*#__PURE__*/compat_module["default"].createElement(Widget, {
       id: idSchema && idSchema.$id,
       multiple: true,
       onChange: this.onSelectChange,
@@ -5648,7 +5648,7 @@ var ArrayField = /*#__PURE__*/function (_Component) {
         options = _objectWithoutPropertiesLoose(_getUiOptions3, ["widget"]);
 
     var Widget = getWidget(schema, widget, widgets);
-    return /*#__PURE__*/react.createElement(Widget, {
+    return /*#__PURE__*/compat_module["default"].createElement(Widget, {
       options: options,
       id: idSchema && idSchema.$id,
       multiple: true,
@@ -5752,7 +5752,7 @@ var ArrayField = /*#__PURE__*/function (_Component) {
     }; // Check if a custom template template was passed in
 
     var Template = uiSchema["ui:ArrayFieldTemplate"] || ArrayFieldTemplate || DefaultFixedArrayFieldTemplate;
-    return /*#__PURE__*/react.createElement(Template, arrayProps);
+    return /*#__PURE__*/compat_module["default"].createElement(Template, arrayProps);
   };
 
   _proto.renderArrayFieldItem = function renderArrayFieldItem(props) {
@@ -5795,7 +5795,7 @@ var ArrayField = /*#__PURE__*/function (_Component) {
       return has[key];
     });
     return {
-      children: /*#__PURE__*/react.createElement(SchemaField, {
+      children: /*#__PURE__*/compat_module["default"].createElement(SchemaField, {
         index: index,
         schema: itemSchema,
         uiSchema: itemUiSchema,
@@ -5839,7 +5839,7 @@ var ArrayField = /*#__PURE__*/function (_Component) {
   }]);
 
   return ArrayField;
-}(react.Component);
+}(compat_module.Component);
 
 ArrayField.defaultProps = {
   uiSchema: {},
@@ -5896,7 +5896,7 @@ function BooleanField(props) {
     });
   }
 
-  return /*#__PURE__*/react.createElement(Widget, {
+  return /*#__PURE__*/compat_module["default"].createElement(Widget, {
     options: _extends({}, options, {
       enumOptions: enumOptions
     }),
@@ -5937,12 +5937,12 @@ function DescriptionField(props) {
   }
 
   if (typeof description === "string") {
-    return /*#__PURE__*/react.createElement("p", {
+    return /*#__PURE__*/compat_module["default"].createElement("p", {
       id: id,
       className: "field-description"
     }, description);
   } else {
-    return /*#__PURE__*/react.createElement("div", {
+    return /*#__PURE__*/compat_module["default"].createElement("div", {
       id: id,
       className: "field-description"
     }, description);
@@ -6095,11 +6095,11 @@ var AnyOfField = /*#__PURE__*/function (_Component) {
         value: index
       };
     });
-    return /*#__PURE__*/react.createElement("div", {
+    return /*#__PURE__*/compat_module["default"].createElement("div", {
       className: "panel panel-default panel-body"
-    }, /*#__PURE__*/react.createElement("div", {
+    }, /*#__PURE__*/compat_module["default"].createElement("div", {
       className: "form-group"
-    }, /*#__PURE__*/react.createElement(Widget, _extends({
+    }, /*#__PURE__*/compat_module["default"].createElement(Widget, _extends({
       id: "" + idSchema.$id + (schema.oneOf ? "__oneof_select" : "__anyof_select"),
       schema: {
         type: "number",
@@ -6113,7 +6113,7 @@ var AnyOfField = /*#__PURE__*/function (_Component) {
         enumOptions: enumOptions
       },
       registry: registry
-    }, uiOptions))), option !== null && /*#__PURE__*/react.createElement(_SchemaField, {
+    }, uiOptions))), option !== null && /*#__PURE__*/compat_module["default"].createElement(_SchemaField, {
       schema: optionSchema,
       uiSchema: uiSchema,
       errorSchema: errorSchema,
@@ -6132,7 +6132,7 @@ var AnyOfField = /*#__PURE__*/function (_Component) {
   };
 
   return AnyOfField;
-}(react.Component);
+}(compat_module.Component);
 
 AnyOfField.defaultProps = {
   disabled: false,
@@ -6231,14 +6231,14 @@ var NumberField = /*#__PURE__*/function (_React$Component) {
       }
     }
 
-    return /*#__PURE__*/react.createElement(StringField, _extends({}, props, {
+    return /*#__PURE__*/compat_module["default"].createElement(StringField, _extends({}, props, {
       formData: value,
       onChange: this.handleChange
     }));
   };
 
   return NumberField;
-}(react.Component);
+}(compat_module["default"].Component);
 
 if (false) {}
 
@@ -6249,20 +6249,20 @@ NumberField.defaultProps = {
 function DefaultObjectFieldTemplate(props) {
   var TitleField = props.TitleField,
       DescriptionField = props.DescriptionField;
-  return /*#__PURE__*/react.createElement("fieldset", {
+  return /*#__PURE__*/compat_module["default"].createElement("fieldset", {
     id: props.idSchema.$id
-  }, (props.uiSchema["ui:title"] || props.title) && /*#__PURE__*/react.createElement(TitleField, {
+  }, (props.uiSchema["ui:title"] || props.title) && /*#__PURE__*/compat_module["default"].createElement(TitleField, {
     id: props.idSchema.$id + "__title",
     title: props.title || props.uiSchema["ui:title"],
     required: props.required,
     formContext: props.formContext
-  }), props.description && /*#__PURE__*/react.createElement(DescriptionField, {
+  }), props.description && /*#__PURE__*/compat_module["default"].createElement(DescriptionField, {
     id: props.idSchema.$id + "__description",
     description: props.description,
     formContext: props.formContext
   }), props.properties.map(function (prop) {
     return prop.content;
-  }), canExpand(props.schema, props.uiSchema, props.formData) && /*#__PURE__*/react.createElement(AddButton, {
+  }), canExpand(props.schema, props.uiSchema, props.formData) && /*#__PURE__*/compat_module["default"].createElement(AddButton, {
     className: "object-property-expand",
     onClick: props.onAddClick(props.schema),
     disabled: props.disabled || props.readonly
@@ -6453,12 +6453,12 @@ var ObjectField = /*#__PURE__*/function (_Component) {
       var properties = Object.keys(schema.properties || {});
       orderedProperties = orderProperties(properties, uiSchema["ui:order"]);
     } catch (err) {
-      return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("p", {
+      return /*#__PURE__*/compat_module["default"].createElement("div", null, /*#__PURE__*/compat_module["default"].createElement("p", {
         className: "config-error",
         style: {
           color: "red"
         }
-      }, "Invalid ", name || "root", " object field configuration:", /*#__PURE__*/react.createElement("em", null, err.message), "."), /*#__PURE__*/react.createElement("pre", null, JSON.stringify(schema)));
+      }, "Invalid ", name || "root", " object field configuration:", /*#__PURE__*/compat_module["default"].createElement("em", null, err.message), "."), /*#__PURE__*/compat_module["default"].createElement("pre", null, JSON.stringify(schema)));
     }
 
     var Template = uiSchema["ui:ObjectFieldTemplate"] || registry.ObjectFieldTemplate || DefaultObjectFieldTemplate;
@@ -6472,7 +6472,7 @@ var ObjectField = /*#__PURE__*/function (_Component) {
         var fieldUiSchema = addedByAdditionalProperties ? uiSchema.additionalProperties : uiSchema[name];
         var hidden = fieldUiSchema && fieldUiSchema["ui:widget"] === "hidden";
         return {
-          content: /*#__PURE__*/react.createElement(SchemaField, {
+          content: /*#__PURE__*/compat_module["default"].createElement(SchemaField, {
             key: name,
             name: name,
             required: _this2.isRequired(name),
@@ -6511,13 +6511,13 @@ var ObjectField = /*#__PURE__*/function (_Component) {
       formContext: formContext,
       registry: registry
     };
-    return /*#__PURE__*/react.createElement(Template, _extends({}, templateProps, {
+    return /*#__PURE__*/compat_module["default"].createElement(Template, _extends({}, templateProps, {
       onAddClick: this.handleAddClick
     }));
   };
 
   return ObjectField;
-}(react.Component);
+}(compat_module.Component);
 
 ObjectField.defaultProps = {
   uiSchema: {},
@@ -6564,7 +6564,7 @@ function getFieldComponent(schema, uiSchema, idSchema, fields) {
 
   return componentName in fields ? fields[componentName] : function () {
     var UnsupportedField = fields.UnsupportedField;
-    return /*#__PURE__*/react.createElement(UnsupportedField, {
+    return /*#__PURE__*/compat_module["default"].createElement(UnsupportedField, {
       schema: schema,
       idSchema: idSchema,
       reason: "Unknown field type " + schema.type
@@ -6581,10 +6581,10 @@ function Label(props) {
     return null;
   }
 
-  return /*#__PURE__*/react.createElement("label", {
+  return /*#__PURE__*/compat_module["default"].createElement("label", {
     className: "control-label",
     htmlFor: id
-  }, label, required && /*#__PURE__*/react.createElement("span", {
+  }, label, required && /*#__PURE__*/compat_module["default"].createElement("span", {
     className: "required"
   }, REQUIRED_FIELD_SYMBOL));
 }
@@ -6593,7 +6593,7 @@ function LabelInput(props) {
   var id = props.id,
       label = props.label,
       onChange = props.onChange;
-  return /*#__PURE__*/react.createElement("input", {
+  return /*#__PURE__*/compat_module["default"].createElement("input", {
     className: "form-control",
     type: "text",
     id: id,
@@ -6613,13 +6613,13 @@ function Help(props) {
   }
 
   if (typeof help === "string") {
-    return /*#__PURE__*/react.createElement("p", {
+    return /*#__PURE__*/compat_module["default"].createElement("p", {
       id: id,
       className: "help-block"
     }, help);
   }
 
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     id: id,
     className: "help-block"
   }, help);
@@ -6633,12 +6633,12 @@ function ErrorList(props) {
     return null;
   }
 
-  return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("ul", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", null, /*#__PURE__*/compat_module["default"].createElement("ul", {
     className: "error-detail bs-callout bs-callout-info"
   }, errors.filter(function (elem) {
     return !!elem;
   }).map(function (error, index) {
-    return /*#__PURE__*/react.createElement("li", {
+    return /*#__PURE__*/compat_module["default"].createElement("li", {
       className: "text-danger",
       key: index
     }, error);
@@ -6657,12 +6657,12 @@ function DefaultTemplate(props) {
       displayLabel = props.displayLabel;
 
   if (hidden) {
-    return /*#__PURE__*/react.createElement("div", {
+    return /*#__PURE__*/compat_module["default"].createElement("div", {
       className: "hidden"
     }, children);
   }
 
-  return /*#__PURE__*/react.createElement(WrapIfAdditional, props, displayLabel && /*#__PURE__*/react.createElement(Label, {
+  return /*#__PURE__*/compat_module["default"].createElement(WrapIfAdditional, props, displayLabel && /*#__PURE__*/compat_module["default"].createElement(Label, {
     label: label,
     required: required,
     id: id
@@ -6693,33 +6693,33 @@ function WrapIfAdditional(props) {
   var additional = schema.hasOwnProperty(ADDITIONAL_PROPERTY_FLAG);
 
   if (!additional) {
-    return /*#__PURE__*/react.createElement("div", {
+    return /*#__PURE__*/compat_module["default"].createElement("div", {
       className: classNames
     }, props.children);
   }
 
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: classNames
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "row"
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "col-xs-5 form-additional"
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "form-group"
-  }, /*#__PURE__*/react.createElement(Label, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Label, {
     label: keyLabel,
     required: required,
     id: id + "-key"
-  }), /*#__PURE__*/react.createElement(LabelInput, {
+  }), /*#__PURE__*/compat_module["default"].createElement(LabelInput, {
     label: label,
     required: required,
     id: id + "-key",
     onChange: onKeyChange
-  }))), /*#__PURE__*/react.createElement("div", {
+  }))), /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "form-additional form-group col-xs-5"
-  }, props.children), /*#__PURE__*/react.createElement("div", {
+  }, props.children), /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "col-xs-2"
-  }, /*#__PURE__*/react.createElement(IconButton, {
+  }, /*#__PURE__*/compat_module["default"].createElement(IconButton, {
     type: "danger",
     icon: "remove",
     className: "array-item-remove btn-block",
@@ -6772,7 +6772,7 @@ function SchemaFieldRender(props) {
       fieldErrorSchema = _objectWithoutPropertiesLoose(errorSchema, ["__errors"]); // See #439: uiSchema: Don't pass consumed class names to child components
 
 
-  var field = /*#__PURE__*/react.createElement(FieldComponent, _extends({}, props, {
+  var field = /*#__PURE__*/compat_module["default"].createElement(FieldComponent, _extends({}, props, {
     idSchema: idSchema,
     schema: schema,
     uiSchema: _extends({}, uiSchema, {
@@ -6809,18 +6809,18 @@ function SchemaFieldRender(props) {
   classNames.push(uiSchema.classNames);
   classNames = classNames.join(" ").trim();
   var fieldProps = {
-    description: /*#__PURE__*/react.createElement(DescriptionField, {
+    description: /*#__PURE__*/compat_module["default"].createElement(DescriptionField, {
       id: id + "__description",
       description: description,
       formContext: formContext
     }),
     rawDescription: description,
-    help: /*#__PURE__*/react.createElement(Help, {
+    help: /*#__PURE__*/compat_module["default"].createElement(Help, {
       id: id + "__help",
       help: help
     }),
     rawHelp: typeof help === "string" ? help : undefined,
-    errors: hideError ? undefined : /*#__PURE__*/react.createElement(ErrorList, {
+    errors: hideError ? undefined : /*#__PURE__*/compat_module["default"].createElement(ErrorList, {
       errors: errors
     }),
     rawErrors: hideError ? undefined : errors,
@@ -6845,7 +6845,7 @@ function SchemaFieldRender(props) {
   };
   var _AnyOfField = registry.fields.AnyOfField;
   var _OneOfField = registry.fields.OneOfField;
-  return /*#__PURE__*/react.createElement(FieldTemplate, fieldProps, /*#__PURE__*/react.createElement(react.Fragment, null, field, schema.anyOf && !isSelect(schema) && /*#__PURE__*/react.createElement(_AnyOfField, {
+  return /*#__PURE__*/compat_module["default"].createElement(FieldTemplate, fieldProps, /*#__PURE__*/compat_module["default"].createElement(compat_module["default"].Fragment, null, field, schema.anyOf && !isSelect(schema) && /*#__PURE__*/compat_module["default"].createElement(_AnyOfField, {
     disabled: disabled,
     readonly: readonly,
     hideError: hideError,
@@ -6864,7 +6864,7 @@ function SchemaFieldRender(props) {
     registry: registry,
     schema: schema,
     uiSchema: uiSchema
-  }), schema.oneOf && !isSelect(schema) && /*#__PURE__*/react.createElement(_OneOfField, {
+  }), schema.oneOf && !isSelect(schema) && /*#__PURE__*/compat_module["default"].createElement(_OneOfField, {
     disabled: disabled,
     readonly: readonly,
     hideError: hideError,
@@ -6904,7 +6904,7 @@ var SchemaField = /*#__PURE__*/function (_React$Component) {
   };
 
   return SchemaField;
-}(react.Component);
+}(compat_module["default"].Component);
 
 SchemaField.defaultProps = {
   uiSchema: {},
@@ -6952,7 +6952,7 @@ function StringField(props) {
       options = _objectWithoutPropertiesLoose(_getUiOptions, ["widget", "placeholder"]);
 
   var Widget = getWidget(schema, widget, widgets);
-  return /*#__PURE__*/react.createElement(Widget, {
+  return /*#__PURE__*/compat_module["default"].createElement(Widget, {
     options: _extends({}, options, {
       enumOptions: enumOptions
     }),
@@ -6990,9 +6990,9 @@ function TitleField(props) {
   var id = props.id,
       title = props.title,
       required = props.required;
-  return /*#__PURE__*/react.createElement("legend", {
+  return /*#__PURE__*/compat_module["default"].createElement("legend", {
     id: id
-  }, title, required && /*#__PURE__*/react.createElement("span", {
+  }, title, required && /*#__PURE__*/compat_module["default"].createElement("span", {
     className: "required"
   }, REQUIRED_FIELD_SYMBOL$1));
 }
@@ -7019,7 +7019,7 @@ var NullField = /*#__PURE__*/function (_Component) {
   };
 
   return NullField;
-}(react.Component);
+}(compat_module.Component);
 
 if (false) {}
 
@@ -7027,9 +7027,9 @@ function UnsupportedField(_ref) {
   var schema = _ref.schema,
       idSchema = _ref.idSchema,
       reason = _ref.reason;
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "unsupported-field"
-  }, /*#__PURE__*/react.createElement("p", null, "Unsupported field schema", idSchema && idSchema.$id && /*#__PURE__*/react.createElement("span", null, " for", " field ", /*#__PURE__*/react.createElement("code", null, idSchema.$id)), reason && /*#__PURE__*/react.createElement("em", null, ": ", reason), "."), schema && /*#__PURE__*/react.createElement("pre", null, JSON.stringify(schema, null, 2)));
+  }, /*#__PURE__*/compat_module["default"].createElement("p", null, "Unsupported field schema", idSchema && idSchema.$id && /*#__PURE__*/compat_module["default"].createElement("span", null, " for", " field ", /*#__PURE__*/compat_module["default"].createElement("code", null, idSchema.$id)), reason && /*#__PURE__*/compat_module["default"].createElement("em", null, ": ", reason), "."), schema && /*#__PURE__*/compat_module["default"].createElement("pre", null, JSON.stringify(schema, null, 2)));
 }
 
 if (false) {}
@@ -7081,7 +7081,7 @@ function DateElement(props) {
       onBlur = props.onBlur;
   var id = rootId + "_" + type;
   var SelectWidget = registry.widgets.SelectWidget;
-  return /*#__PURE__*/react.createElement(SelectWidget, {
+  return /*#__PURE__*/compat_module["default"].createElement(SelectWidget, {
     schema: {
       type: "integer"
     },
@@ -7184,12 +7184,12 @@ var AltDateWidget = /*#__PURE__*/function (_Component) {
         registry = _this$props3.registry,
         onBlur = _this$props3.onBlur,
         options = _this$props3.options;
-    return /*#__PURE__*/react.createElement("ul", {
+    return /*#__PURE__*/compat_module["default"].createElement("ul", {
       className: "list-inline"
     }, this.dateElementProps.map(function (elemProps, i) {
-      return /*#__PURE__*/react.createElement("li", {
+      return /*#__PURE__*/compat_module["default"].createElement("li", {
         key: i
-      }, /*#__PURE__*/react.createElement(DateElement, _extends({
+      }, /*#__PURE__*/compat_module["default"].createElement(DateElement, _extends({
         rootId: id,
         select: _this2.onChange
       }, elemProps, {
@@ -7199,11 +7199,11 @@ var AltDateWidget = /*#__PURE__*/function (_Component) {
         onBlur: onBlur,
         autofocus: autofocus && i === 0
       })));
-    }), (options.hideNowButton !== "undefined" ? !options.hideNowButton : true) && /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("a", {
+    }), (options.hideNowButton !== "undefined" ? !options.hideNowButton : true) && /*#__PURE__*/compat_module["default"].createElement("li", null, /*#__PURE__*/compat_module["default"].createElement("a", {
       href: "#",
       className: "btn btn-info btn-now",
       onClick: this.setNow
-    }, "Now")), (options.hideClearButton !== "undefined" ? !options.hideClearButton : true) && /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("a", {
+    }, "Now")), (options.hideClearButton !== "undefined" ? !options.hideClearButton : true) && /*#__PURE__*/compat_module["default"].createElement("li", null, /*#__PURE__*/compat_module["default"].createElement("a", {
       href: "#",
       className: "btn btn-warning btn-clear",
       onClick: this.clear
@@ -7258,7 +7258,7 @@ var AltDateWidget = /*#__PURE__*/function (_Component) {
   }]);
 
   return AltDateWidget;
-}(react.Component);
+}(compat_module.Component);
 
 AltDateWidget.defaultProps = {
   time: false,
@@ -7274,7 +7274,7 @@ if (false) {}
 
 function AltDateTimeWidget(props) {
   var AltDateWidget = props.registry.widgets.AltDateWidget;
-  return /*#__PURE__*/react.createElement(AltDateWidget, _extends({
+  return /*#__PURE__*/compat_module["default"].createElement(AltDateWidget, _extends({
     time: true
   }, props));
 }
@@ -7346,7 +7346,7 @@ function BaseInput(props) {
     return props.onChange(value === "" ? options.emptyValue : value);
   };
 
-  return [/*#__PURE__*/react.createElement("input", _extends({
+  return [/*#__PURE__*/compat_module["default"].createElement("input", _extends({
     key: inputProps.id,
     className: "form-control",
     readOnly: readonly,
@@ -7362,11 +7362,11 @@ function BaseInput(props) {
     onFocus: onFocus && function (event) {
       return onFocus(inputProps.id, event.target.value);
     }
-  })), schema.examples ? /*#__PURE__*/react.createElement("datalist", {
+  })), schema.examples ? /*#__PURE__*/compat_module["default"].createElement("datalist", {
     key: "datalist_" + inputProps.id,
     id: "examples_" + inputProps.id
   }, [].concat(new Set(schema.examples.concat(schema["default"] ? [schema["default"]] : []))).map(function (example) {
-    return /*#__PURE__*/react.createElement("option", {
+    return /*#__PURE__*/compat_module["default"].createElement("option", {
       key: example,
       value: example
     });
@@ -7398,11 +7398,11 @@ function CheckboxWidget(props) {
   // "const" or "enum" keywords
 
   var required = schemaRequiresTrueValue(schema);
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "checkbox " + (disabled || readonly ? "disabled" : "")
-  }, schema.description && /*#__PURE__*/react.createElement(DescriptionField, {
+  }, schema.description && /*#__PURE__*/compat_module["default"].createElement(DescriptionField, {
     description: schema.description
-  }), /*#__PURE__*/react.createElement("label", null, /*#__PURE__*/react.createElement("input", {
+  }), /*#__PURE__*/compat_module["default"].createElement("label", null, /*#__PURE__*/compat_module["default"].createElement("input", {
     type: "checkbox",
     id: id,
     checked: typeof value === "undefined" ? false : value,
@@ -7418,7 +7418,7 @@ function CheckboxWidget(props) {
     onFocus: onFocus && function (event) {
       return onFocus(id, event.target.checked);
     }
-  }), /*#__PURE__*/react.createElement("span", null, label)));
+  }), /*#__PURE__*/compat_module["default"].createElement("span", null, label)));
 }
 
 CheckboxWidget.defaultProps = {
@@ -7454,14 +7454,14 @@ function CheckboxesWidget(props) {
   var enumOptions = options.enumOptions,
       enumDisabled = options.enumDisabled,
       inline = options.inline;
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "checkboxes",
     id: id
   }, enumOptions.map(function (option, index) {
     var checked = value.indexOf(option.value) !== -1;
     var itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) != -1;
     var disabledCls = disabled || itemDisabled || readonly ? "disabled" : "";
-    var checkbox = /*#__PURE__*/react.createElement("span", null, /*#__PURE__*/react.createElement("input", {
+    var checkbox = /*#__PURE__*/compat_module["default"].createElement("span", null, /*#__PURE__*/compat_module["default"].createElement("input", {
       type: "checkbox",
       id: id + "_" + index,
       checked: checked,
@@ -7479,14 +7479,14 @@ function CheckboxesWidget(props) {
           _onChange(deselectValue(option.value, value));
         }
       }
-    }), /*#__PURE__*/react.createElement("span", null, option.label));
-    return inline ? /*#__PURE__*/react.createElement("label", {
+    }), /*#__PURE__*/compat_module["default"].createElement("span", null, option.label));
+    return inline ? /*#__PURE__*/compat_module["default"].createElement("label", {
       key: index,
       className: "checkbox-inline " + disabledCls
-    }, checkbox) : /*#__PURE__*/react.createElement("div", {
+    }, checkbox) : /*#__PURE__*/compat_module["default"].createElement("div", {
       key: index,
       className: "checkbox " + disabledCls
-    }, /*#__PURE__*/react.createElement("label", null, checkbox));
+    }, /*#__PURE__*/compat_module["default"].createElement("label", null, checkbox));
   }));
 }
 
@@ -7503,7 +7503,7 @@ function ColorWidget(props) {
   var disabled = props.disabled,
       readonly = props.readonly,
       BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement(BaseInput, _extends({
+  return /*#__PURE__*/compat_module["default"].createElement(BaseInput, _extends({
     type: "color"
   }, props, {
     disabled: disabled || readonly
@@ -7515,7 +7515,7 @@ if (false) {}
 function DateWidget(props) {
   var _onChange = props.onChange,
       BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement(BaseInput, _extends({
+  return /*#__PURE__*/compat_module["default"].createElement(BaseInput, _extends({
     type: "date"
   }, props, {
     onChange: function onChange(value) {
@@ -7530,7 +7530,7 @@ function DateTimeWidget(props) {
   var value = props.value,
       _onChange = props.onChange,
       BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement(BaseInput, _extends({
+  return /*#__PURE__*/compat_module["default"].createElement(BaseInput, _extends({
     type: "datetime-local"
   }, props, {
     value: utcToLocal(value),
@@ -7544,7 +7544,7 @@ if (false) {}
 
 function EmailWidget(props) {
   var BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement(BaseInput, _extends({
+  return /*#__PURE__*/compat_module["default"].createElement(BaseInput, _extends({
     type: "email"
   }, props));
 }
@@ -7587,15 +7587,15 @@ function FilesInfo(props) {
     return null;
   }
 
-  return /*#__PURE__*/react.createElement("ul", {
+  return /*#__PURE__*/compat_module["default"].createElement("ul", {
     className: "file-info"
   }, filesInfo.map(function (fileInfo, key) {
     var name = fileInfo.name,
         size = fileInfo.size,
         type = fileInfo.type;
-    return /*#__PURE__*/react.createElement("li", {
+    return /*#__PURE__*/compat_module["default"].createElement("li", {
       key: key
-    }, /*#__PURE__*/react.createElement("strong", null, name), " (", type, ", ", size, " bytes)");
+    }, /*#__PURE__*/compat_module["default"].createElement("strong", null, name), " (", type, ", ", size, " bytes)");
   }));
 }
 
@@ -7671,7 +7671,7 @@ var FileWidget = /*#__PURE__*/function (_Component) {
         autofocus = _this$props2.autofocus,
         options = _this$props2.options;
     var filesInfo = this.state.filesInfo;
-    return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("p", null, /*#__PURE__*/react.createElement("input", {
+    return /*#__PURE__*/compat_module["default"].createElement("div", null, /*#__PURE__*/compat_module["default"].createElement("p", null, /*#__PURE__*/compat_module["default"].createElement("input", {
       ref: function ref(_ref) {
         return _this2.inputRef = _ref;
       },
@@ -7683,13 +7683,13 @@ var FileWidget = /*#__PURE__*/function (_Component) {
       autoFocus: autofocus,
       multiple: multiple,
       accept: options.accept
-    })), /*#__PURE__*/react.createElement(FilesInfo, {
+    })), /*#__PURE__*/compat_module["default"].createElement(FilesInfo, {
       filesInfo: filesInfo
     }));
   };
 
   return FileWidget;
-}(react.Component);
+}(compat_module.Component);
 
 FileWidget.defaultProps = {
   autofocus: false
@@ -7700,7 +7700,7 @@ if (false) {}
 function HiddenWidget(_ref) {
   var id = _ref.id,
       value = _ref.value;
-  return /*#__PURE__*/react.createElement("input", {
+  return /*#__PURE__*/compat_module["default"].createElement("input", {
     type: "hidden",
     id: id,
     value: typeof value === "undefined" ? "" : value
@@ -7711,7 +7711,7 @@ if (false) {}
 
 function PasswordWidget(props) {
   var BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement(BaseInput, _extends({
+  return /*#__PURE__*/compat_module["default"].createElement(BaseInput, _extends({
     type: "password"
   }, props));
 }
@@ -7736,14 +7736,14 @@ function RadioWidget(props) {
       inline = options.inline; // checked={checked} has been moved above name={name}, As mentioned in #349;
   // this is a temporary fix for radio button rendering bug in React, facebook/react#7630.
 
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "field-radio-group",
     id: id
   }, enumOptions.map(function (option, i) {
     var checked = option.value === value;
     var itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) != -1;
     var disabledCls = disabled || itemDisabled || readonly ? "disabled" : "";
-    var radio = /*#__PURE__*/react.createElement("span", null, /*#__PURE__*/react.createElement("input", {
+    var radio = /*#__PURE__*/compat_module["default"].createElement("span", null, /*#__PURE__*/compat_module["default"].createElement("input", {
       type: "radio",
       checked: checked,
       name: name,
@@ -7760,14 +7760,14 @@ function RadioWidget(props) {
       onFocus: onFocus && function (event) {
         return onFocus(id, event.target.value);
       }
-    }), /*#__PURE__*/react.createElement("span", null, option.label));
-    return inline ? /*#__PURE__*/react.createElement("label", {
+    }), /*#__PURE__*/compat_module["default"].createElement("span", null, option.label));
+    return inline ? /*#__PURE__*/compat_module["default"].createElement("label", {
       key: i,
       className: "radio-inline " + disabledCls
-    }, radio) : /*#__PURE__*/react.createElement("div", {
+    }, radio) : /*#__PURE__*/compat_module["default"].createElement("div", {
       key: i,
       className: "radio " + disabledCls
-    }, /*#__PURE__*/react.createElement("label", null, radio));
+    }, /*#__PURE__*/compat_module["default"].createElement("label", null, radio));
   }));
 }
 
@@ -7781,11 +7781,11 @@ function RangeWidget(props) {
   var schema = props.schema,
       value = props.value,
       BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "field-range-wrapper"
-  }, /*#__PURE__*/react.createElement(BaseInput, _extends({
+  }, /*#__PURE__*/compat_module["default"].createElement(BaseInput, _extends({
     type: "range"
-  }, props, rangeSpec(schema))), /*#__PURE__*/react.createElement("span", {
+  }, props, rangeSpec(schema))), /*#__PURE__*/compat_module["default"].createElement("span", {
     className: "range-view"
   }, value));
 }
@@ -7859,7 +7859,7 @@ function SelectWidget(props) {
   var enumOptions = options.enumOptions,
       enumDisabled = options.enumDisabled;
   var emptyValue = multiple ? [] : "";
-  return /*#__PURE__*/react.createElement("select", {
+  return /*#__PURE__*/compat_module["default"].createElement("select", {
     id: id,
     multiple: multiple,
     className: "form-control",
@@ -7880,13 +7880,13 @@ function SelectWidget(props) {
 
       _onChange(processValue(schema, newValue));
     }
-  }, !multiple && schema["default"] === undefined && /*#__PURE__*/react.createElement("option", {
+  }, !multiple && schema["default"] === undefined && /*#__PURE__*/compat_module["default"].createElement("option", {
     value: ""
   }, placeholder), enumOptions.map(function (_ref, i) {
     var value = _ref.value,
         label = _ref.label;
     var disabled = enumDisabled && enumDisabled.indexOf(value) != -1;
-    return /*#__PURE__*/react.createElement("option", {
+    return /*#__PURE__*/compat_module["default"].createElement("option", {
       key: i,
       value: value,
       disabled: disabled
@@ -7918,7 +7918,7 @@ function TextareaWidget(props) {
     return onChange(value === "" ? options.emptyValue : value);
   };
 
-  return /*#__PURE__*/react.createElement("textarea", {
+  return /*#__PURE__*/compat_module["default"].createElement("textarea", {
     id: id,
     className: "form-control",
     value: value ? value : "",
@@ -7947,14 +7947,14 @@ if (false) {}
 
 function TextWidget(props) {
   var BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement(BaseInput, props);
+  return /*#__PURE__*/compat_module["default"].createElement(BaseInput, props);
 }
 
 if (false) {}
 
 function URLWidget(props) {
   var BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement(BaseInput, _extends({
+  return /*#__PURE__*/compat_module["default"].createElement(BaseInput, _extends({
     type: "url"
   }, props));
 }
@@ -7963,7 +7963,7 @@ if (false) {}
 
 function UpDownWidget(props) {
   var BaseInput = props.registry.widgets.BaseInput;
-  return /*#__PURE__*/react.createElement(BaseInput, _extends({
+  return /*#__PURE__*/compat_module["default"].createElement(BaseInput, _extends({
     type: "number"
   }, props, rangeSpec(props.schema)));
 }
@@ -7978,7 +7978,7 @@ function SubmitButton(_ref) {
       norender = _getSubmitButtonOptio.norender,
       submitButtonProps = _getSubmitButtonOptio.props;
 
-  return /*#__PURE__*/react.createElement("div", null, !norender && /*#__PURE__*/react.createElement("button", _extends({
+  return /*#__PURE__*/compat_module["default"].createElement("div", null, !norender && /*#__PURE__*/compat_module["default"].createElement("button", _extends({
     type: "submit"
   }, submitButtonProps, {
     className: "btn btn-info"
@@ -8020,16 +8020,16 @@ function getDefaultRegistry() {
 
 function ErrorList$1(props) {
   var errors = props.errors;
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "panel panel-danger errors"
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     className: "panel-heading"
-  }, /*#__PURE__*/react.createElement("h3", {
+  }, /*#__PURE__*/compat_module["default"].createElement("h3", {
     className: "panel-title"
-  }, "Errors")), /*#__PURE__*/react.createElement("ul", {
+  }, "Errors")), /*#__PURE__*/compat_module["default"].createElement("ul", {
     className: "list-group"
   }, errors.map(function (error, i) {
-    return /*#__PURE__*/react.createElement("li", {
+    return /*#__PURE__*/compat_module["default"].createElement("li", {
       key: i,
       className: "list-group-item text-danger"
     }, error.stack);
@@ -8392,7 +8392,7 @@ var Form = /*#__PURE__*/function (_Component) {
         formContext = _this$props4.formContext;
 
     if (errors.length && showErrorList != false) {
-      return /*#__PURE__*/react.createElement(ErrorList, {
+      return /*#__PURE__*/compat_module["default"].createElement(ErrorList, {
         errors: errors,
         errorSchema: errorSchema,
         schema: schema,
@@ -8474,7 +8474,7 @@ var Form = /*#__PURE__*/function (_Component) {
     }
 
     var autoComplete = currentAutoComplete ? currentAutoComplete : deprecatedAutocomplete;
-    return /*#__PURE__*/react.createElement(FormTag, {
+    return /*#__PURE__*/compat_module["default"].createElement(FormTag, {
       className: className ? className : "rjsf",
       id: id,
       name: name,
@@ -8490,7 +8490,7 @@ var Form = /*#__PURE__*/function (_Component) {
       ref: function ref(form) {
         _this2.formElement = form;
       }
-    }, this.renderErrors(), /*#__PURE__*/react.createElement(_SchemaField, {
+    }, this.renderErrors(), /*#__PURE__*/compat_module["default"].createElement(_SchemaField, {
       schema: schema,
       uiSchema: uiSchema,
       errorSchema: errorSchema,
@@ -8505,13 +8505,13 @@ var Form = /*#__PURE__*/function (_Component) {
       registry: registry,
       disabled: disabled,
       readonly: readonly
-    }), children ? children : /*#__PURE__*/react.createElement(SubmitButton, {
+    }), children ? children : /*#__PURE__*/compat_module["default"].createElement(SubmitButton, {
       uiSchema: uiSchema
     }));
   };
 
   return Form;
-}(react.Component);
+}(compat_module.Component);
 
 Form.defaultProps = {
   uiSchema: {},
@@ -8527,14 +8527,14 @@ Form.defaultProps = {
 if (false) {}
 
 function withTheme(themeProps) {
-  return (0,react.forwardRef)(function (_ref, ref) {
+  return (0,compat_module.forwardRef)(function (_ref, ref) {
     var fields = _ref.fields,
         widgets = _ref.widgets,
         directProps = _objectWithoutPropertiesLoose(_ref, ["fields", "widgets"]);
 
     fields = _extends({}, themeProps.fields, fields);
     widgets = _extends({}, themeProps.widgets, widgets);
-    return /*#__PURE__*/react.createElement(Form, _extends({}, themeProps, directProps, {
+    return /*#__PURE__*/compat_module["default"].createElement(Form, _extends({}, themeProps, directProps, {
       fields: fields,
       widgets: widgets,
       ref: ref
@@ -8786,16 +8786,16 @@ var Form_Form = function Form(_ref) {
     fields = _ref.fields,
     liveValidate = _ref.liveValidate,
     props = Form_objectWithoutPropertiesLoose(_ref, _excluded);
-  var _useState = (0,react.useState)(formData),
+  var _useState = (0,compat_module.useState)(formData),
     value = _useState[0],
     setValue = _useState[1];
-  var _useState2 = (0,react.useState)(liveValidate),
+  var _useState2 = (0,compat_module.useState)(liveValidate),
     hasLiveValidate = _useState2[0],
     setHasLiveValidate = _useState2[1];
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     setValue(formData);
   }, [formData]);
-  var _useMemo = (0,react.useMemo)(function () {
+  var _useMemo = (0,compat_module.useMemo)(function () {
       return utils_getGeneratedUiSchema({
         schema: schema,
         uiSchema: uiSchema,
@@ -8805,13 +8805,13 @@ var Form_Form = function Form(_ref) {
     }, [schema, uiSchema, value, templates]),
     uiSchemaGenerated = _useMemo.uiSchema,
     schemaGenerated = _useMemo.schema;
-  var handleOnChange = (0,react.useMemo)(function () {
+  var handleOnChange = (0,compat_module.useMemo)(function () {
     return onChange || function (_ref2) {
       var formData = _ref2.formData;
       setValue(formData);
     };
   }, [onChange]);
-  var handleOnError = (0,react.useMemo)(function () {
+  var handleOnError = (0,compat_module.useMemo)(function () {
     return function () {
       setHasLiveValidate(true);
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -8821,7 +8821,7 @@ var Form_Form = function Form(_ref) {
     };
   }, [onError]);
   var Component = component;
-  return /*#__PURE__*/react.createElement(Component, Form_extends({
+  return /*#__PURE__*/compat_module["default"].createElement(Component, Form_extends({
     schema: schemaGenerated,
     uiSchema: uiSchemaGenerated,
     fields: fields,
@@ -8941,13 +8941,13 @@ var __objRest = (source, exclude) => {
 const defaultProps = {
   order: 1
 };
-const Title = (0,react.forwardRef)((props, ref) => {
+const Title = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Title", defaultProps, props), { className, order, children, unstyled, size, weight, inline, variant } = _a, others = __objRest(_a, ["className", "order", "children", "unstyled", "size", "weight", "inline", "variant"]);
   const { classes, cx } = Title_styles({ element: `h${order}`, weight, inline }, { name: "Title", unstyled, variant, size });
   if (![1, 2, 3, 4, 5, 6].includes(order)) {
     return null;
   }
-  return /* @__PURE__ */ react.createElement(Text/* Text */.E, Title_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Text/* Text */.E, Title_spreadValues({
     variant,
     component: `h${order}`,
     ref,
@@ -8965,7 +8965,7 @@ Title.displayName = "@mantine/core/Title";
 var TitleField_TitleField = function TitleField(_ref) {
   var title = _ref.title,
     uiSchema = _ref.uiSchema;
-  return /*#__PURE__*/react.createElement(Title, {
+  return /*#__PURE__*/compat_module["default"].createElement(Title, {
     order: 6
   }, uiSchema && uiSchema["ui:title"] || title);
 };
@@ -8976,7 +8976,7 @@ var TitleField_TitleField = function TitleField(_ref) {
 var DescriptionField_DescriptionField = function DescriptionField(_ref) {
   var description = _ref.description;
   if (description) {
-    return /*#__PURE__*/react.createElement(Text/* Text */.E, {
+    return /*#__PURE__*/compat_module["default"].createElement(Text/* Text */.E, {
       size: "xs",
       component: "p",
       sx: function sx(theme) {
@@ -9111,7 +9111,7 @@ const Autocomplete_defaultProps = {
   maxDropdownHeight: "auto",
   positionDependencies: []
 };
-const Autocomplete = (0,react.forwardRef)((props, ref) => {
+const Autocomplete = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,use_input_props/* useInputProps */.I)("Autocomplete", Autocomplete_defaultProps, props), {
     inputProps,
     wrapperProps,
@@ -9180,11 +9180,11 @@ const Autocomplete = (0,react.forwardRef)((props, ref) => {
     "hoverOnSearchChange"
   ]);
   const { classes } = Autocomplete_styles(null, { classNames, styles, name: "Autocomplete", unstyled });
-  const [dropdownOpened, _setDropdownOpened] = (0,react.useState)(initiallyOpened);
-  const [hovered, setHovered] = (0,react.useState)(-1);
-  const [direction, setDirection] = (0,react.useState)("column");
-  const inputRef = (0,react.useRef)(null);
-  const [IMEOpen, setIMEOpen] = (0,react.useState)(false);
+  const [dropdownOpened, _setDropdownOpened] = (0,compat_module.useState)(initiallyOpened);
+  const [hovered, setHovered] = (0,compat_module.useState)(-1);
+  const [direction, setDirection] = (0,compat_module.useState)("column");
+  const inputRef = (0,compat_module.useRef)(null);
+  const [IMEOpen, setIMEOpen] = (0,compat_module.useState)(false);
   const [_value, handleChange] = (0,use_uncontrolled/* useUncontrolled */.Z)({
     value,
     defaultValue,
@@ -9265,9 +9265,9 @@ const Autocomplete = (0,react.forwardRef)((props, ref) => {
     setDropdownOpened(true);
   };
   const shouldRenderDropdown = dropdownOpened && (filteredData.length > 0 || filteredData.length === 0 && !!nothingFound);
-  return /* @__PURE__ */ react.createElement(Input/* Input */.p.Wrapper, Autocomplete_spreadProps(Autocomplete_spreadValues({}, wrapperProps), {
+  return /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p.Wrapper, Autocomplete_spreadProps(Autocomplete_spreadValues({}, wrapperProps), {
     __staticSelector: "Autocomplete"
-  }), /* @__PURE__ */ react.createElement(SelectPopover/* SelectPopover */.k, {
+  }), /* @__PURE__ */ compat_module["default"].createElement(SelectPopover/* SelectPopover */.k, {
     opened: shouldRenderDropdown,
     transitionProps,
     shadow: "sm",
@@ -9283,12 +9283,12 @@ const Autocomplete = (0,react.forwardRef)((props, ref) => {
     unstyled,
     readOnly,
     variant: inputProps.variant
-  }, /* @__PURE__ */ react.createElement(SelectPopover/* SelectPopover */.k.Target, null, /* @__PURE__ */ react.createElement("div", {
+  }, /* @__PURE__ */ compat_module["default"].createElement(SelectPopover/* SelectPopover */.k.Target, null, /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.wrapper,
     "aria-controls": inputProps.id,
     onMouseLeave: () => setHovered(-1),
     tabIndex: -1
-  }, /* @__PURE__ */ react.createElement(Input/* Input */.p, Autocomplete_spreadProps(Autocomplete_spreadValues(Autocomplete_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p, Autocomplete_spreadProps(Autocomplete_spreadValues(Autocomplete_spreadValues({
     type: "search",
     autoComplete: "off"
   }, inputProps), others), {
@@ -9316,7 +9316,7 @@ const Autocomplete = (0,react.forwardRef)((props, ref) => {
     "aria-autocomplete": "list",
     "aria-controls": shouldRenderDropdown ? `${inputProps.id}-items` : null,
     "aria-activedescendant": hovered >= 0 ? `${inputProps.id}-${hovered}` : null
-  })))), /* @__PURE__ */ react.createElement(SelectPopover/* SelectPopover */.k.Dropdown, {
+  })))), /* @__PURE__ */ compat_module["default"].createElement(SelectPopover/* SelectPopover */.k.Dropdown, {
     component: dropdownComponent || SelectScrollArea/* SelectScrollArea */.F,
     maxHeight: maxDropdownHeight,
     direction,
@@ -9324,7 +9324,7 @@ const Autocomplete = (0,react.forwardRef)((props, ref) => {
     __staticSelector: "Autocomplete",
     classNames,
     styles
-  }, /* @__PURE__ */ react.createElement(SelectItems/* SelectItems */.p, {
+  }, /* @__PURE__ */ compat_module["default"].createElement(SelectItems/* SelectItems */.p, {
     data: filteredData,
     hovered,
     classNames,
@@ -9355,10 +9355,10 @@ function useDebounce(value, delay) {
     delay = 250;
   }
   // State and setters for debounced value
-  var _useState = (0,react.useState)(value),
+  var _useState = (0,compat_module.useState)(value),
     debouncedValue = _useState[0],
     setDebouncedValue = _useState[1];
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     // Update debounced value after delay
     var handler = setTimeout(function () {
       setDebouncedValue(value);
@@ -9401,17 +9401,17 @@ function TextWidget_TextWidget(_ref) {
     rawErrors = _ref$rawErrors === void 0 ? [] : _ref$rawErrors,
     rightSection = _ref.rightSection,
     props = TextWidget_objectWithoutPropertiesLoose(_ref, TextWidget_excluded);
-  var _useState = (0,react.useState)(value),
+  var _useState = (0,compat_module.useState)(value),
     innerValue = _useState[0],
     setInnerValue = _useState[1];
   var debouncedValue = useDebounce(innerValue);
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     if (debouncedValue !== value) {
       console.log("----- debouncedValue(value)");
       onChange(debouncedValue);
     }
   }, [debouncedValue]);
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     if (value !== innerValue) {
       console.log("----- setInnerValue(value)");
       setInnerValue(value);
@@ -9434,7 +9434,7 @@ function TextWidget_TextWidget(_ref) {
   };
   var inputType = (type || schema.type) === "string" ? "text" : "" + (type || schema.type);
   var examples = schema.examples && Array.isArray(schema.examples) ? schema.examples : [];
-  return examples.length ? /*#__PURE__*/react.createElement(Autocomplete, {
+  return examples.length ? /*#__PURE__*/compat_module["default"].createElement(Autocomplete, {
     id: id,
     placeholder: placeholder,
     label: label,
@@ -9453,7 +9453,7 @@ function TextWidget_TextWidget(_ref) {
     maxDropdownHeight: 200,
     rightSection: rightSection,
     data: examples
-  }) : /*#__PURE__*/react.createElement(TextInput/* TextInput */.k, {
+  }) : /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
     id: id,
     placeholder: placeholder,
     label: label,
@@ -9499,16 +9499,16 @@ function TextareaWidget_TextareaWidget(_ref) {
     rawErrors = _ref$rawErrors === void 0 ? [] : _ref$rawErrors,
     uiSchema = _ref.uiSchema,
     props = TextareaWidget_objectWithoutPropertiesLoose(_ref, TextareaWidget_excluded);
-  var _useState = (0,react.useState)(value),
+  var _useState = (0,compat_module.useState)(value),
     innerValue = _useState[0],
     setInnerValue = _useState[1];
   var debouncedValue = useDebounce(innerValue);
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     if (debouncedValue !== value) {
       onChange(debouncedValue);
     }
   }, [debouncedValue]);
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     if (value !== innerValue) {
       setInnerValue(value);
     }
@@ -9526,7 +9526,7 @@ function TextareaWidget_TextareaWidget(_ref) {
     return onFocus(id, value);
   };
   var inputType = (type || schema.type) === "string" ? "text" : "" + (type || schema.type);
-  return /*#__PURE__*/react.createElement(Textarea/* Textarea */.T, {
+  return /*#__PURE__*/compat_module["default"].createElement(Textarea/* Textarea */.T, {
     id: id,
     autosize: true,
     minRows: 3,
@@ -9552,9 +9552,9 @@ function URLWidget_extends() { URLWidget_extends = Object.assign ? Object.assign
 
 
 function URLWidget_URLWidget(props) {
-  return /*#__PURE__*/react.createElement(widgets_TextWidget, URLWidget_extends({}, props, {
+  return /*#__PURE__*/compat_module["default"].createElement(widgets_TextWidget, URLWidget_extends({}, props, {
     type: "url",
-    rightSection: /*#__PURE__*/react.createElement("span", {
+    rightSection: /*#__PURE__*/compat_module["default"].createElement("span", {
       style: {
         fontWeight: 600,
         fontSize: 12,
@@ -9569,9 +9569,9 @@ function EmailWidget_extends() { EmailWidget_extends = Object.assign ? Object.as
 
 
 function EmailWidget_EmailWidget(props) {
-  return /*#__PURE__*/react.createElement(widgets_TextWidget, EmailWidget_extends({}, props, {
+  return /*#__PURE__*/compat_module["default"].createElement(widgets_TextWidget, EmailWidget_extends({}, props, {
     type: "email",
-    rightSection: /*#__PURE__*/react.createElement("span", {
+    rightSection: /*#__PURE__*/compat_module["default"].createElement("span", {
       style: {
         fontWeight: 600,
         fontSize: 14
@@ -9585,7 +9585,7 @@ function DateWidget_extends() { DateWidget_extends = Object.assign ? Object.assi
 
 
 function DateWidget_DateWidget(props) {
-  return /*#__PURE__*/react.createElement(widgets_TextWidget, DateWidget_extends({}, props, {
+  return /*#__PURE__*/compat_module["default"].createElement(widgets_TextWidget, DateWidget_extends({}, props, {
     type: "date"
   }));
 }
@@ -9598,9 +9598,9 @@ function ColorWidget_extends() { ColorWidget_extends = Object.assign ? Object.as
 
 
 function ColorWidget_ColorWidget(props) {
-  return /*#__PURE__*/react.createElement(widgets_TextWidget, ColorWidget_extends({}, props, {
+  return /*#__PURE__*/compat_module["default"].createElement(widgets_TextWidget, ColorWidget_extends({}, props, {
     type: "text",
-    rightSection: (props === null || props === void 0 ? void 0 : props.value) ? /*#__PURE__*/react.createElement(Box/* Box */.a, {
+    rightSection: (props === null || props === void 0 ? void 0 : props.value) ? /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
       component: "span",
       sx: {
         width: 16,
@@ -9699,7 +9699,7 @@ function getOS() {
   return "undetermined";
 }
 function useOs(options = { getValueInEffect: true }) {
-  const [value, setValue] = (0,react.useState)(options.getValueInEffect ? "undetermined" : getOS());
+  const [value, setValue] = (0,compat_module.useState)(options.getValueInEffect ? "undetermined" : getOS());
   (0,use_isomorphic_effect/* useIsomorphicEffect */.o)(() => {
     if (options.getValueInEffect) {
       setValue(getOS);
@@ -9740,7 +9740,7 @@ const getInputMode = (step, precision, os) => {
 
 
 function Chevron({ direction, size }) {
-  return /* @__PURE__ */ react.createElement("svg", {
+  return /* @__PURE__ */ compat_module["default"].createElement("svg", {
     style: {
       width: (0,rem/* rem */.D)(size),
       height: (0,rem/* rem */.D)(size),
@@ -9749,7 +9749,7 @@ function Chevron({ direction, size }) {
     viewBox: "0 0 15 15",
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
-  }, /* @__PURE__ */ react.createElement("path", {
+  }, /* @__PURE__ */ compat_module["default"].createElement("path", {
     d: "M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z",
     fill: "currentColor",
     fillRule: "evenodd",
@@ -9889,7 +9889,7 @@ const NumberInput_defaultProps = {
   parser: defaultParser,
   type: "text"
 };
-const NumberInput = (0,react.forwardRef)((props, ref) => {
+const NumberInput = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("NumberInput", NumberInput_defaultProps, props), {
     readOnly,
     disabled,
@@ -9989,10 +9989,10 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
     return parser(num);
   };
   const formatInternalValue = (val) => formatNum(parsePrecision(val));
-  const [internalValue, _setInternalValue] = (0,react.useState)(typeof value === "number" ? value : typeof defaultValue === "number" ? defaultValue : "");
-  const [inputValue, setInputValue] = (0,react.useState)(() => formatInternalValue(internalValue));
-  const inputRef = (0,react.useRef)();
-  const [isFocussed, setIsFocussed] = (0,react.useState)(false);
+  const [internalValue, _setInternalValue] = (0,compat_module.useState)(typeof value === "number" ? value : typeof defaultValue === "number" ? defaultValue : "");
+  const [inputValue, setInputValue] = (0,compat_module.useState)(() => formatInternalValue(internalValue));
+  const inputRef = (0,compat_module.useRef)();
+  const [isFocussed, setIsFocussed] = (0,compat_module.useState)(false);
   const setInternalValue = (val, forceInputValueUpdate) => {
     if (!isFocussed || forceInputValueUpdate) {
       const newInputValue = formatInternalValue(val);
@@ -10006,7 +10006,7 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
   };
   const _min = typeof min === "number" ? min : -Infinity;
   const _max = typeof max === "number" ? max : Infinity;
-  const incrementRef = (0,react.useRef)();
+  const incrementRef = (0,compat_module.useRef)();
   incrementRef.current = () => {
     var _a2;
     let newInternalValue;
@@ -10018,7 +10018,7 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
     setInternalValue(newInternalValue, true);
     onChange == null ? void 0 : onChange(newInternalValue);
   };
-  const decrementRef = (0,react.useRef)();
+  const decrementRef = (0,compat_module.useRef)();
   decrementRef.current = () => {
     var _a2;
     let newInternalValue;
@@ -10031,7 +10031,7 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
     onChange == null ? void 0 : onChange(newInternalValue);
   };
   (0,assign_ref/* assignRef */.b)(handlersRef, { increment: incrementRef.current, decrement: decrementRef.current });
-  (0,react.useEffect)(() => {
+  (0,compat_module.useEffect)(() => {
     if (isFocussed) {
       return;
     }
@@ -10042,8 +10042,8 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
     }
   }, [value, isFocussed]);
   const shouldUseStepInterval = stepHoldDelay !== void 0 && stepHoldInterval !== void 0;
-  const onStepTimeoutRef = (0,react.useRef)(null);
-  const stepCountRef = (0,react.useRef)(0);
+  const onStepTimeoutRef = (0,compat_module.useRef)(null);
+  const stepCountRef = (0,compat_module.useRef)(0);
   const onStepDone = () => {
     if (onStepTimeoutRef.current) {
       window.clearTimeout(onStepTimeoutRef.current);
@@ -10074,13 +10074,13 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
       onStepTimeoutRef.current = window.setTimeout(() => onStepLoop(isIncrement), stepHoldDelay);
     }
   };
-  (0,react.useEffect)(() => {
+  (0,compat_module.useEffect)(() => {
     onStepDone();
     return onStepDone;
   }, []);
-  const controls = /* @__PURE__ */ react.createElement("div", {
+  const controls = /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.rightSection
-  }, /* @__PURE__ */ react.createElement("button", {
+  }, /* @__PURE__ */ compat_module["default"].createElement("button", {
     type: "button",
     tabIndex: -1,
     "aria-hidden": true,
@@ -10091,10 +10091,10 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
     },
     onPointerUp: onStepDone,
     onPointerLeave: onStepDone
-  }, /* @__PURE__ */ react.createElement(Chevron, {
+  }, /* @__PURE__ */ compat_module["default"].createElement(Chevron, {
     size: (0,get_size/* getSize */.Y)({ size, sizes: CHEVRON_SIZES }),
     direction: "up"
-  })), /* @__PURE__ */ react.createElement("button", {
+  })), /* @__PURE__ */ compat_module["default"].createElement("button", {
     type: "button",
     tabIndex: -1,
     "aria-hidden": true,
@@ -10105,7 +10105,7 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
     },
     onPointerUp: onStepDone,
     onPointerLeave: onStepDone
-  }, /* @__PURE__ */ react.createElement(Chevron, {
+  }, /* @__PURE__ */ compat_module["default"].createElement(Chevron, {
     size: (0,get_size/* getSize */.Y)({ size, sizes: CHEVRON_SIZES }),
     direction: "down"
   })));
@@ -10159,7 +10159,7 @@ const NumberInput = (0,react.forwardRef)((props, ref) => {
       onStepDone();
     }
   };
-  return /* @__PURE__ */ react.createElement(TextInput/* TextInput */.k, NumberInput_spreadProps(NumberInput_spreadValues({}, others), {
+  return /* @__PURE__ */ compat_module["default"].createElement(TextInput/* TextInput */.k, NumberInput_spreadProps(NumberInput_spreadValues({}, others), {
     type,
     variant,
     value: inputValue,
@@ -10215,16 +10215,16 @@ function UpDownWidget_UpDownWidget(_ref) {
     _ref$rawErrors = _ref.rawErrors,
     rawErrors = _ref$rawErrors === void 0 ? [] : _ref$rawErrors,
     props = UpDownWidget_objectWithoutPropertiesLoose(_ref, UpDownWidget_excluded);
-  var _useState = (0,react.useState)(value),
+  var _useState = (0,compat_module.useState)(value),
     innerValue = _useState[0],
     setInnerValue = _useState[1];
   var debouncedValue = useDebounce(innerValue);
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     if (debouncedValue !== value) {
       onChange(debouncedValue);
     }
   }, [debouncedValue]);
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     if (value !== innerValue) {
       setInnerValue(value);
     }
@@ -10246,7 +10246,7 @@ function UpDownWidget_UpDownWidget(_ref) {
       value = _ref3$target2.value;
     return onFocus(id, value);
   };
-  return /*#__PURE__*/react.createElement(NumberInput, {
+  return /*#__PURE__*/compat_module["default"].createElement(NumberInput, {
     id: id,
     placeholder: placeholder,
     label: label,
@@ -10274,12 +10274,12 @@ var use_id = __webpack_require__(66798);
 const PasswordToggleIcon = ({
   reveal,
   size
-}) => /* @__PURE__ */ react.createElement("svg", {
+}) => /* @__PURE__ */ compat_module["default"].createElement("svg", {
   viewBox: "0 0 15 15",
   fill: "none",
   xmlns: "http://www.w3.org/2000/svg",
   style: { width: size, height: size }
-}, /* @__PURE__ */ react.createElement("path", {
+}, /* @__PURE__ */ compat_module["default"].createElement("path", {
   d: reveal ? "M13.3536 2.35355C13.5488 2.15829 13.5488 1.84171 13.3536 1.64645C13.1583 1.45118 12.8417 1.45118 12.6464 1.64645L10.6828 3.61012C9.70652 3.21671 8.63759 3 7.5 3C4.30786 3 1.65639 4.70638 0.0760002 7.23501C-0.0253338 7.39715 -0.0253334 7.60288 0.0760014 7.76501C0.902945 9.08812 2.02314 10.1861 3.36061 10.9323L1.64645 12.6464C1.45118 12.8417 1.45118 13.1583 1.64645 13.3536C1.84171 13.5488 2.15829 13.5488 2.35355 13.3536L4.31723 11.3899C5.29348 11.7833 6.36241 12 7.5 12C10.6921 12 13.3436 10.2936 14.924 7.76501C15.0253 7.60288 15.0253 7.39715 14.924 7.23501C14.0971 5.9119 12.9769 4.81391 11.6394 4.06771L13.3536 2.35355ZM9.90428 4.38861C9.15332 4.1361 8.34759 4 7.5 4C4.80285 4 2.52952 5.37816 1.09622 7.50001C1.87284 8.6497 2.89609 9.58106 4.09974 10.1931L9.90428 4.38861ZM5.09572 10.6114L10.9003 4.80685C12.1039 5.41894 13.1272 6.35031 13.9038 7.50001C12.4705 9.62183 10.1971 11 7.5 11C6.65241 11 5.84668 10.8639 5.09572 10.6114Z" : "M7.5 11C4.80285 11 2.52952 9.62184 1.09622 7.50001C2.52952 5.37816 4.80285 4 7.5 4C10.1971 4 12.4705 5.37816 13.9038 7.50001C12.4705 9.62183 10.1971 11 7.5 11ZM7.5 3C4.30786 3 1.65639 4.70638 0.0760002 7.23501C-0.0253338 7.39715 -0.0253334 7.60288 0.0760014 7.76501C1.65639 10.2936 4.30786 12 7.5 12C10.6921 12 13.3436 10.2936 14.924 7.76501C15.0253 7.60288 15.0253 7.39715 14.924 7.23501C13.3436 4.70638 10.6921 3 7.5 3ZM7.5 9.5C8.60457 9.5 9.5 8.60457 9.5 7.5C9.5 6.39543 8.60457 5.5 7.5 5.5C6.39543 5.5 5.5 6.39543 5.5 7.5C5.5 8.60457 6.39543 9.5 7.5 9.5Z",
   fill: "currentColor",
   fillRule: "evenodd",
@@ -10440,7 +10440,7 @@ const PasswordInput_defaultProps = {
   visibilityToggleIcon: PasswordToggleIcon,
   __staticSelector: "PasswordInput"
 };
-const PasswordInput = (0,react.forwardRef)((props, ref) => {
+const PasswordInput = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("PasswordInput", PasswordInput_defaultProps, props), {
     radius,
     disabled,
@@ -10517,7 +10517,7 @@ const PasswordInput = (0,react.forwardRef)((props, ref) => {
     onChange: onVisibilityChange
   });
   const toggleVisibility = () => setVisibility(!_visible);
-  const rightSection = /* @__PURE__ */ react.createElement(ActionIcon/* ActionIcon */.M, {
+  const rightSection = /* @__PURE__ */ compat_module["default"].createElement(ActionIcon/* ActionIcon */.M, {
     className: classes.visibilityToggle,
     tabIndex: toggleTabIndex,
     radius,
@@ -10535,11 +10535,11 @@ const PasswordInput = (0,react.forwardRef)((props, ref) => {
         toggleVisibility();
       }
     }
-  }, /* @__PURE__ */ react.createElement(VisibilityToggleIcon, {
+  }, /* @__PURE__ */ compat_module["default"].createElement(VisibilityToggleIcon, {
     reveal: _visible,
     size: (0,get_size/* getSize */.Y)({ size, sizes: iconSizes })
   }));
-  return /* @__PURE__ */ react.createElement(Input/* Input */.p.Wrapper, PasswordInput_spreadValues(PasswordInput_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p.Wrapper, PasswordInput_spreadValues(PasswordInput_spreadValues({
     required,
     id: uuid,
     label,
@@ -10560,7 +10560,7 @@ const PasswordInput = (0,react.forwardRef)((props, ref) => {
     inputWrapperOrder,
     inputContainer,
     variant
-  }, systemStyles), wrapperProps), /* @__PURE__ */ react.createElement(Input/* Input */.p, {
+  }, systemStyles), wrapperProps), /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p, {
     component: "div",
     error,
     icon,
@@ -10575,7 +10575,7 @@ const PasswordInput = (0,react.forwardRef)((props, ref) => {
     variant,
     unstyled,
     iconWidth
-  }, /* @__PURE__ */ react.createElement("input", PasswordInput_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement("input", PasswordInput_spreadValues({
     type: _visible ? "text" : "password",
     required,
     "data-invalid": !!error || void 0,
@@ -10617,16 +10617,16 @@ function PasswordWidget_PasswordWidget(_ref) {
     _ref$rawErrors = _ref.rawErrors,
     rawErrors = _ref$rawErrors === void 0 ? [] : _ref$rawErrors,
     props = PasswordWidget_objectWithoutPropertiesLoose(_ref, PasswordWidget_excluded);
-  var _useState = (0,react.useState)(value),
+  var _useState = (0,compat_module.useState)(value),
     innerValue = _useState[0],
     setInnerValue = _useState[1];
   var debouncedValue = useDebounce(innerValue, 200);
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     if (debouncedValue !== value) {
       onChange(debouncedValue);
     }
   }, [debouncedValue]);
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     setInnerValue(value);
   }, [value]);
   var _onChange = function _onChange(_ref2) {
@@ -10647,7 +10647,7 @@ function PasswordWidget_PasswordWidget(_ref) {
       value = _ref4$target2.value;
     return onFocus(id, value);
   };
-  return /*#__PURE__*/react.createElement(PasswordInput, {
+  return /*#__PURE__*/compat_module["default"].createElement(PasswordInput, {
     id: id,
     placeholder: placeholder,
     label: label,
@@ -10664,8 +10664,557 @@ function PasswordWidget_PasswordWidget(_ref) {
   });
 }
 /* harmony default export */ const widgets_PasswordWidget = (PasswordWidget_PasswordWidget);
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Switch/Switch.js + 3 modules
-var Switch = __webpack_require__(3284);
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Switch/SwitchGroup.context.js
+
+
+const SwitchGroupContext = (0,compat_module.createContext)(null);
+const SwitchGroupProvider = SwitchGroupContext.Provider;
+const useSwitchGroupContext = () => (0,compat_module.useContext)(SwitchGroupContext);
+
+
+//# sourceMappingURL=SwitchGroup.context.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Switch/SwitchGroup/SwitchGroup.js
+
+
+
+
+
+
+var SwitchGroup_defProp = Object.defineProperty;
+var SwitchGroup_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var SwitchGroup_hasOwnProp = Object.prototype.hasOwnProperty;
+var SwitchGroup_propIsEnum = Object.prototype.propertyIsEnumerable;
+var SwitchGroup_defNormalProp = (obj, key, value) => key in obj ? SwitchGroup_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var SwitchGroup_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (SwitchGroup_hasOwnProp.call(b, prop))
+      SwitchGroup_defNormalProp(a, prop, b[prop]);
+  if (SwitchGroup_getOwnPropSymbols)
+    for (var prop of SwitchGroup_getOwnPropSymbols(b)) {
+      if (SwitchGroup_propIsEnum.call(b, prop))
+        SwitchGroup_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var SwitchGroup_objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (SwitchGroup_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && SwitchGroup_getOwnPropSymbols)
+    for (var prop of SwitchGroup_getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && SwitchGroup_propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const SwitchGroup_defaultProps = {
+  size: "sm"
+};
+const SwitchGroup = (0,compat_module.forwardRef)((props, ref) => {
+  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("SwitchGroup", SwitchGroup_defaultProps, props), { children, value, defaultValue, onChange, size, wrapperProps } = _a, others = SwitchGroup_objRest(_a, ["children", "value", "defaultValue", "onChange", "size", "wrapperProps"]);
+  const [_value, setValue] = (0,use_uncontrolled/* useUncontrolled */.Z)({
+    value,
+    defaultValue,
+    finalValue: [],
+    onChange
+  });
+  const handleChange = (event) => {
+    const itemValue = event.currentTarget.value;
+    setValue(_value.includes(itemValue) ? _value.filter((item) => item !== itemValue) : [..._value, itemValue]);
+  };
+  return /* @__PURE__ */ compat_module["default"].createElement(SwitchGroupProvider, {
+    value: { value: _value, onChange: handleChange, size }
+  }, /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p.Wrapper, SwitchGroup_spreadValues(SwitchGroup_spreadValues({
+    labelElement: "div",
+    size,
+    __staticSelector: "SwitchGroup",
+    ref
+  }, wrapperProps), others), children));
+});
+SwitchGroup.displayName = "@mantine/core/SwitchGroup";
+
+
+//# sourceMappingURL=SwitchGroup.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Switch/Switch.styles.js
+
+
+var Switch_styles_defProp = Object.defineProperty;
+var Switch_styles_defProps = Object.defineProperties;
+var Switch_styles_getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var Switch_styles_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var Switch_styles_hasOwnProp = Object.prototype.hasOwnProperty;
+var Switch_styles_propIsEnum = Object.prototype.propertyIsEnumerable;
+var Switch_styles_defNormalProp = (obj, key, value) => key in obj ? Switch_styles_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var Switch_styles_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (Switch_styles_hasOwnProp.call(b, prop))
+      Switch_styles_defNormalProp(a, prop, b[prop]);
+  if (Switch_styles_getOwnPropSymbols)
+    for (var prop of Switch_styles_getOwnPropSymbols(b)) {
+      if (Switch_styles_propIsEnum.call(b, prop))
+        Switch_styles_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var Switch_styles_spreadProps = (a, b) => Switch_styles_defProps(a, Switch_styles_getOwnPropDescs(b));
+const switchHeight = {
+  xs: (0,rem/* rem */.D)(16),
+  sm: (0,rem/* rem */.D)(20),
+  md: (0,rem/* rem */.D)(24),
+  lg: (0,rem/* rem */.D)(30),
+  xl: (0,rem/* rem */.D)(36)
+};
+const switchWidth = {
+  xs: (0,rem/* rem */.D)(32),
+  sm: (0,rem/* rem */.D)(38),
+  md: (0,rem/* rem */.D)(46),
+  lg: (0,rem/* rem */.D)(56),
+  xl: (0,rem/* rem */.D)(72)
+};
+const handleSizes = {
+  xs: (0,rem/* rem */.D)(12),
+  sm: (0,rem/* rem */.D)(14),
+  md: (0,rem/* rem */.D)(18),
+  lg: (0,rem/* rem */.D)(22),
+  xl: (0,rem/* rem */.D)(28)
+};
+const labelFontSizes = {
+  xs: (0,rem/* rem */.D)(5),
+  sm: (0,rem/* rem */.D)(6),
+  md: (0,rem/* rem */.D)(7),
+  lg: (0,rem/* rem */.D)(9),
+  xl: (0,rem/* rem */.D)(11)
+};
+const trackLabelPaddings = {
+  xs: (0,rem/* rem */.D)(4),
+  sm: (0,rem/* rem */.D)(5),
+  md: (0,rem/* rem */.D)(6),
+  lg: (0,rem/* rem */.D)(8),
+  xl: (0,rem/* rem */.D)(10)
+};
+var Switch_styles_useStyles = (0,create_styles/* createStyles */.r)((theme, { radius, color, labelPosition, error }, { size }) => {
+  const handleSize = (0,get_size/* getSize */.Y)({ size, sizes: handleSizes });
+  const borderRadius = (0,get_size/* getSize */.Y)({ size: radius, sizes: theme.radius });
+  const colors = theme.fn.variant({ variant: "filled", color });
+  const trackWidth = (0,get_size/* getSize */.Y)({ size, sizes: switchWidth });
+  const trackPadding = (0,rem/* rem */.D)(size === "xs" ? 1 : 2);
+  const errorColor = theme.fn.variant({ variant: "filled", color: "red" }).background;
+  return {
+    root: {
+      position: "relative"
+    },
+    input: {
+      height: 0,
+      width: 0,
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      padding: 0,
+      WebkitClipPath: "inset(50%)",
+      clipPath: "inset(50%)",
+      position: "absolute"
+    },
+    track: Switch_styles_spreadProps(Switch_styles_spreadValues({}, theme.fn.focusStyles("input:focus + &")), {
+      cursor: theme.cursorType,
+      overflow: "hidden",
+      WebkitTapHighlightColor: "transparent",
+      position: "relative",
+      borderRadius,
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[2],
+      border: `${(0,rem/* rem */.D)(1)} solid ${error ? errorColor : theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
+      height: (0,get_size/* getSize */.Y)({ size, sizes: switchHeight }),
+      minWidth: trackWidth,
+      margin: 0,
+      transitionProperty: "background-color, border-color",
+      transitionTimingFunction: theme.transitionTimingFunction,
+      transitionDuration: "150ms",
+      boxSizing: "border-box",
+      appearance: "none",
+      display: "flex",
+      alignItems: "center",
+      fontSize: (0,get_size/* getSize */.Y)({ size, sizes: labelFontSizes }),
+      fontWeight: 600,
+      order: labelPosition === "left" ? 2 : 1,
+      userSelect: "none",
+      zIndex: 0,
+      lineHeight: 0,
+      color: theme.colorScheme === "dark" ? theme.colors.dark[1] : theme.colors.gray[6],
+      transition: `color 150ms ${theme.transitionTimingFunction}`,
+      "input:checked + &": {
+        backgroundColor: colors.background,
+        borderColor: colors.background,
+        color: theme.white,
+        transition: `color 150ms ${theme.transitionTimingFunction}`
+      },
+      "input:disabled + &": {
+        backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2],
+        borderColor: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2],
+        cursor: "not-allowed",
+        pointerEvents: "none"
+      }
+    }),
+    thumb: {
+      position: "absolute",
+      zIndex: 1,
+      borderRadius,
+      boxSizing: "border-box",
+      display: "flex",
+      backgroundColor: theme.white,
+      height: handleSize,
+      width: handleSize,
+      border: `${(0,rem/* rem */.D)(1)} solid ${theme.colorScheme === "dark" ? theme.white : theme.colors.gray[3]}`,
+      left: trackPadding,
+      transition: `left 150ms ${theme.transitionTimingFunction}`,
+      "& > *": {
+        margin: "auto"
+      },
+      "@media (prefers-reduced-motion)": {
+        transitionDuration: theme.respectReducedMotion ? "0ms" : ""
+      },
+      "input:checked + * > &": {
+        left: `calc(100% - ${handleSize} - ${trackPadding})`,
+        borderColor: theme.white
+      },
+      "input:disabled + * > &": {
+        borderColor: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2],
+        backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[3] : theme.colors.gray[0]
+      }
+    },
+    trackLabel: {
+      height: "100%",
+      display: "grid",
+      placeContent: "center",
+      minWidth: `calc(${trackWidth} - ${handleSize})`,
+      paddingInline: (0,get_size/* getSize */.Y)({ size, sizes: trackLabelPaddings }),
+      marginLeft: `calc(${handleSize} + ${trackPadding})`,
+      transition: `margin 150ms ${theme.transitionTimingFunction}`,
+      "input:checked + * > &": {
+        marginLeft: 0,
+        marginRight: `calc(${handleSize} + ${trackPadding})`
+      }
+    }
+  };
+});
+
+/* harmony default export */ const Switch_styles = (Switch_styles_useStyles);
+//# sourceMappingURL=Switch.styles.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/InlineInput/InlineInput.styles.js
+
+
+var InlineInput_styles_defProp = Object.defineProperty;
+var InlineInput_styles_defProps = Object.defineProperties;
+var InlineInput_styles_getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var InlineInput_styles_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var InlineInput_styles_hasOwnProp = Object.prototype.hasOwnProperty;
+var InlineInput_styles_propIsEnum = Object.prototype.propertyIsEnumerable;
+var InlineInput_styles_defNormalProp = (obj, key, value) => key in obj ? InlineInput_styles_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var InlineInput_styles_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (InlineInput_styles_hasOwnProp.call(b, prop))
+      InlineInput_styles_defNormalProp(a, prop, b[prop]);
+  if (InlineInput_styles_getOwnPropSymbols)
+    for (var prop of InlineInput_styles_getOwnPropSymbols(b)) {
+      if (InlineInput_styles_propIsEnum.call(b, prop))
+        InlineInput_styles_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var InlineInput_styles_spreadProps = (a, b) => InlineInput_styles_defProps(a, InlineInput_styles_getOwnPropDescs(b));
+const sizes = {
+  xs: (0,rem/* rem */.D)(16),
+  sm: (0,rem/* rem */.D)(20),
+  md: (0,rem/* rem */.D)(24),
+  lg: (0,rem/* rem */.D)(30),
+  xl: (0,rem/* rem */.D)(36)
+};
+var InlineInput_styles_useStyles = (0,create_styles/* createStyles */.r)((theme, { labelPosition }, { size }) => ({
+  root: {},
+  body: {
+    display: "flex",
+    "&:has(input:disabled) label": {
+      color: theme.colorScheme === "dark" ? theme.colors.dark[3] : theme.colors.gray[5]
+    }
+  },
+  labelWrapper: InlineInput_styles_spreadProps(InlineInput_styles_spreadValues({}, theme.fn.fontStyles()), {
+    display: "inline-flex",
+    flexDirection: "column",
+    WebkitTapHighlightColor: "transparent",
+    fontSize: size in sizes ? (0,get_size/* getSize */.Y)({ size, sizes: theme.fontSizes }) : void 0,
+    lineHeight: size in sizes ? (0,get_size/* getSize */.Y)({ size, sizes }) : void 0,
+    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+    cursor: theme.cursorType,
+    order: labelPosition === "left" ? 1 : 2
+  }),
+  description: {
+    marginTop: `calc(${theme.spacing.xs} / 2)`,
+    [labelPosition === "left" ? "paddingRight" : "paddingLeft"]: theme.spacing.sm
+  },
+  error: {
+    marginTop: `calc(${theme.spacing.xs} / 2)`,
+    [labelPosition === "left" ? "paddingRight" : "paddingLeft"]: theme.spacing.sm
+  },
+  label: {
+    cursor: theme.cursorType,
+    [labelPosition === "left" ? "paddingRight" : "paddingLeft"]: theme.spacing.sm,
+    "&:disabled, &[data-disabled]": {
+      color: theme.colorScheme === "dark" ? theme.colors.dark[3] : theme.colors.gray[5]
+    }
+  }
+}));
+
+/* harmony default export */ const InlineInput_styles = (InlineInput_styles_useStyles);
+//# sourceMappingURL=InlineInput.styles.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/InlineInput/InlineInput.js
+
+
+
+
+
+var InlineInput_defProp = Object.defineProperty;
+var InlineInput_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var InlineInput_hasOwnProp = Object.prototype.hasOwnProperty;
+var InlineInput_propIsEnum = Object.prototype.propertyIsEnumerable;
+var InlineInput_defNormalProp = (obj, key, value) => key in obj ? InlineInput_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var InlineInput_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (InlineInput_hasOwnProp.call(b, prop))
+      InlineInput_defNormalProp(a, prop, b[prop]);
+  if (InlineInput_getOwnPropSymbols)
+    for (var prop of InlineInput_getOwnPropSymbols(b)) {
+      if (InlineInput_propIsEnum.call(b, prop))
+        InlineInput_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var InlineInput_objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (InlineInput_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && InlineInput_getOwnPropSymbols)
+    for (var prop of InlineInput_getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && InlineInput_propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const InlineInput = (0,compat_module.forwardRef)((_a, ref) => {
+  var _b = _a, {
+    __staticSelector,
+    className,
+    classNames,
+    styles,
+    unstyled,
+    children,
+    label,
+    description,
+    id,
+    disabled,
+    error,
+    size,
+    labelPosition,
+    variant
+  } = _b, others = InlineInput_objRest(_b, [
+    "__staticSelector",
+    "className",
+    "classNames",
+    "styles",
+    "unstyled",
+    "children",
+    "label",
+    "description",
+    "id",
+    "disabled",
+    "error",
+    "size",
+    "labelPosition",
+    "variant"
+  ]);
+  const { classes, cx } = InlineInput_styles({ labelPosition }, { name: __staticSelector, styles, classNames, unstyled, variant, size });
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, InlineInput_spreadValues({
+    className: cx(classes.root, className),
+    ref
+  }, others), /* @__PURE__ */ compat_module["default"].createElement("div", {
+    className: cx(classes.body)
+  }, children, /* @__PURE__ */ compat_module["default"].createElement("div", {
+    className: classes.labelWrapper
+  }, label != null && /* @__PURE__ */ compat_module["default"].createElement("label", {
+    className: classes.label,
+    "data-disabled": disabled || void 0,
+    htmlFor: id
+  }, label), description && /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p.Description, {
+    className: classes.description
+  }, description), error && error !== "boolean" && /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p.Error, {
+    className: classes.error
+  }, error))));
+});
+InlineInput.displayName = "@mantine/core/InlineInput";
+
+
+//# sourceMappingURL=InlineInput.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Switch/Switch.js
+
+
+
+
+
+
+
+
+
+var Switch_defProp = Object.defineProperty;
+var Switch_defProps = Object.defineProperties;
+var Switch_getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var Switch_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var Switch_hasOwnProp = Object.prototype.hasOwnProperty;
+var Switch_propIsEnum = Object.prototype.propertyIsEnumerable;
+var Switch_defNormalProp = (obj, key, value) => key in obj ? Switch_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var Switch_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (Switch_hasOwnProp.call(b, prop))
+      Switch_defNormalProp(a, prop, b[prop]);
+  if (Switch_getOwnPropSymbols)
+    for (var prop of Switch_getOwnPropSymbols(b)) {
+      if (Switch_propIsEnum.call(b, prop))
+        Switch_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var Switch_spreadProps = (a, b) => Switch_defProps(a, Switch_getOwnPropDescs(b));
+var Switch_objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (Switch_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && Switch_getOwnPropSymbols)
+    for (var prop of Switch_getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && Switch_propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const Switch_defaultProps = {
+  offLabel: "",
+  onLabel: "",
+  size: "sm",
+  radius: "xl",
+  error: false
+};
+const Switch = (0,compat_module.forwardRef)((props, ref) => {
+  var _b;
+  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Switch", Switch_defaultProps, props), {
+    className,
+    color,
+    label,
+    offLabel,
+    onLabel,
+    id,
+    style,
+    size,
+    radius,
+    wrapperProps,
+    children,
+    unstyled,
+    styles,
+    classNames,
+    thumbIcon,
+    sx,
+    checked,
+    defaultChecked,
+    onChange,
+    labelPosition,
+    description,
+    error,
+    disabled,
+    variant
+  } = _a, others = Switch_objRest(_a, [
+    "className",
+    "color",
+    "label",
+    "offLabel",
+    "onLabel",
+    "id",
+    "style",
+    "size",
+    "radius",
+    "wrapperProps",
+    "children",
+    "unstyled",
+    "styles",
+    "classNames",
+    "thumbIcon",
+    "sx",
+    "checked",
+    "defaultChecked",
+    "onChange",
+    "labelPosition",
+    "description",
+    "error",
+    "disabled",
+    "variant"
+  ]);
+  const ctx = useSwitchGroupContext();
+  const _size = (ctx == null ? void 0 : ctx.size) || size;
+  const { classes, cx } = Switch_styles({ color, radius, labelPosition, error: !!error }, { name: "Switch", classNames, styles, unstyled, size: _size, variant });
+  const { systemStyles, rest } = (0,extract_system_styles/* extractSystemStyles */.z)(others);
+  const uuid = (0,use_id/* useId */.B)(id);
+  const contextProps = ctx ? {
+    checked: ctx.value.includes(rest.value),
+    onChange: ctx.onChange
+  } : {};
+  const [_checked, handleChange] = (0,use_uncontrolled/* useUncontrolled */.Z)({
+    value: (_b = contextProps.checked) != null ? _b : checked,
+    defaultValue: defaultChecked,
+    finalValue: false
+  });
+  return /* @__PURE__ */ compat_module["default"].createElement(InlineInput, Switch_spreadValues(Switch_spreadValues({
+    className: cx(className, classes.root),
+    sx,
+    style,
+    id: uuid,
+    size: (ctx == null ? void 0 : ctx.size) || size,
+    labelPosition,
+    label,
+    description,
+    error,
+    disabled,
+    __staticSelector: "Switch",
+    classNames,
+    styles,
+    unstyled,
+    "data-checked": contextProps.checked || void 0,
+    variant
+  }, systemStyles), wrapperProps), /* @__PURE__ */ compat_module["default"].createElement("input", Switch_spreadProps(Switch_spreadValues({}, rest), {
+    disabled,
+    checked: _checked,
+    onChange: (event) => {
+      ctx ? contextProps.onChange(event) : onChange == null ? void 0 : onChange(event);
+      handleChange(event.currentTarget.checked);
+    },
+    id: uuid,
+    ref,
+    type: "checkbox",
+    className: classes.input
+  })), /* @__PURE__ */ compat_module["default"].createElement("label", {
+    htmlFor: uuid,
+    className: classes.track
+  }, /* @__PURE__ */ compat_module["default"].createElement("div", {
+    className: classes.thumb
+  }, thumbIcon), /* @__PURE__ */ compat_module["default"].createElement("div", {
+    className: classes.trackLabel
+  }, _checked ? onLabel : offLabel)));
+});
+Switch.displayName = "@mantine/core/Switch";
+Switch.Group = SwitchGroup;
+
+
+//# sourceMappingURL=Switch.js.map
+
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/CheckboxWidget.js
 
 
@@ -10694,7 +11243,7 @@ var CheckboxWidget_CheckboxWidget = function CheckboxWidget(props) {
     return onFocus(id, checked);
   };
   var desc = label || schema.description;
-  return /*#__PURE__*/react.createElement(Switch/* Switch */.d, {
+  return /*#__PURE__*/compat_module["default"].createElement(Switch, {
     id: id,
     label: desc,
     checked: typeof value === "undefined" ? false : value,
@@ -10710,9 +11259,9 @@ var CheckboxWidget_CheckboxWidget = function CheckboxWidget(props) {
 ;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Checkbox/CheckboxGroup.context.js
 
 
-const CheckboxGroupContext = (0,react.createContext)(null);
+const CheckboxGroupContext = (0,compat_module.createContext)(null);
 const CheckboxGroupProvider = CheckboxGroupContext.Provider;
-const useCheckboxGroupContext = () => (0,react.useContext)(CheckboxGroupContext);
+const useCheckboxGroupContext = () => (0,compat_module.useContext)(CheckboxGroupContext);
 
 
 //# sourceMappingURL=CheckboxGroup.context.js.map
@@ -10755,7 +11304,7 @@ var CheckboxGroup_objRest = (source, exclude) => {
 const CheckboxGroup_defaultProps = {
   size: "sm"
 };
-const CheckboxGroup = (0,react.forwardRef)((props, ref) => {
+const CheckboxGroup = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("CheckboxGroup", CheckboxGroup_defaultProps, props), { children, value, defaultValue, onChange, size, wrapperProps } = _a, others = CheckboxGroup_objRest(_a, ["children", "value", "defaultValue", "onChange", "size", "wrapperProps"]);
   const [_value, setValue] = (0,use_uncontrolled/* useUncontrolled */.Z)({
     value,
@@ -10767,9 +11316,9 @@ const CheckboxGroup = (0,react.forwardRef)((props, ref) => {
     const itemValue = event.currentTarget.value;
     setValue(_value.includes(itemValue) ? _value.filter((item) => item !== itemValue) : [..._value, itemValue]);
   };
-  return /* @__PURE__ */ react.createElement(CheckboxGroupProvider, {
+  return /* @__PURE__ */ compat_module["default"].createElement(CheckboxGroupProvider, {
     value: { value: _value, onChange: handleChange, size }
-  }, /* @__PURE__ */ react.createElement(Input/* Input */.p.Wrapper, CheckboxGroup_spreadValues(CheckboxGroup_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p.Wrapper, CheckboxGroup_spreadValues(CheckboxGroup_spreadValues({
     labelElement: "div",
     size,
     __staticSelector: "CheckboxGroup",
@@ -10814,12 +11363,12 @@ var CheckboxIcon_objRest = (source, exclude) => {
 };
 function CheckIcon(props) {
   const _a = props, { width, height, style } = _a, others = CheckboxIcon_objRest(_a, ["width", "height", "style"]);
-  return /* @__PURE__ */ react.createElement("svg", CheckboxIcon_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement("svg", CheckboxIcon_spreadValues({
     viewBox: "0 0 10 7",
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg",
     style: CheckboxIcon_spreadValues({ width, height }, style)
-  }, others), /* @__PURE__ */ react.createElement("path", {
+  }, others), /* @__PURE__ */ compat_module["default"].createElement("path", {
     d: "M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z",
     fill: "currentColor",
     fillRule: "evenodd",
@@ -10829,18 +11378,18 @@ function CheckIcon(props) {
 function CheckboxIcon(_a) {
   var _b = _a, { indeterminate } = _b, others = CheckboxIcon_objRest(_b, ["indeterminate"]);
   if (indeterminate) {
-    return /* @__PURE__ */ react.createElement("svg", CheckboxIcon_spreadValues({
+    return /* @__PURE__ */ compat_module["default"].createElement("svg", CheckboxIcon_spreadValues({
       xmlns: "http://www.w3.org/2000/svg",
       fill: "none",
       viewBox: "0 0 32 6"
-    }, others), /* @__PURE__ */ react.createElement("rect", {
+    }, others), /* @__PURE__ */ compat_module["default"].createElement("rect", {
       width: "32",
       height: "6",
       fill: "currentColor",
       rx: "3"
     }));
   }
-  return /* @__PURE__ */ react.createElement(CheckIcon, CheckboxIcon_spreadValues({}, others));
+  return /* @__PURE__ */ compat_module["default"].createElement(CheckIcon, CheckboxIcon_spreadValues({}, others));
 }
 
 
@@ -10870,7 +11419,7 @@ var Checkbox_styles_spreadValues = (a, b) => {
   return a;
 };
 var Checkbox_styles_spreadProps = (a, b) => Checkbox_styles_defProps(a, Checkbox_styles_getOwnPropDescs(b));
-const sizes = {
+const Checkbox_styles_sizes = {
   xs: (0,rem/* rem */.D)(16),
   sm: (0,rem/* rem */.D)(20),
   md: (0,rem/* rem */.D)(24),
@@ -10885,7 +11434,7 @@ var Checkbox_styles_useStyles = (0,create_styles/* createStyles */.r)((theme, {
   error,
   indeterminate
 }, { size }) => {
-  const _size = (0,get_size/* getSize */.Y)({ size, sizes });
+  const _size = (0,get_size/* getSize */.Y)({ size, sizes: Checkbox_styles_sizes });
   const colors = theme.fn.variant({ variant: "filled", color });
   return {
     icon: Checkbox_styles_spreadProps(Checkbox_styles_spreadValues({}, theme.fn.cover()), {
@@ -10948,8 +11497,6 @@ var Checkbox_styles_useStyles = (0,create_styles/* createStyles */.r)((theme, {
 /* harmony default export */ const Checkbox_styles = (Checkbox_styles_useStyles);
 //# sourceMappingURL=Checkbox.styles.js.map
 
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/InlineInput/InlineInput.js + 1 modules
-var InlineInput = __webpack_require__(97316);
 ;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Checkbox/Checkbox.js
 
 
@@ -10995,7 +11542,7 @@ const Checkbox_defaultProps = {
   icon: CheckboxIcon,
   labelPosition: "right"
 };
-const Checkbox = (0,react.forwardRef)((props, ref) => {
+const Checkbox = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Checkbox", Checkbox_defaultProps, props), {
     className,
     style,
@@ -11058,7 +11605,7 @@ const Checkbox = (0,react.forwardRef)((props, ref) => {
     checked: ctx.value.includes(rest.value),
     onChange: ctx.onChange
   } : {};
-  return /* @__PURE__ */ react.createElement(InlineInput/* InlineInput */.I, Checkbox_spreadValues(Checkbox_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(InlineInput, Checkbox_spreadValues(Checkbox_spreadValues({
     className,
     sx,
     style,
@@ -11075,16 +11622,16 @@ const Checkbox = (0,react.forwardRef)((props, ref) => {
     unstyled,
     "data-checked": contextProps.checked || void 0,
     variant
-  }, systemStyles), wrapperProps), /* @__PURE__ */ react.createElement("div", {
+  }, systemStyles), wrapperProps), /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.inner
-  }, /* @__PURE__ */ react.createElement("input", Checkbox_spreadValues(Checkbox_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement("input", Checkbox_spreadValues(Checkbox_spreadValues({
     id: uuid,
     ref,
     type: "checkbox",
     className: classes.input,
     checked,
     disabled
-  }, rest), contextProps)), /* @__PURE__ */ react.createElement(Icon, {
+  }, rest), contextProps)), /* @__PURE__ */ compat_module["default"].createElement(Icon, {
     indeterminate,
     className: classes.icon
   })));
@@ -11131,7 +11678,7 @@ function CheckboxesWidget_CheckboxesWidget(props) {
     });
     onChange(normalized);
   };
-  return /*#__PURE__*/react.createElement(Checkbox.Group, {
+  return /*#__PURE__*/compat_module["default"].createElement(Checkbox.Group, {
     id: id,
     label: label,
     description: schema === null || schema === void 0 ? void 0 : schema.description,
@@ -11143,12 +11690,12 @@ function CheckboxesWidget_CheckboxesWidget(props) {
     onChange: _onChange,
     size: "sm",
     spacing: "sm"
-  }, /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     mt: "xs",
     spacing: "xs"
   }, enumOptions.map(function (option, index) {
     var itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) != -1;
-    return /*#__PURE__*/react.createElement(Checkbox, {
+    return /*#__PURE__*/compat_module["default"].createElement(Checkbox, {
       key: option.value,
       label: option.label,
       value: option.value ? String(option.value) : null,
@@ -11167,9 +11714,9 @@ CheckboxesWidget_CheckboxesWidget.defaultProps = {
 ;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Chip/ChipGroup.context.js
 
 
-const ChipGroupContext = (0,react.createContext)(null);
+const ChipGroupContext = (0,compat_module.createContext)(null);
 const ChipGroupProvider = ChipGroupContext.Provider;
-const useChipGroup = () => (0,react.useContext)(ChipGroupContext);
+const useChipGroup = () => (0,compat_module.useContext)(ChipGroupContext);
 
 
 //# sourceMappingURL=ChipGroup.context.js.map
@@ -11198,7 +11745,7 @@ function ChipGroup(props) {
       setValue(val);
     }
   };
-  return /* @__PURE__ */ react.createElement(ChipGroupProvider, {
+  return /* @__PURE__ */ compat_module["default"].createElement(ChipGroupProvider, {
     value: { isChipSelected, onChange: handleChange, multiple }
   }, children);
 }
@@ -11457,7 +12004,7 @@ const Chip_defaultProps = {
   radius: "xl",
   variant: "outline"
 };
-const Chip = (0,react.forwardRef)((props, ref) => {
+const Chip = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Chip", Chip_defaultProps, props), {
     radius,
     type,
@@ -11515,11 +12062,11 @@ const Chip = (0,react.forwardRef)((props, ref) => {
     type: ctx.multiple ? "checkbox" : "radio"
   } : {};
   const _checked = contextProps.checked || _value;
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, Chip_spreadValues(Chip_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, Chip_spreadValues(Chip_spreadValues({
     className: cx(classes.root, className),
     style,
     sx
-  }, systemStyles), wrapperProps), /* @__PURE__ */ react.createElement("input", Chip_spreadValues(Chip_spreadValues({
+  }, systemStyles), wrapperProps), /* @__PURE__ */ compat_module["default"].createElement("input", Chip_spreadValues(Chip_spreadValues({
     type,
     className: classes.input,
     checked: _checked,
@@ -11528,14 +12075,14 @@ const Chip = (0,react.forwardRef)((props, ref) => {
     disabled,
     ref,
     value
-  }, contextProps), rest)), /* @__PURE__ */ react.createElement("label", {
+  }, contextProps), rest)), /* @__PURE__ */ compat_module["default"].createElement("label", {
     htmlFor: uuid,
     "data-checked": _checked || void 0,
     "data-disabled": disabled || void 0,
     className: classes.label
-  }, _checked && /* @__PURE__ */ react.createElement("span", {
+  }, _checked && /* @__PURE__ */ compat_module["default"].createElement("span", {
     className: classes.iconWrapper
-  }, /* @__PURE__ */ react.createElement(CheckIcon, {
+  }, /* @__PURE__ */ compat_module["default"].createElement(CheckIcon, {
     className: classes.checkIcon
   })), children));
 });
@@ -11586,11 +12133,11 @@ function ChipsWidget(props) {
     });
     onChange(normalized);
   };
-  return /*#__PURE__*/react.createElement(Input/* Input */.p.Wrapper, {
+  return /*#__PURE__*/compat_module["default"].createElement(Input/* Input */.p.Wrapper, {
     label: label,
     description: schema === null || schema === void 0 ? void 0 : schema.description,
     required: required
-  }, /*#__PURE__*/react.createElement(Chip.Group, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Chip.Group, {
     required: required,
     value: multiple ? value && (value === null || value === void 0 ? void 0 : value.length) ? value.map(function (item) {
       return String(item);
@@ -11598,14 +12145,14 @@ function ChipsWidget(props) {
     onChange: _onChange,
     size: "sm",
     multiple: multiple
-  }, /*#__PURE__*/react.createElement(Group/* Group */.Y, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
     spacing: "xs",
     style: {
       marginTop: 5
     }
   }, enumOptions.map(function (option, index) {
     var itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) != -1;
-    return /*#__PURE__*/react.createElement(Chip, {
+    return /*#__PURE__*/compat_module["default"].createElement(Chip, {
       key: option.value,
       value: option.value ? String(option.value) : null,
       disabled: disabled || itemDisabled || readonly,
@@ -11653,12 +12200,12 @@ var RadioIcon_objRest = (source, exclude) => {
 };
 function RadioIcon(props) {
   const _a = props, { width, height, style } = _a, others = RadioIcon_objRest(_a, ["width", "height", "style"]);
-  return /* @__PURE__ */ react.createElement("svg", RadioIcon_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement("svg", RadioIcon_spreadValues({
     xmlns: "http://www.w3.org/2000/svg",
     fill: "none",
     viewBox: "0 0 5 5",
     style: RadioIcon_spreadValues({ width, height }, style)
-  }, others), /* @__PURE__ */ react.createElement("path", {
+  }, others), /* @__PURE__ */ compat_module["default"].createElement("path", {
     fill: "currentColor",
     d: "M0 2.5a2.5 2.5 0 115 0 2.5 2.5 0 01-5 0z"
   }));
@@ -11670,9 +12217,9 @@ function RadioIcon(props) {
 ;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Radio/RadioGroup.context.js
 
 
-const RadioGroupContext = (0,react.createContext)(null);
+const RadioGroupContext = (0,compat_module.createContext)(null);
 const RadioGroupProvider = RadioGroupContext.Provider;
-const useRadioGroupContext = () => (0,react.useContext)(RadioGroupContext);
+const useRadioGroupContext = () => (0,compat_module.useContext)(RadioGroupContext);
 
 
 //# sourceMappingURL=RadioGroup.context.js.map
@@ -11715,7 +12262,7 @@ var RadioGroup_objRest = (source, exclude) => {
 const RadioGroup_defaultProps = {
   size: "sm"
 };
-const RadioGroup = (0,react.forwardRef)((props, ref) => {
+const RadioGroup = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("RadioGroup", RadioGroup_defaultProps, props), {
     children,
     value,
@@ -11743,9 +12290,9 @@ const RadioGroup = (0,react.forwardRef)((props, ref) => {
     onChange
   });
   const handleChange = (event) => setValue(event.currentTarget.value);
-  return /* @__PURE__ */ react.createElement(RadioGroupProvider, {
+  return /* @__PURE__ */ compat_module["default"].createElement(RadioGroupProvider, {
     value: { value: _value, onChange: handleChange, size, name: _name }
-  }, /* @__PURE__ */ react.createElement(Input/* Input */.p.Wrapper, RadioGroup_spreadValues(RadioGroup_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p.Wrapper, RadioGroup_spreadValues(RadioGroup_spreadValues({
     labelElement: "div",
     size,
     __staticSelector: "RadioGroup",
@@ -11899,7 +12446,7 @@ const Radio_defaultProps = {
   size: "sm",
   labelPosition: "right"
 };
-const Radio = (0,react.forwardRef)((props, ref) => {
+const Radio = (0,compat_module.forwardRef)((props, ref) => {
   var _b, _c;
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Radio", Radio_defaultProps, props), {
     className,
@@ -11953,7 +12500,7 @@ const Radio = (0,react.forwardRef)((props, ref) => {
     name: (_c = rest.name) != null ? _c : ctx.name,
     onChange: ctx.onChange
   } : {};
-  return /* @__PURE__ */ react.createElement(InlineInput/* InlineInput */.I, Radio_spreadValues(Radio_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(InlineInput, Radio_spreadValues(Radio_spreadValues({
     className,
     sx,
     style,
@@ -11970,15 +12517,15 @@ const Radio = (0,react.forwardRef)((props, ref) => {
     unstyled,
     "data-checked": contextProps.checked || void 0,
     variant
-  }, systemStyles), wrapperProps), /* @__PURE__ */ react.createElement("div", {
+  }, systemStyles), wrapperProps), /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.inner
-  }, /* @__PURE__ */ react.createElement("input", Radio_spreadValues(Radio_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement("input", Radio_spreadValues(Radio_spreadValues({
     ref,
     className: classes.radio,
     type: "radio",
     id: uuid,
     disabled
-  }, rest), contextProps)), /* @__PURE__ */ react.createElement(Icon, {
+  }, rest), contextProps)), /* @__PURE__ */ compat_module["default"].createElement(Icon, {
     className: classes.icon,
     "aria-hidden": true
   })));
@@ -12014,7 +12561,7 @@ function RadioWidget_RadioWidget(props) {
   };
   // checked={checked} has been moved above name={name}, As mentioned in #349;
   // this is a temporary fix for radio button rendering bug in React, facebook/react#7630.
-  return /*#__PURE__*/react.createElement(Radio.Group, {
+  return /*#__PURE__*/compat_module["default"].createElement(Radio.Group, {
     id: id,
     label: label,
     description: schema === null || schema === void 0 ? void 0 : schema.description,
@@ -12022,12 +12569,12 @@ function RadioWidget_RadioWidget(props) {
     required: required,
     value: value ? String(value) : null,
     onChange: _onChange
-  }, /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     mt: "xs",
     spacing: "xs"
   }, enumOptions.map(function (option, i) {
     var itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) != -1;
-    return /*#__PURE__*/react.createElement(Radio, {
+    return /*#__PURE__*/compat_module["default"].createElement(Radio, {
       key: option.value,
       label: option.label,
       value: option.value ? String(option.value) : null,
@@ -12166,11 +12713,11 @@ function DefaultValue(_a) {
     "unstyled"
   ]);
   const { classes, cx } = DefaultValue_styles({ disabled, readOnly, radius }, { name: "MultiSelect", classNames, styles, unstyled, size, variant });
-  return /* @__PURE__ */ react.createElement("div", DefaultValue_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement("div", DefaultValue_spreadValues({
     className: cx(classes.defaultValue, className)
-  }, others), /* @__PURE__ */ react.createElement("span", {
+  }, others), /* @__PURE__ */ compat_module["default"].createElement("span", {
     className: classes.defaultValueLabel
-  }, label), !disabled && !readOnly && /* @__PURE__ */ react.createElement(CloseButton/* CloseButton */.J, {
+  }, label), !disabled && !readOnly && /* @__PURE__ */ compat_module["default"].createElement(CloseButton/* CloseButton */.J, {
     "aria-hidden": true,
     onMouseDown: onRemove,
     size: DefaultValue_buttonSizes[size],
@@ -12429,7 +12976,7 @@ const MultiSelect_defaultProps = {
   positionDependencies: [],
   dropdownPosition: "flip"
 };
-const MultiSelect = (0,react.forwardRef)((props, ref) => {
+const MultiSelect = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("MultiSelect", MultiSelect_defaultProps, props), {
     className,
     style,
@@ -12573,19 +13120,19 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
   ]);
   const { classes, cx, theme } = MultiSelect_styles({ invalid: !!error }, { name: "MultiSelect", classNames, styles, unstyled, size, variant });
   const { systemStyles, rest } = (0,extract_system_styles/* extractSystemStyles */.z)(others);
-  const inputRef = (0,react.useRef)();
-  const itemsRefs = (0,react.useRef)({});
+  const inputRef = (0,compat_module.useRef)();
+  const itemsRefs = (0,compat_module.useRef)({});
   const uuid = (0,use_id/* useId */.B)(id);
-  const [dropdownOpened, setDropdownOpened] = (0,react.useState)(initiallyOpened);
-  const [_hovered, setHovered] = (0,react.useState)(-1);
-  const [direction, setDirection] = (0,react.useState)("column");
+  const [dropdownOpened, setDropdownOpened] = (0,compat_module.useState)(initiallyOpened);
+  const [_hovered, setHovered] = (0,compat_module.useState)(-1);
+  const [direction, setDirection] = (0,compat_module.useState)("column");
   const [_searchValue, handleSearchChange] = (0,use_uncontrolled/* useUncontrolled */.Z)({
     value: searchValue,
     defaultValue: "",
     finalValue: void 0,
     onChange: onSearchChange
   });
-  const [IMEOpen, setIMEOpen] = (0,react.useState)(false);
+  const [IMEOpen, setIMEOpen] = (0,compat_module.useState)(false);
   const { scrollIntoView, targetRef, scrollableRef } = (0,use_scroll_into_view/* useScrollIntoView */.q)({
     duration: 0,
     offset: 5,
@@ -12602,7 +13149,7 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
     finalValue: [],
     onChange
   });
-  const valuesOverflow = (0,react.useRef)(!!maxSelectedValues && maxSelectedValues < _value.length);
+  const valuesOverflow = (0,compat_module.useRef)(!!maxSelectedValues && maxSelectedValues < _value.length);
   const handleValueRemove = (_val) => {
     if (!readOnly) {
       const newValue = _value.filter((val) => val !== _val);
@@ -12821,7 +13368,7 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
       };
     }
     return selectedItem;
-  }).filter((val) => !!val).map((item, index) => /* @__PURE__ */ react.createElement(Value, MultiSelect_spreadProps(MultiSelect_spreadValues({}, item), {
+  }).filter((val) => !!val).map((item, index) => /* @__PURE__ */ compat_module["default"].createElement(Value, MultiSelect_spreadProps(MultiSelect_spreadValues({}, item), {
     variant,
     disabled,
     className: classes.value,
@@ -12853,7 +13400,7 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
     const handler = shouldRenderDropdown ? onDropdownOpen : onDropdownClose;
     typeof handler === "function" && handler();
   }, [shouldRenderDropdown]);
-  return /* @__PURE__ */ react.createElement(Input/* Input */.p.Wrapper, MultiSelect_spreadValues(MultiSelect_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p.Wrapper, MultiSelect_spreadValues(MultiSelect_spreadValues({
     required,
     id: uuid,
     label,
@@ -12874,7 +13421,7 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
     unstyled,
     withAsterisk,
     variant
-  }, systemStyles), wrapperProps), /* @__PURE__ */ react.createElement(SelectPopover/* SelectPopover */.k, {
+  }, systemStyles), wrapperProps), /* @__PURE__ */ compat_module["default"].createElement(SelectPopover/* SelectPopover */.k, {
     opened: shouldRenderDropdown,
     transitionProps,
     shadow: "sm",
@@ -12890,7 +13437,7 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
     styles,
     unstyled,
     variant
-  }, /* @__PURE__ */ react.createElement(SelectPopover/* SelectPopover */.k.Target, null, /* @__PURE__ */ react.createElement("div", {
+  }, /* @__PURE__ */ compat_module["default"].createElement(SelectPopover/* SelectPopover */.k.Target, null, /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.wrapper,
     role: "combobox",
     "aria-haspopup": "listbox",
@@ -12899,13 +13446,13 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
     "aria-expanded": dropdownOpened,
     onMouseLeave: () => setHovered(-1),
     tabIndex: -1
-  }, /* @__PURE__ */ react.createElement("input", {
+  }, /* @__PURE__ */ compat_module["default"].createElement("input", {
     type: "hidden",
     name,
     value: _value.join(","),
     form,
     disabled
-  }), /* @__PURE__ */ react.createElement(Input/* Input */.p, MultiSelect_spreadValues({
+  }), /* @__PURE__ */ compat_module["default"].createElement(Input/* Input */.p, MultiSelect_spreadValues({
     __staticSelector: "MultiSelect",
     style: { overflow: "hidden" },
     component: "div",
@@ -12939,10 +13486,10 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
     disabled,
     clearButtonProps,
     readOnly
-  })), /* @__PURE__ */ react.createElement("div", {
+  })), /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.values,
     "data-clearable": clearable || void 0
-  }, selectedItems, /* @__PURE__ */ react.createElement("input", MultiSelect_spreadValues({
+  }, selectedItems, /* @__PURE__ */ compat_module["default"].createElement("input", MultiSelect_spreadValues({
     ref: (0,use_merged_ref/* useMergedRef */.p)(ref, inputRef),
     type: "search",
     id: uuid,
@@ -12963,7 +13510,7 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
     autoComplete: "off",
     onCompositionStart: () => setIMEOpen(true),
     onCompositionEnd: () => setIMEOpen(false)
-  }, rest)))))), /* @__PURE__ */ react.createElement(SelectPopover/* SelectPopover */.k.Dropdown, {
+  }, rest)))))), /* @__PURE__ */ compat_module["default"].createElement(SelectPopover/* SelectPopover */.k.Dropdown, {
     component: dropdownComponent || SelectScrollArea/* SelectScrollArea */.F,
     maxHeight: maxDropdownHeight,
     direction,
@@ -12972,7 +13519,7 @@ const MultiSelect = (0,react.forwardRef)((props, ref) => {
     __staticSelector: "MultiSelect",
     classNames,
     styles
-  }, /* @__PURE__ */ react.createElement(SelectItems/* SelectItems */.p, {
+  }, /* @__PURE__ */ compat_module["default"].createElement(SelectItems/* SelectItems */.p, {
     data: filteredData,
     hovered,
     classNames,
@@ -13074,7 +13621,7 @@ var SelectWidget_SelectWidget = function SelectWidget(_ref) {
     rawErrors = _ref$rawErrors === void 0 ? [] : _ref$rawErrors;
   var enumOptions = options.enumOptions,
     enumDisabled = options.enumDisabled;
-  var _useState = (0,react.useState)([]),
+  var _useState = (0,compat_module.useState)([]),
     data = _useState[0],
     setData = _useState[1];
   var emptyValue = multiple ? [] : "";
@@ -13085,12 +13632,12 @@ var SelectWidget_SelectWidget = function SelectWidget(_ref) {
       return value;
     }
   }
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     setData(processOptions(schema, enumOptions, enumDisabled));
   }, [enumOptions, enumDisabled]);
   var description = schema.description;
   var Component = multiple ? MultiSelect : Select/* Select */.l6;
-  return /*#__PURE__*/react.createElement(Component, {
+  return /*#__PURE__*/compat_module["default"].createElement(Component, {
     id: id,
     label: label,
     value: typeof value === "undefined" ? emptyValue : multiple ? value.map(function (item) {
@@ -13252,7 +13799,7 @@ var Notification_objRest = (source, exclude) => {
 const Notification_defaultProps = {
   withCloseButton: true
 };
-const Notification = (0,react.forwardRef)((props, ref) => {
+const Notification = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Notification", Notification_defaultProps, props), {
     className,
     color,
@@ -13287,29 +13834,29 @@ const Notification = (0,react.forwardRef)((props, ref) => {
     "variant"
   ]);
   const { classes, cx } = Notification_styles({ color, radius, withTitle: !!title }, { name: "Notification", classNames, styles, unstyled, variant });
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, Notification_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, Notification_spreadValues({
     className: cx(classes.root, className),
     "data-with-icon": !!icon || loading || void 0,
     "data-with-border": withBorder || void 0,
     role: "alert",
     ref
-  }, others), icon && !loading && /* @__PURE__ */ react.createElement("div", {
+  }, others), icon && !loading && /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.icon
-  }, icon), loading && /* @__PURE__ */ react.createElement(Loader/* Loader */.a, {
+  }, icon), loading && /* @__PURE__ */ compat_module["default"].createElement(Loader/* Loader */.a, {
     size: 28,
     color,
     className: classes.loader
-  }), /* @__PURE__ */ react.createElement("div", {
+  }), /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.body
-  }, title && /* @__PURE__ */ react.createElement(Text/* Text */.E, {
+  }, title && /* @__PURE__ */ compat_module["default"].createElement(Text/* Text */.E, {
     className: classes.title,
     size: "sm",
     weight: 500
-  }, title), /* @__PURE__ */ react.createElement(Text/* Text */.E, {
+  }, title), /* @__PURE__ */ compat_module["default"].createElement(Text/* Text */.E, {
     color: "dimmed",
     className: classes.description,
     size: "sm"
-  }, children)), withCloseButton && /* @__PURE__ */ react.createElement(CloseButton/* CloseButton */.J, Notification_spreadProps(Notification_spreadValues({
+  }, children)), withCloseButton && /* @__PURE__ */ compat_module["default"].createElement(CloseButton/* CloseButton */.J, Notification_spreadProps(Notification_spreadValues({
     iconSize: 16,
     color: "gray"
   }, closeButtonProps), {
@@ -13340,7 +13887,7 @@ var insane_default = /*#__PURE__*/__webpack_require__.n(insane);
       }
     } : _ref$options;
   var sanitized = insane_default()(html, options);
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     dangerouslySetInnerHTML: {
       __html: sanitized
     }
@@ -13366,7 +13913,7 @@ var HelpWidget_CheckboxWidget = function CheckboxWidget(props) {
     onBlur = props.onBlur,
     onFocus = props.onFocus;
   var desc = label || schema.description;
-  return (schema === null || schema === void 0 ? void 0 : schema.format) === "group" ? /*#__PURE__*/react.createElement(Notification, {
+  return (schema === null || schema === void 0 ? void 0 : schema.format) === "group" ? /*#__PURE__*/compat_module["default"].createElement(Notification, {
     title: schema === null || schema === void 0 ? void 0 : schema.title,
     withCloseButton: false,
     styles: {
@@ -13387,9 +13934,9 @@ var HelpWidget_CheckboxWidget = function CheckboxWidget(props) {
         marginBottom: 0
       }
     }
-  }, /*#__PURE__*/react.createElement(SanatizeHtml, {
+  }, /*#__PURE__*/compat_module["default"].createElement(SanatizeHtml, {
     html: schema === null || schema === void 0 ? void 0 : schema.description
-  })) : /*#__PURE__*/react.createElement(Box/* Box */.a, {
+  })) : /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
     sx: {
       fontWeight: 300,
       lineHeight: 1.4,
@@ -13401,7 +13948,7 @@ var HelpWidget_CheckboxWidget = function CheckboxWidget(props) {
         marginBottom: 0
       }
     }
-  }, /*#__PURE__*/react.createElement(SanatizeHtml, {
+  }, /*#__PURE__*/compat_module["default"].createElement(SanatizeHtml, {
     html: schema === null || schema === void 0 ? void 0 : schema.description
   }));
 };
@@ -13518,7 +14065,7 @@ var ListItem_objRest = (source, exclude) => {
   return target;
 };
 const ListItem_defaultProps = {};
-const ListItem = (0,react.forwardRef)((props, ref) => {
+const ListItem = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("ListItem", ListItem_defaultProps, props), { className, children, icon } = _a, others = ListItem_objRest(_a, ["className", "children", "icon"]);
   const {
     icon: ctxIcon,
@@ -13534,16 +14081,16 @@ const ListItem = (0,react.forwardRef)((props, ref) => {
   } = useListContext();
   const _icon = icon || ctxIcon;
   const { classes, cx } = ListItem_styles({ withPadding, listStyleType, center, spacing }, { classNames, styles, unstyled, name: "List", variant, size });
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, ListItem_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, ListItem_spreadValues({
     component: "li",
     className: cx(classes.item, className),
     "data-with-icon": !!_icon || void 0,
     ref
-  }, others), /* @__PURE__ */ react.createElement("div", {
+  }, others), /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.itemWrapper
-  }, _icon && /* @__PURE__ */ react.createElement("span", {
+  }, _icon && /* @__PURE__ */ compat_module["default"].createElement("span", {
     className: classes.itemIcon
-  }, _icon), /* @__PURE__ */ react.createElement("span", null, children)));
+  }, _icon), /* @__PURE__ */ compat_module["default"].createElement("span", null, children)));
 });
 ListItem.displayName = "@mantine/core/ListItem";
 
@@ -13628,7 +14175,7 @@ const List_defaultProps = {
   size: "md",
   spacing: 0
 };
-const List = (0,react.forwardRef)((props, ref) => {
+const List = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("List", List_defaultProps, props), {
     children,
     type,
@@ -13659,7 +14206,7 @@ const List = (0,react.forwardRef)((props, ref) => {
     "variant"
   ]);
   const { classes, cx } = List_styles({ withPadding, listStyleType, center, spacing }, { classNames, styles, name: "List", unstyled, size, variant });
-  return /* @__PURE__ */ react.createElement(ListProvider, {
+  return /* @__PURE__ */ compat_module["default"].createElement(ListProvider, {
     value: {
       spacing,
       center,
@@ -13672,7 +14219,7 @@ const List = (0,react.forwardRef)((props, ref) => {
       unstyled,
       variant
     }
-  }, /* @__PURE__ */ react.createElement(Box/* Box */.a, List_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, List_spreadValues({
     component: type === "unordered" ? "ul" : "ol",
     className: cx(classes.root, className),
     ref
@@ -13708,9 +14255,9 @@ var WrapIfAdditional_WrapIfAdditional = function WrapIfAdditional(_ref) {
     var target = _ref2.target;
     return onKeyChange(target.value);
   };
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     key: id + "-key"
-  }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("label", null, keyLabel), /*#__PURE__*/react.createElement(widgets_TextWidget, {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", null, /*#__PURE__*/compat_module["default"].createElement("div", null, /*#__PURE__*/compat_module["default"].createElement("label", null, keyLabel), /*#__PURE__*/compat_module["default"].createElement(widgets_TextWidget, {
     required: required,
     defaultValue: label,
     disabled: disabled || readonly,
@@ -13718,7 +14265,7 @@ var WrapIfAdditional_WrapIfAdditional = function WrapIfAdditional(_ref) {
     name: id + "-key",
     onBlur: !readonly ? handleBlur : undefined,
     type: "text"
-  }))), /*#__PURE__*/react.createElement("div", null, children), /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("button", {
+  }))), /*#__PURE__*/compat_module["default"].createElement("div", null, children), /*#__PURE__*/compat_module["default"].createElement("div", null, /*#__PURE__*/compat_module["default"].createElement("button", {
     variant: "danger",
     icon: "remove",
     tabIndex: -1,
@@ -13747,7 +14294,7 @@ var FieldTemplate = function FieldTemplate(_ref) {
     readonly = _ref.readonly,
     required = _ref.required,
     schema = _ref.schema;
-  return /*#__PURE__*/react.createElement(FieldTemplate_WrapIfAdditional, {
+  return /*#__PURE__*/compat_module["default"].createElement(FieldTemplate_WrapIfAdditional, {
     classNames: classNames,
     disabled: disabled,
     id: id,
@@ -13757,13 +14304,13 @@ var FieldTemplate = function FieldTemplate(_ref) {
     readonly: readonly,
     required: required,
     schema: schema
-  }, /*#__PURE__*/react.createElement(Box/* Box */.a, null, children, rawErrors.length > 0 && /*#__PURE__*/react.createElement(List, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, null, children, rawErrors.length > 0 && /*#__PURE__*/compat_module["default"].createElement(List, {
     listStyleType: "none",
     sx: {
       marginTop: 5
     }
   }, rawErrors.map(function (error) {
-    return /*#__PURE__*/react.createElement(List.Item, {
+    return /*#__PURE__*/compat_module["default"].createElement(List.Item, {
       key: error,
       sx: function sx(theme) {
         return {
@@ -13772,7 +14319,7 @@ var FieldTemplate = function FieldTemplate(_ref) {
         };
       }
     }, error);
-  })), rawHelp && !(rawErrors === null || rawErrors === void 0 ? void 0 : rawErrors.length) && /*#__PURE__*/react.createElement(Text/* Text */.E, {
+  })), rawHelp && !(rawErrors === null || rawErrors === void 0 ? void 0 : rawErrors.length) && /*#__PURE__*/compat_module["default"].createElement(Text/* Text */.E, {
     size: "xs",
     id: id,
     sx: function sx(theme) {
@@ -13796,15 +14343,15 @@ function LazyCollapse_extends() { LazyCollapse_extends = Object.assign ? Object.
 
 
 var LazyCollapse = function LazyCollapse(props) {
-  var _useState = (0,react.useState)(!props["in"]),
+  var _useState = (0,compat_module.useState)(!props["in"]),
     isFirstTimeClose = _useState[0],
     setFirstTimeClose = _useState[1];
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     if (props["in"] === true) {
       setFirstTimeClose(false);
     }
   }, [props["in"]]);
-  return /*#__PURE__*/react.createElement(Collapse/* Collapse */.S, isFirstTimeClose ? LazyCollapse_extends({}, props, {
+  return /*#__PURE__*/compat_module["default"].createElement(Collapse/* Collapse */.S, isFirstTimeClose ? LazyCollapse_extends({}, props, {
     children: undefined
   }) : props);
 };
@@ -13816,7 +14363,7 @@ var RawObjectFieldTemplate = function RawObjectFieldTemplate(_ref) {
   var titleComponent = _ref.titleComponent,
     descriptionComponent = _ref.descriptionComponent,
     children = _ref.children;
-  return /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  return /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     spacing: "md",
     sx: function sx(theme) {
       return {
@@ -13837,7 +14384,7 @@ function AlternateBox_objectWithoutPropertiesLoose(source, excluded) { if (sourc
 var AlternateBox = function AlternateBox(_ref) {
   var children = _ref.children,
     props = AlternateBox_objectWithoutPropertiesLoose(_ref, AlternateBox_excluded);
-  return /*#__PURE__*/react.createElement(Box/* Box */.a, AlternateBox_extends({
+  return /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, AlternateBox_extends({
     component: "fieldset",
     sx: function sx(theme) {
       return {
@@ -13879,10 +14426,10 @@ var CollapseObjectFieldTemplate = function CollapseObjectFieldTemplate(_ref) {
     _ref$isCollapsible = _ref.isCollapsible,
     isCollapsible = _ref$isCollapsible === void 0 ? true : _ref$isCollapsible,
     props = CollapseObjectFieldTemplate_objectWithoutPropertiesLoose(_ref, CollapseObjectFieldTemplate_excluded);
-  var _useState = (0,react.useState)(!initialState || initialState === "opened"),
+  var _useState = (0,compat_module.useState)(!initialState || initialState === "opened"),
     opened = _useState[0],
     setOpened = _useState[1];
-  return /*#__PURE__*/react.createElement(AlternateBox_AlternateBox, null, titleComponent && /*#__PURE__*/react.createElement(Group/* Group */.Y, {
+  return /*#__PURE__*/compat_module["default"].createElement(AlternateBox_AlternateBox, null, titleComponent && /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
     noWrap: true,
     spacing: "sm",
     onClick: function onClick() {
@@ -13896,11 +14443,11 @@ var CollapseObjectFieldTemplate = function CollapseObjectFieldTemplate(_ref) {
         cursor: isCollapsible ? "pointer" : undefined
       };
     }
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     style: {
       paddingRight: isCollapsible ? 30 : 0
     }
-  }, /*#__PURE__*/react.createElement(Text/* Text */.E, null, titleComponent), descriptionComponent && /*#__PURE__*/react.createElement(Text/* Text */.E, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Text/* Text */.E, null, titleComponent), descriptionComponent && /*#__PURE__*/compat_module["default"].createElement(Text/* Text */.E, {
     size: "sm",
     color: "gray",
     weight: 400,
@@ -13908,29 +14455,29 @@ var CollapseObjectFieldTemplate = function CollapseObjectFieldTemplate(_ref) {
       textOverflow: "ellipsis",
       overflow: "hidden"
     }
-  }, descriptionComponent)), isCollapsible && /*#__PURE__*/react.createElement(UnstyledButton/* UnstyledButton */.N, {
+  }, descriptionComponent)), isCollapsible && /*#__PURE__*/compat_module["default"].createElement(UnstyledButton/* UnstyledButton */.N, {
     variant: "subtle",
     sx: {
       marginLeft: "auto",
       position: "absolute",
       right: 10
     }
-  }, /*#__PURE__*/react.createElement(ChevronIcon, {
+  }, /*#__PURE__*/compat_module["default"].createElement(ChevronIcon, {
     style: CollapseObjectFieldTemplate_extends({
       transition: "transform .2s ease-in-out"
     }, opened ? {} : {
       transform: "rotate(-90deg)"
     })
-  }))), isCollapsible ? /*#__PURE__*/react.createElement(LazyCollapse_LazyCollapse, {
+  }))), isCollapsible ? /*#__PURE__*/compat_module["default"].createElement(LazyCollapse_LazyCollapse, {
     "in": opened
-  }, children ? /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, children ? /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     spacing: "md",
     sx: function sx(theme) {
       return {
         padding: (isCollapsible ? 0 : theme.spacing.md) + " " + theme.spacing.md + " " + theme.spacing.md + " " + theme.spacing.md
       };
     }
-  }, children) : null) : children ? /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, children) : null) : children ? /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     spacing: "md",
     sx: function sx(theme) {
       return {
@@ -13946,13 +14493,13 @@ var CollapseObjectFieldTemplate = function CollapseObjectFieldTemplate(_ref) {
 };
 /* harmony default export */ const templates_CollapseObjectFieldTemplate = (CollapseObjectFieldTemplate);
 function ChevronIcon(props) {
-  return /*#__PURE__*/react.createElement("svg", CollapseObjectFieldTemplate_extends({
+  return /*#__PURE__*/compat_module["default"].createElement("svg", CollapseObjectFieldTemplate_extends({
     viewBox: "0 0 15 15",
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg",
     width: 16,
     height: 16
-  }, props), /*#__PURE__*/react.createElement("path", {
+  }, props), /*#__PURE__*/compat_module["default"].createElement("path", {
     d: "M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z",
     fill: "currentColor",
     fillRule: "evenodd",
@@ -13964,7 +14511,7 @@ function GroupObjectFieldTemplate_extends() { GroupObjectFieldTemplate_extends =
 
 
 var GroupObjectFieldTemplate = function GroupObjectFieldTemplate(props) {
-  return /*#__PURE__*/react.createElement(templates_CollapseObjectFieldTemplate, GroupObjectFieldTemplate_extends({}, props, {
+  return /*#__PURE__*/compat_module["default"].createElement(templates_CollapseObjectFieldTemplate, GroupObjectFieldTemplate_extends({}, props, {
     isCollapsible: false,
     initialState: "opened"
   }));
@@ -14434,7 +14981,7 @@ function assignRef(ref, value) {
  * @returns {MutableRefObject}
  */
 function useCallbackRef(initialValue, callback) {
-    var ref = (0,react.useState)(function () { return ({
+    var ref = (0,compat_module.useState)(function () { return ({
         // value
         value: initialValue,
         // last callback
@@ -14482,7 +15029,7 @@ function useMergeRefs(refs, defaultValue) {
         return refs.forEach(function (ref) { return assignRef(ref, newValue); });
     });
     // handle refs changes - added or removed
-    react.useLayoutEffect(function () {
+    compat_module.useLayoutEffect(function () {
         var oldValue = currentValues.get(callbackRef);
         if (oldValue) {
             var prevRefs_1 = new Set(oldValue);
@@ -14600,9 +15147,9 @@ var nothing = function () {
 /**
  * Removes scrollbar from the page and contain the scroll within the Lock
  */
-var RemoveScroll = react.forwardRef(function (props, parentRef) {
-    var ref = react.useRef(null);
-    var _a = react.useState({
+var RemoveScroll = compat_module.forwardRef(function (props, parentRef) {
+    var ref = compat_module.useRef(null);
+    var _a = compat_module.useState({
         onScrollCapture: nothing,
         onWheelCapture: nothing,
         onTouchMoveCapture: nothing,
@@ -14611,9 +15158,9 @@ var RemoveScroll = react.forwardRef(function (props, parentRef) {
     var SideCar = sideCar;
     var containerRef = useMergeRefs([ref, parentRef]);
     var containerProps = __assign(__assign({}, rest), callbacks);
-    return (react.createElement(react.Fragment, null,
-        enabled && (react.createElement(SideCar, { sideCar: effectCar, removeScrollBar: removeScrollBar, shards: shards, noIsolation: noIsolation, inert: inert, setCallbacks: setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref, gapMode: gapMode })),
-        forwardProps ? (react.cloneElement(react.Children.only(children), __assign(__assign({}, containerProps), { ref: containerRef }))) : (react.createElement(Container, __assign({}, containerProps, { className: className, ref: containerRef }), children))));
+    return (compat_module.createElement(compat_module.Fragment, null,
+        enabled && (compat_module.createElement(SideCar, { sideCar: effectCar, removeScrollBar: removeScrollBar, shards: shards, noIsolation: noIsolation, inert: inert, setCallbacks: setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref, gapMode: gapMode })),
+        forwardProps ? (compat_module.cloneElement(compat_module.Children.only(children), __assign(__assign({}, containerProps), { ref: containerRef }))) : (compat_module.createElement(Container, __assign({}, containerProps, { className: className, ref: containerRef }), children))));
 });
 RemoveScroll.defaultProps = {
     enabled: true,
@@ -14638,7 +15185,7 @@ var SideCar = function (_a) {
     if (!Target) {
         throw new Error('Sidecar medium not found');
     }
-    return react.createElement(Target, __assign({}, rest));
+    return compat_module.createElement(Target, __assign({}, rest));
 };
 SideCar.isSideCarExport = true;
 function exportSidecar(medium, exported) {
@@ -14726,7 +15273,7 @@ var stylesheetSingleton = function () {
 var styleHookSingleton = function () {
     var sheet = stylesheetSingleton();
     return function (styles, isDynamic) {
-        react.useEffect(function () {
+        compat_module.useEffect(function () {
             sheet.add(styles);
             return function () {
                 sheet.remove();
@@ -14821,14 +15368,14 @@ var RemoveScrollBar = function (props) {
      however it will be used only by the "first" invocation
      due to singleton nature of <Style
      */
-    var gap = react.useMemo(function () { return getGapWidth(gapMode); }, [gapMode]);
-    react.useEffect(function () {
+    var gap = compat_module.useMemo(function () { return getGapWidth(gapMode); }, [gapMode]);
+    compat_module.useEffect(function () {
         document.body.setAttribute(lockAttribute, '');
         return function () {
             document.body.removeAttribute(lockAttribute);
         };
     }, []);
-    return react.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? '!important' : '') });
+    return compat_module.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? '!important' : '') });
 };
 
 ;// CONCATENATED MODULE: ./node_modules/react-remove-scroll-bar/dist/es2015/index.js
@@ -14983,16 +15530,16 @@ var generateStyle = function (id) { return "\n  .block-interactivity-".concat(id
 var idCounter = 0;
 var lockStack = [];
 function RemoveScrollSideCar(props) {
-    var shouldPreventQueue = react.useRef([]);
-    var touchStartRef = react.useRef([0, 0]);
-    var activeAxis = react.useRef();
-    var id = react.useState(idCounter++)[0];
-    var Style = react.useState(styleSingleton)[0];
-    var lastProps = react.useRef(props);
-    react.useEffect(function () {
+    var shouldPreventQueue = compat_module.useRef([]);
+    var touchStartRef = compat_module.useRef([0, 0]);
+    var activeAxis = compat_module.useRef();
+    var id = compat_module.useState(idCounter++)[0];
+    var Style = compat_module.useState(styleSingleton)[0];
+    var lastProps = compat_module.useRef(props);
+    compat_module.useEffect(function () {
         lastProps.current = props;
     }, [props]);
-    react.useEffect(function () {
+    compat_module.useEffect(function () {
         if (props.inert) {
             document.body.classList.add("block-interactivity-".concat(id));
             var allow_1 = __spreadArray([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
@@ -15004,7 +15551,7 @@ function RemoveScrollSideCar(props) {
         }
         return;
     }, [props.inert, props.lockRef.current, props.shards]);
-    var shouldCancelEvent = react.useCallback(function (event, parent) {
+    var shouldCancelEvent = compat_module.useCallback(function (event, parent) {
         if ('touches' in event && event.touches.length === 2) {
             return !lastProps.current.allowPinchZoom;
         }
@@ -15043,7 +15590,7 @@ function RemoveScrollSideCar(props) {
         var cancelingAxis = activeAxis.current || currentAxis;
         return handleScroll(cancelingAxis, parent, event, cancelingAxis === 'h' ? deltaX : deltaY, true);
     }, []);
-    var shouldPrevent = react.useCallback(function (_event) {
+    var shouldPrevent = compat_module.useCallback(function (_event) {
         var event = _event;
         if (!lockStack.length || lockStack[lockStack.length - 1] !== Style) {
             // not the last active
@@ -15072,24 +15619,24 @@ function RemoveScrollSideCar(props) {
             }
         }
     }, []);
-    var shouldCancel = react.useCallback(function (name, delta, target, should) {
+    var shouldCancel = compat_module.useCallback(function (name, delta, target, should) {
         var event = { name: name, delta: delta, target: target, should: should, shadowParent: getOutermostShadowParent(target) };
         shouldPreventQueue.current.push(event);
         setTimeout(function () {
             shouldPreventQueue.current = shouldPreventQueue.current.filter(function (e) { return e !== event; });
         }, 1);
     }, []);
-    var scrollTouchStart = react.useCallback(function (event) {
+    var scrollTouchStart = compat_module.useCallback(function (event) {
         touchStartRef.current = getTouchXY(event);
         activeAxis.current = undefined;
     }, []);
-    var scrollWheel = react.useCallback(function (event) {
+    var scrollWheel = compat_module.useCallback(function (event) {
         shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
     }, []);
-    var scrollTouchMove = react.useCallback(function (event) {
+    var scrollTouchMove = compat_module.useCallback(function (event) {
         shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
     }, []);
-    react.useEffect(function () {
+    compat_module.useEffect(function () {
         lockStack.push(Style);
         props.setCallbacks({
             onScrollCapture: scrollWheel,
@@ -15107,9 +15654,9 @@ function RemoveScrollSideCar(props) {
         };
     }, []);
     var removeScrollBar = props.removeScrollBar, inert = props.inert;
-    return (react.createElement(react.Fragment, null,
-        inert ? react.createElement(Style, { styles: generateStyle(id) }) : null,
-        removeScrollBar ? react.createElement(RemoveScrollBar, { gapMode: props.gapMode }) : null));
+    return (compat_module.createElement(compat_module.Fragment, null,
+        inert ? compat_module.createElement(Style, { styles: generateStyle(id) }) : null,
+        removeScrollBar ? compat_module.createElement(RemoveScrollBar, { gapMode: props.gapMode }) : null));
 }
 function getOutermostShadowParent(node) {
     var shadowParent = null;
@@ -15134,7 +15681,7 @@ function getOutermostShadowParent(node) {
 
 
 
-var ReactRemoveScroll = react.forwardRef(function (props, ref) { return (react.createElement(RemoveScroll, __assign({}, props, { ref: ref, sideCar: sidecar }))); });
+var ReactRemoveScroll = compat_module.forwardRef(function (props, ref) { return (compat_module.createElement(RemoveScroll, __assign({}, props, { ref: ref, sideCar: sidecar }))); });
 ReactRemoveScroll.classNames = RemoveScroll.classNames;
 /* harmony default export */ const Combination = (ReactRemoveScroll);
 
@@ -15201,11 +15748,11 @@ var ModalBaseCloseButton_objRest = (source, exclude) => {
 const ModalBaseCloseButton_defaultProps = {
   size: "sm"
 };
-const ModalBaseCloseButton = (0,react.forwardRef)((props, ref) => {
+const ModalBaseCloseButton = (0,compat_module.forwardRef)((props, ref) => {
   const ctx = useModalBaseContext();
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)(`${ctx.__staticSelector}CloseButton`, ModalBaseCloseButton_defaultProps, props), { className } = _a, others = ModalBaseCloseButton_objRest(_a, ["className"]);
   const { classes, cx } = ModalBaseCloseButton_styles(null, ctx.stylesApi);
-  return /* @__PURE__ */ react.createElement(CloseButton/* CloseButton */.J, ModalBaseCloseButton_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(CloseButton/* CloseButton */.J, ModalBaseCloseButton_spreadValues({
     className: cx(classes.close, className),
     ref,
     onClick: ctx.onClose
@@ -15311,7 +15858,7 @@ const Overlay_defaultProps = {
   zIndex: (0,get_default_z_index/* getDefaultZIndex */.I)("modal"),
   radius: 0
 };
-const _Overlay = (0,react.forwardRef)((props, ref) => {
+const _Overlay = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Overlay", Overlay_defaultProps, props), {
     variant,
     opacity,
@@ -15344,7 +15891,7 @@ const _Overlay = (0,react.forwardRef)((props, ref) => {
     "fixed"
   ]);
   const { classes, cx } = Overlay_styles({ color, opacity, blur, radius, gradient, fixed, zIndex }, { name: "Overlay", classNames, styles, unstyled, variant });
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, Overlay_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, Overlay_spreadValues({
     ref,
     className: cx(classes.root, className),
     "data-center": center || void 0
@@ -15396,7 +15943,7 @@ var ModalBaseOverlay_objRest = (source, exclude) => {
   return target;
 };
 const ModalBaseOverlay_defaultProps = {};
-const ModalBaseOverlay = (0,react.forwardRef)((props, ref) => {
+const ModalBaseOverlay = (0,compat_module.forwardRef)((props, ref) => {
   const ctx = useModalBaseContext();
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)(`${ctx.__staticSelector}Overlay`, ModalBaseOverlay_defaultProps, props), { onClick, transitionProps, style, className } = _a, others = ModalBaseOverlay_objRest(_a, ["onClick", "transitionProps", "style", "className"]);
   const { classes, cx } = ModalBaseOverlay_styles(null, ctx.stylesApi);
@@ -15404,11 +15951,11 @@ const ModalBaseOverlay = (0,react.forwardRef)((props, ref) => {
     onClick == null ? void 0 : onClick(event);
     ctx.closeOnClickOutside && ctx.onClose();
   };
-  return /* @__PURE__ */ react.createElement(Transition/* Transition */.e, ModalBaseOverlay_spreadProps(ModalBaseOverlay_spreadValues(ModalBaseOverlay_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Transition/* Transition */.e, ModalBaseOverlay_spreadProps(ModalBaseOverlay_spreadValues(ModalBaseOverlay_spreadValues({
     mounted: ctx.opened
   }, ctx.transitionProps), transitionProps), {
     transition: "fade"
-  }), (transitionStyles) => /* @__PURE__ */ react.createElement(Overlay, ModalBaseOverlay_spreadValues({
+  }), (transitionStyles) => /* @__PURE__ */ compat_module["default"].createElement(Overlay, ModalBaseOverlay_spreadValues({
     ref,
     onClick: handleClick,
     fixed: true,
@@ -15444,8 +15991,80 @@ var ModalBaseContent_styles_useStyles = (0,create_styles/* createStyles */.r)((_
 
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/FocusTrap/FocusTrap.js + 4 modules
 var FocusTrap = __webpack_require__(45477);
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Paper/Paper.js + 1 modules
-var Paper = __webpack_require__(8117);
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Paper/Paper.styles.js
+
+
+var Paper_styles_useStyles = (0,create_styles/* createStyles */.r)((theme, { radius, shadow }) => ({
+  root: {
+    outline: 0,
+    WebkitTapHighlightColor: "transparent",
+    display: "block",
+    textDecoration: "none",
+    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    boxSizing: "border-box",
+    borderRadius: theme.fn.radius(radius),
+    boxShadow: theme.shadows[shadow] || shadow || "none",
+    "&[data-with-border]": {
+      border: `${(0,rem/* rem */.D)(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`
+    }
+  }
+}));
+
+/* harmony default export */ const Paper_styles = (Paper_styles_useStyles);
+//# sourceMappingURL=Paper.styles.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Paper/Paper.js
+
+
+
+
+
+
+var Paper_defProp = Object.defineProperty;
+var Paper_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var Paper_hasOwnProp = Object.prototype.hasOwnProperty;
+var Paper_propIsEnum = Object.prototype.propertyIsEnumerable;
+var Paper_defNormalProp = (obj, key, value) => key in obj ? Paper_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var Paper_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (Paper_hasOwnProp.call(b, prop))
+      Paper_defNormalProp(a, prop, b[prop]);
+  if (Paper_getOwnPropSymbols)
+    for (var prop of Paper_getOwnPropSymbols(b)) {
+      if (Paper_propIsEnum.call(b, prop))
+        Paper_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var Paper_objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (Paper_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && Paper_getOwnPropSymbols)
+    for (var prop of Paper_getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && Paper_propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const Paper_defaultProps = {};
+const _Paper = (0,compat_module.forwardRef)((props, ref) => {
+  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Paper", Paper_defaultProps, props), { className, children, radius, withBorder, shadow, unstyled, variant } = _a, others = Paper_objRest(_a, ["className", "children", "radius", "withBorder", "shadow", "unstyled", "variant"]);
+  const { classes, cx } = Paper_styles({ radius, shadow }, { name: "Paper", unstyled, variant });
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, Paper_spreadValues({
+    className: cx(classes.root, className),
+    "data-with-border": withBorder || void 0,
+    ref
+  }, others), children);
+});
+_Paper.displayName = "@mantine/core/Paper";
+const Paper = (0,create_polymorphic_component/* createPolymorphicComponent */.K)(_Paper);
+
+
+//# sourceMappingURL=Paper.js.map
+
 ;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/ModalBase/ModalBaseContent/ModalBaseContent.js
 
 
@@ -15484,7 +16103,7 @@ var ModalBaseContent_objRest = (source, exclude) => {
   return target;
 };
 const ModalBaseContent_defaultProps = {};
-const ModalBaseContent = (0,react.forwardRef)((props, ref) => {
+const ModalBaseContent = (0,compat_module.forwardRef)((props, ref) => {
   const ctx = useModalBaseContext();
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)(`${ctx.__staticSelector}Content`, ModalBaseContent_defaultProps, props), { className, transitionProps, style, onKeyDown } = _a, others = ModalBaseContent_objRest(_a, ["className", "transitionProps", "style", "onKeyDown"]);
   const { classes, cx } = ModalBaseContent_styles({ zIndex: ctx.zIndex }, ctx.stylesApi);
@@ -15494,14 +16113,14 @@ const ModalBaseContent = (0,react.forwardRef)((props, ref) => {
     shouldTrigger && event.key === "Escape" && ctx.closeOnEscape && ctx.onClose();
     onKeyDown == null ? void 0 : onKeyDown(event);
   };
-  return /* @__PURE__ */ react.createElement(Transition/* Transition */.e, ModalBaseContent_spreadValues(ModalBaseContent_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Transition/* Transition */.e, ModalBaseContent_spreadValues(ModalBaseContent_spreadValues({
     mounted: ctx.opened,
     transition: "pop"
-  }, ctx.transitionProps), transitionProps), (transitionStyles) => /* @__PURE__ */ react.createElement("div", {
+  }, ctx.transitionProps), transitionProps), (transitionStyles) => /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: cx(classes.inner)
-  }, /* @__PURE__ */ react.createElement(FocusTrap/* FocusTrap */.s, {
+  }, /* @__PURE__ */ compat_module["default"].createElement(FocusTrap/* FocusTrap */.s, {
     active: ctx.opened && ctx.trapFocus
-  }, /* @__PURE__ */ react.createElement(Paper/* Paper */.t, ModalBaseContent_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement(Paper, ModalBaseContent_spreadValues({
     component: "section",
     role: "dialog",
     tabIndex: -1,
@@ -15578,11 +16197,11 @@ var ModalBaseHeader_objRest = (source, exclude) => {
   return target;
 };
 const ModalBaseHeader_defaultProps = {};
-const ModalBaseHeader = (0,react.forwardRef)((props, ref) => {
+const ModalBaseHeader = (0,compat_module.forwardRef)((props, ref) => {
   const ctx = useModalBaseContext();
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)(`${ctx.__staticSelector}Header`, ModalBaseHeader_defaultProps, props), { className } = _a, others = ModalBaseHeader_objRest(_a, ["className"]);
   const { classes, cx } = ModalBaseHeader_styles({ padding: ctx.padding }, ctx.stylesApi);
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, ModalBaseHeader_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, ModalBaseHeader_spreadValues({
     ref,
     className: cx(classes.header, className)
   }, others));
@@ -15643,15 +16262,15 @@ var ModalBaseTitle_objRest = (source, exclude) => {
   return target;
 };
 const ModalBaseTitle_defaultProps = {};
-const ModalBaseTitle = (0,react.forwardRef)((props, ref) => {
+const ModalBaseTitle = (0,compat_module.forwardRef)((props, ref) => {
   const ctx = useModalBaseContext();
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)(`${ctx.__staticSelector}Title`, ModalBaseTitle_defaultProps, props), { className } = _a, others = ModalBaseTitle_objRest(_a, ["className"]);
   const { classes, cx } = ModalBaseTitle_styles(null, ctx.stylesApi);
-  (0,react.useEffect)(() => {
+  (0,compat_module.useEffect)(() => {
     ctx.setTitleMounted(true);
     return () => ctx.setTitleMounted(false);
   }, []);
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, ModalBaseTitle_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, ModalBaseTitle_spreadValues({
     component: "h2",
     id: ctx.getTitleId(),
     className: cx(classes.title, className),
@@ -15713,15 +16332,15 @@ var ModalBaseBody_objRest = (source, exclude) => {
   return target;
 };
 const ModalBaseBody_defaultProps = {};
-const ModalBaseBody = (0,react.forwardRef)((props, ref) => {
+const ModalBaseBody = (0,compat_module.forwardRef)((props, ref) => {
   const ctx = useModalBaseContext();
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)(`${ctx.__staticSelector}Body`, ModalBaseBody_defaultProps, props), { className } = _a, others = ModalBaseBody_objRest(_a, ["className"]);
   const { classes, cx } = ModalBaseBody_styles({ padding: ctx.padding }, ctx.stylesApi);
-  (0,react.useEffect)(() => {
+  (0,compat_module.useEffect)(() => {
     ctx.setBodyMounted(true);
     return () => ctx.setBodyMounted(false);
   }, []);
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, ModalBaseBody_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, ModalBaseBody_spreadValues({
     id: ctx.getBodyId(),
     className: cx(classes.body, className),
     ref
@@ -15735,7 +16354,7 @@ const ModalBaseBody = (0,react.forwardRef)((props, ref) => {
 
 
 function NativeScrollArea({ children }) {
-  return /* @__PURE__ */ react.createElement(react.Fragment, null, children);
+  return /* @__PURE__ */ compat_module["default"].createElement(compat_module["default"].Fragment, null, children);
 }
 
 
@@ -15748,11 +16367,11 @@ var use_reduced_motion = __webpack_require__(36032);
 
 
 function useLockScroll({ opened, transitionDuration }) {
-  const [shouldLockScroll, setShouldLockScroll] = (0,react.useState)(opened);
-  const timeout = (0,react.useRef)();
+  const [shouldLockScroll, setShouldLockScroll] = (0,compat_module.useState)(opened);
+  const timeout = (0,compat_module.useRef)();
   const reduceMotion = (0,use_reduced_motion/* useReducedMotion */.I)();
   const _transitionDuration = reduceMotion ? 0 : transitionDuration;
-  (0,react.useEffect)(() => {
+  (0,compat_module.useEffect)(() => {
     if (opened) {
       setShouldLockScroll(true);
       window.clearTimeout(timeout.current);
@@ -15904,8 +16523,8 @@ function ModalBase(props) {
     size
   });
   const _id = (0,use_id/* useId */.B)(id);
-  const [titleMounted, setTitleMounted] = (0,react.useState)(false);
-  const [bodyMounted, setBodyMounted] = (0,react.useState)(false);
+  const [titleMounted, setTitleMounted] = (0,compat_module.useState)(false);
+  const [bodyMounted, setBodyMounted] = (0,compat_module.useState)(false);
   const transitionDuration = typeof (transitionProps == null ? void 0 : transitionProps.duration) === "number" ? transitionProps == null ? void 0 : transitionProps.duration : 200;
   const shouldLockScroll = useLockScroll({ opened, transitionDuration });
   (0,use_window_event/* useWindowEvent */.M)("keydown", (event) => {
@@ -15914,10 +16533,10 @@ function ModalBase(props) {
     }
   });
   (0,use_focus_return/* useFocusReturn */.E)({ opened, shouldReturnFocus: trapFocus && returnFocus });
-  return /* @__PURE__ */ react.createElement(OptionalPortal/* OptionalPortal */.r, ModalBase_spreadProps(ModalBase_spreadValues({}, portalProps), {
+  return /* @__PURE__ */ compat_module["default"].createElement(OptionalPortal/* OptionalPortal */.r, ModalBase_spreadProps(ModalBase_spreadValues({}, portalProps), {
     withinPortal,
     target
-  }), /* @__PURE__ */ react.createElement(ModalBaseProvider, {
+  }), /* @__PURE__ */ compat_module["default"].createElement(ModalBaseProvider, {
     value: {
       __staticSelector,
       opened,
@@ -15945,9 +16564,9 @@ function ModalBase(props) {
         unstyled
       }
     }
-  }, /* @__PURE__ */ react.createElement(Combination, {
+  }, /* @__PURE__ */ compat_module["default"].createElement(Combination, {
     enabled: shouldLockScroll && lockScroll
-  }, /* @__PURE__ */ react.createElement(Box/* Box */.a, ModalBase_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, ModalBase_spreadValues({
     className: cx(classes.root, className)
   }, others), children))));
 }
@@ -16027,9 +16646,9 @@ function ModalRoot(props) {
     "fullScreen"
   ]);
   const { classes, cx } = ModalRoot_styles({ yOffset, xOffset, centered, fullScreen }, { name: "Modal", variant, size });
-  return /* @__PURE__ */ react.createElement(ModalProvider, {
+  return /* @__PURE__ */ compat_module["default"].createElement(ModalProvider, {
     value: { yOffset, scrollAreaComponent, radius }
-  }, /* @__PURE__ */ react.createElement(ModalBase, ModalRoot_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement(ModalBase, ModalRoot_spreadValues({
     __staticSelector: "Modal",
     size,
     variant,
@@ -16080,14 +16699,14 @@ var ModalContent_objRest = (source, exclude) => {
 const ModalContent_defaultProps = {
   shadow: "xl"
 };
-const ModalContent = (0,react.forwardRef)((props, ref) => {
+const ModalContent = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("ModalContent", ModalContent_defaultProps, props), { children, scrollAreaComponent } = _a, others = ModalContent_objRest(_a, ["children", "scrollAreaComponent"]);
   const ctx = useModalContext();
   const Scroll = scrollAreaComponent || ctx.scrollAreaComponent || ModalBase.NativeScrollArea;
-  return /* @__PURE__ */ react.createElement(ModalBase.Content, ModalContent_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement(ModalBase.Content, ModalContent_spreadValues({
     ref,
     radius: ctx.radius
-  }, others), /* @__PURE__ */ react.createElement(Scroll, {
+  }, others), /* @__PURE__ */ compat_module["default"].createElement(Scroll, {
     style: { maxHeight: `calc(100dvh - (${(0,rem/* rem */.D)(ctx.yOffset)} * 2))` }
   }, children));
 });
@@ -16155,7 +16774,7 @@ function Modal(props) {
     "children"
   ]);
   const hasHeader = !!title || withCloseButton;
-  return /* @__PURE__ */ react.createElement(ModalRoot, Modal_spreadValues({}, others), withOverlay && /* @__PURE__ */ react.createElement(ModalBase.Overlay, Modal_spreadValues({}, overlayProps)), /* @__PURE__ */ react.createElement(ModalContent, null, hasHeader && /* @__PURE__ */ react.createElement(ModalBase.Header, null, title && /* @__PURE__ */ react.createElement(ModalBase.Title, null, title), withCloseButton && /* @__PURE__ */ react.createElement(ModalBase.CloseButton, Modal_spreadValues({}, closeButtonProps))), /* @__PURE__ */ react.createElement(ModalBase.Body, null, children)));
+  return /* @__PURE__ */ compat_module["default"].createElement(ModalRoot, Modal_spreadValues({}, others), withOverlay && /* @__PURE__ */ compat_module["default"].createElement(ModalBase.Overlay, Modal_spreadValues({}, overlayProps)), /* @__PURE__ */ compat_module["default"].createElement(ModalContent, null, hasHeader && /* @__PURE__ */ compat_module["default"].createElement(ModalBase.Header, null, title && /* @__PURE__ */ compat_module["default"].createElement(ModalBase.Title, null, title), withCloseButton && /* @__PURE__ */ compat_module["default"].createElement(ModalBase.CloseButton, Modal_spreadValues({}, closeButtonProps))), /* @__PURE__ */ compat_module["default"].createElement(ModalBase.Body, null, children)));
 }
 Modal.Root = ModalRoot;
 Modal.CloseButton = ModalBase.CloseButton;
@@ -16179,34 +16798,34 @@ var DialogObjectFieldTemplate = function DialogObjectFieldTemplate(_ref) {
     children = _ref.children,
     title = _ref.title,
     uiSchema = _ref.uiSchema;
-  var _useState = (0,react.useState)(false),
+  var _useState = (0,compat_module.useState)(false),
     opened = _useState[0],
     setOpened = _useState[1];
   var handleOnClose = function handleOnClose() {
     setOpened(false);
   };
-  return /*#__PURE__*/react.createElement("fieldset", {
+  return /*#__PURE__*/compat_module["default"].createElement("fieldset", {
     style: {
       border: "none",
       padding: 0,
       margin: "0 0 10px 0"
     }
-  }, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null, /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     onClick: function onClick() {
       return setOpened(true);
     },
     size: "xs",
     variant: "outline"
-  }, "Configure"), /*#__PURE__*/react.createElement(Modal.Root, {
+  }, "Configure"), /*#__PURE__*/compat_module["default"].createElement(Modal.Root, {
     opened: opened,
     onClose: handleOnClose,
     centered: true,
     overflow: "inside",
     size: "sm"
-  }, /*#__PURE__*/react.createElement(Modal.Overlay, null), /*#__PURE__*/react.createElement(Modal.Content, null, /*#__PURE__*/react.createElement(Modal.Header, null, /*#__PURE__*/react.createElement(Modal.Title, null, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null), /*#__PURE__*/react.createElement(Modal.CloseButton, null)), /*#__PURE__*/react.createElement(Modal.Body, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Modal.Overlay, null), /*#__PURE__*/compat_module["default"].createElement(Modal.Content, null, /*#__PURE__*/compat_module["default"].createElement(Modal.Header, null, /*#__PURE__*/compat_module["default"].createElement(Modal.Title, null, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null), /*#__PURE__*/compat_module["default"].createElement(Modal.CloseButton, null)), /*#__PURE__*/compat_module["default"].createElement(Modal.Body, {
     px: "0",
     pb: "0"
-  }, /*#__PURE__*/react.createElement(AlternateBox_AlternateBox, {
+  }, /*#__PURE__*/compat_module["default"].createElement(AlternateBox_AlternateBox, {
     p: "md"
   }, children ? children : null)))));
 };
@@ -16230,10 +16849,10 @@ var TabsObjectFieldTemplate = function TabsObjectFieldTemplate(_ref) {
     properties = _ref.properties,
     idSchema = _ref.idSchema,
     props = TabsObjectFieldTemplate_objectWithoutPropertiesLoose(_ref, TabsObjectFieldTemplate_excluded);
-  var _useState = (0,react.useState)(idSchema["$id"] + "_tabs_" + properties[0].name + "_0"),
+  var _useState = (0,compat_module.useState)(idSchema["$id"] + "_tabs_" + properties[0].name + "_0"),
     selectedTab = _useState[0],
     setSelectedTab = _useState[1];
-  var lazyStates = (0,react.useRef)((_useRef = {}, _useRef[idSchema["$id"] + "_tabs_" + properties[0].name + "_0"] = true, _useRef));
+  var lazyStates = (0,compat_module.useRef)((_useRef = {}, _useRef[idSchema["$id"] + "_tabs_" + properties[0].name + "_0"] = true, _useRef));
   var handleOnTabChange = function handleOnTabChange(selected) {
     if (!lazyStates[selected]) {
       var _extends2;
@@ -16241,18 +16860,18 @@ var TabsObjectFieldTemplate = function TabsObjectFieldTemplate(_ref) {
     }
     setSelectedTab(selected);
   };
-  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Tabs/* Tabs */.t, {
+  return /*#__PURE__*/compat_module["default"].createElement(compat_module["default"].Fragment, null, /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t, {
     value: selectedTab,
     keepMounted: true,
     onTabChange: handleOnTabChange
-  }, /*#__PURE__*/react.createElement(Tabs/* Tabs */.t.List, null, properties.map(function (element, index) {
+  }, /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.List, null, properties.map(function (element, index) {
     var _schema$properties$el;
-    return (element === null || element === void 0 ? void 0 : element.hidden) ? null : /*#__PURE__*/react.createElement(Tabs/* Tabs */.t.Tab, {
+    return (element === null || element === void 0 ? void 0 : element.hidden) ? null : /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Tab, {
       key: idSchema["$id"] + "_tabs_" + element.name + "_" + index,
       value: idSchema["$id"] + "_tabs_" + element.name + "_" + index
     }, schema === null || schema === void 0 ? void 0 : (_schema$properties$el = schema.properties[element.name]) === null || _schema$properties$el === void 0 ? void 0 : _schema$properties$el.title);
   })), properties.map(function (element, index) {
-    return (element === null || element === void 0 ? void 0 : element.hidden) ? null : /*#__PURE__*/react.createElement(Tabs/* Tabs */.t.Panel, {
+    return (element === null || element === void 0 ? void 0 : element.hidden) ? null : /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Panel, {
       key: idSchema["$id"] + "_tabs_" + element.name + "_" + index,
       value: idSchema["$id"] + "_tabs_" + element.name + "_" + index
     }, lazyStates.current[idSchema["$id"] + "_tabs_" + element.name + "_" + index] ? element.content : null);
@@ -16319,7 +16938,7 @@ function AccordionProvider({
     const nextValue = Array.isArray(_value) ? _value.includes(itemValue) ? _value.filter((selectedValue) => selectedValue !== itemValue) : [..._value, itemValue] : itemValue === _value ? null : itemValue;
     handleChange(nextValue);
   };
-  return /* @__PURE__ */ react.createElement(AccordionContextProvider, {
+  return /* @__PURE__ */ compat_module["default"].createElement(AccordionContextProvider, {
     value: {
       isItemActive,
       onChange: handleItemChange,
@@ -16463,7 +17082,7 @@ var AccordionItem_objRest = (source, exclude) => {
   return target;
 };
 const AccordionItem_defaultProps = {};
-const AccordionItem = (0,react.forwardRef)((props, ref) => {
+const AccordionItem = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("AccordionItem", AccordionItem_defaultProps, props), { children, className, value } = _a, others = AccordionItem_objRest(_a, ["children", "className", "value"]);
   const ctx = useAccordionContext();
   const { classes, cx } = AccordionItem_styles({ radius: ctx.radius }, {
@@ -16473,9 +17092,9 @@ const AccordionItem = (0,react.forwardRef)((props, ref) => {
     unstyled: ctx.unstyled,
     variant: ctx.variant
   });
-  return /* @__PURE__ */ react.createElement(AccordionItemContextProvider, {
+  return /* @__PURE__ */ compat_module["default"].createElement(AccordionItemContextProvider, {
     value: { value }
-  }, /* @__PURE__ */ react.createElement(Box/* Box */.a, AccordionItem_spreadValues({
+  }, /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, AccordionItem_spreadValues({
     ref,
     className: cx(classes.item, className),
     "data-active": ctx.isItemActive(value) || void 0
@@ -16612,7 +17231,7 @@ var AccordionControl_objRest = (source, exclude) => {
   return target;
 };
 const AccordionControl_defaultProps = {};
-const AccordionControl = (0,react.forwardRef)((props, ref) => {
+const AccordionControl = (0,compat_module.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("AccordionControl", AccordionControl_defaultProps, props), { disabled, onKeyDown, onClick, chevron, children, className, icon } = _a, others = AccordionControl_objRest(_a, ["disabled", "onKeyDown", "onClick", "chevron", "children", "className", "icon"]);
   const ctx = useAccordionContext();
   const { value } = useAccordionItemContext();
@@ -16631,7 +17250,7 @@ const AccordionControl = (0,react.forwardRef)((props, ref) => {
   const isActive = ctx.isItemActive(value);
   const shouldWrapWithHeading = typeof ctx.order === "number";
   const Heading = `h${ctx.order}`;
-  const content = /* @__PURE__ */ react.createElement(UnstyledButton/* UnstyledButton */.N, AccordionControl_spreadProps(AccordionControl_spreadValues({}, others), {
+  const content = /* @__PURE__ */ compat_module["default"].createElement(UnstyledButton/* UnstyledButton */.N, AccordionControl_spreadProps(AccordionControl_spreadValues({}, others), {
     ref,
     "data-accordion-control": true,
     disabled,
@@ -16654,15 +17273,15 @@ const AccordionControl = (0,react.forwardRef)((props, ref) => {
       orientation: "vertical",
       onKeyDown
     })
-  }), /* @__PURE__ */ react.createElement("span", {
+  }), /* @__PURE__ */ compat_module["default"].createElement("span", {
     className: classes.chevron,
     "data-rotate": !ctx.disableChevronRotation && isActive || void 0
-  }, chevron || ctx.chevron), /* @__PURE__ */ react.createElement("span", {
+  }, chevron || ctx.chevron), /* @__PURE__ */ compat_module["default"].createElement("span", {
     className: classes.label
-  }, children), icon && /* @__PURE__ */ react.createElement("span", {
+  }, children), icon && /* @__PURE__ */ compat_module["default"].createElement("span", {
     className: classes.icon
   }, icon));
-  return shouldWrapWithHeading ? /* @__PURE__ */ react.createElement(Heading, {
+  return shouldWrapWithHeading ? /* @__PURE__ */ compat_module["default"].createElement(Heading, {
     className: classes.itemTitle
   }, content) : content;
 });
@@ -16753,14 +17372,14 @@ function AccordionPanel(props) {
   const { value } = useAccordionItemContext();
   const { classNames, styles, unstyled } = useAccordionContext();
   const { classes, cx } = AccordionPanel_styles({ radius: ctx.radius }, { name: "Accordion", classNames, styles, unstyled, variant: ctx.variant });
-  return /* @__PURE__ */ react.createElement(Collapse/* Collapse */.S, AccordionPanel_spreadProps(AccordionPanel_spreadValues({}, others), {
+  return /* @__PURE__ */ compat_module["default"].createElement(Collapse/* Collapse */.S, AccordionPanel_spreadProps(AccordionPanel_spreadValues({}, others), {
     className: cx(classes.panel, className),
     in: ctx.isItemActive(value),
     transitionDuration: ctx.transitionDuration,
     role: "region",
     id: ctx.getRegionId(value),
     "aria-labelledby": ctx.getControlId(value)
-  }), /* @__PURE__ */ react.createElement("div", {
+  }), /* @__PURE__ */ compat_module["default"].createElement("div", {
     className: classes.content
   }, children));
 }
@@ -16803,12 +17422,12 @@ var ChevronIcon_objRest = (source, exclude) => {
 };
 function ChevronIcon_ChevronIcon(props) {
   const _a = props, { style } = _a, others = ChevronIcon_objRest(_a, ["style"]);
-  return /* @__PURE__ */ react.createElement("svg", ChevronIcon_spreadValues({
+  return /* @__PURE__ */ compat_module["default"].createElement("svg", ChevronIcon_spreadValues({
     viewBox: "0 0 15 15",
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg",
     style: ChevronIcon_spreadValues({ width: (0,rem/* rem */.D)(16), height: (0,rem/* rem */.D)(16) }, style)
-  }, others), /* @__PURE__ */ react.createElement("path", {
+  }, others), /* @__PURE__ */ compat_module["default"].createElement("path", {
     d: "M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z",
     fill: "currentColor",
     fillRule: "evenodd",
@@ -16867,7 +17486,7 @@ const Accordion_defaultProps = {
   chevronPosition: "right",
   variant: "default",
   chevronSize: 24,
-  chevron: /* @__PURE__ */ react.createElement(ChevronIcon_ChevronIcon, null)
+  chevron: /* @__PURE__ */ compat_module["default"].createElement(ChevronIcon_ChevronIcon, null)
 };
 function Accordion(props) {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Accordion", Accordion_defaultProps, props), {
@@ -16909,7 +17528,7 @@ function Accordion(props) {
     "variant",
     "radius"
   ]);
-  return /* @__PURE__ */ react.createElement(AccordionProvider, {
+  return /* @__PURE__ */ compat_module["default"].createElement(AccordionProvider, {
     id,
     multiple,
     value,
@@ -16927,7 +17546,7 @@ function Accordion(props) {
     classNames,
     styles,
     unstyled
-  }, /* @__PURE__ */ react.createElement(Box/* Box */.a, Accordion_spreadProps(Accordion_spreadValues({}, others), {
+  }, /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, Accordion_spreadProps(Accordion_spreadValues({}, others), {
     "data-accordion": true
   }), children));
 }
@@ -16951,18 +17570,18 @@ var AccordionObjectFieldTemplate = function AccordionObjectFieldTemplate(_ref) {
     formData = _ref.formData,
     properties = _ref.properties,
     idSchema = _ref.idSchema;
-  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Accordion, {
+  return /*#__PURE__*/compat_module["default"].createElement(compat_module["default"].Fragment, null, /*#__PURE__*/compat_module["default"].createElement(Accordion, {
     variant: "separated",
     iconPosition: "right",
     multiple: true,
     defaultValue: [idSchema["$id"] + "_tabs_" + properties[0].name + "_0"]
   }, properties.map(function (element, index) {
     var _schema$properties$el;
-    return (element === null || element === void 0 ? void 0 : element.hidden) ? null : /*#__PURE__*/react.createElement(Accordion.Item, {
+    return (element === null || element === void 0 ? void 0 : element.hidden) ? null : /*#__PURE__*/compat_module["default"].createElement(Accordion.Item, {
       key: idSchema["$id"] + "_tabs_" + element.name + "_" + index,
       value: idSchema["$id"] + "_tabs_" + element.name + "_" + index
       // in={!element?.hidden}
-    }, /*#__PURE__*/react.createElement(Accordion.Control, null, schema === null || schema === void 0 ? void 0 : (_schema$properties$el = schema.properties[element.name]) === null || _schema$properties$el === void 0 ? void 0 : _schema$properties$el.title), /*#__PURE__*/react.createElement(Accordion.Panel, null, element.content));
+    }, /*#__PURE__*/compat_module["default"].createElement(Accordion.Control, null, schema === null || schema === void 0 ? void 0 : (_schema$properties$el = schema.properties[element.name]) === null || _schema$properties$el === void 0 ? void 0 : _schema$properties$el.title), /*#__PURE__*/compat_module["default"].createElement(Accordion.Panel, null, element.content));
   })));
 };
 /* harmony default export */ const templates_AccordionObjectFieldTemplate = (AccordionObjectFieldTemplate);
@@ -17011,24 +17630,24 @@ var ObjectFieldTemplate = function ObjectFieldTemplate(props) {
   var format = rawFormat[0];
   var initialState = rawFormat[1];
   var Component = templates[format] || templates["default"];
-  return /*#__PURE__*/react.createElement(Component, ObjectFieldTemplate_extends({
+  return /*#__PURE__*/compat_module["default"].createElement(Component, ObjectFieldTemplate_extends({
     format: format,
     initialState: initialState,
-    titleComponent: (uiSchema["ui:title"] || title) && /*#__PURE__*/react.createElement(TitleField, {
+    titleComponent: (uiSchema["ui:title"] || title) && /*#__PURE__*/compat_module["default"].createElement(TitleField, {
       id: idSchema.$id + "-title",
       title: uiSchema["ui:title"] || title,
       required: required
     }),
-    descriptionComponent: description && /*#__PURE__*/react.createElement(DescriptionField, {
+    descriptionComponent: description && /*#__PURE__*/compat_module["default"].createElement(DescriptionField, {
       id: idSchema.$id + "-description",
       description: description
     })
   }, props), properties.map(function (element, index) {
-    return /*#__PURE__*/react.createElement(LazyCollapse_LazyCollapse, {
+    return /*#__PURE__*/compat_module["default"].createElement(LazyCollapse_LazyCollapse, {
       key: index,
       "in": !(element === null || element === void 0 ? void 0 : element.hidden)
     }, element.content);
-  }), ObjectFieldTemplate_canExpand(schema, uiSchema, formData) ? /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }), ObjectFieldTemplate_canExpand(schema, uiSchema, formData) ? /*#__PURE__*/compat_module["default"].createElement("div", null, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     onClick: onAddClick(schema),
     disabled: disabled || readonly
   })) : null);
@@ -17044,7 +17663,7 @@ var RawObjectFieldTemplate_RawObjectFieldTemplate = function RawObjectFieldTempl
   var titleComponent = _ref.titleComponent,
     descriptionComponent = _ref.descriptionComponent,
     children = _ref.children;
-  return /*#__PURE__*/react.createElement(react.Fragment, null, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null, /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  return /*#__PURE__*/compat_module["default"].createElement(compat_module["default"].Fragment, null, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null, /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     spacing: "md",
     sx: function sx(theme) {
       return {
@@ -17068,10 +17687,10 @@ var CollapseObjectFieldTemplate_CollapseObjectFieldTemplate = function CollapseO
     initialState = _ref.initialState,
     _ref$isCollapsible = _ref.isCollapsible,
     isCollapsible = _ref$isCollapsible === void 0 ? true : _ref$isCollapsible;
-  var _useState = (0,react.useState)(!initialState || initialState === "opened"),
+  var _useState = (0,compat_module.useState)(!initialState || initialState === "opened"),
     opened = _useState[0],
     setOpened = _useState[1];
-  return /*#__PURE__*/react.createElement(AlternateBox_AlternateBox, null, titleComponent && /*#__PURE__*/react.createElement(Group/* Group */.Y, {
+  return /*#__PURE__*/compat_module["default"].createElement(AlternateBox_AlternateBox, null, titleComponent && /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
     noWrap: true,
     spacing: "sm",
     onClick: function onClick() {
@@ -17085,40 +17704,40 @@ var CollapseObjectFieldTemplate_CollapseObjectFieldTemplate = function CollapseO
         cursor: isCollapsible ? "pointer" : undefined
       };
     }
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     style: {
       paddingRight: 30
     }
-  }, /*#__PURE__*/react.createElement(Text/* Text */.E, null, titleComponent), descriptionComponent && /*#__PURE__*/react.createElement(Text/* Text */.E, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Text/* Text */.E, null, titleComponent), descriptionComponent && /*#__PURE__*/compat_module["default"].createElement(Text/* Text */.E, {
     size: "md",
     weight: 400,
     sx: {
       textOverflow: "ellipsis",
       overflow: "hidden"
     }
-  }, descriptionComponent)), isCollapsible && /*#__PURE__*/react.createElement(UnstyledButton/* UnstyledButton */.N, {
+  }, descriptionComponent)), isCollapsible && /*#__PURE__*/compat_module["default"].createElement(UnstyledButton/* UnstyledButton */.N, {
     variant: "subtle",
     sx: {
       marginLeft: "auto",
       position: "absolute",
       right: 10
     }
-  }, /*#__PURE__*/react.createElement(CollapseObjectFieldTemplate_ChevronIcon, {
+  }, /*#__PURE__*/compat_module["default"].createElement(CollapseObjectFieldTemplate_ChevronIcon, {
     style: templates_CollapseObjectFieldTemplate_extends({
       transition: "transform .2s ease-in-out"
     }, opened ? {} : {
       transform: "rotate(-90deg)"
     })
-  }))), isCollapsible ? /*#__PURE__*/react.createElement(LazyCollapse_LazyCollapse, {
+  }))), isCollapsible ? /*#__PURE__*/compat_module["default"].createElement(LazyCollapse_LazyCollapse, {
     "in": opened
-  }, children ? /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, children ? /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     spacing: "md",
     sx: function sx(theme) {
       return {
         padding: (isCollapsible ? 0 : theme.spacing.md) + " " + theme.spacing.md + " " + theme.spacing.md + " " + theme.spacing.md
       };
     }
-  }, children) : null) : children ? /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, children) : null) : children ? /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     spacing: "md",
     sx: function sx(theme) {
       return {
@@ -17129,13 +17748,13 @@ var CollapseObjectFieldTemplate_CollapseObjectFieldTemplate = function CollapseO
 };
 /* harmony default export */ const ArrayFieldTemplate_templates_CollapseObjectFieldTemplate = (CollapseObjectFieldTemplate_CollapseObjectFieldTemplate);
 function CollapseObjectFieldTemplate_ChevronIcon(props) {
-  return /*#__PURE__*/react.createElement("svg", templates_CollapseObjectFieldTemplate_extends({
+  return /*#__PURE__*/compat_module["default"].createElement("svg", templates_CollapseObjectFieldTemplate_extends({
     viewBox: "0 0 15 15",
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg",
     width: 16,
     height: 16
-  }, props), /*#__PURE__*/react.createElement("path", {
+  }, props), /*#__PURE__*/compat_module["default"].createElement("path", {
     d: "M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z",
     fill: "currentColor",
     fillRule: "evenodd",
@@ -17147,7 +17766,7 @@ function templates_GroupObjectFieldTemplate_extends() { templates_GroupObjectFie
 
 
 var GroupObjectFieldTemplate_GroupObjectFieldTemplate = function GroupObjectFieldTemplate(props) {
-  return /*#__PURE__*/react.createElement(ArrayFieldTemplate_templates_CollapseObjectFieldTemplate, templates_GroupObjectFieldTemplate_extends({}, props, {
+  return /*#__PURE__*/compat_module["default"].createElement(ArrayFieldTemplate_templates_CollapseObjectFieldTemplate, templates_GroupObjectFieldTemplate_extends({}, props, {
     isCollapsible: false,
     initialState: "opened"
   }));
@@ -17163,34 +17782,34 @@ var DialogObjectFieldTemplate_DialogObjectFieldTemplate = function DialogObjectF
     children = _ref.children,
     title = _ref.title,
     uiSchema = _ref.uiSchema;
-  var _useState = (0,react.useState)(false),
+  var _useState = (0,compat_module.useState)(false),
     opened = _useState[0],
     setOpened = _useState[1];
   var handleOnClose = function handleOnClose() {
     setOpened(false);
   };
-  return /*#__PURE__*/react.createElement("fieldset", {
+  return /*#__PURE__*/compat_module["default"].createElement("fieldset", {
     style: {
       border: "none",
       padding: 0,
       margin: "0 0 10px 0"
     }
-  }, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null, /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     onClick: function onClick() {
       return setOpened(true);
     },
     size: "xs",
     variant: "outline"
-  }, "Configure"), /*#__PURE__*/react.createElement(Modal.Root, {
+  }, "Configure"), /*#__PURE__*/compat_module["default"].createElement(Modal.Root, {
     opened: opened,
     onClose: handleOnClose,
     centered: true,
     overflow: "inside",
     size: "sm"
-  }, /*#__PURE__*/react.createElement(Modal.Overlay, null), /*#__PURE__*/react.createElement(Modal.Content, null, /*#__PURE__*/react.createElement(Modal.Header, null, /*#__PURE__*/react.createElement(Modal.Title, null, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null), /*#__PURE__*/react.createElement(Modal.CloseButton, null)), /*#__PURE__*/react.createElement(Modal.Body, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Modal.Overlay, null), /*#__PURE__*/compat_module["default"].createElement(Modal.Content, null, /*#__PURE__*/compat_module["default"].createElement(Modal.Header, null, /*#__PURE__*/compat_module["default"].createElement(Modal.Title, null, titleComponent ? titleComponent : null, descriptionComponent ? descriptionComponent : null), /*#__PURE__*/compat_module["default"].createElement(Modal.CloseButton, null)), /*#__PURE__*/compat_module["default"].createElement(Modal.Body, {
     px: "0",
     pb: "0"
-  }, /*#__PURE__*/react.createElement(AlternateBox_AlternateBox, {
+  }, /*#__PURE__*/compat_module["default"].createElement(AlternateBox_AlternateBox, {
     p: "md"
   }, children ? children : null)))));
 };
@@ -17219,7 +17838,7 @@ function ArrayFieldTemplate_extends() { ArrayFieldTemplate_extends = Object.assi
 var ArrayFieldTemplate_isMultiSelect = utils.isMultiSelect,
   ArrayFieldTemplate_getDefaultRegistry = utils.getDefaultRegistry;
 var SimpleBox = function SimpleBox(props) {
-  return /*#__PURE__*/react.createElement("div", ArrayFieldTemplate_extends({
+  return /*#__PURE__*/compat_module["default"].createElement("div", ArrayFieldTemplate_extends({
     style: {
       position: "relative"
     }
@@ -17230,9 +17849,9 @@ var ArrayFieldTemplate = function ArrayFieldTemplate(props) {
     _props$registry = props.registry,
     registry = _props$registry === void 0 ? ArrayFieldTemplate_getDefaultRegistry() : _props$registry;
   if (ArrayFieldTemplate_isMultiSelect(schema, registry.rootSchema)) {
-    return /*#__PURE__*/react.createElement(ArrayFieldTemplate_DefaultFixedArrayFieldTemplate, props);
+    return /*#__PURE__*/compat_module["default"].createElement(ArrayFieldTemplate_DefaultFixedArrayFieldTemplate, props);
   } else {
-    return /*#__PURE__*/react.createElement(ArrayFieldTemplate_DefaultNormalArrayFieldTemplate, props);
+    return /*#__PURE__*/compat_module["default"].createElement(ArrayFieldTemplate_DefaultNormalArrayFieldTemplate, props);
   }
 };
 var ArrayFieldTemplate_ArrayFieldTitle = function ArrayFieldTitle(_ref) {
@@ -17244,7 +17863,7 @@ var ArrayFieldTemplate_ArrayFieldTitle = function ArrayFieldTitle(_ref) {
     return null;
   }
   var id = idSchema.$id + "__title";
-  return /*#__PURE__*/react.createElement(TitleField, {
+  return /*#__PURE__*/compat_module["default"].createElement(TitleField, {
     id: id,
     title: title,
     required: required
@@ -17258,7 +17877,7 @@ var ArrayFieldTemplate_ArrayFieldDescription = function ArrayFieldDescription(_r
     return null;
   }
   var id = idSchema.$id + "__description";
-  return /*#__PURE__*/react.createElement(DescriptionField, {
+  return /*#__PURE__*/compat_module["default"].createElement(DescriptionField, {
     id: id,
     description: description
   });
@@ -17270,33 +17889,33 @@ var ArrayFieldTemplate_DefaultArrayItem = function DefaultArrayItem(_ref3) {
     withNoContainer = _ref3$withNoContainer === void 0 ? false : _ref3$withNoContainer,
     props = ArrayFieldTemplate_objectWithoutPropertiesLoose(_ref3, ArrayFieldTemplate_excluded);
   var Wrapper = withNoContainer ? SimpleBox : AlternateBox_AlternateBox;
-  return /*#__PURE__*/react.createElement(Wrapper, {
+  return /*#__PURE__*/compat_module["default"].createElement(Wrapper, {
     key: "" + props.key + props.id
-  }, /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     style: {
       padding: withNoContainer ? 0 : 15
     }
-  }, props.children), props.hasToolbar && /*#__PURE__*/react.createElement("div", {
+  }, props.children), props.hasToolbar && /*#__PURE__*/compat_module["default"].createElement("div", {
     style: {
       position: "absolute",
       top: 0,
       right: 0
     }
-  }, /*#__PURE__*/react.createElement(Button/* Button */.$.Group, null, (props.hasMoveUp || props.hasMoveDown) && /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$.Group, null, (props.hasMoveUp || props.hasMoveDown) && /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     variant: "light",
     size: "xs",
     compact: true,
     tabIndex: -1,
     disabled: props.disabled || props.readonly || !props.hasMoveUp,
     onClick: props.onReorderClick(props.index, props.index - 1)
-  }, "\u2191"), (props.hasMoveUp || props.hasMoveDown) && /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, "\u2191"), (props.hasMoveUp || props.hasMoveDown) && /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     variant: "light",
     size: "xs",
     compact: true,
     tabIndex: -1,
     disabled: props.disabled || props.readonly || !props.hasMoveDown,
     onClick: props.onReorderClick(props.index, props.index + 1)
-  }, "\u2193"), props.hasRemove && /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, "\u2193"), props.hasRemove && /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     variant: "light",
     size: "xs",
     compact: true,
@@ -17313,28 +17932,28 @@ var ArrayFieldTemplate_DefaultFixedArrayFieldTemplate = function DefaultFixedArr
   var format = rawFormat[0];
   var initialState = rawFormat[1];
   var Component = ArrayFieldTemplate_templates[format] || ArrayFieldTemplate_templates["default"];
-  return /*#__PURE__*/react.createElement(Component, ArrayFieldTemplate_extends({
+  return /*#__PURE__*/compat_module["default"].createElement(Component, ArrayFieldTemplate_extends({
     format: format,
     initialState: initialState,
-    titleComponent: (uiSchema["ui:title"] || title) && /*#__PURE__*/react.createElement(ArrayFieldTemplate_ArrayFieldTitle, {
+    titleComponent: (uiSchema["ui:title"] || title) && /*#__PURE__*/compat_module["default"].createElement(ArrayFieldTemplate_ArrayFieldTitle, {
       key: "array-field-title-" + props.idSchema.$id,
       TitleField: props.TitleField,
       idSchema: props.idSchema,
       title: props.uiSchema["ui:title"] || props.title,
       required: props.required
     }),
-    descriptionComponent: (props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/react.createElement("div", {
+    descriptionComponent: (props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/compat_module["default"].createElement("div", {
       key: "field-description-" + props.idSchema.$id
     }, props.uiSchema["ui:description"] || props.schema.description)
-  }, props), /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, props), /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     spacing: "md"
   }, props.items && props.items.map(function (p) {
     return ArrayFieldTemplate_DefaultArrayItem(p);
-  })), props.canAdd && /*#__PURE__*/react.createElement("div", {
+  })), props.canAdd && /*#__PURE__*/compat_module["default"].createElement("div", {
     style: {
       textAlign: "right"
     }
-  }, /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     size: "xs",
     compact: true,
     variant: "outline",
@@ -17350,34 +17969,34 @@ var ArrayFieldTemplate_DefaultNormalArrayFieldTemplate = function DefaultNormalA
   var format = rawFormat[0];
   var initialState = rawFormat[1];
   var Component = ArrayFieldTemplate_templates[format] || ArrayFieldTemplate_templates["default"];
-  return /*#__PURE__*/react.createElement(Component, ArrayFieldTemplate_extends({
+  return /*#__PURE__*/compat_module["default"].createElement(Component, ArrayFieldTemplate_extends({
     format: format,
     initialState: initialState,
-    titleComponent: (uiSchema["ui:title"] || title) && /*#__PURE__*/react.createElement(ArrayFieldTemplate_ArrayFieldTitle, {
+    titleComponent: (uiSchema["ui:title"] || title) && /*#__PURE__*/compat_module["default"].createElement(ArrayFieldTemplate_ArrayFieldTitle, {
       key: "array-field-title-" + props.idSchema.$id,
       TitleField: props.TitleField,
       idSchema: props.idSchema,
       title: props.uiSchema["ui:title"] || props.title,
       required: props.required
     }),
-    descriptionComponent: (props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/react.createElement(ArrayFieldTemplate_ArrayFieldDescription, {
+    descriptionComponent: (props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/compat_module["default"].createElement(ArrayFieldTemplate_ArrayFieldDescription, {
       key: "array-field-description-" + props.idSchema.$id,
       DescriptionField: props.DescriptionField,
       idSchema: props.idSchema,
       description: props.uiSchema["ui:description"] || props.schema.description
     })
-  }, props), /*#__PURE__*/react.createElement(Stack/* Stack */.B, {
+  }, props), /*#__PURE__*/compat_module["default"].createElement(Stack/* Stack */.B, {
     spacing: "md"
   }, props.items && props.items.map(function (p) {
     var _props$schema, _props$schema$items;
     return ArrayFieldTemplate_DefaultArrayItem(ArrayFieldTemplate_extends({}, p, {
       withNoContainer: (props === null || props === void 0 ? void 0 : (_props$schema = props.schema) === null || _props$schema === void 0 ? void 0 : (_props$schema$items = _props$schema.items) === null || _props$schema$items === void 0 ? void 0 : _props$schema$items.type) === "object"
     }));
-  }), props.canAdd && /*#__PURE__*/react.createElement("div", {
+  }), props.canAdd && /*#__PURE__*/compat_module["default"].createElement("div", {
     style: {
       textAlign: "right"
     }
-  }, /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     size: "xs",
     compact: true,
     variant: "outline",
@@ -17417,8 +18036,153 @@ var Theme = {
 /* harmony default export */ const Theme_Theme = (Theme);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/components/Theme/index.js
 
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.js + 2 modules
-var JsonInput = __webpack_require__(96924);
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/validate-json/validate-json.js
+function validateJson(value, deserialize) {
+  if (typeof value === "string" && value.trim().length === 0) {
+    return true;
+  }
+  try {
+    deserialize(value);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+
+//# sourceMappingURL=validate-json.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.styles.js
+
+
+var JsonInput_styles_useStyles = (0,create_styles/* createStyles */.r)((theme, _params, { size }) => ({
+  input: {
+    fontFamily: theme.fontFamilyMonospace,
+    fontSize: `calc(${(0,get_size/* getSize */.Y)({ size, sizes: theme.fontSizes })} - ${(0,rem/* rem */.D)(2)})`
+  }
+}));
+
+/* harmony default export */ const JsonInput_styles = (JsonInput_styles_useStyles);
+//# sourceMappingURL=JsonInput.styles.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.js
+
+
+
+
+
+
+
+var JsonInput_defProp = Object.defineProperty;
+var JsonInput_defProps = Object.defineProperties;
+var JsonInput_getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var JsonInput_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var JsonInput_hasOwnProp = Object.prototype.hasOwnProperty;
+var JsonInput_propIsEnum = Object.prototype.propertyIsEnumerable;
+var JsonInput_defNormalProp = (obj, key, value) => key in obj ? JsonInput_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var JsonInput_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (JsonInput_hasOwnProp.call(b, prop))
+      JsonInput_defNormalProp(a, prop, b[prop]);
+  if (JsonInput_getOwnPropSymbols)
+    for (var prop of JsonInput_getOwnPropSymbols(b)) {
+      if (JsonInput_propIsEnum.call(b, prop))
+        JsonInput_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var JsonInput_spreadProps = (a, b) => JsonInput_defProps(a, JsonInput_getOwnPropDescs(b));
+var JsonInput_objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (JsonInput_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && JsonInput_getOwnPropSymbols)
+    for (var prop of JsonInput_getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && JsonInput_propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const JsonInput_defaultProps = {
+  formatOnBlur: false,
+  size: "sm",
+  serialize: JSON.stringify,
+  deserialize: JSON.parse
+};
+const JsonInput = (0,compat_module.forwardRef)((props, ref) => {
+  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("JsonInput", JsonInput_defaultProps, props), {
+    value,
+    defaultValue,
+    onChange,
+    onFocus,
+    onBlur,
+    error,
+    formatOnBlur,
+    size,
+    validationError,
+    classNames,
+    unstyled,
+    readOnly,
+    variant,
+    serialize,
+    deserialize
+  } = _a, others = JsonInput_objRest(_a, [
+    "value",
+    "defaultValue",
+    "onChange",
+    "onFocus",
+    "onBlur",
+    "error",
+    "formatOnBlur",
+    "size",
+    "validationError",
+    "classNames",
+    "unstyled",
+    "readOnly",
+    "variant",
+    "serialize",
+    "deserialize"
+  ]);
+  const { classes, cx } = JsonInput_styles(null, { name: "JsonInput", unstyled, size, variant });
+  const [_value, setValue] = (0,use_uncontrolled/* useUncontrolled */.Z)({
+    value,
+    defaultValue,
+    finalValue: "",
+    onChange
+  });
+  const [valid, setValid] = (0,compat_module.useState)(validateJson(_value, deserialize));
+  const handleFocus = (event) => {
+    typeof onFocus === "function" && onFocus(event);
+    setValid(true);
+  };
+  const handleBlur = (event) => {
+    typeof onBlur === "function" && onBlur(event);
+    const isValid = validateJson(event.currentTarget.value, deserialize);
+    formatOnBlur && !readOnly && isValid && event.currentTarget.value.trim() !== "" && setValue(serialize(deserialize(event.currentTarget.value), null, 2));
+    setValid(isValid);
+  };
+  return /* @__PURE__ */ compat_module["default"].createElement(Textarea/* Textarea */.T, JsonInput_spreadValues({
+    value: _value,
+    onChange: (event) => setValue(event.currentTarget.value),
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    error: valid ? error : validationError || true,
+    __staticSelector: "JsonInput",
+    classNames: JsonInput_spreadProps(JsonInput_spreadValues({}, classNames), { input: cx(classes.input, classNames == null ? void 0 : classNames.input) }),
+    autoComplete: "off",
+    ref,
+    unstyled,
+    readOnly,
+    size,
+    variant
+  }, others));
+});
+JsonInput.displayName = "@mantine/core/JsonInput";
+
+
+//# sourceMappingURL=JsonInput.js.map
+
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/core/utils/isJsonValid.js
 /* harmony default export */ const isJsonValid = (function (str) {
   try {
@@ -17433,7 +18197,7 @@ var JsonInput = __webpack_require__(96924);
 
 
 var JsonField = function JsonField(props) {
-  var _useState = (0,react.useState)(JSON.stringify(props.formData, null, 2)),
+  var _useState = (0,compat_module.useState)(JSON.stringify(props.formData, null, 2)),
     text = _useState[0],
     setText = _useState[1];
 
@@ -17454,7 +18218,7 @@ var JsonField = function JsonField(props) {
   //   // lineNumbersMinChars: 0,
   // };
 
-  (0,react.useEffect)(function () {
+  (0,compat_module.useEffect)(function () {
     setText(JSON.stringify(props.formData, null, 2));
   }, [props.formData]);
   var handleOnChange = function handleOnChange(str) {
@@ -17476,14 +18240,14 @@ var JsonField = function JsonField(props) {
     errors = props.errors,
     hidden = props.hidden,
     rawDescription = props.rawDescription;
-  return hidden ? null : /*#__PURE__*/react.createElement("div", {
+  return hidden ? null : /*#__PURE__*/compat_module["default"].createElement("div", {
     className: classNames + " field-json"
-  }, /*#__PURE__*/react.createElement(Input/* Input */.p.Wrapper, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Input/* Input */.p.Wrapper, {
     id: id,
     label: label,
     description: rawDescription,
     required: required
-  }, /*#__PURE__*/react.createElement(JsonInput/* JsonInput */.f, {
+  }, /*#__PURE__*/compat_module["default"].createElement(JsonInput, {
     id: id,
     value: text,
     onChange: handleOnChange,
@@ -17528,7 +18292,7 @@ var Form_Form_Form = function Form(_ref) {
   var props = Form_Form_extends({}, (_objectDestructuringEmpty(_ref), _ref));
   // const _className = `${styles.form}${className ? " " + className : ""}`;
 
-  return /*#__PURE__*/react.createElement(core_Form, Form_Form_extends({
+  return /*#__PURE__*/compat_module["default"].createElement(core_Form, Form_Form_extends({
     component: Component,
     templates: mantine_templates,
     customFormats: customFormats,
@@ -17543,511 +18307,6 @@ var Form_Form_Form = function Form(_ref) {
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js
 
 // export { default } from "@rjsf/core"
-
-/***/ }),
-
-/***/ 18801:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  S: () => (/* binding */ Collapse)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@mantine/hooks/esm/use-reduced-motion/use-reduced-motion.js + 1 modules
-var use_reduced_motion = __webpack_require__(36032);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
-// EXTERNAL MODULE: ./node_modules/react-dom/index.js
-var react_dom = __webpack_require__(40961);
-// EXTERNAL MODULE: ./node_modules/@mantine/hooks/esm/use-did-update/use-did-update.js
-var use_did_update = __webpack_require__(96915);
-// EXTERNAL MODULE: ./node_modules/@mantine/hooks/esm/use-merged-ref/use-merged-ref.js
-var use_merged_ref = __webpack_require__(12305);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Collapse/use-collapse.js
-
-
-
-
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
-function getAutoHeightDuration(height) {
-  if (!height || typeof height === "string") {
-    return 0;
-  }
-  const constant = height / 36;
-  return Math.round((4 + 15 * constant ** 0.25 + constant / 5) * 10);
-}
-function getElementHeight(el) {
-  return (el == null ? void 0 : el.current) ? el.current.scrollHeight : "auto";
-}
-const raf = typeof window !== "undefined" && window.requestAnimationFrame;
-function useCollapse({
-  transitionDuration,
-  transitionTimingFunction = "ease",
-  onTransitionEnd = () => {
-  },
-  opened
-}) {
-  const el = (0,react.useRef)(null);
-  const collapsedHeight = 0;
-  const collapsedStyles = {
-    display: "none",
-    height: 0,
-    overflow: "hidden"
-  };
-  const [styles, setStylesRaw] = (0,react.useState)(opened ? {} : collapsedStyles);
-  const setStyles = (newStyles) => {
-    (0,react_dom.flushSync)(() => setStylesRaw(newStyles));
-  };
-  const mergeStyles = (newStyles) => {
-    setStyles((oldStyles) => __spreadValues(__spreadValues({}, oldStyles), newStyles));
-  };
-  function getTransitionStyles(height) {
-    const _duration = transitionDuration || getAutoHeightDuration(height);
-    return {
-      transition: `height ${_duration}ms ${transitionTimingFunction}`
-    };
-  }
-  (0,use_did_update/* useDidUpdate */.C)(() => {
-    if (opened) {
-      raf(() => {
-        mergeStyles({ willChange: "height", display: "block", overflow: "hidden" });
-        raf(() => {
-          const height = getElementHeight(el);
-          mergeStyles(__spreadProps(__spreadValues({}, getTransitionStyles(height)), { height }));
-        });
-      });
-    } else {
-      raf(() => {
-        const height = getElementHeight(el);
-        mergeStyles(__spreadProps(__spreadValues({}, getTransitionStyles(height)), { willChange: "height", height }));
-        raf(() => mergeStyles({ height: collapsedHeight, overflow: "hidden" }));
-      });
-    }
-  }, [opened]);
-  const handleTransitionEnd = (e) => {
-    if (e.target !== el.current || e.propertyName !== "height") {
-      return;
-    }
-    if (opened) {
-      const height = getElementHeight(el);
-      if (height === styles.height) {
-        setStyles({});
-      } else {
-        mergeStyles({ height });
-      }
-      onTransitionEnd();
-    } else if (styles.height === collapsedHeight) {
-      setStyles(collapsedStyles);
-      onTransitionEnd();
-    }
-  };
-  function getCollapseProps(_a = {}) {
-    var _b = _a, { style = {}, refKey = "ref" } = _b, rest = __objRest(_b, ["style", "refKey"]);
-    const theirRef = rest[refKey];
-    return __spreadProps(__spreadValues({
-      "aria-hidden": !opened
-    }, rest), {
-      [refKey]: (0,use_merged_ref/* mergeRefs */.P)(el, theirRef),
-      onTransitionEnd: handleTransitionEnd,
-      style: __spreadValues(__spreadValues({ boxSizing: "border-box" }, style), styles)
-    });
-  }
-  return getCollapseProps;
-}
-
-
-//# sourceMappingURL=use-collapse.js.map
-
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/style-system-props/extract-system-styles/extract-system-styles.js
-var extract_system_styles = __webpack_require__(76251);
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
-var Box = __webpack_require__(29180);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Collapse/Collapse.js
-
-
-
-
-
-
-
-var Collapse_defProp = Object.defineProperty;
-var Collapse_getOwnPropSymbols = Object.getOwnPropertySymbols;
-var Collapse_hasOwnProp = Object.prototype.hasOwnProperty;
-var Collapse_propIsEnum = Object.prototype.propertyIsEnumerable;
-var Collapse_defNormalProp = (obj, key, value) => key in obj ? Collapse_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var Collapse_spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (Collapse_hasOwnProp.call(b, prop))
-      Collapse_defNormalProp(a, prop, b[prop]);
-  if (Collapse_getOwnPropSymbols)
-    for (var prop of Collapse_getOwnPropSymbols(b)) {
-      if (Collapse_propIsEnum.call(b, prop))
-        Collapse_defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var Collapse_objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (Collapse_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && Collapse_getOwnPropSymbols)
-    for (var prop of Collapse_getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && Collapse_propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
-const defaultProps = {
-  transitionDuration: 200,
-  transitionTimingFunction: "ease",
-  animateOpacity: true
-};
-const Collapse = (0,react.forwardRef)((props, ref) => {
-  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Collapse", defaultProps, props), {
-    children,
-    in: opened,
-    transitionDuration,
-    transitionTimingFunction,
-    style,
-    onTransitionEnd,
-    animateOpacity
-  } = _a, others = Collapse_objRest(_a, [
-    "children",
-    "in",
-    "transitionDuration",
-    "transitionTimingFunction",
-    "style",
-    "onTransitionEnd",
-    "animateOpacity"
-  ]);
-  const theme = (0,MantineProvider/* useMantineTheme */.xd)();
-  const shouldReduceMotion = (0,use_reduced_motion/* useReducedMotion */.I)();
-  const reduceMotion = theme.respectReducedMotion ? shouldReduceMotion : false;
-  const duration = reduceMotion ? 0 : transitionDuration;
-  const { systemStyles, rest } = (0,extract_system_styles/* extractSystemStyles */.z)(others);
-  const getCollapseProps = useCollapse({
-    opened,
-    transitionDuration: duration,
-    transitionTimingFunction,
-    onTransitionEnd
-  });
-  if (duration === 0) {
-    return opened ? /* @__PURE__ */ react.createElement(Box/* Box */.a, Collapse_spreadValues({}, rest), children) : null;
-  }
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, Collapse_spreadValues({}, getCollapseProps(Collapse_spreadValues(Collapse_spreadValues({ style, ref }, rest), systemStyles))), /* @__PURE__ */ react.createElement("div", {
-    style: {
-      opacity: opened || !animateOpacity ? 1 : 0,
-      transition: animateOpacity ? `opacity ${duration}ms ${transitionTimingFunction}` : "none"
-    }
-  }, children));
-});
-Collapse.displayName = "@mantine/core/Collapse";
-
-
-//# sourceMappingURL=Collapse.js.map
-
-
-/***/ }),
-
-/***/ 84543:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Y: () => (/* binding */ Group)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Group/filter-falsy-children/filter-falsy-children.js
-
-
-function filterFalsyChildren(children) {
-  return react.Children.toArray(children).filter(Boolean);
-}
-
-
-//# sourceMappingURL=filter-falsy-children.js.map
-
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Group/Group.styles.js
-var Group_styles = __webpack_require__(36950);
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
-var Box = __webpack_require__(29180);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Group/Group.js
-
-
-
-
-
-
-var __defProp = Object.defineProperty;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
-const defaultProps = {
-  position: "left",
-  spacing: "md"
-};
-const Group = (0,react.forwardRef)((props, ref) => {
-  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Group", defaultProps, props), {
-    className,
-    position,
-    align,
-    children,
-    noWrap,
-    grow,
-    spacing,
-    unstyled,
-    variant
-  } = _a, others = __objRest(_a, [
-    "className",
-    "position",
-    "align",
-    "children",
-    "noWrap",
-    "grow",
-    "spacing",
-    "unstyled",
-    "variant"
-  ]);
-  const filteredChildren = filterFalsyChildren(children);
-  const { classes, cx } = (0,Group_styles/* default */.A)({
-    align,
-    grow,
-    noWrap,
-    spacing,
-    position,
-    count: filteredChildren.length
-  }, { unstyled, name: "Group", variant });
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, __spreadValues({
-    className: cx(classes.root, className),
-    ref
-  }, others), filteredChildren);
-});
-Group.displayName = "@mantine/core/Group";
-
-
-//# sourceMappingURL=Group.js.map
-
-
-/***/ }),
-
-/***/ 24001:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  B: () => (/* binding */ Stack)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/tss/create-styles.js + 1 modules
-var create_styles = __webpack_require__(54297);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/get-size/get-size.js
-var get_size = __webpack_require__(9103);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Stack/Stack.styles.js
-
-
-var useStyles = (0,create_styles/* createStyles */.r)((theme, { spacing, align, justify }) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: align,
-    justifyContent: justify,
-    gap: (0,get_size/* getSize */.Y)({ size: spacing, sizes: theme.spacing })
-  }
-}));
-
-/* harmony default export */ const Stack_styles = (useStyles);
-//# sourceMappingURL=Stack.styles.js.map
-
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
-var Box = __webpack_require__(29180);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Stack/Stack.js
-
-
-
-
-
-var __defProp = Object.defineProperty;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
-const defaultProps = {
-  spacing: "md",
-  align: "stretch",
-  justify: "flex-start"
-};
-const Stack = (0,react.forwardRef)((props, ref) => {
-  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Stack", defaultProps, props), { spacing, className, align, justify, unstyled, variant } = _a, others = __objRest(_a, ["spacing", "className", "align", "justify", "unstyled", "variant"]);
-  const { classes, cx } = Stack_styles({ spacing, align, justify }, { name: "Stack", unstyled, variant });
-  return /* @__PURE__ */ react.createElement(Box/* Box */.a, __spreadValues({
-    className: cx(classes.root, className),
-    ref
-  }, others));
-});
-Stack.displayName = "@mantine/core/Stack";
-
-
-//# sourceMappingURL=Stack.js.map
-
-
-/***/ }),
-
-/***/ 72280:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   k: () => (/* binding */ TextInput)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var _Input_use_input_props_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(86873);
-/* harmony import */ var _Input_Input_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13323);
-
-
-
-
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
-const defaultProps = {
-  type: "text",
-  size: "sm",
-  __staticSelector: "TextInput"
-};
-const TextInput = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((props, ref) => {
-  const _a = (0,_Input_use_input_props_js__WEBPACK_IMPORTED_MODULE_1__/* .useInputProps */ .I)("TextInput", defaultProps, props), { inputProps, wrapperProps } = _a, others = __objRest(_a, ["inputProps", "wrapperProps"]);
-  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_Input_js__WEBPACK_IMPORTED_MODULE_2__/* .Input */ .p.Wrapper, __spreadValues({}, wrapperProps), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_Input_js__WEBPACK_IMPORTED_MODULE_2__/* .Input */ .p, __spreadProps(__spreadValues(__spreadValues({}, inputProps), others), {
-    ref
-  })));
-});
-TextInput.displayName = "@mantine/core/TextInput";
-
-
-//# sourceMappingURL=TextInput.js.map
-
 
 /***/ }),
 
@@ -26525,1991 +26784,6 @@ function get(object, path, defaultValue) {
 }
 
 module.exports = get;
-
-
-/***/ }),
-
-/***/ 70182:
-/***/ ((module, exports, __webpack_require__) => {
-
-/* module decorator */ module = __webpack_require__.nmd(module);
-/**
- * Lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as the size to enable large array optimizations. */
-var LARGE_ARRAY_SIZE = 200;
-
-/** Used to stand-in for `undefined` hash values. */
-var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-/** Used to detect hot functions by number of calls within a span of milliseconds. */
-var HOT_COUNT = 800,
-    HOT_SPAN = 16;
-
-/** Used as references for various `Number` constants. */
-var MAX_SAFE_INTEGER = 9007199254740991;
-
-/** `Object#toString` result references. */
-var argsTag = '[object Arguments]',
-    arrayTag = '[object Array]',
-    asyncTag = '[object AsyncFunction]',
-    boolTag = '[object Boolean]',
-    dateTag = '[object Date]',
-    errorTag = '[object Error]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]',
-    mapTag = '[object Map]',
-    numberTag = '[object Number]',
-    nullTag = '[object Null]',
-    objectTag = '[object Object]',
-    proxyTag = '[object Proxy]',
-    regexpTag = '[object RegExp]',
-    setTag = '[object Set]',
-    stringTag = '[object String]',
-    undefinedTag = '[object Undefined]',
-    weakMapTag = '[object WeakMap]';
-
-var arrayBufferTag = '[object ArrayBuffer]',
-    dataViewTag = '[object DataView]',
-    float32Tag = '[object Float32Array]',
-    float64Tag = '[object Float64Array]',
-    int8Tag = '[object Int8Array]',
-    int16Tag = '[object Int16Array]',
-    int32Tag = '[object Int32Array]',
-    uint8Tag = '[object Uint8Array]',
-    uint8ClampedTag = '[object Uint8ClampedArray]',
-    uint16Tag = '[object Uint16Array]',
-    uint32Tag = '[object Uint32Array]';
-
-/**
- * Used to match `RegExp`
- * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
- */
-var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
-
-/** Used to detect host constructors (Safari). */
-var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-/** Used to detect unsigned integer values. */
-var reIsUint = /^(?:0|[1-9]\d*)$/;
-
-/** Used to identify `toStringTag` values of typed arrays. */
-var typedArrayTags = {};
-typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
-typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
-typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
-typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
-typedArrayTags[uint32Tag] = true;
-typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
-typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
-typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
-typedArrayTags[errorTag] = typedArrayTags[funcTag] =
-typedArrayTags[mapTag] = typedArrayTags[numberTag] =
-typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
-typedArrayTags[setTag] = typedArrayTags[stringTag] =
-typedArrayTags[weakMapTag] = false;
-
-/** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof __webpack_require__.g == 'object' && __webpack_require__.g && __webpack_require__.g.Object === Object && __webpack_require__.g;
-
-/** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-
-/** Used as a reference to the global object. */
-var root = freeGlobal || freeSelf || Function('return this')();
-
-/** Detect free variable `exports`. */
-var freeExports =  true && exports && !exports.nodeType && exports;
-
-/** Detect free variable `module`. */
-var freeModule = freeExports && "object" == 'object' && module && !module.nodeType && module;
-
-/** Detect the popular CommonJS extension `module.exports`. */
-var moduleExports = freeModule && freeModule.exports === freeExports;
-
-/** Detect free variable `process` from Node.js. */
-var freeProcess = moduleExports && freeGlobal.process;
-
-/** Used to access faster Node.js helpers. */
-var nodeUtil = (function() {
-  try {
-    // Use `util.types` for Node.js 10+.
-    var types = freeModule && freeModule.require && freeModule.require('util').types;
-
-    if (types) {
-      return types;
-    }
-
-    // Legacy `process.binding('util')` for Node.js < 10.
-    return freeProcess && freeProcess.binding && freeProcess.binding('util');
-  } catch (e) {}
-}());
-
-/* Node.js helper references. */
-var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
-
-/**
- * A faster alternative to `Function#apply`, this function invokes `func`
- * with the `this` binding of `thisArg` and the arguments of `args`.
- *
- * @private
- * @param {Function} func The function to invoke.
- * @param {*} thisArg The `this` binding of `func`.
- * @param {Array} args The arguments to invoke `func` with.
- * @returns {*} Returns the result of `func`.
- */
-function apply(func, thisArg, args) {
-  switch (args.length) {
-    case 0: return func.call(thisArg);
-    case 1: return func.call(thisArg, args[0]);
-    case 2: return func.call(thisArg, args[0], args[1]);
-    case 3: return func.call(thisArg, args[0], args[1], args[2]);
-  }
-  return func.apply(thisArg, args);
-}
-
-/**
- * The base implementation of `_.times` without support for iteratee shorthands
- * or max array length checks.
- *
- * @private
- * @param {number} n The number of times to invoke `iteratee`.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the array of results.
- */
-function baseTimes(n, iteratee) {
-  var index = -1,
-      result = Array(n);
-
-  while (++index < n) {
-    result[index] = iteratee(index);
-  }
-  return result;
-}
-
-/**
- * The base implementation of `_.unary` without support for storing metadata.
- *
- * @private
- * @param {Function} func The function to cap arguments for.
- * @returns {Function} Returns the new capped function.
- */
-function baseUnary(func) {
-  return function(value) {
-    return func(value);
-  };
-}
-
-/**
- * Gets the value at `key` of `object`.
- *
- * @private
- * @param {Object} [object] The object to query.
- * @param {string} key The key of the property to get.
- * @returns {*} Returns the property value.
- */
-function getValue(object, key) {
-  return object == null ? undefined : object[key];
-}
-
-/**
- * Creates a unary function that invokes `func` with its argument transformed.
- *
- * @private
- * @param {Function} func The function to wrap.
- * @param {Function} transform The argument transform.
- * @returns {Function} Returns the new function.
- */
-function overArg(func, transform) {
-  return function(arg) {
-    return func(transform(arg));
-  };
-}
-
-/** Used for built-in method references. */
-var arrayProto = Array.prototype,
-    funcProto = Function.prototype,
-    objectProto = Object.prototype;
-
-/** Used to detect overreaching core-js shims. */
-var coreJsData = root['__core-js_shared__'];
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/** Used to detect methods masquerading as native. */
-var maskSrcKey = (function() {
-  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
-  return uid ? ('Symbol(src)_1.' + uid) : '';
-}());
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var nativeObjectToString = objectProto.toString;
-
-/** Used to infer the `Object` constructor. */
-var objectCtorString = funcToString.call(Object);
-
-/** Used to detect if a method is native. */
-var reIsNative = RegExp('^' +
-  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
-  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
-);
-
-/** Built-in value references. */
-var Buffer = moduleExports ? root.Buffer : undefined,
-    Symbol = root.Symbol,
-    Uint8Array = root.Uint8Array,
-    allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined,
-    getPrototype = overArg(Object.getPrototypeOf, Object),
-    objectCreate = Object.create,
-    propertyIsEnumerable = objectProto.propertyIsEnumerable,
-    splice = arrayProto.splice,
-    symToStringTag = Symbol ? Symbol.toStringTag : undefined;
-
-var defineProperty = (function() {
-  try {
-    var func = getNative(Object, 'defineProperty');
-    func({}, '', {});
-    return func;
-  } catch (e) {}
-}());
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined,
-    nativeMax = Math.max,
-    nativeNow = Date.now;
-
-/* Built-in method references that are verified to be native. */
-var Map = getNative(root, 'Map'),
-    nativeCreate = getNative(Object, 'create');
-
-/**
- * The base implementation of `_.create` without support for assigning
- * properties to the created object.
- *
- * @private
- * @param {Object} proto The object to inherit from.
- * @returns {Object} Returns the new object.
- */
-var baseCreate = (function() {
-  function object() {}
-  return function(proto) {
-    if (!isObject(proto)) {
-      return {};
-    }
-    if (objectCreate) {
-      return objectCreate(proto);
-    }
-    object.prototype = proto;
-    var result = new object;
-    object.prototype = undefined;
-    return result;
-  };
-}());
-
-/**
- * Creates a hash object.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function Hash(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-/**
- * Removes all key-value entries from the hash.
- *
- * @private
- * @name clear
- * @memberOf Hash
- */
-function hashClear() {
-  this.__data__ = nativeCreate ? nativeCreate(null) : {};
-  this.size = 0;
-}
-
-/**
- * Removes `key` and its value from the hash.
- *
- * @private
- * @name delete
- * @memberOf Hash
- * @param {Object} hash The hash to modify.
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function hashDelete(key) {
-  var result = this.has(key) && delete this.__data__[key];
-  this.size -= result ? 1 : 0;
-  return result;
-}
-
-/**
- * Gets the hash value for `key`.
- *
- * @private
- * @name get
- * @memberOf Hash
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function hashGet(key) {
-  var data = this.__data__;
-  if (nativeCreate) {
-    var result = data[key];
-    return result === HASH_UNDEFINED ? undefined : result;
-  }
-  return hasOwnProperty.call(data, key) ? data[key] : undefined;
-}
-
-/**
- * Checks if a hash value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf Hash
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function hashHas(key) {
-  var data = this.__data__;
-  return nativeCreate ? (data[key] !== undefined) : hasOwnProperty.call(data, key);
-}
-
-/**
- * Sets the hash `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf Hash
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the hash instance.
- */
-function hashSet(key, value) {
-  var data = this.__data__;
-  this.size += this.has(key) ? 0 : 1;
-  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
-  return this;
-}
-
-// Add methods to `Hash`.
-Hash.prototype.clear = hashClear;
-Hash.prototype['delete'] = hashDelete;
-Hash.prototype.get = hashGet;
-Hash.prototype.has = hashHas;
-Hash.prototype.set = hashSet;
-
-/**
- * Creates an list cache object.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function ListCache(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-/**
- * Removes all key-value entries from the list cache.
- *
- * @private
- * @name clear
- * @memberOf ListCache
- */
-function listCacheClear() {
-  this.__data__ = [];
-  this.size = 0;
-}
-
-/**
- * Removes `key` and its value from the list cache.
- *
- * @private
- * @name delete
- * @memberOf ListCache
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function listCacheDelete(key) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  if (index < 0) {
-    return false;
-  }
-  var lastIndex = data.length - 1;
-  if (index == lastIndex) {
-    data.pop();
-  } else {
-    splice.call(data, index, 1);
-  }
-  --this.size;
-  return true;
-}
-
-/**
- * Gets the list cache value for `key`.
- *
- * @private
- * @name get
- * @memberOf ListCache
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function listCacheGet(key) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  return index < 0 ? undefined : data[index][1];
-}
-
-/**
- * Checks if a list cache value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf ListCache
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function listCacheHas(key) {
-  return assocIndexOf(this.__data__, key) > -1;
-}
-
-/**
- * Sets the list cache `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf ListCache
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the list cache instance.
- */
-function listCacheSet(key, value) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  if (index < 0) {
-    ++this.size;
-    data.push([key, value]);
-  } else {
-    data[index][1] = value;
-  }
-  return this;
-}
-
-// Add methods to `ListCache`.
-ListCache.prototype.clear = listCacheClear;
-ListCache.prototype['delete'] = listCacheDelete;
-ListCache.prototype.get = listCacheGet;
-ListCache.prototype.has = listCacheHas;
-ListCache.prototype.set = listCacheSet;
-
-/**
- * Creates a map cache object to store key-value pairs.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function MapCache(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-/**
- * Removes all key-value entries from the map.
- *
- * @private
- * @name clear
- * @memberOf MapCache
- */
-function mapCacheClear() {
-  this.size = 0;
-  this.__data__ = {
-    'hash': new Hash,
-    'map': new (Map || ListCache),
-    'string': new Hash
-  };
-}
-
-/**
- * Removes `key` and its value from the map.
- *
- * @private
- * @name delete
- * @memberOf MapCache
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function mapCacheDelete(key) {
-  var result = getMapData(this, key)['delete'](key);
-  this.size -= result ? 1 : 0;
-  return result;
-}
-
-/**
- * Gets the map value for `key`.
- *
- * @private
- * @name get
- * @memberOf MapCache
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function mapCacheGet(key) {
-  return getMapData(this, key).get(key);
-}
-
-/**
- * Checks if a map value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf MapCache
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function mapCacheHas(key) {
-  return getMapData(this, key).has(key);
-}
-
-/**
- * Sets the map `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf MapCache
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the map cache instance.
- */
-function mapCacheSet(key, value) {
-  var data = getMapData(this, key),
-      size = data.size;
-
-  data.set(key, value);
-  this.size += data.size == size ? 0 : 1;
-  return this;
-}
-
-// Add methods to `MapCache`.
-MapCache.prototype.clear = mapCacheClear;
-MapCache.prototype['delete'] = mapCacheDelete;
-MapCache.prototype.get = mapCacheGet;
-MapCache.prototype.has = mapCacheHas;
-MapCache.prototype.set = mapCacheSet;
-
-/**
- * Creates a stack cache object to store key-value pairs.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function Stack(entries) {
-  var data = this.__data__ = new ListCache(entries);
-  this.size = data.size;
-}
-
-/**
- * Removes all key-value entries from the stack.
- *
- * @private
- * @name clear
- * @memberOf Stack
- */
-function stackClear() {
-  this.__data__ = new ListCache;
-  this.size = 0;
-}
-
-/**
- * Removes `key` and its value from the stack.
- *
- * @private
- * @name delete
- * @memberOf Stack
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function stackDelete(key) {
-  var data = this.__data__,
-      result = data['delete'](key);
-
-  this.size = data.size;
-  return result;
-}
-
-/**
- * Gets the stack value for `key`.
- *
- * @private
- * @name get
- * @memberOf Stack
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function stackGet(key) {
-  return this.__data__.get(key);
-}
-
-/**
- * Checks if a stack value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf Stack
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function stackHas(key) {
-  return this.__data__.has(key);
-}
-
-/**
- * Sets the stack `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf Stack
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the stack cache instance.
- */
-function stackSet(key, value) {
-  var data = this.__data__;
-  if (data instanceof ListCache) {
-    var pairs = data.__data__;
-    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
-      pairs.push([key, value]);
-      this.size = ++data.size;
-      return this;
-    }
-    data = this.__data__ = new MapCache(pairs);
-  }
-  data.set(key, value);
-  this.size = data.size;
-  return this;
-}
-
-// Add methods to `Stack`.
-Stack.prototype.clear = stackClear;
-Stack.prototype['delete'] = stackDelete;
-Stack.prototype.get = stackGet;
-Stack.prototype.has = stackHas;
-Stack.prototype.set = stackSet;
-
-/**
- * Creates an array of the enumerable property names of the array-like `value`.
- *
- * @private
- * @param {*} value The value to query.
- * @param {boolean} inherited Specify returning inherited property names.
- * @returns {Array} Returns the array of property names.
- */
-function arrayLikeKeys(value, inherited) {
-  var isArr = isArray(value),
-      isArg = !isArr && isArguments(value),
-      isBuff = !isArr && !isArg && isBuffer(value),
-      isType = !isArr && !isArg && !isBuff && isTypedArray(value),
-      skipIndexes = isArr || isArg || isBuff || isType,
-      result = skipIndexes ? baseTimes(value.length, String) : [],
-      length = result.length;
-
-  for (var key in value) {
-    if ((inherited || hasOwnProperty.call(value, key)) &&
-        !(skipIndexes && (
-           // Safari 9 has enumerable `arguments.length` in strict mode.
-           key == 'length' ||
-           // Node.js 0.10 has enumerable non-index properties on buffers.
-           (isBuff && (key == 'offset' || key == 'parent')) ||
-           // PhantomJS 2 has enumerable non-index properties on typed arrays.
-           (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
-           // Skip index properties.
-           isIndex(key, length)
-        ))) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-/**
- * This function is like `assignValue` except that it doesn't assign
- * `undefined` values.
- *
- * @private
- * @param {Object} object The object to modify.
- * @param {string} key The key of the property to assign.
- * @param {*} value The value to assign.
- */
-function assignMergeValue(object, key, value) {
-  if ((value !== undefined && !eq(object[key], value)) ||
-      (value === undefined && !(key in object))) {
-    baseAssignValue(object, key, value);
-  }
-}
-
-/**
- * Assigns `value` to `key` of `object` if the existing value is not equivalent
- * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * for equality comparisons.
- *
- * @private
- * @param {Object} object The object to modify.
- * @param {string} key The key of the property to assign.
- * @param {*} value The value to assign.
- */
-function assignValue(object, key, value) {
-  var objValue = object[key];
-  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
-      (value === undefined && !(key in object))) {
-    baseAssignValue(object, key, value);
-  }
-}
-
-/**
- * Gets the index at which the `key` is found in `array` of key-value pairs.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {*} key The key to search for.
- * @returns {number} Returns the index of the matched value, else `-1`.
- */
-function assocIndexOf(array, key) {
-  var length = array.length;
-  while (length--) {
-    if (eq(array[length][0], key)) {
-      return length;
-    }
-  }
-  return -1;
-}
-
-/**
- * The base implementation of `assignValue` and `assignMergeValue` without
- * value checks.
- *
- * @private
- * @param {Object} object The object to modify.
- * @param {string} key The key of the property to assign.
- * @param {*} value The value to assign.
- */
-function baseAssignValue(object, key, value) {
-  if (key == '__proto__' && defineProperty) {
-    defineProperty(object, key, {
-      'configurable': true,
-      'enumerable': true,
-      'value': value,
-      'writable': true
-    });
-  } else {
-    object[key] = value;
-  }
-}
-
-/**
- * The base implementation of `baseForOwn` which iterates over `object`
- * properties returned by `keysFunc` and invokes `iteratee` for each property.
- * Iteratee functions may exit iteration early by explicitly returning `false`.
- *
- * @private
- * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @param {Function} keysFunc The function to get the keys of `object`.
- * @returns {Object} Returns `object`.
- */
-var baseFor = createBaseFor();
-
-/**
- * The base implementation of `getTag` without fallbacks for buggy environments.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the `toStringTag`.
- */
-function baseGetTag(value) {
-  if (value == null) {
-    return value === undefined ? undefinedTag : nullTag;
-  }
-  return (symToStringTag && symToStringTag in Object(value))
-    ? getRawTag(value)
-    : objectToString(value);
-}
-
-/**
- * The base implementation of `_.isArguments`.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an `arguments` object,
- */
-function baseIsArguments(value) {
-  return isObjectLike(value) && baseGetTag(value) == argsTag;
-}
-
-/**
- * The base implementation of `_.isNative` without bad shim checks.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a native function,
- *  else `false`.
- */
-function baseIsNative(value) {
-  if (!isObject(value) || isMasked(value)) {
-    return false;
-  }
-  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
-  return pattern.test(toSource(value));
-}
-
-/**
- * The base implementation of `_.isTypedArray` without Node.js optimizations.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
- */
-function baseIsTypedArray(value) {
-  return isObjectLike(value) &&
-    isLength(value.length) && !!typedArrayTags[baseGetTag(value)];
-}
-
-/**
- * The base implementation of `_.keysIn` which doesn't treat sparse arrays as dense.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- */
-function baseKeysIn(object) {
-  if (!isObject(object)) {
-    return nativeKeysIn(object);
-  }
-  var isProto = isPrototype(object),
-      result = [];
-
-  for (var key in object) {
-    if (!(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-/**
- * The base implementation of `_.merge` without support for multiple sources.
- *
- * @private
- * @param {Object} object The destination object.
- * @param {Object} source The source object.
- * @param {number} srcIndex The index of `source`.
- * @param {Function} [customizer] The function to customize merged values.
- * @param {Object} [stack] Tracks traversed source values and their merged
- *  counterparts.
- */
-function baseMerge(object, source, srcIndex, customizer, stack) {
-  if (object === source) {
-    return;
-  }
-  baseFor(source, function(srcValue, key) {
-    stack || (stack = new Stack);
-    if (isObject(srcValue)) {
-      baseMergeDeep(object, source, key, srcIndex, baseMerge, customizer, stack);
-    }
-    else {
-      var newValue = customizer
-        ? customizer(safeGet(object, key), srcValue, (key + ''), object, source, stack)
-        : undefined;
-
-      if (newValue === undefined) {
-        newValue = srcValue;
-      }
-      assignMergeValue(object, key, newValue);
-    }
-  }, keysIn);
-}
-
-/**
- * A specialized version of `baseMerge` for arrays and objects which performs
- * deep merges and tracks traversed objects enabling objects with circular
- * references to be merged.
- *
- * @private
- * @param {Object} object The destination object.
- * @param {Object} source The source object.
- * @param {string} key The key of the value to merge.
- * @param {number} srcIndex The index of `source`.
- * @param {Function} mergeFunc The function to merge values.
- * @param {Function} [customizer] The function to customize assigned values.
- * @param {Object} [stack] Tracks traversed source values and their merged
- *  counterparts.
- */
-function baseMergeDeep(object, source, key, srcIndex, mergeFunc, customizer, stack) {
-  var objValue = safeGet(object, key),
-      srcValue = safeGet(source, key),
-      stacked = stack.get(srcValue);
-
-  if (stacked) {
-    assignMergeValue(object, key, stacked);
-    return;
-  }
-  var newValue = customizer
-    ? customizer(objValue, srcValue, (key + ''), object, source, stack)
-    : undefined;
-
-  var isCommon = newValue === undefined;
-
-  if (isCommon) {
-    var isArr = isArray(srcValue),
-        isBuff = !isArr && isBuffer(srcValue),
-        isTyped = !isArr && !isBuff && isTypedArray(srcValue);
-
-    newValue = srcValue;
-    if (isArr || isBuff || isTyped) {
-      if (isArray(objValue)) {
-        newValue = objValue;
-      }
-      else if (isArrayLikeObject(objValue)) {
-        newValue = copyArray(objValue);
-      }
-      else if (isBuff) {
-        isCommon = false;
-        newValue = cloneBuffer(srcValue, true);
-      }
-      else if (isTyped) {
-        isCommon = false;
-        newValue = cloneTypedArray(srcValue, true);
-      }
-      else {
-        newValue = [];
-      }
-    }
-    else if (isPlainObject(srcValue) || isArguments(srcValue)) {
-      newValue = objValue;
-      if (isArguments(objValue)) {
-        newValue = toPlainObject(objValue);
-      }
-      else if (!isObject(objValue) || isFunction(objValue)) {
-        newValue = initCloneObject(srcValue);
-      }
-    }
-    else {
-      isCommon = false;
-    }
-  }
-  if (isCommon) {
-    // Recursively merge objects and arrays (susceptible to call stack limits).
-    stack.set(srcValue, newValue);
-    mergeFunc(newValue, srcValue, srcIndex, customizer, stack);
-    stack['delete'](srcValue);
-  }
-  assignMergeValue(object, key, newValue);
-}
-
-/**
- * The base implementation of `_.rest` which doesn't validate or coerce arguments.
- *
- * @private
- * @param {Function} func The function to apply a rest parameter to.
- * @param {number} [start=func.length-1] The start position of the rest parameter.
- * @returns {Function} Returns the new function.
- */
-function baseRest(func, start) {
-  return setToString(overRest(func, start, identity), func + '');
-}
-
-/**
- * The base implementation of `setToString` without support for hot loop shorting.
- *
- * @private
- * @param {Function} func The function to modify.
- * @param {Function} string The `toString` result.
- * @returns {Function} Returns `func`.
- */
-var baseSetToString = !defineProperty ? identity : function(func, string) {
-  return defineProperty(func, 'toString', {
-    'configurable': true,
-    'enumerable': false,
-    'value': constant(string),
-    'writable': true
-  });
-};
-
-/**
- * Creates a clone of  `buffer`.
- *
- * @private
- * @param {Buffer} buffer The buffer to clone.
- * @param {boolean} [isDeep] Specify a deep clone.
- * @returns {Buffer} Returns the cloned buffer.
- */
-function cloneBuffer(buffer, isDeep) {
-  if (isDeep) {
-    return buffer.slice();
-  }
-  var length = buffer.length,
-      result = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length);
-
-  buffer.copy(result);
-  return result;
-}
-
-/**
- * Creates a clone of `arrayBuffer`.
- *
- * @private
- * @param {ArrayBuffer} arrayBuffer The array buffer to clone.
- * @returns {ArrayBuffer} Returns the cloned array buffer.
- */
-function cloneArrayBuffer(arrayBuffer) {
-  var result = new arrayBuffer.constructor(arrayBuffer.byteLength);
-  new Uint8Array(result).set(new Uint8Array(arrayBuffer));
-  return result;
-}
-
-/**
- * Creates a clone of `typedArray`.
- *
- * @private
- * @param {Object} typedArray The typed array to clone.
- * @param {boolean} [isDeep] Specify a deep clone.
- * @returns {Object} Returns the cloned typed array.
- */
-function cloneTypedArray(typedArray, isDeep) {
-  var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
-  return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
-}
-
-/**
- * Copies the values of `source` to `array`.
- *
- * @private
- * @param {Array} source The array to copy values from.
- * @param {Array} [array=[]] The array to copy values to.
- * @returns {Array} Returns `array`.
- */
-function copyArray(source, array) {
-  var index = -1,
-      length = source.length;
-
-  array || (array = Array(length));
-  while (++index < length) {
-    array[index] = source[index];
-  }
-  return array;
-}
-
-/**
- * Copies properties of `source` to `object`.
- *
- * @private
- * @param {Object} source The object to copy properties from.
- * @param {Array} props The property identifiers to copy.
- * @param {Object} [object={}] The object to copy properties to.
- * @param {Function} [customizer] The function to customize copied values.
- * @returns {Object} Returns `object`.
- */
-function copyObject(source, props, object, customizer) {
-  var isNew = !object;
-  object || (object = {});
-
-  var index = -1,
-      length = props.length;
-
-  while (++index < length) {
-    var key = props[index];
-
-    var newValue = customizer
-      ? customizer(object[key], source[key], key, object, source)
-      : undefined;
-
-    if (newValue === undefined) {
-      newValue = source[key];
-    }
-    if (isNew) {
-      baseAssignValue(object, key, newValue);
-    } else {
-      assignValue(object, key, newValue);
-    }
-  }
-  return object;
-}
-
-/**
- * Creates a function like `_.assign`.
- *
- * @private
- * @param {Function} assigner The function to assign values.
- * @returns {Function} Returns the new assigner function.
- */
-function createAssigner(assigner) {
-  return baseRest(function(object, sources) {
-    var index = -1,
-        length = sources.length,
-        customizer = length > 1 ? sources[length - 1] : undefined,
-        guard = length > 2 ? sources[2] : undefined;
-
-    customizer = (assigner.length > 3 && typeof customizer == 'function')
-      ? (length--, customizer)
-      : undefined;
-
-    if (guard && isIterateeCall(sources[0], sources[1], guard)) {
-      customizer = length < 3 ? undefined : customizer;
-      length = 1;
-    }
-    object = Object(object);
-    while (++index < length) {
-      var source = sources[index];
-      if (source) {
-        assigner(object, source, index, customizer);
-      }
-    }
-    return object;
-  });
-}
-
-/**
- * Creates a base function for methods like `_.forIn` and `_.forOwn`.
- *
- * @private
- * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {Function} Returns the new base function.
- */
-function createBaseFor(fromRight) {
-  return function(object, iteratee, keysFunc) {
-    var index = -1,
-        iterable = Object(object),
-        props = keysFunc(object),
-        length = props.length;
-
-    while (length--) {
-      var key = props[fromRight ? length : ++index];
-      if (iteratee(iterable[key], key, iterable) === false) {
-        break;
-      }
-    }
-    return object;
-  };
-}
-
-/**
- * Gets the data for `map`.
- *
- * @private
- * @param {Object} map The map to query.
- * @param {string} key The reference key.
- * @returns {*} Returns the map data.
- */
-function getMapData(map, key) {
-  var data = map.__data__;
-  return isKeyable(key)
-    ? data[typeof key == 'string' ? 'string' : 'hash']
-    : data.map;
-}
-
-/**
- * Gets the native function at `key` of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {string} key The key of the method to get.
- * @returns {*} Returns the function if it's native, else `undefined`.
- */
-function getNative(object, key) {
-  var value = getValue(object, key);
-  return baseIsNative(value) ? value : undefined;
-}
-
-/**
- * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the raw `toStringTag`.
- */
-function getRawTag(value) {
-  var isOwn = hasOwnProperty.call(value, symToStringTag),
-      tag = value[symToStringTag];
-
-  try {
-    value[symToStringTag] = undefined;
-    var unmasked = true;
-  } catch (e) {}
-
-  var result = nativeObjectToString.call(value);
-  if (unmasked) {
-    if (isOwn) {
-      value[symToStringTag] = tag;
-    } else {
-      delete value[symToStringTag];
-    }
-  }
-  return result;
-}
-
-/**
- * Initializes an object clone.
- *
- * @private
- * @param {Object} object The object to clone.
- * @returns {Object} Returns the initialized clone.
- */
-function initCloneObject(object) {
-  return (typeof object.constructor == 'function' && !isPrototype(object))
-    ? baseCreate(getPrototype(object))
-    : {};
-}
-
-/**
- * Checks if `value` is a valid array-like index.
- *
- * @private
- * @param {*} value The value to check.
- * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
- * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
- */
-function isIndex(value, length) {
-  var type = typeof value;
-  length = length == null ? MAX_SAFE_INTEGER : length;
-
-  return !!length &&
-    (type == 'number' ||
-      (type != 'symbol' && reIsUint.test(value))) &&
-        (value > -1 && value % 1 == 0 && value < length);
-}
-
-/**
- * Checks if the given arguments are from an iteratee call.
- *
- * @private
- * @param {*} value The potential iteratee value argument.
- * @param {*} index The potential iteratee index or key argument.
- * @param {*} object The potential iteratee object argument.
- * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
- *  else `false`.
- */
-function isIterateeCall(value, index, object) {
-  if (!isObject(object)) {
-    return false;
-  }
-  var type = typeof index;
-  if (type == 'number'
-        ? (isArrayLike(object) && isIndex(index, object.length))
-        : (type == 'string' && index in object)
-      ) {
-    return eq(object[index], value);
-  }
-  return false;
-}
-
-/**
- * Checks if `value` is suitable for use as unique object key.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
- */
-function isKeyable(value) {
-  var type = typeof value;
-  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
-    ? (value !== '__proto__')
-    : (value === null);
-}
-
-/**
- * Checks if `func` has its source masked.
- *
- * @private
- * @param {Function} func The function to check.
- * @returns {boolean} Returns `true` if `func` is masked, else `false`.
- */
-function isMasked(func) {
-  return !!maskSrcKey && (maskSrcKey in func);
-}
-
-/**
- * Checks if `value` is likely a prototype object.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
- */
-function isPrototype(value) {
-  var Ctor = value && value.constructor,
-      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
-
-  return value === proto;
-}
-
-/**
- * This function is like
- * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
- * except that it includes inherited enumerable properties.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- */
-function nativeKeysIn(object) {
-  var result = [];
-  if (object != null) {
-    for (var key in Object(object)) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-/**
- * Converts `value` to a string using `Object.prototype.toString`.
- *
- * @private
- * @param {*} value The value to convert.
- * @returns {string} Returns the converted string.
- */
-function objectToString(value) {
-  return nativeObjectToString.call(value);
-}
-
-/**
- * A specialized version of `baseRest` which transforms the rest array.
- *
- * @private
- * @param {Function} func The function to apply a rest parameter to.
- * @param {number} [start=func.length-1] The start position of the rest parameter.
- * @param {Function} transform The rest array transform.
- * @returns {Function} Returns the new function.
- */
-function overRest(func, start, transform) {
-  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
-  return function() {
-    var args = arguments,
-        index = -1,
-        length = nativeMax(args.length - start, 0),
-        array = Array(length);
-
-    while (++index < length) {
-      array[index] = args[start + index];
-    }
-    index = -1;
-    var otherArgs = Array(start + 1);
-    while (++index < start) {
-      otherArgs[index] = args[index];
-    }
-    otherArgs[start] = transform(array);
-    return apply(func, this, otherArgs);
-  };
-}
-
-/**
- * Gets the value at `key`, unless `key` is "__proto__" or "constructor".
- *
- * @private
- * @param {Object} object The object to query.
- * @param {string} key The key of the property to get.
- * @returns {*} Returns the property value.
- */
-function safeGet(object, key) {
-  if (key === 'constructor' && typeof object[key] === 'function') {
-    return;
-  }
-
-  if (key == '__proto__') {
-    return;
-  }
-
-  return object[key];
-}
-
-/**
- * Sets the `toString` method of `func` to return `string`.
- *
- * @private
- * @param {Function} func The function to modify.
- * @param {Function} string The `toString` result.
- * @returns {Function} Returns `func`.
- */
-var setToString = shortOut(baseSetToString);
-
-/**
- * Creates a function that'll short out and invoke `identity` instead
- * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
- * milliseconds.
- *
- * @private
- * @param {Function} func The function to restrict.
- * @returns {Function} Returns the new shortable function.
- */
-function shortOut(func) {
-  var count = 0,
-      lastCalled = 0;
-
-  return function() {
-    var stamp = nativeNow(),
-        remaining = HOT_SPAN - (stamp - lastCalled);
-
-    lastCalled = stamp;
-    if (remaining > 0) {
-      if (++count >= HOT_COUNT) {
-        return arguments[0];
-      }
-    } else {
-      count = 0;
-    }
-    return func.apply(undefined, arguments);
-  };
-}
-
-/**
- * Converts `func` to its source code.
- *
- * @private
- * @param {Function} func The function to convert.
- * @returns {string} Returns the source code.
- */
-function toSource(func) {
-  if (func != null) {
-    try {
-      return funcToString.call(func);
-    } catch (e) {}
-    try {
-      return (func + '');
-    } catch (e) {}
-  }
-  return '';
-}
-
-/**
- * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * comparison between two values to determine if they are equivalent.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @example
- *
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
- *
- * _.eq(object, object);
- * // => true
- *
- * _.eq(object, other);
- * // => false
- *
- * _.eq('a', 'a');
- * // => true
- *
- * _.eq('a', Object('a'));
- * // => false
- *
- * _.eq(NaN, NaN);
- * // => true
- */
-function eq(value, other) {
-  return value === other || (value !== value && other !== other);
-}
-
-/**
- * Checks if `value` is likely an `arguments` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an `arguments` object,
- *  else `false`.
- * @example
- *
- * _.isArguments(function() { return arguments; }());
- * // => true
- *
- * _.isArguments([1, 2, 3]);
- * // => false
- */
-var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsArguments : function(value) {
-  return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
-    !propertyIsEnumerable.call(value, 'callee');
-};
-
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(document.body.children);
- * // => false
- *
- * _.isArray('abc');
- * // => false
- *
- * _.isArray(_.noop);
- * // => false
- */
-var isArray = Array.isArray;
-
-/**
- * Checks if `value` is array-like. A value is considered array-like if it's
- * not a function and has a `value.length` that's an integer greater than or
- * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
- * @example
- *
- * _.isArrayLike([1, 2, 3]);
- * // => true
- *
- * _.isArrayLike(document.body.children);
- * // => true
- *
- * _.isArrayLike('abc');
- * // => true
- *
- * _.isArrayLike(_.noop);
- * // => false
- */
-function isArrayLike(value) {
-  return value != null && isLength(value.length) && !isFunction(value);
-}
-
-/**
- * This method is like `_.isArrayLike` except that it also checks if `value`
- * is an object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array-like object,
- *  else `false`.
- * @example
- *
- * _.isArrayLikeObject([1, 2, 3]);
- * // => true
- *
- * _.isArrayLikeObject(document.body.children);
- * // => true
- *
- * _.isArrayLikeObject('abc');
- * // => false
- *
- * _.isArrayLikeObject(_.noop);
- * // => false
- */
-function isArrayLikeObject(value) {
-  return isObjectLike(value) && isArrayLike(value);
-}
-
-/**
- * Checks if `value` is a buffer.
- *
- * @static
- * @memberOf _
- * @since 4.3.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
- * @example
- *
- * _.isBuffer(new Buffer(2));
- * // => true
- *
- * _.isBuffer(new Uint8Array(2));
- * // => false
- */
-var isBuffer = nativeIsBuffer || stubFalse;
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a function, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  if (!isObject(value)) {
-    return false;
-  }
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 9 which returns 'object' for typed arrays and other constructors.
-  var tag = baseGetTag(value);
-  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
-}
-
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This method is loosely based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- * @example
- *
- * _.isLength(3);
- * // => true
- *
- * _.isLength(Number.MIN_VALUE);
- * // => false
- *
- * _.isLength(Infinity);
- * // => false
- *
- * _.isLength('3');
- * // => false
- */
-function isLength(value) {
-  return typeof value == 'number' &&
-    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return value != null && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return value != null && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is a plain object, that is, an object created by the
- * `Object` constructor or one with a `[[Prototype]]` of `null`.
- *
- * @static
- * @memberOf _
- * @since 0.8.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- * }
- *
- * _.isPlainObject(new Foo);
- * // => false
- *
- * _.isPlainObject([1, 2, 3]);
- * // => false
- *
- * _.isPlainObject({ 'x': 0, 'y': 0 });
- * // => true
- *
- * _.isPlainObject(Object.create(null));
- * // => true
- */
-function isPlainObject(value) {
-  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
-    return false;
-  }
-  var proto = getPrototype(value);
-  if (proto === null) {
-    return true;
-  }
-  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
-  return typeof Ctor == 'function' && Ctor instanceof Ctor &&
-    funcToString.call(Ctor) == objectCtorString;
-}
-
-/**
- * Checks if `value` is classified as a typed array.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
- * @example
- *
- * _.isTypedArray(new Uint8Array);
- * // => true
- *
- * _.isTypedArray([]);
- * // => false
- */
-var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
-
-/**
- * Converts `value` to a plain object flattening inherited enumerable string
- * keyed properties of `value` to own properties of the plain object.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {Object} Returns the converted plain object.
- * @example
- *
- * function Foo() {
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.assign({ 'a': 1 }, new Foo);
- * // => { 'a': 1, 'b': 2 }
- *
- * _.assign({ 'a': 1 }, _.toPlainObject(new Foo));
- * // => { 'a': 1, 'b': 2, 'c': 3 }
- */
-function toPlainObject(value) {
-  return copyObject(value, keysIn(value));
-}
-
-/**
- * Creates an array of the own and inherited enumerable property names of `object`.
- *
- * **Note:** Non-object values are coerced to objects.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.keysIn(new Foo);
- * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
- */
-function keysIn(object) {
-  return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
-}
-
-/**
- * This method is like `_.assign` except that it recursively merges own and
- * inherited enumerable string keyed properties of source objects into the
- * destination object. Source properties that resolve to `undefined` are
- * skipped if a destination value exists. Array and plain object properties
- * are merged recursively. Other objects and value types are overridden by
- * assignment. Source objects are applied from left to right. Subsequent
- * sources overwrite property assignments of previous sources.
- *
- * **Note:** This method mutates `object`.
- *
- * @static
- * @memberOf _
- * @since 0.5.0
- * @category Object
- * @param {Object} object The destination object.
- * @param {...Object} [sources] The source objects.
- * @returns {Object} Returns `object`.
- * @example
- *
- * var object = {
- *   'a': [{ 'b': 2 }, { 'd': 4 }]
- * };
- *
- * var other = {
- *   'a': [{ 'c': 3 }, { 'e': 5 }]
- * };
- *
- * _.merge(object, other);
- * // => { 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
- */
-var merge = createAssigner(function(object, source, srcIndex) {
-  baseMerge(object, source, srcIndex);
-});
-
-/**
- * Creates a function that returns `value`.
- *
- * @static
- * @memberOf _
- * @since 2.4.0
- * @category Util
- * @param {*} value The value to return from the new function.
- * @returns {Function} Returns the new constant function.
- * @example
- *
- * var objects = _.times(2, _.constant({ 'a': 1 }));
- *
- * console.log(objects);
- * // => [{ 'a': 1 }, { 'a': 1 }]
- *
- * console.log(objects[0] === objects[1]);
- * // => true
- */
-function constant(value) {
-  return function() {
-    return value;
-  };
-}
-
-/**
- * This method returns the first argument it receives.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Util
- * @param {*} value Any value.
- * @returns {*} Returns `value`.
- * @example
- *
- * var object = { 'a': 1 };
- *
- * console.log(_.identity(object) === object);
- * // => true
- */
-function identity(value) {
-  return value;
-}
-
-/**
- * This method returns `false`.
- *
- * @static
- * @memberOf _
- * @since 4.13.0
- * @category Util
- * @returns {boolean} Returns `false`.
- * @example
- *
- * _.times(2, _.stubFalse);
- * // => [false, false]
- */
-function stubFalse() {
-  return false;
-}
-
-module.exports = merge;
 
 
 /***/ }),
@@ -38834,7 +37108,7 @@ var apply = __webpack_require__(76024);
 var uncurryThis = __webpack_require__(92361);
 var isCallable = __webpack_require__(62250);
 var getOwnPropertyDescriptor = (__webpack_require__(13846).f);
-var isForced = __webpack_require__(29844);
+var isForced = __webpack_require__(7463);
 var path = __webpack_require__(92046);
 var bind = __webpack_require__(28311);
 var createNonEnumerableProperty = __webpack_require__(61626);
@@ -39211,7 +37485,7 @@ module.exports = typeof documentAll == 'undefined' && documentAll !== undefined 
 
 /***/ }),
 
-/***/ 29844:
+/***/ 7463:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";

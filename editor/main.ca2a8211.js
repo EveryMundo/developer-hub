@@ -1460,7 +1460,7 @@ function memoize(fn) {
 
 /***/ }),
 
-/***/ 82389:
+/***/ 57377:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1474,7 +1474,7 @@ __webpack_require__.d(__webpack_exports__, {
   a: () => (/* binding */ ThemeProvider),
   b: () => (/* binding */ withTheme),
   c: () => (/* binding */ createEmotionProps),
-  h: () => (/* binding */ emotion_element_c39617d8_browser_esm_hasOwnProperty),
+  h: () => (/* binding */ hasOwn),
   i: () => (/* binding */ isBrowser),
   u: () => (/* binding */ useTheme),
   w: () => (/* binding */ withEmotionCache)
@@ -1526,7 +1526,7 @@ var emotion_utils_browser_esm = __webpack_require__(30041);
 var emotion_serialize_browser_esm = __webpack_require__(13451);
 // EXTERNAL MODULE: ./node_modules/@emotion/use-insertion-effect-with-fallbacks/dist/emotion-use-insertion-effect-with-fallbacks.browser.esm.js
 var emotion_use_insertion_effect_with_fallbacks_browser_esm = __webpack_require__(71287);
-;// CONCATENATED MODULE: ./node_modules/@emotion/react/dist/emotion-element-c39617d8.browser.esm.js
+;// CONCATENATED MODULE: ./node_modules/@emotion/react/dist/emotion-element-43c6fea0.browser.esm.js
 
 
 
@@ -1538,7 +1538,7 @@ var emotion_use_insertion_effect_with_fallbacks_browser_esm = __webpack_require_
 
 
 var isBrowser = "object" !== 'undefined';
-var emotion_element_c39617d8_browser_esm_hasOwnProperty = {}.hasOwnProperty;
+var hasOwn = {}.hasOwnProperty;
 
 var EmotionCacheContext = /* #__PURE__ */compat_module.createContext( // we're doing this to avoid preconstruct's dead code elimination in this one case
 // because this module is primarily intended for the browser and node
@@ -1696,7 +1696,7 @@ var createEmotionProps = function createEmotionProps(type, props) {
   var newProps = {};
 
   for (var key in props) {
-    if (emotion_element_c39617d8_browser_esm_hasOwnProperty.call(props, key)) {
+    if (hasOwn.call(props, key)) {
       newProps[key] = props[key];
     }
   }
@@ -1748,7 +1748,7 @@ var Emotion = /* #__PURE__ */withEmotionCache(function (props, cache, ref) {
   var newProps = {};
 
   for (var key in props) {
-    if (emotion_element_c39617d8_browser_esm_hasOwnProperty.call(props, key) && key !== 'css' && key !== typePropName && ( true || 0)) {
+    if (hasOwn.call(props, key) && key !== 'css' && key !== typePropName && ( true || 0)) {
       newProps[key] = props[key];
     }
   }
@@ -1777,21 +1777,21 @@ var Emotion$1 = Emotion;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   CacheProvider: () => (/* reexport safe */ _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.C),
+/* harmony export */   CacheProvider: () => (/* reexport safe */ _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.C),
 /* harmony export */   ClassNames: () => (/* binding */ ClassNames),
 /* harmony export */   Global: () => (/* binding */ Global),
-/* harmony export */   ThemeContext: () => (/* reexport safe */ _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.T),
-/* harmony export */   ThemeProvider: () => (/* reexport safe */ _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.a),
-/* harmony export */   __unsafe_useEmotionCache: () => (/* reexport safe */ _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__._),
+/* harmony export */   ThemeContext: () => (/* reexport safe */ _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.T),
+/* harmony export */   ThemeProvider: () => (/* reexport safe */ _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.a),
+/* harmony export */   __unsafe_useEmotionCache: () => (/* reexport safe */ _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__._),
 /* harmony export */   createElement: () => (/* binding */ jsx),
 /* harmony export */   css: () => (/* binding */ css),
 /* harmony export */   jsx: () => (/* binding */ jsx),
 /* harmony export */   keyframes: () => (/* binding */ keyframes),
-/* harmony export */   useTheme: () => (/* reexport safe */ _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.u),
-/* harmony export */   withEmotionCache: () => (/* reexport safe */ _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.w),
-/* harmony export */   withTheme: () => (/* reexport safe */ _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.b)
+/* harmony export */   useTheme: () => (/* reexport safe */ _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.u),
+/* harmony export */   withEmotionCache: () => (/* reexport safe */ _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.w),
+/* harmony export */   withTheme: () => (/* reexport safe */ _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.b)
 /* harmony export */ });
-/* harmony import */ var _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(82389);
+/* harmony import */ var _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(57377);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(88763);
 /* harmony import */ var _emotion_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(30041);
 /* harmony import */ var _emotion_use_insertion_effect_with_fallbacks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71287);
@@ -1813,7 +1813,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var pkg = {
 	name: "@emotion/react",
-	version: "11.11.3",
+	version: "11.11.4",
 	main: "dist/emotion-react.cjs.js",
 	module: "dist/emotion-react.esm.js",
 	browser: {
@@ -1946,15 +1946,15 @@ var pkg = {
 var jsx = function jsx(type, props) {
   var args = arguments;
 
-  if (props == null || !_emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.h.call(props, 'css')) {
+  if (props == null || !_emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.h.call(props, 'css')) {
     // $FlowFixMe
     return react__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(undefined, args);
   }
 
   var argsLength = args.length;
   var createElementArgArray = new Array(argsLength);
-  createElementArgArray[0] = _emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.E;
-  createElementArgArray[1] = (0,_emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.c)(type, props);
+  createElementArgArray[0] = _emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.E;
+  createElementArgArray[1] = (0,_emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.c)(type, props);
 
   for (var i = 2; i < argsLength; i++) {
     createElementArgArray[i] = args[i];
@@ -1968,13 +1968,13 @@ var warnedAboutCssPropForGlobal = false; // maintain place over rerenders.
 // initial render from browser, insertBefore context.sheet.tags[0] or if a style hasn't been inserted there yet, appendChild
 // initial client-side render from SSR, use place of hydrating tag
 
-var Global = /* #__PURE__ */(0,_emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.w)(function (props, cache) {
+var Global = /* #__PURE__ */(0,_emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.w)(function (props, cache) {
   if (false) {}
 
   var styles = props.styles;
-  var serialized = (0,_emotion_serialize__WEBPACK_IMPORTED_MODULE_3__/* .serializeStyles */ .J)([styles], undefined, react__WEBPACK_IMPORTED_MODULE_1__.useContext(_emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.T));
+  var serialized = (0,_emotion_serialize__WEBPACK_IMPORTED_MODULE_3__/* .serializeStyles */ .J)([styles], undefined, react__WEBPACK_IMPORTED_MODULE_1__.useContext(_emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.T));
 
-  if (!_emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.i) {
+  if (!_emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.i) {
     var _ref;
 
     var serializedNames = serialized.name;
@@ -2160,7 +2160,7 @@ var Insertion = function Insertion(_ref) {
   return null;
 };
 
-var ClassNames = /* #__PURE__ */(0,_emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.w)(function (props, cache) {
+var ClassNames = /* #__PURE__ */(0,_emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.w)(function (props, cache) {
   var hasRendered = false;
   var serializedArr = [];
 
@@ -2191,7 +2191,7 @@ var ClassNames = /* #__PURE__ */(0,_emotion_element_c39617d8_browser_esm_js__WEB
   var content = {
     css: css,
     cx: cx,
-    theme: react__WEBPACK_IMPORTED_MODULE_1__.useContext(_emotion_element_c39617d8_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.T)
+    theme: react__WEBPACK_IMPORTED_MODULE_1__.useContext(_emotion_element_43c6fea0_browser_esm_js__WEBPACK_IMPORTED_MODULE_0__.T)
   };
   var ele = props.children(content);
   hasRendered = true;
@@ -2956,7 +2956,7 @@ module.exports = defaults;
 
 /***/ }),
 
-/***/ 31708:
+/***/ 91352:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -20992,8 +20992,153 @@ var Theme = {
 /* harmony default export */ const Theme_Theme = (Theme);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/components/Theme/index.js
 
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.js + 2 modules
-var JsonInput = __webpack_require__(96924);
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/validate-json/validate-json.js
+function validateJson(value, deserialize) {
+  if (typeof value === "string" && value.trim().length === 0) {
+    return true;
+  }
+  try {
+    deserialize(value);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+
+//# sourceMappingURL=validate-json.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.styles.js
+
+
+var JsonInput_styles_useStyles = (0,create_styles/* createStyles */.r)((theme, _params, { size }) => ({
+  input: {
+    fontFamily: theme.fontFamilyMonospace,
+    fontSize: `calc(${(0,get_size/* getSize */.Y)({ size, sizes: theme.fontSizes })} - ${(0,rem/* rem */.D)(2)})`
+  }
+}));
+
+/* harmony default export */ const JsonInput_styles = (JsonInput_styles_useStyles);
+//# sourceMappingURL=JsonInput.styles.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.js
+
+
+
+
+
+
+
+var JsonInput_defProp = Object.defineProperty;
+var JsonInput_defProps = Object.defineProperties;
+var JsonInput_getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var JsonInput_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var JsonInput_hasOwnProp = Object.prototype.hasOwnProperty;
+var JsonInput_propIsEnum = Object.prototype.propertyIsEnumerable;
+var JsonInput_defNormalProp = (obj, key, value) => key in obj ? JsonInput_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var JsonInput_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (JsonInput_hasOwnProp.call(b, prop))
+      JsonInput_defNormalProp(a, prop, b[prop]);
+  if (JsonInput_getOwnPropSymbols)
+    for (var prop of JsonInput_getOwnPropSymbols(b)) {
+      if (JsonInput_propIsEnum.call(b, prop))
+        JsonInput_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var JsonInput_spreadProps = (a, b) => JsonInput_defProps(a, JsonInput_getOwnPropDescs(b));
+var JsonInput_objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (JsonInput_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && JsonInput_getOwnPropSymbols)
+    for (var prop of JsonInput_getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && JsonInput_propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const JsonInput_defaultProps = {
+  formatOnBlur: false,
+  size: "sm",
+  serialize: JSON.stringify,
+  deserialize: JSON.parse
+};
+const JsonInput = (0,compat_module.forwardRef)((props, ref) => {
+  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("JsonInput", JsonInput_defaultProps, props), {
+    value,
+    defaultValue,
+    onChange,
+    onFocus,
+    onBlur,
+    error,
+    formatOnBlur,
+    size,
+    validationError,
+    classNames,
+    unstyled,
+    readOnly,
+    variant,
+    serialize,
+    deserialize
+  } = _a, others = JsonInput_objRest(_a, [
+    "value",
+    "defaultValue",
+    "onChange",
+    "onFocus",
+    "onBlur",
+    "error",
+    "formatOnBlur",
+    "size",
+    "validationError",
+    "classNames",
+    "unstyled",
+    "readOnly",
+    "variant",
+    "serialize",
+    "deserialize"
+  ]);
+  const { classes, cx } = JsonInput_styles(null, { name: "JsonInput", unstyled, size, variant });
+  const [_value, setValue] = (0,use_uncontrolled/* useUncontrolled */.Z)({
+    value,
+    defaultValue,
+    finalValue: "",
+    onChange
+  });
+  const [valid, setValid] = (0,compat_module.useState)(validateJson(_value, deserialize));
+  const handleFocus = (event) => {
+    typeof onFocus === "function" && onFocus(event);
+    setValid(true);
+  };
+  const handleBlur = (event) => {
+    typeof onBlur === "function" && onBlur(event);
+    const isValid = validateJson(event.currentTarget.value, deserialize);
+    formatOnBlur && !readOnly && isValid && event.currentTarget.value.trim() !== "" && setValue(serialize(deserialize(event.currentTarget.value), null, 2));
+    setValid(isValid);
+  };
+  return /* @__PURE__ */ compat_module["default"].createElement(Textarea/* Textarea */.T, JsonInput_spreadValues({
+    value: _value,
+    onChange: (event) => setValue(event.currentTarget.value),
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    error: valid ? error : validationError || true,
+    __staticSelector: "JsonInput",
+    classNames: JsonInput_spreadProps(JsonInput_spreadValues({}, classNames), { input: cx(classes.input, classNames == null ? void 0 : classNames.input) }),
+    autoComplete: "off",
+    ref,
+    unstyled,
+    readOnly,
+    size,
+    variant
+  }, others));
+});
+JsonInput.displayName = "@mantine/core/JsonInput";
+
+
+//# sourceMappingURL=JsonInput.js.map
+
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/core/utils/isJsonValid.js
 /* harmony default export */ const isJsonValid = (function (str) {
   try {
@@ -21058,7 +21203,7 @@ var JsonField = function JsonField(props) {
     label: label,
     description: rawDescription,
     required: required
-  }, /*#__PURE__*/compat_module["default"].createElement(JsonInput/* JsonInput */.f, {
+  }, /*#__PURE__*/compat_module["default"].createElement(JsonInput, {
     id: id,
     value: text,
     onChange: handleOnChange,
@@ -24539,180 +24684,6 @@ function useInputProps(component, defaultProps, props) {
 
 
 //# sourceMappingURL=use-input-props.js.map
-
-
-/***/ }),
-
-/***/ 96924:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  f: () => (/* binding */ JsonInput)
-});
-
-// EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
-var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/@mantine/hooks/esm/use-uncontrolled/use-uncontrolled.js
-var use_uncontrolled = __webpack_require__(19203);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/validate-json/validate-json.js
-function validateJson(value, deserialize) {
-  if (typeof value === "string" && value.trim().length === 0) {
-    return true;
-  }
-  try {
-    deserialize(value);
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-
-//# sourceMappingURL=validate-json.js.map
-
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/tss/create-styles.js + 1 modules
-var create_styles = __webpack_require__(54297);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/get-size/get-size.js
-var get_size = __webpack_require__(9103);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/rem/rem.js
-var rem = __webpack_require__(48085);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.styles.js
-
-
-var useStyles = (0,create_styles/* createStyles */.r)((theme, _params, { size }) => ({
-  input: {
-    fontFamily: theme.fontFamilyMonospace,
-    fontSize: `calc(${(0,get_size/* getSize */.Y)({ size, sizes: theme.fontSizes })} - ${(0,rem/* rem */.D)(2)})`
-  }
-}));
-
-/* harmony default export */ const JsonInput_styles = (useStyles);
-//# sourceMappingURL=JsonInput.styles.js.map
-
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Textarea/Textarea.js + 5 modules
-var Textarea = __webpack_require__(98421);
-;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.js
-
-
-
-
-
-
-
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
-const defaultProps = {
-  formatOnBlur: false,
-  size: "sm",
-  serialize: JSON.stringify,
-  deserialize: JSON.parse
-};
-const JsonInput = (0,compat_module.forwardRef)((props, ref) => {
-  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("JsonInput", defaultProps, props), {
-    value,
-    defaultValue,
-    onChange,
-    onFocus,
-    onBlur,
-    error,
-    formatOnBlur,
-    size,
-    validationError,
-    classNames,
-    unstyled,
-    readOnly,
-    variant,
-    serialize,
-    deserialize
-  } = _a, others = __objRest(_a, [
-    "value",
-    "defaultValue",
-    "onChange",
-    "onFocus",
-    "onBlur",
-    "error",
-    "formatOnBlur",
-    "size",
-    "validationError",
-    "classNames",
-    "unstyled",
-    "readOnly",
-    "variant",
-    "serialize",
-    "deserialize"
-  ]);
-  const { classes, cx } = JsonInput_styles(null, { name: "JsonInput", unstyled, size, variant });
-  const [_value, setValue] = (0,use_uncontrolled/* useUncontrolled */.Z)({
-    value,
-    defaultValue,
-    finalValue: "",
-    onChange
-  });
-  const [valid, setValid] = (0,compat_module.useState)(validateJson(_value, deserialize));
-  const handleFocus = (event) => {
-    typeof onFocus === "function" && onFocus(event);
-    setValid(true);
-  };
-  const handleBlur = (event) => {
-    typeof onBlur === "function" && onBlur(event);
-    const isValid = validateJson(event.currentTarget.value, deserialize);
-    formatOnBlur && !readOnly && isValid && event.currentTarget.value.trim() !== "" && setValue(serialize(deserialize(event.currentTarget.value), null, 2));
-    setValid(isValid);
-  };
-  return /* @__PURE__ */ compat_module["default"].createElement(Textarea/* Textarea */.T, __spreadValues({
-    value: _value,
-    onChange: (event) => setValue(event.currentTarget.value),
-    onFocus: handleFocus,
-    onBlur: handleBlur,
-    error: valid ? error : validationError || true,
-    __staticSelector: "JsonInput",
-    classNames: __spreadProps(__spreadValues({}, classNames), { input: cx(classes.input, classNames == null ? void 0 : classNames.input) }),
-    autoComplete: "off",
-    ref,
-    unstyled,
-    readOnly,
-    size,
-    variant
-  }, others));
-});
-JsonInput.displayName = "@mantine/core/JsonInput";
-
-
-//# sourceMappingURL=JsonInput.js.map
 
 
 /***/ }),
@@ -37205,8 +37176,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/@emotion/react/dist/emotion-element-c39617d8.browser.esm.js + 2 modules
-var emotion_element_c39617d8_browser_esm = __webpack_require__(82389);
+// EXTERNAL MODULE: ./node_modules/@emotion/react/dist/emotion-element-43c6fea0.browser.esm.js + 2 modules
+var emotion_element_43c6fea0_browser_esm = __webpack_require__(57377);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/dist/emotion-react.browser.esm.js
 var emotion_react_browser_esm = __webpack_require__(17437);
 ;// CONCATENATED MODULE: ./node_modules/@mantine/styles/esm/theme/default-colors.js
@@ -38355,7 +38326,7 @@ function MantineProvider({
 }) {
   const ctx = (0,compat_module.useContext)(MantineProviderContext);
   const mergedTheme = mergeThemeWithFunctions(DEFAULT_THEME, inherit ? MantineProvider_spreadValues(MantineProvider_spreadValues({}, ctx.theme), theme) : theme);
-  return /* @__PURE__ */ compat_module["default"].createElement(emotion_element_c39617d8_browser_esm.a, {
+  return /* @__PURE__ */ compat_module["default"].createElement(emotion_element_43c6fea0_browser_esm.a, {
     theme: mergedTheme
   }, /* @__PURE__ */ compat_module["default"].createElement(MantineProviderContext.Provider, {
     value: { theme: mergedTheme, emotionCache }
@@ -44788,7 +44759,8 @@ module.exports = assignment;
 /* harmony export */   QE: () => (/* binding */ TEMPLATE_MAPPING),
 /* harmony export */   oj: () => (/* binding */ DEFAULT_DESKTOP_VIEWPORT),
 /* harmony export */   qX: () => (/* binding */ VIEWPORT_MAPPING),
-/* harmony export */   tS: () => (/* binding */ MODULE_WAIT_TIMEOUT_UNTIL_ERROR)
+/* harmony export */   tS: () => (/* binding */ MODULE_WAIT_TIMEOUT_UNTIL_ERROR),
+/* harmony export */   y_: () => (/* binding */ TESTER_SERVICE_URL)
 /* harmony export */ });
 /* unused harmony exports DEFAULT_MODULE_URL_IF_EMPTY, ADNETIFY_SCRIPT */
 var DEFAULT_MODULE_URL_IF_EMPTY = "https://everymundo.github.io/registry/examples/hello-react/";
@@ -44867,6 +44839,7 @@ var TEMPLATE_MAPPING = {
     template: "page"
   }
 };
+var TESTER_SERVICE_URL = "https://registry-tester.everymundo.net/trfx/:tenant/:siteEdition/:slug";
 
 /***/ }),
 
@@ -44886,7 +44859,7 @@ var compat_module = __webpack_require__(88763);
 var Store = __webpack_require__(91342);
 ;// CONCATENATED MODULE: ./src/addons/OverviewAddon/components/ContextSummary/ContextSummary.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const ContextSummary_module = ({"tempTitle":"k","container":"l"});
+/* harmony default export */ const ContextSummary_module = ({"tempTitle":"h","container":"i"});
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Text/Text.js + 1 modules
 var Text = __webpack_require__(99826);
 ;// CONCATENATED MODULE: ./src/addons/OverviewAddon/components/ContextSummary/ContextSummary.jsx
@@ -45558,7 +45531,7 @@ var I18nAddon = (0,loadable_esm/* default */.Ay)(function () {
   return __webpack_require__.e(/* import() */ 85).then(__webpack_require__.bind(__webpack_require__, 5085));
 });
 var TestAddon = (0,loadable_esm/* default */.Ay)(function () {
-  return __webpack_require__.e(/* import() */ 823).then(__webpack_require__.bind(__webpack_require__, 65823));
+  return __webpack_require__.e(/* import() */ 966).then(__webpack_require__.bind(__webpack_require__, 77966));
 });
 /* harmony default export */ const addons_config = ([{
   key: "addon-overview",
@@ -45984,18 +45957,18 @@ var store = function store(set, get) {
     }(),
     updateOptionsStyles: function () {
       var _updateOptionsStyles = (0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee6(_ref) {
-        var selectedTheme, tokens;
+        var selectedTheme, tokens, resources;
         return regenerator_default().wrap(function _callee6$(_context6) {
           while (1) switch (_context6.prev = _context6.next) {
             case 0:
-              selectedTheme = _ref.selectedTheme, tokens = _ref.tokens;
+              selectedTheme = _ref.selectedTheme, tokens = _ref.tokens, resources = _ref.resources;
               set(function (state) {
                 return {
                   options: Store_objectSpread(Store_objectSpread({}, state.options), {}, {
-                    styles: {
+                    styles: Store_objectSpread({
                       selectedTheme: selectedTheme,
                       tokens: tokens
-                    }
+                    }, resources ? resources : {})
                   })
                 };
               }, false, "options/updateOptionsStyles");
@@ -65317,7 +65290,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("0606d925b3ec09700fd5")
+/******/ 		__webpack_require__.h = () => ("ca2a8211c4e63655e170")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -65416,6 +65389,9 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 		
 /******/ 			linkTag.rel = "stylesheet";
 /******/ 			linkTag.type = "text/css";
+/******/ 			if (__webpack_require__.nc) {
+/******/ 				linkTag.nonce = __webpack_require__.nc;
+/******/ 			}
 /******/ 			var onLinkComplete = (event) => {
 /******/ 				// avoid mem leaks.
 /******/ 				linkTag.onerror = linkTag.onload = null;
@@ -65472,7 +65448,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"27":1,"85":1,"502":1,"823":1,"898":1};
+/******/ 			var cssChunks = {"27":1,"85":1,"502":1,"898":1,"966":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
@@ -65774,8 +65750,8 @@ var Store = __webpack_require__(91342);
 var Tabs = __webpack_require__(80579);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Alert/Alert.js + 1 modules
 var Alert = __webpack_require__(859);
-// EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 277 modules
-var es = __webpack_require__(31708);
+// EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 280 modules
+var es = __webpack_require__(91352);
 // EXTERNAL MODULE: ./node_modules/@loadable/component/dist/loadable.esm.mjs + 3 modules
 var loadable_esm = __webpack_require__(20110);
 // EXTERNAL MODULE: ./node_modules/@monaco-editor/react/dist/index.mjs + 11 modules

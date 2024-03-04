@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_everymundo_registry_playground"] = self["webpackChunk_everymundo_registry_playground"] || []).push([[823],{
+(self["webpackChunk_everymundo_registry_playground"] = self["webpackChunk_everymundo_registry_playground"] || []).push([[966],{
 
-/***/ 65823:
+/***/ 77966:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -20,52 +20,11 @@ var toConsumableArray = __webpack_require__(45458);
 var defineProperty = __webpack_require__(64980);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(10467);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
-var slicedToArray = __webpack_require__(80296);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
 var regenerator = __webpack_require__(54756);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/use-clipboard-copy/dist/index.js
-var dist = __webpack_require__(92600);
-// EXTERNAL MODULE: ./node_modules/json-difference/dist/index.js
-var json_difference_dist = __webpack_require__(73970);
-;// CONCATENATED MODULE: ./src/utils/jsonDifference.js
-// const transform = require("lodash.transform");
-// const isEqual = require("lodash.isequal");
-// const isArray = require("lodash.isarray");
-// const isObject = require("lodash.isobject");
-
-// /**
-//  * Find difference between two objects
-//  * @param  {object} origObj - Source object to compare newObj against
-//  * @param  {object} newObj  - New object with potential changes
-//  * @return {object} differences
-//  */
-// function jsonDifference(origObj, newObj) {
-//   function changes(newObj, origObj) {
-//     let arrayIndexCounter = 0;
-//     return transform(newObj, function (result, value, key) {
-//       if (!isEqual(value, origObj[key])) {
-//         let resultKey = isArray(origObj) ? arrayIndexCounter++ : key;
-//         result[resultKey] =
-//           isObject(value) && isObject(origObj[key])
-//             ? changes(value, origObj[key])
-//             : value;
-//       }
-//     });
-//   }
-//   return changes(newObj, origObj);
-// }
-
-// export default jsonDifference;
-
-
-function jsonDifference(origObj, newObj) {
-  return (0,json_difference_dist.getDiff)(origObj, newObj, true);
-}
-/* harmony default export */ const utils_jsonDifference = (jsonDifference);
 // EXTERNAL MODULE: ./src/data/styles/themes/index.js + 5 modules
 var themes = __webpack_require__(41459);
 // EXTERNAL MODULE: ./src/utils/getDefaultPayloadBySetupJson.js
@@ -109,8 +68,6 @@ var getDefaultModulePayload = /*#__PURE__*/function () {
 var Alert = __webpack_require__(859);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Tabs/Tabs.js + 10 modules
 var Tabs = __webpack_require__(80579);
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
-var Box = __webpack_require__(29180);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Group/Group.js + 1 modules
 var Group = __webpack_require__(84543);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
@@ -213,12 +170,14 @@ FileButton.displayName = "@mantine/core/FileButton";
 
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Button/Button.js + 3 modules
 var Button = __webpack_require__(67859);
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/JsonInput/JsonInput.js + 2 modules
-var JsonInput = __webpack_require__(96924);
+// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
+var Box = __webpack_require__(29180);
 // EXTERNAL MODULE: ./src/store/Store.js + 7 modules
 var Store = __webpack_require__(91342);
 // EXTERNAL MODULE: ./src/components/ModulePayloadViewer/index.js + 5 modules
 var ModulePayloadViewer = __webpack_require__(9604);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
+var slicedToArray = __webpack_require__(80296);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/tss/create-styles.js + 1 modules
 var create_styles = __webpack_require__(54297);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/rem/rem.js
@@ -484,11 +443,11 @@ function ScenariosList(_ref) {
       onClick: function onClick() {
         return onRowSelected(index);
       }
-    }, /*#__PURE__*/compat_module["default"].createElement("td", null), /*#__PURE__*/compat_module["default"].createElement("td", null, /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
+    }, /*#__PURE__*/compat_module["default"].createElement("td", null, /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
       spacing: "sm"
     }, /*#__PURE__*/compat_module["default"].createElement(Text/* Text */.E, {
       weight: 500
-    }, item.name))), /*#__PURE__*/compat_module["default"].createElement("td", null, item.details));
+    }, "TRFX"))), /*#__PURE__*/compat_module["default"].createElement("td", null, item.tenant), /*#__PURE__*/compat_module["default"].createElement("td", null, item.siteEdition), /*#__PURE__*/compat_module["default"].createElement("td", null, item.slug), /*#__PURE__*/compat_module["default"].createElement("td", null, item.details));
   });
   return /*#__PURE__*/compat_module["default"].createElement(ScrollArea/* ScrollArea */.F, {
     h: 180,
@@ -504,18 +463,158 @@ function ScenariosList(_ref) {
     highlightOnHover: true
   }, /*#__PURE__*/compat_module["default"].createElement("thead", {
     className: cx(classes.header, (0,defineProperty/* default */.A)({}, classes.scrolled, scrolled))
-  }, /*#__PURE__*/compat_module["default"].createElement("tr", null, /*#__PURE__*/compat_module["default"].createElement("th", {
-    style: {
-      width: (0,rem/* rem */.D)(40)
-    }
-  }), /*#__PURE__*/compat_module["default"].createElement("th", null, "Name"), /*#__PURE__*/compat_module["default"].createElement("th", null))), /*#__PURE__*/compat_module["default"].createElement("tbody", null, rows)));
+  }, /*#__PURE__*/compat_module["default"].createElement("tr", null, /*#__PURE__*/compat_module["default"].createElement("th", null, "Type"), /*#__PURE__*/compat_module["default"].createElement("th", null, "Tenant"), /*#__PURE__*/compat_module["default"].createElement("th", null, "Site Edition"), /*#__PURE__*/compat_module["default"].createElement("th", null, "Slug"), /*#__PURE__*/compat_module["default"].createElement("th", null))), /*#__PURE__*/compat_module["default"].createElement("tbody", null, rows)));
 }
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Popover/Popover.js + 19 modules
 var Popover = __webpack_require__(75733);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/functions/fns/breakpoints/breakpoints.js
+var breakpoints_breakpoints = __webpack_require__(76483);
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/SimpleGrid/get-sorted-breakpoints/get-sorted-breakpoints.js
+
+
+function getSortedBreakpoints(theme, breakpoints) {
+  if (breakpoints.length === 0) {
+    return breakpoints;
+  }
+  const property = "maxWidth" in breakpoints[0] ? "maxWidth" : "minWidth";
+  const sorted = [...breakpoints].sort((a, b) => (0,breakpoints_breakpoints/* getBreakpointValue */.rL)((0,get_size/* getSize */.Y)({ size: b[property], sizes: theme.breakpoints })) - (0,breakpoints_breakpoints/* getBreakpointValue */.rL)((0,get_size/* getSize */.Y)({ size: a[property], sizes: theme.breakpoints })));
+  return property === "minWidth" ? sorted.reverse() : sorted;
+}
+
+
+//# sourceMappingURL=get-sorted-breakpoints.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/SimpleGrid/SimpleGrid.styles.js
+
+
+
+var SimpleGrid_styles_defProp = Object.defineProperty;
+var SimpleGrid_styles_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var SimpleGrid_styles_hasOwnProp = Object.prototype.hasOwnProperty;
+var SimpleGrid_styles_propIsEnum = Object.prototype.propertyIsEnumerable;
+var SimpleGrid_styles_defNormalProp = (obj, key, value) => key in obj ? SimpleGrid_styles_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var SimpleGrid_styles_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (SimpleGrid_styles_hasOwnProp.call(b, prop))
+      SimpleGrid_styles_defNormalProp(a, prop, b[prop]);
+  if (SimpleGrid_styles_getOwnPropSymbols)
+    for (var prop of SimpleGrid_styles_getOwnPropSymbols(b)) {
+      if (SimpleGrid_styles_propIsEnum.call(b, prop))
+        SimpleGrid_styles_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var SimpleGrid_styles_useStyles = (0,create_styles/* createStyles */.r)((theme, { spacing, breakpoints, cols, verticalSpacing }) => {
+  const hasVerticalSpacing = verticalSpacing != null;
+  const gridBreakpoints = getSortedBreakpoints(theme, breakpoints).reduce((acc, breakpoint) => {
+    var _a, _b;
+    const property = "maxWidth" in breakpoint ? "max-width" : "min-width";
+    const breakpointSize = (0,get_size/* getSize */.Y)({
+      size: property === "max-width" ? breakpoint.maxWidth : breakpoint.minWidth,
+      sizes: theme.breakpoints,
+      units: "em"
+    });
+    const breakpointValue = (0,breakpoints_breakpoints/* getBreakpointValue */.rL)(breakpointSize) - (property === "max-width" ? 1 : 0);
+    acc[`@media (${property}: ${(0,rem.em)(breakpointValue)})`] = {
+      gridTemplateColumns: `repeat(${breakpoint.cols}, minmax(0, 1fr))`,
+      gap: `${(0,get_size/* getSize */.Y)({
+        size: (_a = breakpoint.verticalSpacing) != null ? _a : hasVerticalSpacing ? verticalSpacing : spacing,
+        sizes: theme.spacing
+      })} ${(0,get_size/* getSize */.Y)({
+        size: (_b = breakpoint.spacing) != null ? _b : spacing,
+        sizes: theme.spacing
+      })}`
+    };
+    return acc;
+  }, {});
+  return {
+    root: SimpleGrid_styles_spreadValues({
+      boxSizing: "border-box",
+      display: "grid",
+      gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+      gap: `${(0,get_size/* getSize */.Y)({
+        size: hasVerticalSpacing ? verticalSpacing : spacing,
+        sizes: theme.spacing
+      })} ${(0,get_size/* getSize */.Y)({ size: spacing, sizes: theme.spacing })}`
+    }, gridBreakpoints)
+  };
+});
+
+/* harmony default export */ const SimpleGrid_styles = (SimpleGrid_styles_useStyles);
+//# sourceMappingURL=SimpleGrid.styles.js.map
+
+;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/SimpleGrid/SimpleGrid.js
+
+
+
+
+
+var SimpleGrid_defProp = Object.defineProperty;
+var SimpleGrid_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var SimpleGrid_hasOwnProp = Object.prototype.hasOwnProperty;
+var SimpleGrid_propIsEnum = Object.prototype.propertyIsEnumerable;
+var SimpleGrid_defNormalProp = (obj, key, value) => key in obj ? SimpleGrid_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var SimpleGrid_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (SimpleGrid_hasOwnProp.call(b, prop))
+      SimpleGrid_defNormalProp(a, prop, b[prop]);
+  if (SimpleGrid_getOwnPropSymbols)
+    for (var prop of SimpleGrid_getOwnPropSymbols(b)) {
+      if (SimpleGrid_propIsEnum.call(b, prop))
+        SimpleGrid_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var SimpleGrid_objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (SimpleGrid_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && SimpleGrid_getOwnPropSymbols)
+    for (var prop of SimpleGrid_getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && SimpleGrid_propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const SimpleGrid_defaultProps = {
+  breakpoints: [],
+  cols: 1,
+  spacing: "md"
+};
+const SimpleGrid = (0,compat_module.forwardRef)((props, ref) => {
+  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("SimpleGrid", SimpleGrid_defaultProps, props), {
+    className,
+    breakpoints,
+    cols,
+    spacing,
+    verticalSpacing,
+    children,
+    unstyled,
+    variant
+  } = _a, others = SimpleGrid_objRest(_a, [
+    "className",
+    "breakpoints",
+    "cols",
+    "spacing",
+    "verticalSpacing",
+    "children",
+    "unstyled",
+    "variant"
+  ]);
+  const { classes, cx } = SimpleGrid_styles({ breakpoints, cols, spacing, verticalSpacing }, { name: "SimpleGrid", unstyled, variant });
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, SimpleGrid_spreadValues({
+    className: cx(classes.root, className),
+    ref
+  }, others), children);
+});
+SimpleGrid.displayName = "@mantine/core/SimpleGrid";
+
+
+//# sourceMappingURL=SimpleGrid.js.map
+
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/TextInput/TextInput.js
 var TextInput = __webpack_require__(72280);
-// EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Textarea/Textarea.js + 5 modules
-var Textarea = __webpack_require__(98421);
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/components/NewScenario.jsx
 
 
@@ -528,16 +627,27 @@ function NewScenario(_ref) {
     } : _ref$onAction;
   var _useState = (0,compat_module.useState)(""),
     _useState2 = (0,slicedToArray/* default */.A)(_useState, 2),
-    name = _useState2[0],
-    setName = _useState2[1];
+    tenant = _useState2[0],
+    setTenant = _useState2[1];
   var _useState3 = (0,compat_module.useState)(""),
     _useState4 = (0,slicedToArray/* default */.A)(_useState3, 2),
-    details = _useState4[0],
-    setDetails = _useState4[1];
+    siteEdition = _useState4[0],
+    setSiteEdition = _useState4[1];
+  var _useState5 = (0,compat_module.useState)(""),
+    _useState6 = (0,slicedToArray/* default */.A)(_useState5, 2),
+    slug = _useState6[0],
+    setSlug = _useState6[1];
+  var _useState7 = (0,compat_module.useState)(""),
+    _useState8 = (0,slicedToArray/* default */.A)(_useState7, 2),
+    details = _useState8[0],
+    setDetails = _useState8[1];
   var handleOnAction = function handleOnAction() {
     onAction({
       name: name,
-      details: details
+      details: details,
+      tenant: tenant,
+      siteEdition: siteEdition,
+      slug: slug
     });
   };
   return /*#__PURE__*/compat_module["default"].createElement(Popover/* Popover */.A, {
@@ -552,23 +662,56 @@ function NewScenario(_ref) {
         background: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white
       };
     }
+  }, /*#__PURE__*/compat_module["default"].createElement(SimpleGrid, {
+    cols: 2
   }, /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
-    label: "Name",
+    label: "Tenant",
     size: "xs",
     required: true,
-    value: name,
+    value: tenant,
     onChange: function onChange(e) {
-      return setName(e.target.value);
+      return setTenant(e.target.value);
     }
-  }), /*#__PURE__*/compat_module["default"].createElement(Textarea/* Textarea */.T, {
-    label: "Details",
+  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+    label: "Site Edition",
     size: "xs",
-    mt: "xs",
-    value: details,
+    required: true,
+    value: siteEdition,
     onChange: function onChange(e) {
-      return setDetails(e.target.value);
+      return setSiteEdition(e.target.value);
     }
-  }), /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
+  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+    label: "Slug",
+    size: "xs",
+    value: slug,
+    onChange: function onChange(e) {
+      return setSlug(e.target.value);
+    }
+  })), /*#__PURE__*/compat_module["default"].createElement(SimpleGrid, {
+    cols: 2,
+    mt: "lg"
+  }, /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+    label: "Env",
+    size: "xs",
+    required: true,
+    defaultValue: "",
+    disabled: true
+  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+    label: "Module",
+    size: "xs",
+    defaultValue: "",
+    disabled: true
+  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+    label: "Campaign",
+    size: "xs",
+    defaultValue: "",
+    disabled: true
+  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+    label: "Theme",
+    size: "xs",
+    defaultValue: "",
+    disabled: true
+  })), /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
     sx: {
       textAlign: "right"
     }
@@ -581,9 +724,14 @@ function NewScenario(_ref) {
     }
   }, "Add"))));
 }
+// EXTERNAL MODULE: ./node_modules/lodash.merge/index.js
+var lodash_merge = __webpack_require__(70182);
+var lodash_merge_default = /*#__PURE__*/__webpack_require__.n(lodash_merge);
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/TestAddon.module.css
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const TestAddon_module = ({"panel":"m","modulePayloadBar":"n"});
+// EXTERNAL MODULE: ./config/constants.js
+var constants = __webpack_require__(62246);
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/TestAddon.jsx
 
 
@@ -592,7 +740,6 @@ function NewScenario(_ref) {
 
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,defineProperty/* default */.A)(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-
 
 
 
@@ -618,6 +765,9 @@ var UPDATE_OPTIONS_TEST_DATA_SELECTOR = function UPDATE_OPTIONS_TEST_DATA_SELECT
 var SET_MODULE_PAYLOAD_SELECTOR = function SET_MODULE_PAYLOAD_SELECTOR(state) {
   return state.setModulePayload;
 };
+var UPDATE_OPTIONS_STYLES_SELECTOR = function UPDATE_OPTIONS_STYLES_SELECTOR(state) {
+  return state.updateOptionsStyles;
+};
 function downloadFile(filename) {
   var content = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
   var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "application/json:charset=UTF-8";
@@ -638,50 +788,7 @@ var TestAddon = function TestAddon() {
   var data = (0,Store/* useStore */.P)(OPTION_TEST_DATA_SELECTOR);
   var setData = (0,Store/* useStore */.P)(UPDATE_OPTIONS_TEST_DATA_SELECTOR);
   var setModulePayload = (0,Store/* useStore */.P)(SET_MODULE_PAYLOAD_SELECTOR);
-  var _useState = (0,compat_module.useState)("{}"),
-    _useState2 = (0,slicedToArray/* default */.A)(_useState, 2),
-    diff = _useState2[0],
-    setDiff = _useState2[1];
-  var clipboard = (0,dist.useClipboard)({
-    copiedTimeout: 1000 // timeout duration in milliseconds
-  });
-  (0,compat_module.useEffect)(function () {
-    function process() {
-      return _process.apply(this, arguments);
-    }
-    function _process() {
-      _process = (0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee() {
-        var defaultAdnetifyPayload, difference;
-        return regenerator_default().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return utils_getDefaultModulePayload(setupJson);
-            case 2:
-              defaultAdnetifyPayload = _context.sent;
-              difference = utils_jsonDifference(defaultAdnetifyPayload, payload);
-              setDiff(JSON.stringify(difference, null, 2));
-            case 5:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee);
-      }));
-      return _process.apply(this, arguments);
-    }
-    process();
-  }, [payload, setupJson]);
-  var handleCopyToClipboard = (0,compat_module.useCallback)( /*#__PURE__*/(0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee2() {
-    return regenerator_default().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          clipboard.copy(diff);
-        case 1:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  })), [clipboard.copy, diff]);
+  var updateOptionsStyles = (0,Store/* useStore */.P)(UPDATE_OPTIONS_STYLES_SELECTOR);
   var handleOnSetFile = function handleOnSetFile(file) {
     console.log(file);
     if (!file) {
@@ -708,27 +815,27 @@ var TestAddon = function TestAddon() {
     reader.readAsDataURL(file);
   };
   var handleOnDownloadFile = /*#__PURE__*/function () {
-    var _ref2 = (0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee3() {
+    var _ref = (0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee() {
       var defaultAdnetifyPayload, _data;
-      return regenerator_default().wrap(function _callee3$(_context3) {
-        while (1) switch (_context3.prev = _context3.next) {
+      return regenerator_default().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
           case 0:
-            _context3.next = 2;
+            _context.next = 2;
             return utils_getDefaultModulePayload(setupJson);
           case 2:
-            defaultAdnetifyPayload = _context3.sent;
+            defaultAdnetifyPayload = _context.sent;
             _data = _objectSpread(_objectSpread({}, data), {}, {
               payload: defaultAdnetifyPayload
             });
             downloadFile("registry-test-addon-data.json", JSON.stringify(_data));
           case 5:
           case "end":
-            return _context3.stop();
+            return _context.stop();
         }
-      }, _callee3);
+      }, _callee);
     }));
     return function handleOnDownloadFile() {
-      return _ref2.apply(this, arguments);
+      return _ref.apply(this, arguments);
     };
   }();
   var handleOnResetAll = function handleOnResetAll() {
@@ -736,27 +843,116 @@ var TestAddon = function TestAddon() {
       setData([]);
     }
   };
+  var handleOnResetPayload = /*#__PURE__*/function () {
+    var _ref2 = (0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee2() {
+      var defaultAdnetifyPayload;
+      return regenerator_default().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return utils_getDefaultModulePayload(setupJson);
+          case 2:
+            defaultAdnetifyPayload = _context2.sent;
+            setModulePayload(defaultAdnetifyPayload);
+          case 4:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return function handleOnResetPayload() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
   var handleOnAddScenario = function handleOnAddScenario(_ref3) {
     var _data$scenarios;
     var name = _ref3.name,
-      details = _ref3.details;
+      details = _ref3.details,
+      tenant = _ref3.tenant,
+      siteEdition = _ref3.siteEdition,
+      slug = _ref3.slug;
     setData({
       data: _objectSpread(_objectSpread({}, data), {}, {
-        scenarios: [].concat((0,toConsumableArray/* default */.A)(data !== null && data !== void 0 && (_data$scenarios = data.scenarios) !== null && _data$scenarios !== void 0 && _data$scenarios.length ? data.scenarios : []), [{
-          name: name,
-          details: details,
-          data: Object.assign({}, payload)
-        }])
+        scenarios: [{
+          tenant: tenant,
+          siteEdition: siteEdition,
+          slug: slug,
+          details: details
+        }].concat((0,toConsumableArray/* default */.A)(data !== null && data !== void 0 && (_data$scenarios = data.scenarios) !== null && _data$scenarios !== void 0 && _data$scenarios.length ? data.scenarios : []))
       })
     });
   };
-  var handleOnRowSelected = function handleOnRowSelected(index) {
-    var _data$scenarios$index;
-    console.log(data === null || data === void 0 ? void 0 : data.scenarios[index]);
-    if (data !== null && data !== void 0 && (_data$scenarios$index = data.scenarios[index]) !== null && _data$scenarios$index !== void 0 && _data$scenarios$index.data) {
-      setModulePayload(data.scenarios[index].data);
-    }
-  };
+  var handleOnRowSelected = /*#__PURE__*/function () {
+    var _ref4 = (0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee3(index) {
+      var _data$scenarios$index, tenant, siteEdition, slug, _payload$styles, _payload$styles2, response, out, _out$payload, remotePayload, defaultAdnetifyPayload, _payload, tokens, resources;
+      return regenerator_default().wrap(function _callee3$(_context3) {
+        while (1) switch (_context3.prev = _context3.next) {
+          case 0:
+            console.log(data === null || data === void 0 ? void 0 : data.scenarios[index]);
+            if (data !== null && data !== void 0 && data.scenarios[index]) {
+              _context3.next = 3;
+              break;
+            }
+            return _context3.abrupt("return");
+          case 3:
+            _data$scenarios$index = data === null || data === void 0 ? void 0 : data.scenarios[index], tenant = _data$scenarios$index.tenant, siteEdition = _data$scenarios$index.siteEdition, slug = _data$scenarios$index.slug;
+            if (!(tenant && siteEdition)) {
+              _context3.next = 28;
+              break;
+            }
+            _context3.prev = 5;
+            _context3.next = 8;
+            return fetch(constants/* TESTER_SERVICE_URL */.y_ === null || constants/* TESTER_SERVICE_URL */.y_ === void 0 ? void 0 : constants/* TESTER_SERVICE_URL */.y_.replace(":tenant", tenant).replace(":siteEdition", siteEdition).replace(":slug", slug), {
+              method: "GET",
+              headers: {
+                Accept: "application/json"
+              }
+            });
+          case 8:
+            response = _context3.sent;
+            if (response.ok) {
+              _context3.next = 11;
+              break;
+            }
+            throw responseError;
+          case 11:
+            _context3.next = 13;
+            return response.json();
+          case 13:
+            out = _context3.sent;
+            _out$payload = out.payload, remotePayload = _out$payload === void 0 ? {} : _out$payload;
+            _context3.next = 17;
+            return utils_getDefaultModulePayload(setupJson);
+          case 17:
+            defaultAdnetifyPayload = _context3.sent;
+            _payload = _objectSpread(_objectSpread({}, remotePayload), {}, {
+              settings: lodash_merge_default()({}, (defaultAdnetifyPayload === null || defaultAdnetifyPayload === void 0 ? void 0 : defaultAdnetifyPayload.settings) || {}, (remotePayload === null || remotePayload === void 0 ? void 0 : remotePayload.settings) || {}),
+              tokens: _objectSpread({}, (defaultAdnetifyPayload === null || defaultAdnetifyPayload === void 0 ? void 0 : defaultAdnetifyPayload.tokens) || {})
+            });
+            tokens = _payload === null || _payload === void 0 || (_payload$styles = _payload.styles) === null || _payload$styles === void 0 ? void 0 : _payload$styles.value;
+            resources = _payload === null || _payload === void 0 || (_payload$styles2 = _payload.styles) === null || _payload$styles2 === void 0 ? void 0 : _payload$styles2.resources;
+            updateOptionsStyles({
+              selectedTheme: null,
+              tokens: tokens,
+              resources: resources
+            });
+            setModulePayload(_payload);
+            _context3.next = 28;
+            break;
+          case 25:
+            _context3.prev = 25;
+            _context3.t0 = _context3["catch"](5);
+            console.log(_context3.t0);
+          case 28:
+          case "end":
+            return _context3.stop();
+        }
+      }, _callee3, null, [[5, 25]]);
+    }));
+    return function handleOnRowSelected(_x) {
+      return _ref4.apply(this, arguments);
+    };
+  }();
   return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: TestAddon_module.panel
   }, /*#__PURE__*/compat_module["default"].createElement("div", {
@@ -776,24 +972,15 @@ var TestAddon = function TestAddon() {
     defaultValue: "cases"
   }, /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.List, null, /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Tab, {
     value: "cases"
-  }, "Scenarios"), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Tab, {
+  }, "Live"), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Tab, {
     value: "performance"
   }, "Performance")), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Panel, {
     value: "cases",
     pt: "xs"
-  }, /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
     mb: "xs",
-    sx: {
-      backgroundColor: "#fff"
-    }
-  }, /*#__PURE__*/compat_module["default"].createElement(ScenariosList, {
-    data: data === null || data === void 0 ? void 0 : data.scenarios,
-    onRowSelected: function onRowSelected(index) {
-      return handleOnRowSelected(index);
-    }
-  })), /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
-    mb: "lg",
-    spacing: 5
+    spacing: 5,
+    position: "right"
   }, /*#__PURE__*/compat_module["default"].createElement(FileButton, {
     onChange: handleOnSetFile,
     accept: "application/json",
@@ -811,25 +998,17 @@ var TestAddon = function TestAddon() {
     onClick: function onClick() {
       return handleOnDownloadFile();
     }
-  }, "Download"), /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
-    variant: "default",
-    size: "xs",
-    compact: true,
+  }, "Download")), /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
+    mb: "xs",
     sx: {
-      marginLeft: "auto"
-    },
-    onClick: function onClick() {
-      return handleOnResetAll();
+      backgroundColor: "#fff"
     }
-  }, "Reset All")), /*#__PURE__*/compat_module["default"].createElement(JsonInput/* JsonInput */.f, {
-    label: "Diff with default payload",
-    value: diff,
-    readOnly: true,
-    autosize: true,
-    minRows: 4,
-    maxRows: 10,
-    mb: "xs"
-  }), /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
+  }, /*#__PURE__*/compat_module["default"].createElement(ScenariosList, {
+    data: data === null || data === void 0 ? void 0 : data.scenarios,
+    onRowSelected: function onRowSelected(index) {
+      return handleOnRowSelected(index);
+    }
+  })), /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
     mb: "xs",
     spacing: 5,
     position: "right"
@@ -849,12 +1028,13 @@ var TestAddon = function TestAddon() {
     variant: "default",
     size: "xs",
     compact: true,
-    onClick: handleCopyToClipboard
-  }, !clipboard.copied ? "Copy" : "Copied"), /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
-    variant: "default",
-    size: "xs",
-    compact: true
-  }, "Reset"))), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Panel, {
+    sx: {
+      marginLeft: "auto"
+    },
+    onClick: function onClick() {
+      return handleOnResetPayload();
+    }
+  }, "Reset Payload"))), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Panel, {
     value: "performance",
     pt: "xs"
   }, "Coming soon"))), /*#__PURE__*/compat_module["default"].createElement("div", {
@@ -866,14 +1046,6 @@ var TestAddon = function TestAddon() {
 /* harmony default export */ const TestAddon_TestAddon = (TestAddon);
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/index.js
 
-
-
-/***/ }),
-
-/***/ 73970:
-/***/ ((__unused_webpack_module, exports) => {
-
-Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=(e,f)=>{const o=[];for(const i in e)if(f.hasOwnProperty(i)){if(typeof e[i]=="object"&&typeof f[i]=="object"&&JSON.stringify(e[i])===JSON.stringify(f[i])||e[i]===f[i])continue;if(e[i]==="@{}"||e[i]==="@[]"){const n=f[i]==="@{}"?{}:f[i]==="@[]"?[]:f[i];e[i]==="@{}"?JSON.stringify(f[i])!=="{}"&&o.push([i,{},n]):JSON.stringify(f[i])!=="[]"&&o.push([i,[],n])}else o.push([i,e[i],f[i]])}return o},p=(e,f)=>{const o=[];let i=0;for(const n in e)if(!(n in f)){const r=e[n]==="@{}"?{}:e[n]==="@[]"?[]:e[n];o[i]=[n,r],i++}return o},O=(e,f,o,i)=>{const n=i?e?"[":".":"/",r=i?e?"]":"":e?"[]":"";return f==="__start__"?`${i&&e?"[":""}${o}${r}`:`${f}${n}${o}${r}`},s=(e,f=!1,o,i="__start__")=>{o===void 0&&(o=Array.isArray(e)?{__root__:"@[]"}:{__root__:"@{}"});for(const n of Object.keys(e)){const r=O(Array.isArray(e),i,n,f);typeof e[n]=="object"&&e[n]!==null?(Object.keys(e[n]).length===0?o[r]=e[n]:o[r]=Array.isArray(e[n])?"@[]":"@{}",s(e[n],f,o,r)):o[r]=e[n]}return o},c=e=>(e.edited=e.edited.filter(f=>!(typeof f[1]=="object"&&f[2]==="@{}")).map(f=>f[2]==="@{}"?[f[0],f[1],{}]:f[2]==="@[]"?[f[0],f[1],[]]:f),e),b={isLodashLike:!1},j=(e,f,o)=>{const{isLodashLike:i}=o??b,n={added:[],removed:[],edited:[]},r=typeof e=="string"?JSON.parse(e):e,_=typeof f=="string"?JSON.parse(f):f,y=s(r,i),g=s(_,i);return n.removed=p(y,g),n.added=p(g,y),n.edited=t(y,g),c(n)};exports.getDiff=j;exports.getEditedPaths=t;exports.getPathsDiff=p;exports.getStructPaths=s;
 
 
 /***/ })

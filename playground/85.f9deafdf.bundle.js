@@ -28,8 +28,8 @@ var lodash_set = __webpack_require__(20974);
 var lodash_set_default = /*#__PURE__*/__webpack_require__.n(lodash_set);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Button/Button.js + 3 modules
 var Button = __webpack_require__(67859);
-// EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 277 modules
-var es = __webpack_require__(31708);
+// EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 280 modules
+var es = __webpack_require__(91352);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/form/schema.json
 const schema_namespaceObject = /*#__PURE__*/JSON.parse('{"type":"object","properties":{"direction":{"type":"string","title":"Direction","description":"Test the module with different text direction.","enum":["ltr","rtl"],"enumNames":["LTR (Left to Right)","RTL (Right to Left)"],"default":"ltr"},"showLabels":{"type":"boolean","title":"Show labels","help":"Uncheck to not send labels to the module","default":true},"labels":{"type":"array","description":"List of all module labels","format":"collapse:closed","title":"Labels","items":{"type":"object","properties":{"key":{"type":"string","title":"Key","placeholder":"some-unique-key"},"value":{"type":"string","title":"Value","placeholder":"some-value"}},"default":{}},"showIf":{"showLabels":true}}}}');
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/form/uiSchema.json
@@ -38,7 +38,7 @@ const uiSchema_namespaceObject = /*#__PURE__*/JSON.parse('{"labels":{"ui:options
 var Store = __webpack_require__(76032);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const I18nAddon_module = ({"panel":"p","actionToolbar":"q"});
+/* harmony default export */ const I18nAddon_module = ({"panel":"w","actionToolbar":"x"});
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.jsx
 
 

@@ -806,8 +806,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/@emotion/react/dist/emotion-element-c39617d8.browser.esm.js + 2 modules
-var emotion_element_c39617d8_browser_esm = __webpack_require__(82389);
+// EXTERNAL MODULE: ./node_modules/@emotion/react/dist/emotion-element-43c6fea0.browser.esm.js + 2 modules
+var emotion_element_43c6fea0_browser_esm = __webpack_require__(57377);
 // EXTERNAL MODULE: ./node_modules/@emotion/react/dist/emotion-react.browser.esm.js
 var emotion_react_browser_esm = __webpack_require__(17437);
 ;// CONCATENATED MODULE: ./node_modules/@mantine/styles/esm/theme/default-colors.js
@@ -1956,7 +1956,7 @@ function MantineProvider({
 }) {
   const ctx = (0,compat_module.useContext)(MantineProviderContext);
   const mergedTheme = mergeThemeWithFunctions(DEFAULT_THEME, inherit ? MantineProvider_spreadValues(MantineProvider_spreadValues({}, ctx.theme), theme) : theme);
-  return /* @__PURE__ */ compat_module["default"].createElement(emotion_element_c39617d8_browser_esm.a, {
+  return /* @__PURE__ */ compat_module["default"].createElement(emotion_element_43c6fea0_browser_esm.a, {
     theme: mergedTheme
   }, /* @__PURE__ */ compat_module["default"].createElement(MantineProviderContext.Provider, {
     value: { theme: mergedTheme, emotionCache }

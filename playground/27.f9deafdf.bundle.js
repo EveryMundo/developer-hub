@@ -269,8 +269,8 @@ var defineProperty = __webpack_require__(64980);
 var objectWithoutProperties = __webpack_require__(80045);
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 277 modules
-var es = __webpack_require__(31708);
+// EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 280 modules
+var es = __webpack_require__(91352);
 // EXTERNAL MODULE: ./src/store/Store.js + 6 modules
 var Store = __webpack_require__(76032);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
