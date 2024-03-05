@@ -10,8 +10,8 @@ __webpack_require__.d(__webpack_exports__, {
   F: () => (/* binding */ Alert)
 });
 
-// EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
-var compat_module = __webpack_require__(88763);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
 var MantineProvider = __webpack_require__(23097);
 // EXTERNAL MODULE: ./node_modules/@mantine/hooks/esm/use-id/use-id.js + 1 modules
@@ -173,7 +173,7 @@ var __objRest = (source, exclude) => {
 const defaultProps = {
   variant: "light"
 };
-const Alert = (0,compat_module.forwardRef)((props, ref) => {
+const Alert = (0,react.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Alert", defaultProps, props), {
     id,
     className,
@@ -209,29 +209,29 @@ const Alert = (0,compat_module.forwardRef)((props, ref) => {
   const rootId = (0,use_id/* useId */.B)(id);
   const titleId = title && `${rootId}-title`;
   const bodyId = `${rootId}-body`;
-  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, Alert_spreadValues({
+  return /* @__PURE__ */ react.createElement(Box/* Box */.a, Alert_spreadValues({
     id: rootId,
     role: "alert",
     "aria-labelledby": titleId,
     "aria-describedby": bodyId,
     className: cx(classes.root, classes[variant], className),
     ref
-  }, others), /* @__PURE__ */ compat_module["default"].createElement("div", {
+  }, others), /* @__PURE__ */ react.createElement("div", {
     className: classes.wrapper
-  }, icon && /* @__PURE__ */ compat_module["default"].createElement("div", {
+  }, icon && /* @__PURE__ */ react.createElement("div", {
     className: classes.icon
-  }, icon), /* @__PURE__ */ compat_module["default"].createElement("div", {
+  }, icon), /* @__PURE__ */ react.createElement("div", {
     className: classes.body
-  }, title && /* @__PURE__ */ compat_module["default"].createElement("div", {
+  }, title && /* @__PURE__ */ react.createElement("div", {
     className: classes.title,
     "data-with-close-button": withCloseButton || void 0
-  }, /* @__PURE__ */ compat_module["default"].createElement("span", {
+  }, /* @__PURE__ */ react.createElement("span", {
     id: titleId,
     className: classes.label
-  }, title)), /* @__PURE__ */ compat_module["default"].createElement("div", {
+  }, title)), /* @__PURE__ */ react.createElement("div", {
     id: bodyId,
     className: classes.message
-  }, children)), withCloseButton && /* @__PURE__ */ compat_module["default"].createElement(CloseButton/* CloseButton */.J, {
+  }, children)), withCloseButton && /* @__PURE__ */ react.createElement(CloseButton/* CloseButton */.J, {
     className: classes.closeButton,
     onClick: onClose,
     variant: "transparent",
@@ -270,8 +270,8 @@ var asyncToGenerator = __webpack_require__(10467);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
 var regenerator = __webpack_require__(54756);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
-// EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
-var compat_module = __webpack_require__(88763);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./src/data/styles/themes/index.js + 5 modules
 var themes = __webpack_require__(41459);
 // EXTERNAL MODULE: ./src/utils/getDefaultPayloadBySetupJson.js
@@ -359,7 +359,7 @@ var __objRest = (source, exclude) => {
 const defaultProps = {
   multiple: false
 };
-const FileButton = (0,compat_module.forwardRef)((props, ref) => {
+const FileButton = (0,react.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("FileButton", defaultProps, props), {
     onChange,
     children,
@@ -383,7 +383,7 @@ const FileButton = (0,compat_module.forwardRef)((props, ref) => {
     "capture",
     "inputProps"
   ]);
-  const inputRef = (0,compat_module.useRef)();
+  const inputRef = (0,react.useRef)();
   const onClick = () => {
     !disabled && inputRef.current.click();
   };
@@ -398,7 +398,7 @@ const FileButton = (0,compat_module.forwardRef)((props, ref) => {
     inputRef.current.value = "";
   };
   (0,assign_ref/* assignRef */.b)(resetRef, reset);
-  return /* @__PURE__ */ compat_module["default"].createElement(compat_module["default"].Fragment, null, children(__spreadValues({ onClick }, others)), /* @__PURE__ */ compat_module["default"].createElement("input", __spreadValues({
+  return /* @__PURE__ */ react.createElement(react.Fragment, null, children(__spreadValues({ onClick }, others)), /* @__PURE__ */ react.createElement("input", __spreadValues({
     style: { display: "none" },
     type: "file",
     accept,
@@ -419,8 +419,8 @@ FileButton.displayName = "@mantine/core/FileButton";
 var Button = __webpack_require__(67859);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
 var Box = __webpack_require__(29180);
-// EXTERNAL MODULE: ./src/store/Store.js + 6 modules
-var Store = __webpack_require__(76032);
+// EXTERNAL MODULE: ./src/store/Store.js + 11 modules
+var Store = __webpack_require__(62361);
 // EXTERNAL MODULE: ./src/components/ModulePayloadViewer/index.js + 5 modules
 var ModulePayloadViewer = __webpack_require__(47674);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
@@ -577,7 +577,7 @@ const Table_defaultProps = {
   withBorder: false,
   withColumnBorders: false
 };
-const Table = (0,compat_module.forwardRef)((props, ref) => {
+const Table = (0,react.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Table", Table_defaultProps, props), {
     className,
     children,
@@ -606,7 +606,7 @@ const Table = (0,compat_module.forwardRef)((props, ref) => {
     "variant"
   ]);
   const { classes, cx } = Table_styles({ captionSide, verticalSpacing, horizontalSpacing, fontSize, withBorder, withColumnBorders }, { unstyled, name: "Table", variant });
-  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, Table_spreadProps(Table_spreadValues({}, others), {
+  return /* @__PURE__ */ react.createElement(Box/* Box */.a, Table_spreadProps(Table_spreadValues({}, others), {
     component: "table",
     ref,
     className: cx(classes.root, className),
@@ -660,11 +660,11 @@ function ScenariosList(_ref) {
   var _useStyles = ScenariosList_useStyles(),
     classes = _useStyles.classes,
     cx = _useStyles.cx;
-  var _useState = (0,compat_module.useState)(false),
+  var _useState = (0,react.useState)(false),
     _useState2 = (0,slicedToArray/* default */.A)(_useState, 2),
     scrolled = _useState2[0],
     setScrolled = _useState2[1];
-  var _useState3 = (0,compat_module.useState)([]),
+  var _useState3 = (0,react.useState)([]),
     _useState4 = (0,slicedToArray/* default */.A)(_useState3, 2),
     selection = _useState4[0],
     setSelection = _useState4[1];
@@ -684,33 +684,33 @@ function ScenariosList(_ref) {
   };
   var rows = data.map(function (item, index) {
     var selected = selection.includes(item.id);
-    return /*#__PURE__*/compat_module["default"].createElement("tr", {
+    return /*#__PURE__*/react.createElement("tr", {
       key: "".concat(index).concat(item.name),
       className: cx((0,defineProperty/* default */.A)({}, classes.rowSelected, selected)),
       onClick: function onClick() {
         return onRowSelected(index);
       }
-    }, /*#__PURE__*/compat_module["default"].createElement("td", null, /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
+    }, /*#__PURE__*/react.createElement("td", null, /*#__PURE__*/react.createElement(Group/* Group */.Y, {
       spacing: "sm"
-    }, /*#__PURE__*/compat_module["default"].createElement(Text/* Text */.E, {
+    }, /*#__PURE__*/react.createElement(Text/* Text */.E, {
       weight: 500
-    }, item.name, ":DEV"))), /*#__PURE__*/compat_module["default"].createElement("td", null, item.tenant), /*#__PURE__*/compat_module["default"].createElement("td", null, item.siteEdition), /*#__PURE__*/compat_module["default"].createElement("td", null, item.slug), /*#__PURE__*/compat_module["default"].createElement("td", null, item.theme), /*#__PURE__*/compat_module["default"].createElement("td", null, item.module), /*#__PURE__*/compat_module["default"].createElement("td", null, item.campaign), /*#__PURE__*/compat_module["default"].createElement("td", null, item.details));
+    }, item.name, ":DEV"))), /*#__PURE__*/react.createElement("td", null, item.tenant), /*#__PURE__*/react.createElement("td", null, item.siteEdition), /*#__PURE__*/react.createElement("td", null, item.slug), /*#__PURE__*/react.createElement("td", null, item.theme), /*#__PURE__*/react.createElement("td", null, item.module), /*#__PURE__*/react.createElement("td", null, item.campaign), /*#__PURE__*/react.createElement("td", null, item.details));
   });
-  return /*#__PURE__*/compat_module["default"].createElement(ScrollArea/* ScrollArea */.F, {
+  return /*#__PURE__*/react.createElement(ScrollArea/* ScrollArea */.F, {
     h: 180,
     onScrollPositionChange: function onScrollPositionChange(_ref2) {
       var y = _ref2.y;
       return setScrolled(y !== 0);
     }
-  }, /*#__PURE__*/compat_module["default"].createElement(Table, {
+  }, /*#__PURE__*/react.createElement(Table, {
     maw: "100%",
     miw: 300,
     verticalSpacing: "xs",
     fontSize: "xs",
     highlightOnHover: true
-  }, /*#__PURE__*/compat_module["default"].createElement("thead", {
+  }, /*#__PURE__*/react.createElement("thead", {
     className: cx(classes.header, (0,defineProperty/* default */.A)({}, classes.scrolled, scrolled))
-  }, /*#__PURE__*/compat_module["default"].createElement("tr", null, /*#__PURE__*/compat_module["default"].createElement("th", null, "Type"), /*#__PURE__*/compat_module["default"].createElement("th", null, "Tenant"), /*#__PURE__*/compat_module["default"].createElement("th", null, "SE"), /*#__PURE__*/compat_module["default"].createElement("th", null, "Slug"), /*#__PURE__*/compat_module["default"].createElement("th", null, "Theme"), /*#__PURE__*/compat_module["default"].createElement("th", null, "Module"), /*#__PURE__*/compat_module["default"].createElement("th", null, "Campaign"), /*#__PURE__*/compat_module["default"].createElement("th", null))), /*#__PURE__*/compat_module["default"].createElement("tbody", null, rows)));
+  }, /*#__PURE__*/react.createElement("tr", null, /*#__PURE__*/react.createElement("th", null, "Type"), /*#__PURE__*/react.createElement("th", null, "Tenant"), /*#__PURE__*/react.createElement("th", null, "SE"), /*#__PURE__*/react.createElement("th", null, "Slug"), /*#__PURE__*/react.createElement("th", null, "Theme"), /*#__PURE__*/react.createElement("th", null, "Module"), /*#__PURE__*/react.createElement("th", null, "Campaign"), /*#__PURE__*/react.createElement("th", null))), /*#__PURE__*/react.createElement("tbody", null, rows)));
 }
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Popover/Popover.js + 19 modules
 var Popover = __webpack_require__(75733);
@@ -829,7 +829,7 @@ const SimpleGrid_defaultProps = {
   cols: 1,
   spacing: "md"
 };
-const SimpleGrid = (0,compat_module.forwardRef)((props, ref) => {
+const SimpleGrid = (0,react.forwardRef)((props, ref) => {
   const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("SimpleGrid", SimpleGrid_defaultProps, props), {
     className,
     breakpoints,
@@ -850,7 +850,7 @@ const SimpleGrid = (0,compat_module.forwardRef)((props, ref) => {
     "variant"
   ]);
   const { classes, cx } = SimpleGrid_styles({ breakpoints, cols, spacing, verticalSpacing }, { name: "SimpleGrid", unstyled, variant });
-  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, SimpleGrid_spreadValues({
+  return /* @__PURE__ */ react.createElement(Box/* Box */.a, SimpleGrid_spreadValues({
     className: cx(classes.root, className),
     ref
   }, others), children);
@@ -872,31 +872,31 @@ function NewScenario(_ref) {
     onAction = _ref$onAction === void 0 ? function () {
       return null;
     } : _ref$onAction;
-  var _useState = (0,compat_module.useState)(""),
+  var _useState = (0,react.useState)(""),
     _useState2 = (0,slicedToArray/* default */.A)(_useState, 2),
     tenant = _useState2[0],
     setTenant = _useState2[1];
-  var _useState3 = (0,compat_module.useState)(""),
+  var _useState3 = (0,react.useState)(""),
     _useState4 = (0,slicedToArray/* default */.A)(_useState3, 2),
     siteEdition = _useState4[0],
     setSiteEdition = _useState4[1];
-  var _useState5 = (0,compat_module.useState)(""),
+  var _useState5 = (0,react.useState)(""),
     _useState6 = (0,slicedToArray/* default */.A)(_useState5, 2),
     slug = _useState6[0],
     setSlug = _useState6[1];
-  var _useState7 = (0,compat_module.useState)(""),
+  var _useState7 = (0,react.useState)(""),
     _useState8 = (0,slicedToArray/* default */.A)(_useState7, 2),
     module = _useState8[0],
     setModule = _useState8[1];
-  var _useState9 = (0,compat_module.useState)(""),
+  var _useState9 = (0,react.useState)(""),
     _useState10 = (0,slicedToArray/* default */.A)(_useState9, 2),
     theme = _useState10[0],
     setTheme = _useState10[1];
-  var _useState11 = (0,compat_module.useState)(""),
+  var _useState11 = (0,react.useState)(""),
     _useState12 = (0,slicedToArray/* default */.A)(_useState11, 2),
     campaign = _useState12[0],
     setCampaign = _useState12[1];
-  var _useState13 = (0,compat_module.useState)(""),
+  var _useState13 = (0,react.useState)(""),
     _useState14 = (0,slicedToArray/* default */.A)(_useState13, 2),
     details = _useState14[0],
     setDetails = _useState14[1];
@@ -912,21 +912,21 @@ function NewScenario(_ref) {
       campaign: campaign
     });
   };
-  return /*#__PURE__*/compat_module["default"].createElement(Popover/* Popover */.A, {
+  return /*#__PURE__*/react.createElement(Popover/* Popover */.A, {
     width: 300,
     trapFocus: true,
     position: "bottom-start",
     withArrow: true,
     shadow: "md"
-  }, /*#__PURE__*/compat_module["default"].createElement(Popover/* Popover */.A.Target, null, children), /*#__PURE__*/compat_module["default"].createElement(Popover/* Popover */.A.Dropdown, {
+  }, /*#__PURE__*/react.createElement(Popover/* Popover */.A.Target, null, children), /*#__PURE__*/react.createElement(Popover/* Popover */.A.Dropdown, {
     sx: function sx(theme) {
       return {
         background: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white
       };
     }
-  }, /*#__PURE__*/compat_module["default"].createElement(SimpleGrid, {
+  }, /*#__PURE__*/react.createElement(SimpleGrid, {
     cols: 2
-  }, /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+  }, /*#__PURE__*/react.createElement(TextInput/* TextInput */.k, {
     label: "Tenant",
     size: "xs",
     required: true,
@@ -934,7 +934,7 @@ function NewScenario(_ref) {
     onChange: function onChange(e) {
       return setTenant(e.target.value);
     }
-  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+  }), /*#__PURE__*/react.createElement(TextInput/* TextInput */.k, {
     label: "Site Edition",
     size: "xs",
     required: true,
@@ -942,30 +942,30 @@ function NewScenario(_ref) {
     onChange: function onChange(e) {
       return setSiteEdition(e.target.value);
     }
-  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+  }), /*#__PURE__*/react.createElement(TextInput/* TextInput */.k, {
     label: "Slug",
     size: "xs",
     value: slug,
     onChange: function onChange(e) {
       return setSlug(e.target.value);
     }
-  })), /*#__PURE__*/compat_module["default"].createElement(SimpleGrid, {
+  })), /*#__PURE__*/react.createElement(SimpleGrid, {
     cols: 2,
     mt: "lg"
-  }, /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+  }, /*#__PURE__*/react.createElement(TextInput/* TextInput */.k, {
     label: "Env",
     size: "xs",
     required: true,
     defaultValue: "DEV",
     disabled: true
-  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+  }), /*#__PURE__*/react.createElement(TextInput/* TextInput */.k, {
     label: "Theme",
     size: "xs",
     value: theme,
     onChange: function onChange(e) {
       return setTheme(e.target.value);
     }
-  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+  }), /*#__PURE__*/react.createElement(TextInput/* TextInput */.k, {
     label: "Module",
     size: "xs",
     value: module,
@@ -973,7 +973,7 @@ function NewScenario(_ref) {
       return setModule(e.target.value);
     },
     disabled: true
-  }), /*#__PURE__*/compat_module["default"].createElement(TextInput/* TextInput */.k, {
+  }), /*#__PURE__*/react.createElement(TextInput/* TextInput */.k, {
     label: "Campaign",
     size: "xs",
     value: campaign,
@@ -981,11 +981,11 @@ function NewScenario(_ref) {
       return setCampaign(e.target.value);
     },
     disabled: true
-  })), /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
+  })), /*#__PURE__*/react.createElement(Box/* Box */.a, {
     sx: {
       textAlign: "right"
     }
-  }, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
+  }, /*#__PURE__*/react.createElement(Button/* Button */.$, {
     size: "xs",
     variant: "filled",
     mt: "md",
@@ -999,7 +999,7 @@ var lodash_merge = __webpack_require__(70182);
 var lodash_merge_default = /*#__PURE__*/__webpack_require__.n(lodash_merge);
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/TestAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const TestAddon_module = ({"panel":"r","modulePayloadBar":"s"});
+/* harmony default export */ const TestAddon_module = ({"panel":"a","modulePayloadBar":"b"});
 // EXTERNAL MODULE: ./config/constants.js
 var constants = __webpack_require__(62246);
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/TestAddon.jsx
@@ -1086,19 +1086,14 @@ var TestAddon = function TestAddon() {
   };
   var handleOnDownloadFile = /*#__PURE__*/function () {
     var _ref = (0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee() {
-      var defaultAdnetifyPayload, _data;
+      var _data;
       return regenerator_default().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return utils_getDefaultModulePayload(setupJson);
-          case 2:
-            defaultAdnetifyPayload = _context.sent;
-            _data = _objectSpread(_objectSpread({}, data), {}, {
-              payload: defaultAdnetifyPayload
-            });
+            // const defaultAdnetifyPayload = await getDefaultModulePayload(setupJson);
+            _data = _objectSpread({}, data);
             downloadFile("registry-test-addon-data.json", JSON.stringify(_data));
-          case 5:
+          case 2:
           case "end":
             return _context.stop();
         }
@@ -1230,70 +1225,70 @@ var TestAddon = function TestAddon() {
       return _ref4.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/compat_module["default"].createElement("div", {
+  return /*#__PURE__*/react.createElement("div", {
     className: TestAddon_module.panel
-  }, /*#__PURE__*/compat_module["default"].createElement("div", {
+  }, /*#__PURE__*/react.createElement("div", {
     style: {
       padding: 15,
       background: "var(--playground-colors-bg-standard)",
       overflow: "auto",
       flex: 1
     }
-  }, /*#__PURE__*/compat_module["default"].createElement(Alert/* Alert */.F, {
+  }, /*#__PURE__*/react.createElement(Alert/* Alert */.F, {
     color: "grape",
     mb: "md",
     style: {
       border: "1px solid #00000033"
     }
-  }, "Lorem ipsum lorem ..."), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t, {
+  }, "Lorem ipsum lorem ..."), /*#__PURE__*/react.createElement(Tabs/* Tabs */.t, {
     defaultValue: "cases"
-  }, /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.List, null, /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Tab, {
+  }, /*#__PURE__*/react.createElement(Tabs/* Tabs */.t.List, null, /*#__PURE__*/react.createElement(Tabs/* Tabs */.t.Tab, {
     value: "cases"
-  }, "Live"), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Tab, {
+  }, "Live"), /*#__PURE__*/react.createElement(Tabs/* Tabs */.t.Tab, {
     value: "performance"
-  }, "Performance")), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Panel, {
+  }, "Performance")), /*#__PURE__*/react.createElement(Tabs/* Tabs */.t.Panel, {
     value: "cases",
     pt: "xs"
-  }, /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
+  }, /*#__PURE__*/react.createElement(Group/* Group */.Y, {
     mb: "xs",
     spacing: 5,
     position: "right"
-  }, /*#__PURE__*/compat_module["default"].createElement(FileButton, {
+  }, /*#__PURE__*/react.createElement(FileButton, {
     onChange: handleOnSetFile,
     accept: "application/json",
     capture: true
   }, function (props) {
-    return /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, (0,esm_extends/* default */.A)({}, props, {
+    return /*#__PURE__*/react.createElement(Button/* Button */.$, (0,esm_extends/* default */.A)({}, props, {
       variant: "default",
       size: "xs",
       compact: true
     }), "Upload");
-  }), /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
+  }), /*#__PURE__*/react.createElement(Button/* Button */.$, {
     variant: "default",
     size: "xs",
     compact: true,
     onClick: function onClick() {
       return handleOnDownloadFile();
     }
-  }, "Download")), /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
+  }, "Download")), /*#__PURE__*/react.createElement(Box/* Box */.a, {
     mb: "xs",
     sx: {
       backgroundColor: "#fff"
     }
-  }, /*#__PURE__*/compat_module["default"].createElement(ScenariosList, {
+  }, /*#__PURE__*/react.createElement(ScenariosList, {
     data: data === null || data === void 0 ? void 0 : data.scenarios,
     onRowSelected: function onRowSelected(index) {
       return handleOnRowSelected(index);
     }
-  })), /*#__PURE__*/compat_module["default"].createElement(Group/* Group */.Y, {
+  })), /*#__PURE__*/react.createElement(Group/* Group */.Y, {
     mb: "xs",
     spacing: 5,
     position: "right"
-  }, /*#__PURE__*/compat_module["default"].createElement(NewScenario, {
+  }, /*#__PURE__*/react.createElement(NewScenario, {
     onAction: function onAction(_props) {
       return handleOnAddScenario(_props);
     }
-  }, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
+  }, /*#__PURE__*/react.createElement(Button/* Button */.$, {
     size: "xs",
     variant: "default",
     compact: true,
@@ -1301,7 +1296,7 @@ var TestAddon = function TestAddon() {
       marginRight: "auto"
     }
     // leftIcon={<IconDatabase size={14} />}
-  }, "Add scenario")), /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
+  }, "Add scenario")), /*#__PURE__*/react.createElement(Button/* Button */.$, {
     variant: "default",
     size: "xs",
     compact: true,
@@ -1311,12 +1306,12 @@ var TestAddon = function TestAddon() {
     onClick: function onClick() {
       return handleOnResetPayload();
     }
-  }, "Reset Payload"))), /*#__PURE__*/compat_module["default"].createElement(Tabs/* Tabs */.t.Panel, {
+  }, "Reset Payload"))), /*#__PURE__*/react.createElement(Tabs/* Tabs */.t.Panel, {
     value: "performance",
     pt: "xs"
-  }, "Coming soon"))), /*#__PURE__*/compat_module["default"].createElement("div", {
+  }, "Coming soon"))), /*#__PURE__*/react.createElement("div", {
     className: TestAddon_module.modulePayloadBar
-  }, /*#__PURE__*/compat_module["default"].createElement(ModulePayloadViewer/* ModulePayloadViewer */.r, {
+  }, /*#__PURE__*/react.createElement(ModulePayloadViewer/* ModulePayloadViewer */.r, {
     defaultOpened: false
   })));
 };
@@ -1342,8 +1337,8 @@ __webpack_require__.d(__webpack_exports__, {
 var defineProperty = __webpack_require__(64980);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
 var slicedToArray = __webpack_require__(80296);
-// EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
-var compat_module = __webpack_require__(88763);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
 var Box = __webpack_require__(29180);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/UnstyledButton/UnstyledButton.js + 1 modules
@@ -1356,8 +1351,8 @@ var Textarea = __webpack_require__(98421);
 var Button = __webpack_require__(67859);
 // EXTERNAL MODULE: ./node_modules/@mantine/hooks/esm/use-disclosure/use-disclosure.js
 var use_disclosure = __webpack_require__(40279);
-// EXTERNAL MODULE: ./src/store/Store.js + 6 modules
-var Store = __webpack_require__(76032);
+// EXTERNAL MODULE: ./src/store/Store.js + 11 modules
+var Store = __webpack_require__(62361);
 ;// CONCATENATED MODULE: ./src/utils/isJsonValid.js
 /* harmony default export */ const isJsonValid = (function (str) {
   try {
@@ -1381,7 +1376,7 @@ var CopyToClipboard = function CopyToClipboard(_ref) {
   var clipboard = (0,dist.useClipboard)({
     copiedTimeout: copiedTimeout
   });
-  var handleCopy = (0,compat_module.useCallback)(function (text) {
+  var handleCopy = (0,react.useCallback)(function (text) {
     if (text !== null) {
       clipboard.copy(text);
     }
@@ -1412,12 +1407,12 @@ var monacoEditorOptions = {
   contextmenu: false
 };
 var LoadingScreen = function LoadingScreen(props) {
-  return /*#__PURE__*/compat_module["default"].createElement("div", null, "Loading payload...");
+  return /*#__PURE__*/react.createElement("div", null, "Loading payload...");
 };
 var ModulePayloadJsonEditor = function ModulePayloadJsonEditor(_ref) {
   var value = _ref.value,
     onChange = _ref.onChange;
-  var monacoRef = (0,compat_module.useRef)(null);
+  var monacoRef = (0,react.useRef)(null);
   var handleEditorWillMount = function handleEditorWillMount(monaco) {
     // monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
     //   // enableSchemaRequest: true,
@@ -1442,7 +1437,7 @@ var ModulePayloadJsonEditor = function ModulePayloadJsonEditor(_ref) {
   var handleEditorChange = function handleEditorChange(str) {
     onChange(str);
   };
-  return /*#__PURE__*/compat_module["default"].createElement(react_dist/* default */.Ay, {
+  return /*#__PURE__*/react.createElement(react_dist/* default */.Ay, {
     language: "json",
     value: value,
     path: "internal://server/module-payload.json",
@@ -1451,7 +1446,7 @@ var ModulePayloadJsonEditor = function ModulePayloadJsonEditor(_ref) {
     beforeMount: handleEditorWillMount,
     onMount: handleEditorDidMount,
     onChange: handleEditorChange,
-    loading: /*#__PURE__*/compat_module["default"].createElement(LoadingScreen, null),
+    loading: /*#__PURE__*/react.createElement(LoadingScreen, null),
     saveViewState: false
   });
 };
@@ -1483,15 +1478,15 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
     openedHandlers = _useDisclosure2[1];
   var payload = (0,Store/* useStore */.P)(PAYLOAD_SELECTOR);
   var setModulePayload = (0,Store/* useStore */.P)(SET_MODULE_PAYLOAD_SELECTOR);
-  var _useState = (0,compat_module.useState)(false),
+  var _useState = (0,react.useState)(false),
     _useState2 = (0,slicedToArray/* default */.A)(_useState, 2),
     isEditMode = _useState2[0],
     setEditMode = _useState2[1];
-  var _useState3 = (0,compat_module.useState)(JSON.stringify(payload, null, 2)),
+  var _useState3 = (0,react.useState)(JSON.stringify(payload, null, 2)),
     _useState4 = (0,slicedToArray/* default */.A)(_useState3, 2),
     textPayload = _useState4[0],
     setTextPayload = _useState4[1];
-  (0,compat_module.useEffect)(function () {
+  (0,react.useEffect)(function () {
     if (isEditMode) {
       setTextPayload(JSON.stringify(payload, null, 2));
     }
@@ -1509,7 +1504,7 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
       setEditMode(false);
     }
   };
-  return /*#__PURE__*/compat_module["default"].createElement(Box/* Box */.a, {
+  return /*#__PURE__*/react.createElement(Box/* Box */.a, {
     sx: function sx(theme) {
       return {
         borderTop: "1px solid ".concat(theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]),
@@ -1517,7 +1512,7 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
         boxSizing: "border-box"
       };
     }
-  }, /*#__PURE__*/compat_module["default"].createElement(UnstyledButton/* UnstyledButton */.N, {
+  }, /*#__PURE__*/react.createElement(UnstyledButton/* UnstyledButton */.N, {
     sx: function sx(theme) {
       return (0,defineProperty/* default */.A)((0,defineProperty/* default */.A)((0,defineProperty/* default */.A)((0,defineProperty/* default */.A)((0,defineProperty/* default */.A)({
         fontWeight: 600,
@@ -1531,7 +1526,7 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
     onClick: function onClick() {
       return openedHandlers.toggle();
     }
-  }, "Module Payload", /*#__PURE__*/compat_module["default"].createElement("svg", {
+  }, "Module Payload", /*#__PURE__*/react.createElement("svg", {
     style: _objectSpread({
       marginLeft: "auto",
       transition: "transform .2s ease-in-out"
@@ -1543,17 +1538,17 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
     xmlns: "http://www.w3.org/2000/svg",
     width: "16",
     height: "16"
-  }, /*#__PURE__*/compat_module["default"].createElement("path", {
+  }, /*#__PURE__*/react.createElement("path", {
     d: "M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z",
     fill: "currentColor",
     fillRule: "evenodd",
     clipRule: "evenodd"
-  }))), /*#__PURE__*/compat_module["default"].createElement(Collapse/* Collapse */.S, {
+  }))), /*#__PURE__*/react.createElement(Collapse/* Collapse */.S, {
     "in": opened,
     sx: {
       padding: 1
     }
-  }, !isEditMode ? /*#__PURE__*/compat_module["default"].createElement(Textarea/* Textarea */.T, {
+  }, !isEditMode ? /*#__PURE__*/react.createElement(Textarea/* Textarea */.T, {
     autoCorrect: "off",
     readOnly: true,
     spellCheck: "false",
@@ -1579,32 +1574,32 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
       };
     },
     value: JSON.stringify(payload, null, 2)
-  }) : /*#__PURE__*/compat_module["default"].createElement("div", {
+  }) : /*#__PURE__*/react.createElement("div", {
     style: {
       height: 320,
       border: "1px solid #ddd",
       background: "#fff",
       boxShadow: "0 3px 4px rgb(0 0 0 / 8%)"
     }
-  }, /*#__PURE__*/compat_module["default"].createElement(ModulePayloadJsonEditor_ModulePayloadJsonEditor, {
+  }, /*#__PURE__*/react.createElement(ModulePayloadJsonEditor_ModulePayloadJsonEditor, {
     value: textPayload,
     onChange: handleTextPayloadOnChange
-  })), /*#__PURE__*/compat_module["default"].createElement("div", {
+  })), /*#__PURE__*/react.createElement("div", {
     style: {
       fontSize: 11,
       color: "#888",
       margin: "10px 15px"
     }
-  }, "Data received by the Module at initialization.", /*#__PURE__*/compat_module["default"].createElement("div", {
+  }, "Data received by the Module at initialization.", /*#__PURE__*/react.createElement("div", {
     style: {
       marginTop: -2,
       "float": "right",
       textAlign: "left"
     }
-  }, !isEditMode ? /*#__PURE__*/compat_module["default"].createElement(compat_module["default"].Fragment, null, /*#__PURE__*/compat_module["default"].createElement(CopyToClipboard_CopyToClipboard, null, function (_ref3) {
+  }, !isEditMode ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(CopyToClipboard_CopyToClipboard, null, function (_ref3) {
     var handleCopy = _ref3.handleCopy,
       clipboard = _ref3.clipboard;
-    return /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
+    return /*#__PURE__*/react.createElement(Button/* Button */.$, {
       variant: "subtle",
       size: "xs",
       color: "gray",
@@ -1616,7 +1611,7 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
         marginLeft: 10
       }
     }, !clipboard.copied ? "Copy" : "Copied");
-  }), /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
+  }), /*#__PURE__*/react.createElement(Button/* Button */.$, {
     variant: "subtle",
     size: "xs",
     color: "gray",
@@ -1627,7 +1622,7 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
     onClick: function onClick() {
       return handleToggleEditMode();
     }
-  }, "Edit")) : /*#__PURE__*/compat_module["default"].createElement(compat_module["default"].Fragment, null, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
+  }, "Edit")) : /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Button/* Button */.$, {
     variant: "subtle",
     size: "xs",
     color: "gray",
@@ -1638,7 +1633,7 @@ var ModulePayloadViewer = function ModulePayloadViewer(_ref) {
     onClick: function onClick() {
       return handleToggleEditMode();
     }
-  }, "Cancel"), /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
+  }, "Cancel"), /*#__PURE__*/react.createElement(Button/* Button */.$, {
     variant: "filled",
     size: "xs",
     color: "gray",

@@ -839,19 +839,14 @@ var TestAddon = function TestAddon() {
   };
   var handleOnDownloadFile = /*#__PURE__*/function () {
     var _ref = (0,asyncToGenerator/* default */.A)( /*#__PURE__*/regenerator_default().mark(function _callee() {
-      var defaultAdnetifyPayload, _data;
+      var _data;
       return regenerator_default().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return utils_getDefaultModulePayload(setupJson);
-          case 2:
-            defaultAdnetifyPayload = _context.sent;
-            _data = _objectSpread(_objectSpread({}, data), {}, {
-              payload: defaultAdnetifyPayload
-            });
+            // const defaultAdnetifyPayload = await getDefaultModulePayload(setupJson);
+            _data = _objectSpread({}, data);
             downloadFile("registry-test-addon-data.json", JSON.stringify(_data));
-          case 5:
+          case 2:
           case "end":
             return _context.stop();
         }
