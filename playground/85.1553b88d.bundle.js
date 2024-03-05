@@ -31,14 +31,14 @@ var Button = __webpack_require__(67859);
 // EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 280 modules
 var es = __webpack_require__(91352);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/form/schema.json
-const schema_namespaceObject = /*#__PURE__*/JSON.parse('{"type":"object","properties":{"direction":{"type":"string","title":"Direction","description":"Test the module with different text direction.","enum":["ltr","rtl"],"enumNames":["LTR (Left to Right)","RTL (Right to Left)"],"default":"ltr"},"showLabels":{"type":"boolean","title":"Show labels","help":"Uncheck to not send labels to the module","default":true},"labels":{"type":"array","description":"List of all module labels","format":"collapse:closed","title":"Labels","items":{"type":"object","properties":{"key":{"type":"string","title":"Key","placeholder":"some-unique-key"},"value":{"type":"string","title":"Value","placeholder":"some-value"}},"default":{}},"showIf":{"showLabels":true}}}}');
+const schema_namespaceObject = /*#__PURE__*/JSON.parse('{"type":"object","properties":{"direction":{"type":"string","title":"Direction","description":"Test the module with different text direction.","enum":["LTR","RTL"],"enumNames":["LTR (Left to Right)","RTL (Right to Left)"],"default":"LTR"},"showLabels":{"type":"boolean","title":"Show labels","help":"Uncheck to not send labels to the module","default":true},"labels":{"type":"array","description":"List of all module labels","format":"collapse:closed","title":"Labels","items":{"type":"object","properties":{"key":{"type":"string","title":"Key","placeholder":"some-unique-key"},"value":{"type":"string","title":"Value","placeholder":"some-value"}},"default":{}},"showIf":{"showLabels":true}}}}');
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/form/uiSchema.json
 const uiSchema_namespaceObject = /*#__PURE__*/JSON.parse('{"labels":{"ui:options":{"addable":true,"orderable":false,"removable":true}}}');
-// EXTERNAL MODULE: ./src/store/Store.js + 7 modules
-var Store = __webpack_require__(91342);
+// EXTERNAL MODULE: ./src/store/Store.js + 6 modules
+var Store = __webpack_require__(76032);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const I18nAddon_module = ({"panel":"o","actionToolbar":"p"});
+/* harmony default export */ const I18nAddon_module = ({"panel":"r","actionToolbar":"s"});
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.jsx
 
 
@@ -72,7 +72,7 @@ var normalizeLabels = function normalizeLabels(labels) {
   }) : [];
 };
 var I18nAddon = function I18nAddon(_ref) {
-  var _payload$i18n, _setupJson$i18n, _setupJson$i18n2, _setupJson$i18n3, _payload$context;
+  var _payload$i18n, _setupJson$i18n, _setupJson$i18n2, _setupJson$i18n3, _payload$context, _payload$context2;
   var _ref$withRealTimeUpda = _ref.withRealTimeUpdates,
     withRealTimeUpdates = _ref$withRealTimeUpda === void 0 ? false : _ref$withRealTimeUpda;
   var setModulePayload = (0,Store/* useStore */.P)(SET_MODULE_PAYLOAD_SELECTOR);
@@ -82,7 +82,7 @@ var I18nAddon = function I18nAddon(_ref) {
   schema_namespaceObject.properties.direction.showIf = (setupJson === null || setupJson === void 0 || (_setupJson$i18n = setupJson.i18n) === null || _setupJson$i18n === void 0 ? void 0 : _setupJson$i18n.rtl) || false;
   schema_namespaceObject.properties.showLabels.showIf = ((setupJson === null || setupJson === void 0 || (_setupJson$i18n2 = setupJson.i18n) === null || _setupJson$i18n2 === void 0 ? void 0 : _setupJson$i18n2.language) === "*" || setupJson !== null && setupJson !== void 0 && (_setupJson$i18n3 = setupJson.i18n) !== null && _setupJson$i18n3 !== void 0 && _setupJson$i18n3.labels) && !withRealTimeUpdates ? true : false;
   var _useState = (0,compat_module.useState)({
-      direction: (payload === null || payload === void 0 || (_payload$context = payload.context) === null || _payload$context === void 0 || (_payload$context = _payload$context.geo) === null || _payload$context === void 0 || (_payload$context = _payload$context.language) === null || _payload$context === void 0 ? void 0 : _payload$context.textDirection) || "ltr",
+      direction: payload !== null && payload !== void 0 && (_payload$context = payload.context) !== null && _payload$context !== void 0 && (_payload$context = _payload$context.geo) !== null && _payload$context !== void 0 && (_payload$context = _payload$context.language) !== null && _payload$context !== void 0 && _payload$context.textDirection ? payload === null || payload === void 0 || (_payload$context2 = payload.context) === null || _payload$context2 === void 0 || (_payload$context2 = _payload$context2.geo) === null || _payload$context2 === void 0 || (_payload$context2 = _payload$context2.language) === null || _payload$context2 === void 0 ? void 0 : _payload$context2.textDirection.toUpperCase() : "LTR",
       showLabels: labels && Object.keys(labels).length !== 0,
       labels: normalizeLabels(labels)
     }),
@@ -97,17 +97,17 @@ var I18nAddon = function I18nAddon(_ref) {
     }).reduce(function (a, v) {
       return _objectSpread(_objectSpread({}, a), {}, (0,defineProperty/* default */.A)({}, v.key, v.value));
     }, {})));
-    obj = lodash_set_default()(obj, "context.geo.language.textDirection", formData.direction || "ltr");
+    obj = lodash_set_default()(obj, "context.geo.language.textDirection", formData.direction || "LTR");
     setModulePayload(obj);
   };
   var handleOnReset = function handleOnReset(e) {
     var obj = JSON.parse(JSON.stringify(payload));
     var i18n = setupJson !== null && setupJson !== void 0 && setupJson.i18n ? JSON.parse(JSON.stringify(setupJson.i18n)) : undefined;
     obj = lodash_set_default()(obj, "i18n", i18n);
-    obj = lodash_set_default()(obj, "context.geo.language.textDirection", "ltr");
+    obj = lodash_set_default()(obj, "context.geo.language.textDirection", "LTR");
     setModulePayload(obj);
     setFormData({
-      direction: "ltr",
+      direction: "LTR",
       showLabels: true,
       labels: normalizeLabels(i18n === null || i18n === void 0 ? void 0 : i18n.labels)
     });
