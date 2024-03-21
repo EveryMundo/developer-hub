@@ -5,8 +5,8 @@ export default () => (
   <div className="nx-flex nx-items-center ltr:nx-mr-auto rtl:nx-ml-auto">
     <a
       className="hover:nx-opacity-75"
-      href="https://everymundo.com"
-      title="Everymundo"
+      href="https://marketplace.pros.com"
+      title="PROS Marketplace"
     >
       <svg
         width="233"
