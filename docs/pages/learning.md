@@ -4,7 +4,7 @@ order: 2
 
 # Learning
 
-In-depth review of the key concepts of **EveryMundo Developer Hub**:
+In-depth review of the key concepts of **Developer Hub**:
 
 - [Architecture](/learning/architecture)
 - [Setup.json](/learning/setup-file)

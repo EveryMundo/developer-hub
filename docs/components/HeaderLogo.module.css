@@ -1,8 +1,8 @@
-.emLogo path:last-child {
+.emLogo path {
   fill: #333
 }
 
-html[class~=dark] .emLogo path:last-child {
+html[class~=dark] .emLogo path {
   fill: #fff
 }
 

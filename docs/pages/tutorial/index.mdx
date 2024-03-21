@@ -14,9 +14,9 @@ import PlaygroundDemo from "@/components/PlaygroundDemo";
 
 # Tutorial
 
-The following tutorial lays out a basic initial path to start using the **EveryMundo Developer Hub**. Alternate paths are omitted to simplify familiarization with the environment.
+The following tutorial lays out a basic initial path to start using the **Developer Hub**. Alternate paths are omitted to simplify familiarization with the environment.
 
-![EveryMundo Developer Hub](@/assets/images/tutorial/cover.jpg)
+![Developer Hub](@/assets/images/tutorial/cover.jpg)
 
 ## TL;DR
 
@@ -35,7 +35,7 @@ Below is the live example of what will be achieved by the end of this tutorial a
 
 ### Create new module
 
-To start we are going to use **React** as technology and create the project with the tool [Create React App](https://create-react-app.dev/) using a basic template adapted to the EveryMundo Developer Hub: [@everymundo/registry-module](https://www.npmjs.com/package/@everymundo/cra-template-registry-module).
+To start we are going to use **React** as technology and create the project with the tool [Create React App](https://create-react-app.dev/) using a basic template adapted to the Developer Hub: [@everymundo/registry-module](https://www.npmjs.com/package/@everymundo/cra-template-registry-module).
 
 Run the following command to build the project: (`hello-react` will be used as the project name and folder)
 
@@ -86,7 +86,7 @@ Three files have been highlighted because they are closely associated in the int
 
 #### Setup.json file
 
-The `Setup.json` is the module contract. This file defines the needs of the module and its behavior with respect to the **EveryMundo Developer Hub**.
+The `Setup.json` is the module contract. This file defines the needs of the module and its behavior with respect to the **Developer Hub**.
 
 In this tutorial the module will define some configuration in the `setup.json`:
 
@@ -137,7 +137,7 @@ In this tutorial the module will define some configuration in the `setup.json`:
 
 #### Package.json (with `@everymundo/registry-script`)
 
-It is important that you include `@everymundo/registry-script` library as a dependency. _Registry Script_ is the library that allows communication with the **EveryMundo Developer Hub**.
+It is important that you include `@everymundo/registry-script` library as a dependency. _Registry Script_ is the library that allows communication with the **Developer Hub**.
 
 ```json filename="hello-react/package.json" {6}
 {
@@ -231,7 +231,7 @@ registry configure
 
 #### Define a new module
 
-This step is to associate your local module with a new module registered in the **EveryMundo Developer Hub**. To run the following command you must be inside the project folder (in this `hello-react` tutorial).
+This step is to associate your local module with a new module registered in the ** Developer Hub**. To run the following command you must be inside the project folder (in this `hello-react` tutorial).
 
 ```console copy filename="Terminal"
 registry create
