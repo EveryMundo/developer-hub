@@ -18,7 +18,7 @@ isReady().then((payload) => {
 ```
 
 ```js
-const payload = async getPayload();
+const payload = await getPayload();
 ```
 
 ## Events
