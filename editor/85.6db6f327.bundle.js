@@ -1,9 +1,9 @@
-"use strict";
 (self["webpackChunk_everymundo_registry_playground"] = self["webpackChunk_everymundo_registry_playground"] || []).push([[85],{
 
 /***/ 5085:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -23,9 +23,9 @@ var regenerator = __webpack_require__(54756);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/lodash.set/index.js
-var lodash_set = __webpack_require__(20974);
-var lodash_set_default = /*#__PURE__*/__webpack_require__.n(lodash_set);
+// EXTERNAL MODULE: ./node_modules/lodash/set.js
+var set = __webpack_require__(63560);
+var set_default = /*#__PURE__*/__webpack_require__.n(set);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Button/Button.js + 3 modules
 var Button = __webpack_require__(67859);
 // EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 280 modules
@@ -34,11 +34,11 @@ var es = __webpack_require__(91352);
 const schema_namespaceObject = /*#__PURE__*/JSON.parse('{"type":"object","properties":{"direction":{"type":"string","title":"Direction","description":"Test the module with different text direction.","enum":["LTR","RTL"],"enumNames":["LTR (Left to Right)","RTL (Right to Left)"],"default":"LTR"},"showLabels":{"type":"boolean","title":"Show labels","help":"Uncheck to not send labels to the module","default":true},"labels":{"type":"array","description":"List of all module labels","format":"collapse:closed","title":"Labels","items":{"type":"object","properties":{"key":{"type":"string","title":"Key","placeholder":"some-unique-key"},"value":{"type":"string","title":"Value","placeholder":"some-value"}},"default":{}},"showIf":{"showLabels":true}}}}');
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/form/uiSchema.json
 const uiSchema_namespaceObject = /*#__PURE__*/JSON.parse('{"labels":{"ui:options":{"addable":true,"orderable":false,"removable":true}}}');
-// EXTERNAL MODULE: ./src/store/Store.js + 6 modules
-var Store = __webpack_require__(76032);
+// EXTERNAL MODULE: ./src/store/Store.js + 7 modules
+var Store = __webpack_require__(91342);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const I18nAddon_module = ({"panel":"r","actionToolbar":"s"});
+/* harmony default export */ const I18nAddon_module = ({"panel":"o","actionToolbar":"p"});
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.jsx
 
 
@@ -91,20 +91,20 @@ var I18nAddon = function I18nAddon(_ref) {
     setFormData = _useState2[1];
   var handleOnSubmit = function handleOnSubmit(e) {
     var obj = JSON.parse(JSON.stringify(payload));
-    obj = lodash_set_default()(obj, "i18n.labels", _objectSpread({}, e.formData.labels.filter(function (_ref2) {
+    obj = set_default()(obj, "i18n.labels", _objectSpread({}, e.formData.labels.filter(function (_ref2) {
       var key = _ref2.key;
       return typeof key !== "undefined";
     }).reduce(function (a, v) {
       return _objectSpread(_objectSpread({}, a), {}, (0,defineProperty/* default */.A)({}, v.key, v.value));
     }, {})));
-    obj = lodash_set_default()(obj, "context.geo.language.textDirection", formData.direction || "LTR");
+    obj = set_default()(obj, "context.geo.language.textDirection", formData.direction || "LTR");
     setModulePayload(obj);
   };
   var handleOnReset = function handleOnReset(e) {
     var obj = JSON.parse(JSON.stringify(payload));
     var i18n = setupJson !== null && setupJson !== void 0 && setupJson.i18n ? JSON.parse(JSON.stringify(setupJson.i18n)) : undefined;
-    obj = lodash_set_default()(obj, "i18n", i18n);
-    obj = lodash_set_default()(obj, "context.geo.language.textDirection", "LTR");
+    obj = set_default()(obj, "i18n", i18n);
+    obj = set_default()(obj, "context.geo.language.textDirection", "LTR");
     setModulePayload(obj);
     setFormData({
       direction: "LTR",
@@ -172,6 +172,106 @@ var I18nAddon = function I18nAddon(_ref) {
 /* harmony default export */ const I18nAddon_I18nAddon = (I18nAddon);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/index.js
 
+
+
+/***/ }),
+
+/***/ 73170:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var assignValue = __webpack_require__(16547),
+    castPath = __webpack_require__(31769),
+    isIndex = __webpack_require__(30361),
+    isObject = __webpack_require__(23805),
+    toKey = __webpack_require__(77797);
+
+/**
+ * The base implementation of `_.set`.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {Array|string} path The path of the property to set.
+ * @param {*} value The value to set.
+ * @param {Function} [customizer] The function to customize path creation.
+ * @returns {Object} Returns `object`.
+ */
+function baseSet(object, path, value, customizer) {
+  if (!isObject(object)) {
+    return object;
+  }
+  path = castPath(path, object);
+
+  var index = -1,
+      length = path.length,
+      lastIndex = length - 1,
+      nested = object;
+
+  while (nested != null && ++index < length) {
+    var key = toKey(path[index]),
+        newValue = value;
+
+    if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+      return object;
+    }
+
+    if (index != lastIndex) {
+      var objValue = nested[key];
+      newValue = customizer ? customizer(objValue, key, nested) : undefined;
+      if (newValue === undefined) {
+        newValue = isObject(objValue)
+          ? objValue
+          : (isIndex(path[index + 1]) ? [] : {});
+      }
+    }
+    assignValue(nested, key, newValue);
+    nested = nested[key];
+  }
+  return object;
+}
+
+module.exports = baseSet;
+
+
+/***/ }),
+
+/***/ 63560:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var baseSet = __webpack_require__(73170);
+
+/**
+ * Sets the value at `path` of `object`. If a portion of `path` doesn't exist,
+ * it's created. Arrays are created for missing index properties while objects
+ * are created for all other missing properties. Use `_.setWith` to customize
+ * `path` creation.
+ *
+ * **Note:** This method mutates `object`.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.7.0
+ * @category Object
+ * @param {Object} object The object to modify.
+ * @param {Array|string} path The path of the property to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns `object`.
+ * @example
+ *
+ * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+ *
+ * _.set(object, 'a[0].b.c', 4);
+ * console.log(object.a[0].b.c);
+ * // => 4
+ *
+ * _.set(object, ['x', '0', 'y', 'z'], 5);
+ * console.log(object.x[0].y.z);
+ * // => 5
+ */
+function set(object, path, value) {
+  return object == null ? object : baseSet(object, path, value);
+}
+
+module.exports = set;
 
 
 /***/ })

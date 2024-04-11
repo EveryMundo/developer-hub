@@ -23871,16 +23871,16 @@ var LogsAddon = loadable_esm(function () {
   return Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 7673));
 });
 var SettingsAddon = loadable_esm(function () {
-  return Promise.all(/* import() */[__webpack_require__.e(955), __webpack_require__.e(267), __webpack_require__.e(806)]).then(__webpack_require__.bind(__webpack_require__, 70806));
+  return Promise.all(/* import() */[__webpack_require__.e(459), __webpack_require__.e(267), __webpack_require__.e(806)]).then(__webpack_require__.bind(__webpack_require__, 70806));
 });
 var StylesAddon = loadable_esm(function () {
-  return Promise.all(/* import() */[__webpack_require__.e(955), __webpack_require__.e(267), __webpack_require__.e(898)]).then(__webpack_require__.bind(__webpack_require__, 97898));
+  return Promise.all(/* import() */[__webpack_require__.e(459), __webpack_require__.e(267), __webpack_require__.e(898)]).then(__webpack_require__.bind(__webpack_require__, 97898));
 });
 var I18nAddon = loadable_esm(function () {
-  return Promise.all(/* import() */[__webpack_require__.e(955), __webpack_require__.e(267), __webpack_require__.e(85)]).then(__webpack_require__.bind(__webpack_require__, 5085));
+  return Promise.all(/* import() */[__webpack_require__.e(459), __webpack_require__.e(267), __webpack_require__.e(85)]).then(__webpack_require__.bind(__webpack_require__, 5085));
 });
 var TestAddon = loadable_esm(function () {
-  return Promise.all(/* import() */[__webpack_require__.e(955), __webpack_require__.e(198), __webpack_require__.e(966)]).then(__webpack_require__.bind(__webpack_require__, 77966));
+  return Promise.all(/* import() */[__webpack_require__.e(459), __webpack_require__.e(198), __webpack_require__.e(966)]).then(__webpack_require__.bind(__webpack_require__, 77966));
 });
 /* harmony default export */ const addons_config = ([{
   key: "addon-overview",
@@ -34684,7 +34684,7 @@ function _unsupportedIterableToArray(o, minLen) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("36ed6cecd5171e24c853")
+/******/ 		__webpack_require__.h = () => ("2b8c30ecea6ae8e4805b")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
