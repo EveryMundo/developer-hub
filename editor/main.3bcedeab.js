@@ -17180,7 +17180,6 @@ function useCallbackRef(initialValue, callback) {
 
 
 
-var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? compat_module.useLayoutEffect : compat_module.useEffect;
 var currentValues = new WeakMap();
 /**
  * Merges two or more refs together providing a single interface to set their value
@@ -17201,7 +17200,7 @@ function useMergeRefs(refs, defaultValue) {
         return refs.forEach(function (ref) { return assignRef(ref, newValue); });
     });
     // handle refs changes - added or removed
-    useIsomorphicLayoutEffect(function () {
+    compat_module.useLayoutEffect(function () {
         var oldValue = currentValues.get(callbackRef);
         if (oldValue) {
             var prevRefs_1 = new Set(oldValue);
@@ -17530,36 +17529,23 @@ var getStyles = function (_a, allowRelative, gapMode, important) {
         .filter(Boolean)
         .join(''), "\n  }\n  \n  .").concat(zeroRightClassName, " {\n    right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(fullWidthClassName, " {\n    margin-right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(zeroRightClassName, " .").concat(zeroRightClassName, " {\n    right: 0 ").concat(important, ";\n  }\n  \n  .").concat(fullWidthClassName, " .").concat(fullWidthClassName, " {\n    margin-right: 0 ").concat(important, ";\n  }\n  \n  body[").concat(lockAttribute, "] {\n    ").concat(removedBarSizeVariable, ": ").concat(gap, "px;\n  }\n");
 };
-var getCurrentUseCounter = function () {
-    var counter = parseInt(document.body.getAttribute(lockAttribute) || '0', 10);
-    return isFinite(counter) ? counter : 0;
-};
-var useLockAttribute = function () {
-    compat_module.useEffect(function () {
-        document.body.setAttribute(lockAttribute, (getCurrentUseCounter() + 1).toString());
-        return function () {
-            var newCounter = getCurrentUseCounter() - 1;
-            if (newCounter <= 0) {
-                document.body.removeAttribute(lockAttribute);
-            }
-            else {
-                document.body.setAttribute(lockAttribute, newCounter.toString());
-            }
-        };
-    }, []);
-};
 /**
  * Removes page scrollbar and blocks page scroll when mounted
  */
-var RemoveScrollBar = function (_a) {
-    var noRelative = _a.noRelative, noImportant = _a.noImportant, _b = _a.gapMode, gapMode = _b === void 0 ? 'margin' : _b;
-    useLockAttribute();
+var RemoveScrollBar = function (props) {
+    var noRelative = props.noRelative, noImportant = props.noImportant, _a = props.gapMode, gapMode = _a === void 0 ? 'margin' : _a;
     /*
      gap will be measured on every component mount
      however it will be used only by the "first" invocation
      due to singleton nature of <Style
      */
     var gap = compat_module.useMemo(function () { return getGapWidth(gapMode); }, [gapMode]);
+    compat_module.useEffect(function () {
+        document.body.setAttribute(lockAttribute, '');
+        return function () {
+            document.body.removeAttribute(lockAttribute);
+        };
+    }, []);
     return compat_module.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? '!important' : '') });
 };
 
@@ -45433,7 +45419,7 @@ var loadable_esm = __webpack_require__(20110);
 
 // import OverviewAddon from "../src/addons/OverviewAddon";
 var OverviewAddon = (0,loadable_esm/* default */.Ay)(function () {
-  return __webpack_require__.e(/* import() */ 502).then(__webpack_require__.bind(__webpack_require__, 52502));
+  return __webpack_require__.e(/* import() */ 513).then(__webpack_require__.bind(__webpack_require__, 21513));
 });
 var LogsAddon = (0,loadable_esm/* default */.Ay)(function () {
   return Promise.all(/* import() */[__webpack_require__.e(5), __webpack_require__.e(673)]).then(__webpack_require__.bind(__webpack_require__, 7673));
@@ -63124,10 +63110,10 @@ var SHARED = '__core-js_shared__';
 var store = module.exports = globalThis[SHARED] || defineGlobalProperty(SHARED, {});
 
 (store.versions || (store.versions = [])).push({
-  version: '3.36.1',
+  version: '3.36.0',
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2014-2024 Denis Pushkarev (zloirock.ru)',
-  license: 'https://github.com/zloirock/core-js/blob/v3.36.1/LICENSE',
+  license: 'https://github.com/zloirock/core-js/blob/v3.36.0/LICENSE',
   source: 'https://github.com/zloirock/core-js'
 });
 
@@ -65208,7 +65194,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("6db6f3274654de511998")
+/******/ 		__webpack_require__.h = () => ("3bcedeaba130d75a9bd9")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -65366,7 +65352,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"27":1,"85":1,"502":1,"898":1,"966":1};
+/******/ 			var cssChunks = {"27":1,"85":1,"513":1,"898":1,"966":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {

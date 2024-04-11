@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_everymundo_registry_playground"] = self["webpackChunk_everymundo_registry_playground"] || []).push([[502],{
+(self["webpackChunk_everymundo_registry_playground"] = self["webpackChunk_everymundo_registry_playground"] || []).push([[513],{
 
-/***/ 52502:
+/***/ 21513:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -35,115 +35,95 @@ var slicedToArray = __webpack_require__(80296);
 var TextInput = __webpack_require__(72280);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/ActionIcon/ActionIcon.js + 1 modules
 var ActionIcon = __webpack_require__(93898);
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(5556);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-;// CONCATENATED MODULE: ./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.js
+;// CONCATENATED MODULE: ./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs
 /**
- * @tabler/icons-react v2.47.0 - MIT
+ * @license @tabler/icons-react v3.2.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
  */
 
 var defaultAttributes = {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: 24,
-  height: 24,
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round"
+  outline: {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  },
+  filled: {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    stroke: "none"
+  }
 };
 
 
-//# sourceMappingURL=defaultAttributes.js.map
+//# sourceMappingURL=defaultAttributes.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@tabler/icons-react/dist/esm/createReactComponent.js
+;// CONCATENATED MODULE: ./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs
 /**
- * @tabler/icons-react v2.47.0 - MIT
+ * @license @tabler/icons-react v3.2.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
  */
 
 
 
 
-
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
-var createReactComponent = (iconName, iconNamePascal, iconNode) => {
+const createReactComponent = (type, iconName, iconNamePascal, iconNode) => {
   const Component = (0,compat_module.forwardRef)(
-    (_a, ref) => {
-      var _b = _a, { color = "currentColor", size = 24, stroke = 2, children } = _b, rest = __objRest(_b, ["color", "size", "stroke", "children"]);
-      return (0,compat_module.createElement)(
-        "svg",
-        __spreadValues(__spreadProps(__spreadValues({
-          ref
-        }, defaultAttributes), {
-          width: size,
-          height: size,
-          stroke: color,
+    ({ color = "currentColor", size = 24, stroke = 2, className, children, ...rest }, ref) => (0,compat_module.createElement)(
+      "svg",
+      {
+        ref,
+        ...defaultAttributes[type],
+        width: size,
+        height: size,
+        className: [`tabler-icon`, `tabler-icon-${iconName}`, className].join(" "),
+        ...type === "filled" ? {
+          fill: color
+        } : {
           strokeWidth: stroke,
-          className: `tabler-icon tabler-icon-${iconName}`
-        }), rest),
-        [...iconNode.map(([tag, attrs]) => (0,compat_module.createElement)(tag, attrs)), ...children || []]
-      );
-    }
+          stroke: color
+        },
+        ...rest
+      },
+      [
+        ...iconNode.map(([tag, attrs]) => (0,compat_module.createElement)(tag, attrs)),
+        ...Array.isArray(children) ? children : [children]
+      ]
+    )
   );
-  Component.propTypes = {
-    color: (prop_types_default()).string,
-    size: prop_types_default().oneOfType([(prop_types_default()).string, (prop_types_default()).number]),
-    stroke: prop_types_default().oneOfType([(prop_types_default()).string, (prop_types_default()).number])
-  };
   Component.displayName = `${iconNamePascal}`;
   return Component;
 };
 
 
-//# sourceMappingURL=createReactComponent.js.map
+//# sourceMappingURL=createReactComponent.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@tabler/icons-react/dist/esm/icons/IconArrowRight.js
+;// CONCATENATED MODULE: ./node_modules/@tabler/icons-react/dist/esm/icons/IconArrowRight.mjs
 /**
- * @tabler/icons-react v2.47.0 - MIT
+ * @license @tabler/icons-react v3.2.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
  */
 
 
 
-var IconArrowRight = createReactComponent("arrow-right", "IconArrowRight", [
-  ["path", { d: "M5 12l14 0", key: "svg-0" }],
-  ["path", { d: "M13 18l6 -6", key: "svg-1" }],
-  ["path", { d: "M13 6l6 6", key: "svg-2" }]
-]);
+var IconArrowRight = createReactComponent("outline", "arrow-right", "IconArrowRight", [["path", { "d": "M5 12l14 0", "key": "svg-0" }], ["path", { "d": "M13 18l6 -6", "key": "svg-1" }], ["path", { "d": "M13 6l6 6", "key": "svg-2" }]]);
 
 
-//# sourceMappingURL=IconArrowRight.js.map
+//# sourceMappingURL=IconArrowRight.mjs.map
 
 // EXTERNAL MODULE: ./src/store/Store.js + 7 modules
 var Store = __webpack_require__(91342);
@@ -219,41 +199,41 @@ var get_system_styles = __webpack_require__(16048);
 
 
 
-var Flex_defProp = Object.defineProperty;
-var Flex_defProps = Object.defineProperties;
-var Flex_getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var Flex_getOwnPropSymbols = Object.getOwnPropertySymbols;
-var Flex_hasOwnProp = Object.prototype.hasOwnProperty;
-var Flex_propIsEnum = Object.prototype.propertyIsEnumerable;
-var Flex_defNormalProp = (obj, key, value) => key in obj ? Flex_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var Flex_spreadValues = (a, b) => {
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
-    if (Flex_hasOwnProp.call(b, prop))
-      Flex_defNormalProp(a, prop, b[prop]);
-  if (Flex_getOwnPropSymbols)
-    for (var prop of Flex_getOwnPropSymbols(b)) {
-      if (Flex_propIsEnum.call(b, prop))
-        Flex_defNormalProp(a, prop, b[prop]);
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
     }
   return a;
 };
-var Flex_spreadProps = (a, b) => Flex_defProps(a, Flex_getOwnPropDescs(b));
-var Flex_objRest = (source, exclude) => {
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
   var target = {};
   for (var prop in source)
-    if (Flex_hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
       target[prop] = source[prop];
-  if (source != null && Flex_getOwnPropSymbols)
-    for (var prop of Flex_getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && Flex_propIsEnum.call(source, prop))
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
         target[prop] = source[prop];
     }
   return target;
 };
 const defaultProps = {};
 const Flex = (0,compat_module.forwardRef)((props, ref) => {
-  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Flex", defaultProps, props), { gap, rowGap, columnGap, align, justify, wrap, direction, sx } = _a, others = Flex_objRest(_a, ["gap", "rowGap", "columnGap", "align", "justify", "wrap", "direction", "sx"]);
-  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, Flex_spreadProps(Flex_spreadValues({}, others), {
+  const _a = (0,MantineProvider/* useComponentDefaultProps */.a1)("Flex", defaultProps, props), { gap, rowGap, columnGap, align, justify, wrap, direction, sx } = _a, others = __objRest(_a, ["gap", "rowGap", "columnGap", "align", "justify", "wrap", "direction", "sx"]);
+  return /* @__PURE__ */ compat_module["default"].createElement(Box/* Box */.a, __spreadProps(__spreadValues({}, others), {
     sx: [
       { display: "flex" },
       (theme) => (0,get_system_styles/* getSystemStyles */._)({ gap, rowGap, columnGap, align, justify, wrap, direction }, theme, FLEX_SYSTEM_PROPS),
@@ -267,26 +247,20 @@ Flex.displayName = "@mantine/core/Flex";
 
 //# sourceMappingURL=Flex.js.map
 
-;// CONCATENATED MODULE: ./node_modules/@tabler/icons-react/dist/esm/icons/IconEye.js
+;// CONCATENATED MODULE: ./node_modules/@tabler/icons-react/dist/esm/icons/IconEye.mjs
 /**
- * @tabler/icons-react v2.47.0 - MIT
+ * @license @tabler/icons-react v3.2.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
  */
 
 
 
-var IconEye = createReactComponent("eye", "IconEye", [
-  ["path", { d: "M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0", key: "svg-0" }],
-  [
-    "path",
-    {
-      d: "M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6",
-      key: "svg-1"
-    }
-  ]
-]);
+var IconEye = createReactComponent("outline", "eye", "IconEye", [["path", { "d": "M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0", "key": "svg-0" }], ["path", { "d": "M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6", "key": "svg-1" }]]);
 
 
-//# sourceMappingURL=IconEye.js.map
+//# sourceMappingURL=IconEye.mjs.map
 
 // EXTERNAL MODULE: ./src/utils/getQueryParams.js
 var getQueryParams = __webpack_require__(46729);
