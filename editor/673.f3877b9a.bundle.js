@@ -14,8 +14,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/@code-editor/console-feed/lib/index.js
-var lib = __webpack_require__(99617);
+// EXTERNAL MODULE: ./node_modules/console-feed/lib/index.js
+var lib = __webpack_require__(36005);
 // EXTERNAL MODULE: ./src/store/Store.js + 7 modules
 var Store = __webpack_require__(91342);
 ;// CONCATENATED MODULE: ./src/addons/LogsAddon/LogsAddon.jsx

@@ -856,8 +856,8 @@ var Tabs = __webpack_require__(80579);
 var esm_extends = __webpack_require__(58168);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
 var objectWithoutProperties = __webpack_require__(80045);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 29 modules
+var MantineProvider = __webpack_require__(35103);
 ;// CONCATENATED MODULE: ./src/components/MantineProviderWrapper/MantineProviderWrapper.js
 
 

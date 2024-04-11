@@ -70,8 +70,8 @@ var Alert = __webpack_require__(859);
 var Tabs = __webpack_require__(80579);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Group/Group.js + 1 modules
 var Group = __webpack_require__(84543);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 29 modules
+var MantineProvider = __webpack_require__(35103);
 // EXTERNAL MODULE: ./node_modules/@mantine/hooks/esm/utils/assign-ref/assign-ref.js
 var assign_ref = __webpack_require__(28525);
 // EXTERNAL MODULE: ./node_modules/@mantine/hooks/esm/use-merged-ref/use-merged-ref.js

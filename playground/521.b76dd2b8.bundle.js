@@ -12,8 +12,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 29 modules
+var MantineProvider = __webpack_require__(35103);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/rem/rem.js
 var rem = __webpack_require__(48085);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/tss/create-styles.js + 1 modules
@@ -1307,8 +1307,8 @@ __webpack_require__.d(__webpack_exports__, {
 var compat_module = __webpack_require__(88763);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/rem/rem.js
 var rem = __webpack_require__(48085);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 29 modules
+var MantineProvider = __webpack_require__(35103);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/get-size/get-size.js
 var get_size = __webpack_require__(9103);
 ;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Select/SelectRightSection/ChevronIcon.js
@@ -1561,8 +1561,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 29 modules
+var MantineProvider = __webpack_require__(35103);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/tss/create-styles.js + 1 modules
 var create_styles = __webpack_require__(54297);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/get-size/get-size.js

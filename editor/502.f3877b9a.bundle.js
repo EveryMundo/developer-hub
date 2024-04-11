@@ -191,8 +191,8 @@ var ModuleUrlSummary = function ModuleUrlSummary() {
 /* harmony default export */ const components_ModuleUrlSummary = (ModuleUrlSummary);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 var esm_extends = __webpack_require__(58168);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 29 modules
+var MantineProvider = __webpack_require__(35103);
 // EXTERNAL MODULE: ./node_modules/@mantine/utils/esm/pack-sx/pack-sx.js
 var pack_sx = __webpack_require__(55470);
 ;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Flex/flex-props.js

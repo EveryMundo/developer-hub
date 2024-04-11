@@ -12,8 +12,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
 var compat_module = __webpack_require__(88763);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 29 modules
+var MantineProvider = __webpack_require__(35103);
 // EXTERNAL MODULE: ./node_modules/@mantine/utils/esm/create-safe-context/create-safe-context.js
 var create_safe_context = __webpack_require__(85618);
 ;// CONCATENATED MODULE: ./node_modules/@mantine/core/esm/Tabs/Tabs.errors.js

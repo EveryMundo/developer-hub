@@ -8849,8 +8849,8 @@ Form_Form.defaultProps = {
   fields: undefined
 };
 /* harmony default export */ const core_Form = (Form_Form);
-// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 25 modules
-var MantineProvider = __webpack_require__(23097);
+// EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/MantineProvider.js + 29 modules
+var MantineProvider = __webpack_require__(35103);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/theme/utils/rem/rem.js
 var rem = __webpack_require__(48085);
 // EXTERNAL MODULE: ./node_modules/@mantine/styles/esm/tss/create-styles.js + 1 modules
@@ -15009,6 +15009,7 @@ function useCallbackRef(initialValue, callback) {
 
 
 
+var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? compat_module.useLayoutEffect : compat_module.useEffect;
 var currentValues = new WeakMap();
 /**
  * Merges two or more refs together providing a single interface to set their value
@@ -15029,7 +15030,7 @@ function useMergeRefs(refs, defaultValue) {
         return refs.forEach(function (ref) { return assignRef(ref, newValue); });
     });
     // handle refs changes - added or removed
-    compat_module.useLayoutEffect(function () {
+    useIsomorphicLayoutEffect(function () {
         var oldValue = currentValues.get(callbackRef);
         if (oldValue) {
             var prevRefs_1 = new Set(oldValue);
@@ -15358,23 +15359,36 @@ var getStyles = function (_a, allowRelative, gapMode, important) {
         .filter(Boolean)
         .join(''), "\n  }\n  \n  .").concat(zeroRightClassName, " {\n    right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(fullWidthClassName, " {\n    margin-right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(zeroRightClassName, " .").concat(zeroRightClassName, " {\n    right: 0 ").concat(important, ";\n  }\n  \n  .").concat(fullWidthClassName, " .").concat(fullWidthClassName, " {\n    margin-right: 0 ").concat(important, ";\n  }\n  \n  body[").concat(lockAttribute, "] {\n    ").concat(removedBarSizeVariable, ": ").concat(gap, "px;\n  }\n");
 };
+var getCurrentUseCounter = function () {
+    var counter = parseInt(document.body.getAttribute(lockAttribute) || '0', 10);
+    return isFinite(counter) ? counter : 0;
+};
+var useLockAttribute = function () {
+    compat_module.useEffect(function () {
+        document.body.setAttribute(lockAttribute, (getCurrentUseCounter() + 1).toString());
+        return function () {
+            var newCounter = getCurrentUseCounter() - 1;
+            if (newCounter <= 0) {
+                document.body.removeAttribute(lockAttribute);
+            }
+            else {
+                document.body.setAttribute(lockAttribute, newCounter.toString());
+            }
+        };
+    }, []);
+};
 /**
  * Removes page scrollbar and blocks page scroll when mounted
  */
-var RemoveScrollBar = function (props) {
-    var noRelative = props.noRelative, noImportant = props.noImportant, _a = props.gapMode, gapMode = _a === void 0 ? 'margin' : _a;
+var RemoveScrollBar = function (_a) {
+    var noRelative = _a.noRelative, noImportant = _a.noImportant, _b = _a.gapMode, gapMode = _b === void 0 ? 'margin' : _b;
+    useLockAttribute();
     /*
      gap will be measured on every component mount
      however it will be used only by the "first" invocation
      due to singleton nature of <Style
      */
     var gap = compat_module.useMemo(function () { return getGapWidth(gapMode); }, [gapMode]);
-    compat_module.useEffect(function () {
-        document.body.setAttribute(lockAttribute, '');
-        return function () {
-            document.body.removeAttribute(lockAttribute);
-        };
-    }, []);
     return compat_module.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? '!important' : '') });
 };
 
@@ -29004,7 +29018,7 @@ module.exports = baseGetAllKeys;
 
 /***/ }),
 
-/***/ 50171:
+/***/ 72552:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var Symbol = __webpack_require__(51873),
@@ -29200,7 +29214,7 @@ module.exports = baseIntersection;
 /***/ 27534:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var baseGetTag = __webpack_require__(50171),
+var baseGetTag = __webpack_require__(72552),
     isObjectLike = __webpack_require__(40346);
 
 /** `Object#toString` result references. */
@@ -29542,7 +29556,7 @@ module.exports = baseIsSet;
 /***/ 4901:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var baseGetTag = __webpack_require__(50171),
+var baseGetTag = __webpack_require__(72552),
     isLength = __webpack_require__(30294),
     isObjectLike = __webpack_require__(40346);
 
@@ -31644,7 +31658,7 @@ var DataView = __webpack_require__(55580),
     Promise = __webpack_require__(32804),
     Set = __webpack_require__(76545),
     WeakMap = __webpack_require__(28303),
-    baseGetTag = __webpack_require__(50171),
+    baseGetTag = __webpack_require__(72552),
     toSource = __webpack_require__(47473);
 
 /** `Object#toString` result references. */
@@ -33941,7 +33955,7 @@ module.exports = isArrayLikeObject;
 /***/ 53812:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var baseGetTag = __webpack_require__(50171),
+var baseGetTag = __webpack_require__(72552),
     isObjectLike = __webpack_require__(40346);
 
 /** `Object#toString` result references. */
@@ -34065,7 +34079,7 @@ module.exports = isEqual;
 /***/ 1882:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var baseGetTag = __webpack_require__(50171),
+var baseGetTag = __webpack_require__(72552),
     isObject = __webpack_require__(23805);
 
 /** `Object#toString` result references. */
@@ -34259,7 +34273,7 @@ module.exports = isObjectLike;
 /***/ 11331:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var baseGetTag = __webpack_require__(50171),
+var baseGetTag = __webpack_require__(72552),
     getPrototype = __webpack_require__(28879),
     isObjectLike = __webpack_require__(40346);
 
@@ -34362,7 +34376,7 @@ module.exports = isSet;
 /***/ 44394:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var baseGetTag = __webpack_require__(50171),
+var baseGetTag = __webpack_require__(72552),
     isObjectLike = __webpack_require__(40346);
 
 /** `Object#toString` result references. */
@@ -37794,10 +37808,10 @@ var SHARED = '__core-js_shared__';
 var store = module.exports = globalThis[SHARED] || defineGlobalProperty(SHARED, {});
 
 (store.versions || (store.versions = [])).push({
-  version: '3.36.0',
+  version: '3.36.1',
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2014-2024 Denis Pushkarev (zloirock.ru)',
-  license: 'https://github.com/zloirock/core-js/blob/v3.36.0/LICENSE',
+  license: 'https://github.com/zloirock/core-js/blob/v3.36.1/LICENSE',
   source: 'https://github.com/zloirock/core-js'
 });
 
