@@ -44664,7 +44664,8 @@ module.exports = assignment;
 /* harmony export */ });
 /* unused harmony exports DEFAULT_MODULE_URL_IF_EMPTY, ADNETIFY_SCRIPT */
 var DEFAULT_MODULE_URL_IF_EMPTY = "https://everymundo.github.io/registry/examples/hello-react/";
-var ADNETIFY_SCRIPT = "https://em-frontend-assets-dev.airtrfx.com/mm/1.1.4/adnetify-playground.js";
+var ADNETIFY_SCRIPT = "https://everymundo.github.io/registry/experiments/scripts/vg/dev/0.0.3/adnetify-playground.js"; // "https://em-frontend-assets-dev.airtrfx.com/mm/1.1.4/adnetify-playground.js";
+
 var MODULE_WAIT_TIMEOUT_UNTIL_ERROR = 8000;
 var VIEWPORT_MAPPING = {
   desktop: {
@@ -61417,7 +61418,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("b6445747432922989eac")
+/******/ 		__webpack_require__.h = () => ("34d56fcc473d0ebd79f5")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
