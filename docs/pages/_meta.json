@@ -23,6 +23,9 @@
     }
   },
   "references": "References",
+  "migration-guide": {
+    "display": "hidden"
+  },
   "tutorial": {
     "title": "Tutorial",
     "type": "page",
