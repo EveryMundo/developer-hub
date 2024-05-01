@@ -23,28 +23,49 @@ const payload = await getPayload();
 
 ## Events
 
-```js
-import { setFullScreen } from "@everymundo/registry-script"
-
-function () {
-  setFullScreen(true); // Open fullscreen
-}
-```
+### Enter in full size
 
 ```js
-import { setFullScreen } from "@everymundo/registry-script"
+import { triggerAction } from "@everymundo/registry-script";
 
-function () {
-  setFullScreen(false); // Close fullscreen
-}
-```
-
-```js
-import { openPopup } from "@everymundo/registry-script"
-
-function () {
-  openPopup({
-   fare: {}
+triggerAction("fullsize:enter") // Request permission to enter in fullsize
+  .then(() => { // if success add code to enter fullsize (open dialog, etc)
+    console.log("--- SUCCCESS");
+  })
+  .catch((err) => { // if error you can't enter full size
+    console.log("--- ERROR");
+    console.log("Error: ", err);
   });
-}
+```
+
+### Exit from full size
+```js
+import { triggerAction } from "@everymundo/registry-script";
+
+triggerAction("fullsize:exit") // Request permission to exit from fullsize
+  .then(() => { // if success add code to exit from fullsize (closet dialog, etc)
+    console.log("--- SUCCCESS");
+  })
+  .catch((err) => { // if error you can't exit from full size
+    console.log("--- ERROR");
+    console.log("Error: ", err);
+  });
+```
+
+### Open search panel
+```js
+import { triggerAction } from "@everymundo/registry-script";
+
+triggerAction("search-panel:open", {
+  "industry": "airline", // industry of the search panel requested, for now airline or hospitality
+  "payload": {} // fares o rates content
+}) // Request permission to open the popup
+  .then((result) => { // if success you can trigger tracking events ...
+    console.log("--- SUCCCESS");
+    console.log("Result: ", result);
+  })
+  .catch((err) => { // if error you can show error or trigger direct deeplink
+    console.log("--- ERROR");
+    console.log("Error: ", err);
+  });
 ```
