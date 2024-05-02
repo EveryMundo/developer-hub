@@ -1,46 +1,253 @@
 ---
 ---
 
+import {
+  Callout,
+  Tab,
+  Tabs,
+  Steps,
+  Cards,
+  Card,
+  FileTree,
+} from "nextra-theme-docs";
+
 # Migration Guide
 
 ![Migration Guide Cover](@/assets/images/migration-guide/cover.jpg)
 
-## Knowing the "mamotreto" / Get Started.
+## Get Started / Knowing this "mamotreto"
 
-This is a detailed guide to accelerate the migration of existing PROS modules to the **Registry Ecosystem**. It serves as a complement to other tools for organizing internal processes.
+This is a detailed guide to accelerate the migration of existing _PROS modules_ to the **Developer Hub Ecosystem**. It serves as a complement to other tools for organizing internal processes.
 
 It will be useful as long as the modules meet these conditions:
 
-- The module to be migrated is already working in production. 
-- The module currently uses our Services/APIS (although not necessarily the latest versions) 
-- The module already has all the labels defined in the system. 
-- The module has styling mechanisms that allow it to look as desired in our system and partially implements EDS even if it is not directly connected to a theme. 
-- The module has all the necessary settings to be functional and flexible according to our needs. 
+- The module is already **working in production**. 
+- The module **currently uses our services** (although not necessarily the latest versions) 
+- The module already **use labels defined in the system**. 
+- The module has **required settings** to be functional and flexible according to our needs.
+- The module has **styling mechanisms that apply Design System** (formerly _EDS_) even if it is not directly connected to tokens. 
+- The module **use our tracking services**.
 
-## Obtaining credentials.
+<Callout>
+  In this guide, **Developer Hub** and **Registry** are used to refer to the same concept.
+</Callout>
 
-Lorem ipsum lorem
-
-## Preparation of deployment and development tools.
-
-Lorem ipsum lorem
-
-## Understanding Setup.Json and Payload.
+## Key concepts
 
 Lorem ipsum lorem
 
-## Settings Definition
+### What is a Developer Hub Module?
 
-Lorem ipsum lorem.
+A _Developer Hub Module_ must be a quality app that meets the standards and market needs associated with the functional and non-functional requirements provided by PROS.
 
-## Consuming EDS
+However, at a more basic technical level, we can summarize that a app becomes a _Developer Hub Module_ if it meets the following:
 
-Lorem ipsum lorem.
+- The app is a web application with an `index.html` in the root of the build folder.
+- In the root of the build folder there should be a `setup.json` file
+- The project must install and use the `@everymundo/registry-script` dependency
 
-## Label Translation
+### Development, testing and deployment tools.
 
-Lorem ipsum lorem.
+<table>
+  <tbody>
+    <tr>
+      <td>
+        **Registry CLI**
+      </td>
+      <td>
+        (**Must be installed**). Command-line interface for **Developer Hub**. 
+        Allows to communicate with the platform and deploy/promote modules. 
+        Requires authentication.<br />
+        https://www.npmjs.com/package/@everymundo/em-registry-cli
+      </td>
+    </tr>
+    <tr>
+      <td>
+        **Editor**
+      </td>
+      <td>
+        A tool from the **Developer Hub** that accelerates the construction of the digital contract `Setup.json` without the need for the module to be developed yet.<br />
+        https://everymundo.github.io/developer-hub/editor
+      </td>
+    </tr>
+    <tr>
+      <td>
+        **Playground**
+      </td>
+      <td>
+        Tool that allows the development and QA of a module without the need for the real environment. This tool creates a _Module Payload_ (input config for Module) with mock data using the configuration specified in _Setup JSON_.<br />
+        https://everymundo.github.io/developer-hub/playground
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-## Migration of Services/APIS
+## Things we already have / Things we need.
 
-Lorem ipsum lorem.
+- A module working in production
+  - **What we need?**
+  - [ ] Wrap it in an app with the specifications of a _Developer Hub module_.
+  - [ ] Deploy to the _PROS_ ecosystem of the **Developer Hub** using _Registry CLI_
+  - [ ] Add new events to request the module in "fullscreen" or trigger the "Popup"
+- A module currently using our services
+  - **What we need?**
+  - [ ] Add in the `setup.json` the services configuration and include all the services used by the module according to the convention
+  - [ ] Migrate services to what we call _Smart Services_.
+- A module using labels defined in the system
+  - **What we need?**
+  - [ ] Make an inventory of all the label keys used by the Module.
+  - [ ] Add the i18n configuration to `setup.json` and include all the labels keys that the module has with their respective values ​​in English.
+- A module using **required settings** to be functional and flexible
+  - **What we need?**
+  - [ ] Add to `setup.json` the configuration to use custom settings
+  - [ ] Define the structure of the module settings using the generic settings templates provided
+  - [ ] Connect the new settings values ​​received through the _Module Payload_ with the way the module internally handles the settings.
+- A module using styling mechanisms that apply Design System (formerly EDS)
+  - **What we need?**
+  - [ ] Add to `setup.json` the configuration to use _Design System_ style tokens.
+  - [ ] Make the necessary mapping transformations between the received _Design System_ tokens and the internal token structure used by the module.
+- A module using our tracking services
+  - **What we need?**
+  - [ ] Migrate to the new module tracking library.
+
+## Straight to the point
+
+<Steps>
+
+### Obtaining credentials
+
+Before being able to interact with the platform you need to have available certain credentials necessary to deploy the module and also to interact with the services/apis.
+
+- Registry CLI credentials (user, key).
+- Services/Apis token.
+
+<Callout>
+  There is no reason to stop if you do not yet have the final Registry CLI credentials. You can advance in everything else except what is related to module deployment/promotion.
+</Callout>
+
+### Wrap module in a Registry module
+
+
+
+```bash
+npx degit Everymundo/developer-hub/examples/hello-react your-project-folder-name
+```
+
+#### Project structure
+
+<FileTree>
+  <FileTree.Folder name="hello-react/" defaultOpen>
+    <FileTree.Folder name="public/" defaultOpen>
+      <FileTree.File name="index.html" />
+      <FileTree.File name="robots.txt" />
+      <FileTree.File name="setup.json" active />
+    </FileTree.Folder>
+    <FileTree.Folder name="src/" defaultOpen>
+      <FileTree.Folder name="components/" defaultOpen>
+        <FileTree.Folder name="App/">
+          <FileTree.File name="App.css" />
+          <FileTree.File name="App.jsx" />
+          <FileTree.File name="App.stories.js" />
+          <FileTree.File name="App.test.js" />
+          <FileTree.File name="index.js" />
+        </FileTree.Folder>
+        <FileTree.Folder name="Button/" />
+      </FileTree.Folder>
+      <FileTree.Folder name="context/" />
+      <FileTree.Folder name="hooks/" />
+      <FileTree.Folder name="utils/" />
+      <FileTree.File name="index.js" active />
+    </FileTree.Folder>
+    <FileTree.File name="package.json" active />
+    <FileTree.File name="..." />
+  </FileTree.Folder>
+</FileTree>
+
+### Understanding Setup.json and Payload
+
+Setup.json example:
+
+```json
+{
+  "context": {},
+  "settings": {
+    "schema": {
+      "properties": {}
+    }
+  }
+  "styles": {
+    "service": "codeless",
+    "options": {
+      "type": "eds",
+      "format": "json"
+    }
+  }
+  "i18n": {
+    "rtl": true,
+    "language": "*",
+    "labels": {
+      "label-key-1": "English value for key 1",
+      "label-key-2": "English value for key 2"
+    }
+  },
+  "tokens": {
+    "em:apiKey": "<some-very-very-secret-token>"
+  },
+  "services": {
+    "some-unique-and-well-known-key": {
+      "endpoint": "https://services-url/path-to-services"
+    },
+    "em:sputnik:search": {
+      "endpoint": "https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%tenantCode%%/fares/search"
+    }
+  }
+  "metaData": {}
+}
+```
+
+Payload example
+
+```json
+{}
+```
+
+### Using Registry Script in `index.js`.
+
+(Add demo code)
+
+### Special events: "Fullscreen" and "Popup".
+
+(Explanation of the new event names and how to use them with promises.)
+
+### Settings definition (Form)
+
+(References to the Json Schema documentation, settings and links to the specific templates for the pricing modules. Also give an example of the partner module in the playground and Editor.)
+
+### Consuming EDS
+
+(Describe where the tokens are received, the structure of the object, how to print the sources and list of all the tokens.)
+
+### I18N / Label Translation
+
+(Brief description of some attributes of i18n and how to extract the module labels.)
+
+### Migration of Services/APIS
+
+(How services are defined in Setup.json and how to migrate to new versions.)
+
+### Tracking library
+
+(Link to the tracking library.)
+
+### Deploy new module using Registry CLI
+
+</Steps>
+
+## Whats Next?
+
+<Cards num={2}>
+  <Card title="Learning in deep" arrow href="/learning" />
+  <Card title="Understand Setup.json" arrow href="/learning/setup-file" />
+  <Card title="Get clear with FAQ" arrow href="/get-started/faqs" />
+  <Card title="View more examples" arrow href="/examples" />
+</Cards>

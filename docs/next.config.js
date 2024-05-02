@@ -1,12 +1,23 @@
+import nextra from 'nextra'
+import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
+
 const isProd = process.env.NODE_ENV === "production";
 
-const withNextra = require("nextra")({
+const withNextra = nextra({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.jsx",
+  mdxOptions: {
+    remarkPlugins: [
+      [
+        remarkMdxDisableExplicitJsx,
+        { whiteList: ['table', 'thead', 'tbody', 'tr', 'th', 'td'] }
+      ]
+    ]
+  },
   staticImage: true,
 });
 
-module.exports = withNextra({
+export default withNextra({
   output: "export",
   distDir: 'build/docs',
   basePath: isProd ? "/developer-hub/docs" : undefined,
