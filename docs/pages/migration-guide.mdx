@@ -17,7 +17,8 @@ import {
 
 ## Get Started / Knowing this "mamotreto"
 
-This is a detailed guide to accelerate the migration of existing _PROS modules_ to the **Developer Hub Ecosystem**. It serves as a complement to other tools for organizing internal processes.
+This is a detailed guide to accelerate the migration of existing _PROS modules_ to the **Developer Hub Ecosystem**.
+It serves as a complement to other tools for organizing internal processes.
 
 It will be useful as long as the modules meet these conditions:
 
@@ -28,13 +29,17 @@ It will be useful as long as the modules meet these conditions:
 - The module has **styling mechanisms that apply Design System** (formerly _EDS_) even if it is not directly connected to tokens. 
 - The module **use our tracking services**.
 
+In-depth information can be found in specialized sections of the documentation
+
 <Callout>
   In this guide, **Developer Hub** and **Registry** are used to refer to the same concept.
 </Callout>
 
-## Key concepts
+### Good to know
 
 Lorem ipsum lorem
+
+## Key concepts
 
 ### What is a Developer Hub Module?
 
@@ -42,9 +47,17 @@ A _Developer Hub Module_ must be a quality app that meets the standards and mark
 
 However, at a more basic technical level, we can summarize that a app becomes a _Developer Hub Module_ if it meets the following:
 
-- The app is a web application with an `index.html` in the root of the build folder.
-- In the root of the build folder there should be a `setup.json` file
-- The project must install and use the `@everymundo/registry-script` dependency
+- The app is a **web application with an `index.html` in the root of the build** folder.
+- There should be a **`setup.json` file in the root of the build** folder 
+- The project must **install and use `@everymundo/registry-script`** dependency
+
+### Setup.json and Module Payload
+
+Lorem ipsum
+
+### Registry Script (`@everymundo/registry-script`)
+
+Lorem ipsum
 
 ### Development, testing and deployment tools.
 
@@ -81,6 +94,10 @@ However, at a more basic technical level, we can summarize that a app becomes a 
     </tr>
   </tbody>
 </table>
+
+### Internal concepts
+
+In addition to the previous concepts, you should also know about terms such as _Context_, how to use our _Services/Apis_, details about the Design System (formerly _EDS_), specific events of the _Tracking Library_, etc. etc.
 
 ## Things we already have / Things we need.
 
@@ -138,23 +155,22 @@ npx degit Everymundo/developer-hub/examples/hello-react your-project-folder-name
 <FileTree>
   <FileTree.Folder name="hello-react/" defaultOpen>
     <FileTree.Folder name="public/" defaultOpen>
-      <FileTree.File name="index.html" />
-      <FileTree.File name="robots.txt" />
       <FileTree.File name="setup.json" active />
+      <FileTree.File name="..." />
     </FileTree.Folder>
     <FileTree.Folder name="src/" defaultOpen>
       <FileTree.Folder name="components/" defaultOpen>
-        <FileTree.Folder name="App/">
+        <FileTree.Folder name="App/" defaultOpen>
           <FileTree.File name="App.css" />
-          <FileTree.File name="App.jsx" />
-          <FileTree.File name="App.stories.js" />
-          <FileTree.File name="App.test.js" />
+          <FileTree.File name="App.jsx" active />
           <FileTree.File name="index.js" />
         </FileTree.Folder>
         <FileTree.Folder name="Button/" />
+        <FileTree.File name="..." />
       </FileTree.Folder>
       <FileTree.Folder name="context/" />
       <FileTree.Folder name="hooks/" />
+      <FileTree.Folder name="styles/" />
       <FileTree.Folder name="utils/" />
       <FileTree.File name="index.js" active />
     </FileTree.Folder>
@@ -163,7 +179,7 @@ npx degit Everymundo/developer-hub/examples/hello-react your-project-folder-name
   </FileTree.Folder>
 </FileTree>
 
-### Understanding Setup.json and Payload
+### Setup.json and Module Payload in practice
 
 Setup.json example:
 
@@ -174,14 +190,14 @@ Setup.json example:
     "schema": {
       "properties": {}
     }
-  }
+  },
   "styles": {
     "service": "codeless",
     "options": {
       "type": "eds",
       "format": "json"
     }
-  }
+  },
   "i18n": {
     "rtl": true,
     "language": "*",
@@ -200,7 +216,7 @@ Setup.json example:
     "em:sputnik:search": {
       "endpoint": "https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%tenantCode%%/fares/search"
     }
-  }
+  },
   "metaData": {}
 }
 ```
