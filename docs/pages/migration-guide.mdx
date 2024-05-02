@@ -41,6 +41,15 @@ Lorem ipsum lorem
 
 ## Key concepts
 
+### Architecture
+
+![Adnetify](@/assets/images/learning/architecture-adnetify.png)
+
+- Adnetify
+- Iframe
+- Developer Hub Module
+- Registry Script
+
 ### What is a Developer Hub Module?
 
 A _Developer Hub Module_ must be a quality app that meets the standards and market needs associated with the functional and non-functional requirements provided by PROS.
@@ -53,11 +62,9 @@ However, at a more basic technical level, we can summarize that a app becomes a 
 
 ### Setup.json and Module Payload
 
-Lorem ipsum
+**Setup.json**: Is a JSON file that acts as a vital contract between the module and the system. It technically describes module settings, integration with the design system, label definitions, API usage, resource permissions, (...). This configuration file must be uploaded with the project build.
 
-### Registry Script (`@everymundo/registry-script`)
-
-Lorem ipsum
+**Module Payload**: An object that will contain all the values ​​that are needed to run the module. For example, the context, settings, Design System tokens, labels, etc. This object is returned by the Registry Script library.
 
 ### Development, testing and deployment tools.
 
@@ -179,18 +186,36 @@ npx degit Everymundo/developer-hub/examples/hello-react your-project-folder-name
   </FileTree.Folder>
 </FileTree>
 
+Three files have been highlighted because they are closely associated with the integration with the **Developer Hub Ecosystem** and will be mentioned repeatedly in the following steps of this guide:
+
+- `public/setup.json`
+- `package.json`
+- `src/index.js`
+- `src/components/App/App.jsx`
+
 ### Setup.json and Module Payload in practice
 
 Setup.json example:
 
-```json
+```json filename="public/setup.json" 
 {
   "context": {},
+
   "settings": {
     "schema": {
-      "properties": {}
+      "properties": {
+        "title": {
+          "title": "Title",
+          "description": "Description, lorem ipsum lorem ..",
+          "help": "Hint: Text next to a field to guide the end user filling it",
+          "placeholder": "Placeholder ..",
+          "type": "string",
+          "default": "Hello React"
+        }
+      }
     }
   },
+
   "styles": {
     "service": "codeless",
     "options": {
@@ -198,6 +223,7 @@ Setup.json example:
       "format": "json"
     }
   },
+
   "i18n": {
     "rtl": true,
     "language": "*",
@@ -206,9 +232,11 @@ Setup.json example:
       "label-key-2": "English value for key 2"
     }
   },
+
   "tokens": {
     "em:apiKey": "<some-very-very-secret-token>"
   },
+
   "services": {
     "some-unique-and-well-known-key": {
       "endpoint": "https://services-url/path-to-services"
@@ -217,6 +245,7 @@ Setup.json example:
       "endpoint": "https://openair-dev.airtrfx.com/airfare-sputnik-service/v3/%%tenantCode%%/fares/search"
     }
   },
+
   "metaData": {}
 }
 ```
@@ -224,12 +253,68 @@ Setup.json example:
 Payload example
 
 ```json
-{}
+{
+  "context": {},
+  "settings": {},
+  "styles": {
+    "value": {}
+  },
+  "i18n": {
+    "labels": {}
+  },
+  "tokens": {
+    "em:apiKey": "<value>"
+  },
+  "services": {}
+}
 ```
 
 ### Using Registry Script in `index.js`.
 
-(Add demo code)
+```js filename="src/index.js" {1,9, 11}
+import { isReady } from "@everymundo/registry-script";
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+import App from "./components/App";
+import getCmpConfig from "./utils/getCmpConfig";
+
+isReady().then(async (payload) => {
+  // Transform data received from the payload to what is expected by the module
+  const cmpConfig = await getCmpConfig(payload);
+
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <App cmpConfig={cmpConfig} />
+  );
+});
+```
+
+```js filename="src/components/App/App.jsx" {13}
+import React from "react";
+
+import FcBookingContainer from "@everymundo/em-cmp-lib-airmodules-components/src/components/em-cmp-flights-booking/container/FlightsBooking";
+import DynamicContextInterceptor from "@everymundo/em-cmp-lib-airmodules-components/src/components/em-cmp-flights-booking/container/DynamicContextInterceptor";
+import ThemeProvider from "@everymundo/em-cmp-lib-airmodules-components/src/atoms/services/theme/context/ThemeProvider";
+
+const Container = ({ children }) => (
+  <div style={{ maxWidth: 1200, margin: "auto", minHeight: 600 }}>
+    {children}
+  </div>
+);
+
+const App = ({ cmpConfig }) => (
+  <Container>
+    <ThemeProvider theme={cmpConfig.theme} loadTailwind={true}>
+      <DynamicContextInterceptor>
+        <FcBookingContainer cmpConfig={cmpConfig} />
+      </DynamicContextInterceptor>
+    </ThemeProvider>
+  </Container>
+);
+
+export default App;
+```
 
 ### Special events: "Fullscreen" and "Popup".
 
