@@ -37,18 +37,35 @@ In-depth information can be found in specialized sections of the documentation
 
 ### Good to know
 
-Lorem ipsum lorem
+- If you have more questions that cannot be resolved with this guide or this documentation site, please get in touch. We will resolve your doubt by expanding/improving this documentation.
+- If you find any typographical errors, or have suggestions for changes to the documentation, you can manage them directly by editing the pages and making a Pull Request. This documentation is in a public repository.
 
 ## Key concepts
 
 ### Architecture
 
+_Developer Hub Modules_ (for now) load inside an Iframe on the client page. Broadly speaking, the elements described below are key in the workflow.
+- _Adnetify Script_
+- _Module Manager_
+- _Registry Script_
+
 ![Adnetify](@/assets/images/learning/architecture-adnetify.png)
 
-- Adnetify
-- Iframe
-- Developer Hub Module
-- Registry Script
+#### Adnetify Script
+
+_Adnetify Script_ is a code that is delivered to the client and is responsible for scanning the entire page and detecting assigned spaces (slots) to place modules and other significant information such as the client's URL, data layers, etc. _Adnetify Script_ communicates with a service in the backend called _Module Manager_ who is responsible for determining based on the information obtained by Adnetify Script which modules should be loaded in each slot found on the client page. To load the module, _Adnetify Script_ also has another important task: communication with a script that lives inside the module called _Registry Script_.
+
+#### Module Manager
+
+_Module Manager_ is the brain in the entire process of putting a module live to the client. It is a group of services that are consumed by _Adnetify Script_.
+
+#### Registry Script
+
+_Registry Script_ is the only concept mentioned in this section that will be directly used in the development of the module. It is a library that you must have as a dependency in your project.
+
+This library is the one that communicates with _Adnetify Script_ to obtain the module startup data, which we call _Module Payload_.
+
+It also takes care of other extra tasks such as adapting the Iframe to the dimensions of the module, opening the module in full size, triggering the popup, etc. etc.
 
 ### What is a Developer Hub Module?
 
@@ -62,7 +79,7 @@ However, at a more basic technical level, we can summarize that a app becomes a 
 
 ### Setup.json and Module Payload
 
-**Setup.json**: Is a JSON file that acts as a vital contract between the module and the system. It technically describes module settings, integration with the design system, label definitions, API usage, resource permissions, (...). This configuration file must be uploaded with the project build.
+**Setup.json**: A configuration file `setup.json` that be uploaded with the project build. Is a JSON file that acts as a vital contract between the module and the system. It technically describes module settings, integration with the design system, label definitions, API usage, resource permissions, (...)
 
 **Module Payload**: An object that will contain all the values ​​that are needed to run the module. For example, the context, settings, Design System tokens, labels, etc. This object is returned by the Registry Script library.
 
@@ -151,13 +168,19 @@ Before being able to interact with the platform you need to have available certa
 
 ### Wrap module in a Registry module
 
+At this point you should have code for a functional module (usually as a component in _React_) but that has not yet been integrated into the **Developer Hub Ecosystem**.
 
+What we will do in this step is wrap that module in an application that has the requirements to be rendered as a _Developer Hub Module_.
+
+Assuming that the module you already have is developed in _React_, and taking into account the previously mentioned requirements that make any project a _Developer Hub Module_, we recommend that to start getting familiar with the ecosystem you try using one of our `hello-react` created with _Vite_ (Later you can create your own projects with your own tools optimized to your needs.):
 
 ```bash
 npx degit Everymundo/developer-hub/examples/hello-react your-project-folder-name
 ```
 
 #### Project structure
+
+By executing the above command you will get a web application with the following structure. This application already meets the requirements to be considered a _Developer Hub Module_.
 
 <FileTree>
   <FileTree.Folder name="hello-react/" defaultOpen>
