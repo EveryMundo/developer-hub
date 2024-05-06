@@ -178,6 +178,10 @@ Assuming that the module you already have is developed in _React_, and taking in
 npx degit Everymundo/developer-hub/examples/hello-react your-project-folder-name
 ```
 
+<Callout>
+  The following link shows a production-ready module in the Playground: https://everymundo.github.io/developer-hub/playground/?url=https://modules.everymundo.work/prod/FRONT10/FRONT10-001/20240425194647/index.html
+</Callout>
+
 #### Project structure
 
 By executing the above command you will get a web application with the following structure. This application already meets the requirements to be considered a _Developer Hub Module_.
@@ -345,7 +349,11 @@ export default App;
 
 ### Settings definition (Form)
 
-(References to the Json Schema documentation, settings and links to the specific templates for the pricing modules. Also give an example of the partner module in the playground and Editor.)
+The convention for defining module settings is based on [Json Schema](https://json-schema.org/) with some [minor tweaks specific to the **Developer Hub**](/learning/setup-file/settings). 
+
+Use the following real example of a module in production as a starting point for creating the `Setup.json` of your new module. The following link opens the `Setup.json` of that module in the _Editor_ (Add or remove to suit module needs):
+
+https://everymundo.github.io/developer-hub/editor/?setup=https://modules.everymundo.work/prod/FRONT10/FRONT10-001/20240425194647/setup.json
 
 ### Consuming EDS
 
