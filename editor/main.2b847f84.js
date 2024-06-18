@@ -44664,7 +44664,7 @@ module.exports = assignment;
 /* harmony export */ });
 /* unused harmony exports DEFAULT_MODULE_URL_IF_EMPTY, ADNETIFY_SCRIPT */
 var DEFAULT_MODULE_URL_IF_EMPTY = "https://everymundo.github.io/registry/examples/hello-react/";
-var ADNETIFY_SCRIPT = "https://everymundo.github.io/registry/experiments/scripts/vg/dev/0.0.3/adnetify-playground.js"; // "https://em-frontend-assets-dev.airtrfx.com/mm/1.1.4/adnetify-playground.js";
+var ADNETIFY_SCRIPT = "https://everymundo.github.io/registry-adnetify2/scripts/2.0.0-experimental-05/dev/adnetify-playground.js"; // "https://em-frontend-assets-dev.airtrfx.com/mm/1.1.4/adnetify-playground.js";
 
 var MODULE_WAIT_TIMEOUT_UNTIL_ERROR = 8000;
 var VIEWPORT_MAPPING = {
@@ -45659,6 +45659,9 @@ function Store_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { va
 
 var lonely = getLonelyParam();
 var matrix = getMatrixParam();
+var generateModuleId = function generateModuleId() {
+  return "mm2-".concat(Date.now());
+};
 var devtoolsMiddleWare = function devtoolsMiddleWare(store) {
   return  false ? 0 : store;
 };
@@ -45807,7 +45810,7 @@ var store = function store(set, get) {
                   model: Store_objectSpread(Store_objectSpread({}, state.model), model),
                   module: {
                     payload: payload,
-                    id: Date.now()
+                    id: generateModuleId()
                   }
                 };
               }, false, "model/updateModel");
@@ -45926,7 +45929,7 @@ var store = function store(set, get) {
                 return {
                   module: {
                     payload: payload,
-                    id: Date.now()
+                    id: generateModuleId()
                   }
                 };
               }, false, "module/setModulePayload");
@@ -45968,7 +45971,7 @@ var store = function store(set, get) {
                 if (draft !== null && draft !== void 0 && (_draft$module = draft.module) !== null && _draft$module !== void 0 && (_draft$module = _draft$module.payload) !== null && _draft$module !== void 0 && (_draft$module = _draft$module.context) !== null && _draft$module !== void 0 && (_draft$module = _draft$module.audience) !== null && _draft$module !== void 0 && _draft$module.device_category) {
                   draft.module.payload.context.audience.device_category = device;
                 }
-                draft.module.id = Date.now();
+                draft.module.id = generateModuleId();
               }), false, "ui/updateViewportAndDevice");
 
               // setTimeout(
@@ -45976,7 +45979,7 @@ var store = function store(set, get) {
               //     set(
               //       produce((draft) => {
               //         draft.module.payload.context.audience.device_category = device; // FIXME: Check object exists
-              //         draft.module.id = Date.now();
+              //         draft.module.id = generateModuleId();
               //       }),
               //       false,
               //       "ui/updateViewportAndDevice"
@@ -46010,7 +46013,7 @@ var store = function store(set, get) {
             case 5:
               set(immer_esm(function (draft) {
                 draft.options.template = template;
-                draft.module.id = Date.now();
+                draft.module.id = generateModuleId();
               }), false, "ui/updateTemplate");
             case 6:
             case "end":
@@ -46101,7 +46104,6 @@ var getSettings = /*#__PURE__*/function () {
 }();
 var getStyles = /*#__PURE__*/function () {
   var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(config, _ref3) {
-    var _config$styles, _config$styles2, _config$styles3;
     var tokens, _ref3$resources, resources, styles;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
@@ -46115,11 +46117,11 @@ var getStyles = /*#__PURE__*/function () {
         case 3:
           styles = {
             value: (0,_getThemeValue__WEBPACK_IMPORTED_MODULE_1__/* .getThemeValue */ .n)(config, tokens),
-            options: {
-              type: (config === null || config === void 0 || (_config$styles = config.styles) === null || _config$styles === void 0 || (_config$styles = _config$styles.options) === null || _config$styles === void 0 ? void 0 : _config$styles.type) || undefined,
-              format: (config === null || config === void 0 || (_config$styles2 = config.styles) === null || _config$styles2 === void 0 || (_config$styles2 = _config$styles2.options) === null || _config$styles2 === void 0 ? void 0 : _config$styles2.format) || undefined,
-              output: (config === null || config === void 0 || (_config$styles3 = config.styles) === null || _config$styles3 === void 0 || (_config$styles3 = _config$styles3.options) === null || _config$styles3 === void 0 ? void 0 : _config$styles3.output) || undefined
-            },
+            // options: {
+            //   type: config?.styles?.options?.type || undefined,
+            //   format: config?.styles?.options?.format || undefined,
+            //   output: config?.styles?.options?.output || undefined,
+            // },
             resources: resources
           };
           return _context3.abrupt("return", styles);
@@ -46135,10 +46137,13 @@ var getStyles = /*#__PURE__*/function () {
 }();
 var getI18n = /*#__PURE__*/function () {
   var _ref5 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4(config) {
+    var _config$i18n;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
-          return _context4.abrupt("return", config !== null && config !== void 0 && config.i18n ? Object.assign({}, config === null || config === void 0 ? void 0 : config.i18n) : undefined);
+          return _context4.abrupt("return", config !== null && config !== void 0 && config.i18n ? {
+            labels: Object.assign({}, (config === null || config === void 0 || (_config$i18n = config.i18n) === null || _config$i18n === void 0 ? void 0 : _config$i18n.labels) || {})
+          } : undefined);
         case 1:
         case "end":
           return _context4.stop();
@@ -46181,53 +46186,109 @@ var getServices = /*#__PURE__*/function () {
     return _ref7.apply(this, arguments);
   };
 }();
-var getDefaultPayloadBySetupJson = /*#__PURE__*/function () {
-  var _ref8 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7(setupJson, options) {
-    var adnetifyPayload;
+var getGlobalSettings = /*#__PURE__*/function () {
+  var _ref8 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7(config, context) {
+    var _context$geo, _context$geo2, _context$geo3, _context$geo4, _context$geo5, _context$geo6, _context$geo7, _context$geo8, _context$geo9, _context$geo10, _context$geo11;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee7$(_context7) {
       while (1) switch (_context7.prev = _context7.next) {
         case 0:
-          _context7.next = 2;
-          return getContext(setupJson);
-        case 2:
-          _context7.t0 = _context7.sent;
-          _context7.next = 5;
-          return getSettings(setupJson);
-        case 5:
-          _context7.t1 = _context7.sent;
-          _context7.next = 8;
-          return getStyles(setupJson, options === null || options === void 0 ? void 0 : options.styles);
-        case 8:
-          _context7.t2 = _context7.sent;
-          _context7.next = 11;
-          return getI18n(setupJson);
-        case 11:
-          _context7.t3 = _context7.sent;
-          _context7.next = 14;
-          return getTokens(setupJson);
-        case 14:
-          _context7.t4 = _context7.sent;
-          _context7.next = 17;
-          return getServices(setupJson);
-        case 17:
-          _context7.t5 = _context7.sent;
-          adnetifyPayload = {
-            context: _context7.t0,
-            settings: _context7.t1,
-            styles: _context7.t2,
-            i18n: _context7.t3,
-            tokens: _context7.t4,
-            services: _context7.t5
-          };
-          return _context7.abrupt("return", adnetifyPayload);
-        case 20:
+          return _context7.abrupt("return", {
+            siteEdition: {
+              name: context !== null && context !== void 0 && (_context$geo = context.geo) !== null && _context$geo !== void 0 && (_context$geo = _context$geo.language) !== null && _context$geo !== void 0 && _context$geo.site_edition ? context === null || context === void 0 || (_context$geo2 = context.geo) === null || _context$geo2 === void 0 || (_context$geo2 = _context$geo2.language) === null || _context$geo2 === void 0 ? void 0 : _context$geo2.site_edition : context !== null && context !== void 0 && (_context$geo3 = context.geo) !== null && _context$geo3 !== void 0 && (_context$geo3 = _context$geo3.language) !== null && _context$geo3 !== void 0 && _context$geo3.lang && context !== null && context !== void 0 && (_context$geo4 = context.geo) !== null && _context$geo4 !== void 0 && (_context$geo4 = _context$geo4.language) !== null && _context$geo4 !== void 0 && _context$geo4.siteEditionMarket ? "".concat(context === null || context === void 0 || (_context$geo5 = context.geo) === null || _context$geo5 === void 0 || (_context$geo5 = _context$geo5.language) === null || _context$geo5 === void 0 ? void 0 : _context$geo5.lang, "-").concat(context === null || context === void 0 || (_context$geo6 = context.geo) === null || _context$geo6 === void 0 || (_context$geo6 = _context$geo6.language) === null || _context$geo6 === void 0 ? void 0 : _context$geo6.siteEditionMarket) : "en",
+              trfx: true,
+              global: context !== null && context !== void 0 && (_context$geo7 = context.geo) !== null && _context$geo7 !== void 0 && (_context$geo7 = _context$geo7.language) !== null && _context$geo7 !== void 0 && _context$geo7.siteEditionMarket ? false : true,
+              allCurrencies: false,
+              language: (context === null || context === void 0 || (_context$geo8 = context.geo) === null || _context$geo8 === void 0 || (_context$geo8 = _context$geo8.language) === null || _context$geo8 === void 0 ? void 0 : _context$geo8.lang) || "en",
+              siteEditionLanguage: (context === null || context === void 0 || (_context$geo9 = context.geo) === null || _context$geo9 === void 0 || (_context$geo9 = _context$geo9.language) === null || _context$geo9 === void 0 ? void 0 : _context$geo9.lang) || "en",
+              siteEditionMarket: (context === null || context === void 0 || (_context$geo10 = context.geo) === null || _context$geo10 === void 0 || (_context$geo10 = _context$geo10.language) === null || _context$geo10 === void 0 ? void 0 : _context$geo10.siteEditionMarket) || undefined
+            },
+            currencyCode: "USD",
+            textDirection: (context === null || context === void 0 || (_context$geo11 = context.geo) === null || _context$geo11 === void 0 || (_context$geo11 = _context$geo11.language) === null || _context$geo11 === void 0 ? void 0 : _context$geo11.textDirection) || "LTR",
+            multiCurrency: false,
+            journeyType: "ONE_WAY",
+            searchConfig: {
+              caseSensitive: true,
+              includeScore: false,
+              includeMatches: false,
+              shouldSort: true,
+              findAllMatches: true,
+              threshold: 0.1,
+              location: 0,
+              distance: 100,
+              maxPatternLength: 5,
+              minMatchCharLength: 2,
+              keys: ["value", "label"],
+              ignoreLocation: false
+            },
+            advConfig: {
+              directDeeplink: false,
+              geoLocation: false
+            },
+            travelClasses: ["ECONOMY"]
+          });
+        case 1:
         case "end":
           return _context7.stop();
       }
     }, _callee7);
   }));
-  return function getDefaultPayloadBySetupJson(_x8, _x9) {
+  return function getGlobalSettings(_x8, _x9) {
     return _ref8.apply(this, arguments);
+  };
+}();
+var getDefaultPayloadBySetupJson = /*#__PURE__*/function () {
+  var _ref9 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee8(setupJson, options) {
+    var context, adnetifyPayload;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee8$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
+        case 0:
+          _context8.next = 2;
+          return getContext(setupJson);
+        case 2:
+          context = _context8.sent;
+          _context8.t0 = context;
+          _context8.next = 6;
+          return getSettings(setupJson);
+        case 6:
+          _context8.t1 = _context8.sent;
+          _context8.next = 9;
+          return getGlobalSettings(setupJson, context);
+        case 9:
+          _context8.t2 = _context8.sent;
+          _context8.next = 12;
+          return getStyles(setupJson, options === null || options === void 0 ? void 0 : options.styles);
+        case 12:
+          _context8.t3 = _context8.sent;
+          _context8.next = 15;
+          return getI18n(setupJson);
+        case 15:
+          _context8.t4 = _context8.sent;
+          _context8.next = 18;
+          return getTokens(setupJson);
+        case 18:
+          _context8.t5 = _context8.sent;
+          _context8.next = 21;
+          return getServices(setupJson);
+        case 21:
+          _context8.t6 = _context8.sent;
+          adnetifyPayload = {
+            context: _context8.t0,
+            settings: _context8.t1,
+            globalSettings: _context8.t2,
+            styles: _context8.t3,
+            i18n: _context8.t4,
+            tokens: _context8.t5,
+            services: _context8.t6
+          };
+          return _context8.abrupt("return", adnetifyPayload);
+        case 24:
+        case "end":
+          return _context8.stop();
+      }
+    }, _callee8);
+  }));
+  return function getDefaultPayloadBySetupJson(_x10, _x11) {
+    return _ref9.apply(this, arguments);
   };
 }();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getDefaultPayloadBySetupJson);
@@ -61418,7 +61479,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("34d56fcc473d0ebd79f5")
+/******/ 		__webpack_require__.h = () => ("2b847f849113958d36a3")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
