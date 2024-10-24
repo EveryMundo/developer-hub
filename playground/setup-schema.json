@@ -227,7 +227,7 @@
                     "op": {
                       "type": "string",
                       "title": "JavaScript operator",
-                      "enum": ["==", "!=", "<", ">", "<=", ">="]
+                      "enum": ["==", "!=", "<", ">", "<=", ">=", "INCLUDES"]
                     },
                     "value": {
                       "title": "Expected value",

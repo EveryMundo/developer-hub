@@ -517,7 +517,7 @@ __webpack_require__.d(__webpack_exports__, {
 var react = __webpack_require__(96540);
 ;// CONCATENATED MODULE: ./src/addons/OverviewAddon/OverviewAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const OverviewAddon_module = ({"panel":"j","modulePayloadBar":"k","tempTitle":"l"});
+/* harmony default export */ const OverviewAddon_module = ({"panel":"g","modulePayloadBar":"h","tempTitle":"i"});
 // EXTERNAL MODULE: ./src/utils/deviceRecognition.js
 var deviceRecognition = __webpack_require__(29978);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
