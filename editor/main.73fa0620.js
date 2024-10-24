@@ -10742,9 +10742,9 @@ var merge_default = /*#__PURE__*/__webpack_require__.n(merge);
 var TEMPLATES_BY_FORMAT = {
   json: "JsonFieldTemplate"
 };
-var getPaths = function getPaths(o) {
+var _getPaths = function getPaths(o) {
   return Object.keys(o + "" === o || o || 0).flatMap(function (k) {
-    return [k].concat(getPaths(o[k]).map(function (i) {
+    return [k].concat(_getPaths(o[k]).map(function (i) {
       return k + "." + i;
     }));
   });
@@ -10776,6 +10776,8 @@ var operation = function operation(op, a, b) {
       return a <= b;
     case ">=":
       return a >= b;
+    case "INCLUDES":
+      return Array.isArray(a) && a.includes(b);
     default:
       break;
   }
@@ -10822,7 +10824,7 @@ var getGeneratedUiSchema = function getGeneratedUiSchema(_ref2) {
     json = _ref2$json === void 0 ? {} : _ref2$json,
     _ref2$templates = _ref2.templates,
     templates = _ref2$templates === void 0 ? {} : _ref2$templates;
-  var paths = getPaths(schema);
+  var paths = _getPaths(schema);
   var uiSchemaExt = {};
   var schemaExt = {};
   paths.forEach(function (path) {
@@ -10936,8 +10938,8 @@ var getGeneratedUiSchema = function getGeneratedUiSchema(_ref2) {
 /* harmony default export */ const utils_getGeneratedUiSchema = (getGeneratedUiSchema);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/core/Form.js
 var _excluded = ["component", "templates", "schema", "uiSchema", "onChange", "onError", "formData", "widgets", "fields", "liveValidate"];
-function Form_extends() { Form_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return Form_extends.apply(this, arguments); }
-function Form_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function Form_extends() { return Form_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, Form_extends.apply(null, arguments); }
+function Form_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 function transformErrors(errors) {
@@ -11546,7 +11548,7 @@ function useDebounce(value, delay) {
 
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/TextWidget.js
 var TextWidget_excluded = ["id", "placeholder", "required", "readonly", "disabled", "type", "label", "value", "onChange", "onBlur", "onFocus", "autofocus", "options", "schema", "uiSchema", "rawErrors", "rightSection"];
-function TextWidget_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function TextWidget_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 
@@ -11645,7 +11647,7 @@ function TextWidget_TextWidget(_ref) {
 var Textarea = __webpack_require__(98421);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/TextareaWidget.js
 var TextareaWidget_excluded = ["id", "placeholder", "required", "readonly", "disabled", "type", "label", "value", "onChange", "onBlur", "onFocus", "autofocus", "options", "schema", "rawErrors", "uiSchema"];
-function TextareaWidget_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function TextareaWidget_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 
@@ -11717,7 +11719,7 @@ function TextareaWidget_TextareaWidget(_ref) {
 }
 /* harmony default export */ const widgets_TextareaWidget = (TextareaWidget_TextareaWidget);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/URLWidget.js
-function URLWidget_extends() { URLWidget_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return URLWidget_extends.apply(this, arguments); }
+function URLWidget_extends() { return URLWidget_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, URLWidget_extends.apply(null, arguments); }
 
 
 function URLWidget_URLWidget(props) {
@@ -11734,7 +11736,7 @@ function URLWidget_URLWidget(props) {
 }
 /* harmony default export */ const widgets_URLWidget = (URLWidget_URLWidget);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/EmailWidget.js
-function EmailWidget_extends() { EmailWidget_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return EmailWidget_extends.apply(this, arguments); }
+function EmailWidget_extends() { return EmailWidget_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, EmailWidget_extends.apply(null, arguments); }
 
 
 function EmailWidget_EmailWidget(props) {
@@ -11750,7 +11752,7 @@ function EmailWidget_EmailWidget(props) {
 }
 /* harmony default export */ const widgets_EmailWidget = (EmailWidget_EmailWidget);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/DateWidget.js
-function DateWidget_extends() { DateWidget_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return DateWidget_extends.apply(this, arguments); }
+function DateWidget_extends() { return DateWidget_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, DateWidget_extends.apply(null, arguments); }
 
 
 function DateWidget_DateWidget(props) {
@@ -11762,7 +11764,7 @@ function DateWidget_DateWidget(props) {
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Box/Box.js + 1 modules
 var Box = __webpack_require__(29180);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/ColorWidget.js
-function ColorWidget_extends() { ColorWidget_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ColorWidget_extends.apply(this, arguments); }
+function ColorWidget_extends() { return ColorWidget_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, ColorWidget_extends.apply(null, arguments); }
 
 
 
@@ -12361,7 +12363,7 @@ NumberInput.displayName = "@mantine/core/NumberInput";
 
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/UpDownWidget.js
 var UpDownWidget_excluded = ["id", "placeholder", "required", "readonly", "disabled", "type", "label", "value", "onChange", "onBlur", "onFocus", "autofocus", "options", "schema", "uiSchema", "rawErrors"];
-function UpDownWidget_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function UpDownWidget_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 
@@ -12763,7 +12765,7 @@ PasswordInput.displayName = "@mantine/core/PasswordInput";
 
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/PasswordWidget.js
 var PasswordWidget_excluded = ["id", "placeholder", "required", "readonly", "disabled", "type", "label", "value", "onChange", "onBlur", "onFocus", "autofocus", "options", "schema", "uiSchema", "rawErrors"];
-function PasswordWidget_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function PasswordWidget_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 
@@ -15716,7 +15718,7 @@ MultiSelect.displayName = "@mantine/core/MultiSelect";
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Select/Select.js + 2 modules
 var Select = __webpack_require__(92228);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/widgets/SelectWidget.js
-function SelectWidget_extends() { SelectWidget_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return SelectWidget_extends.apply(this, arguments); }
+function SelectWidget_extends() { return SelectWidget_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, SelectWidget_extends.apply(null, arguments); }
 
 
 
@@ -16509,7 +16511,7 @@ var Button = __webpack_require__(67859);
 var Collapse = __webpack_require__(18801);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/components/LazyCollapse/LazyCollapse.js
 var LazyCollapse_excluded = ["children"];
-function LazyCollapse_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function LazyCollapse_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 var LazyCollapse = function LazyCollapse(_ref) {
@@ -16547,8 +16549,8 @@ var RawObjectFieldTemplate = function RawObjectFieldTemplate(_ref) {
 var UnstyledButton = __webpack_require__(99100);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/components/AlternateBox/AlternateBox.js
 var AlternateBox_excluded = ["children"];
-function AlternateBox_extends() { AlternateBox_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return AlternateBox_extends.apply(this, arguments); }
-function AlternateBox_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function AlternateBox_extends() { return AlternateBox_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, AlternateBox_extends.apply(null, arguments); }
+function AlternateBox_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 var AlternateBox = function AlternateBox(_ref) {
@@ -16582,8 +16584,8 @@ var AlternateBox = function AlternateBox(_ref) {
 
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/templates/ObjectFieldTemplate/templates/CollapseObjectFieldTemplate.js
 var CollapseObjectFieldTemplate_excluded = ["titleComponent", "descriptionComponent", "children", "initialState", "isCollapsible"];
-function CollapseObjectFieldTemplate_extends() { CollapseObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return CollapseObjectFieldTemplate_extends.apply(this, arguments); }
-function CollapseObjectFieldTemplate_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function CollapseObjectFieldTemplate_extends() { return CollapseObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, CollapseObjectFieldTemplate_extends.apply(null, arguments); }
+function CollapseObjectFieldTemplate_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 
@@ -16677,7 +16679,7 @@ function ChevronIcon(props) {
   }));
 }
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/templates/ObjectFieldTemplate/templates/GroupObjectFieldTemplate.js
-function GroupObjectFieldTemplate_extends() { GroupObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return GroupObjectFieldTemplate_extends.apply(this, arguments); }
+function GroupObjectFieldTemplate_extends() { return GroupObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, GroupObjectFieldTemplate_extends.apply(null, arguments); }
 
 
 var GroupObjectFieldTemplate = function GroupObjectFieldTemplate(props) {
@@ -19004,8 +19006,8 @@ var DialogObjectFieldTemplate = function DialogObjectFieldTemplate(_ref) {
 var Tabs = __webpack_require__(80579);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/templates/ObjectFieldTemplate/templates/TabsObjectFieldTemplate.js
 var TabsObjectFieldTemplate_excluded = ["titleComponent", "descriptionComponent", "children", "schema", "uiSchema", "formData", "properties", "idSchema"];
-function TabsObjectFieldTemplate_extends() { TabsObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return TabsObjectFieldTemplate_extends.apply(this, arguments); }
-function TabsObjectFieldTemplate_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function TabsObjectFieldTemplate_extends() { return TabsObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, TabsObjectFieldTemplate_extends.apply(null, arguments); }
+function TabsObjectFieldTemplate_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 
 
 var TabsObjectFieldTemplate = function TabsObjectFieldTemplate(_ref) {
@@ -19772,7 +19774,7 @@ var AccordionObjectFieldTemplate = function AccordionObjectFieldTemplate(_ref) {
   "default": templates_GroupObjectFieldTemplate
 });
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/templates/ObjectFieldTemplate/ObjectFieldTemplate.js
-function ObjectFieldTemplate_extends() { ObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ObjectFieldTemplate_extends.apply(this, arguments); }
+function ObjectFieldTemplate_extends() { return ObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, ObjectFieldTemplate_extends.apply(null, arguments); }
 
 
 
@@ -19845,7 +19847,7 @@ var RawObjectFieldTemplate_RawObjectFieldTemplate = function RawObjectFieldTempl
 };
 /* harmony default export */ const ArrayFieldTemplate_templates_RawObjectFieldTemplate = (RawObjectFieldTemplate_RawObjectFieldTemplate);
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/templates/ArrayFieldTemplate/templates/CollapseObjectFieldTemplate.js
-function templates_CollapseObjectFieldTemplate_extends() { templates_CollapseObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return templates_CollapseObjectFieldTemplate_extends.apply(this, arguments); }
+function templates_CollapseObjectFieldTemplate_extends() { return templates_CollapseObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, templates_CollapseObjectFieldTemplate_extends.apply(null, arguments); }
 
 
 
@@ -19932,7 +19934,7 @@ function CollapseObjectFieldTemplate_ChevronIcon(props) {
   }));
 }
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/templates/ArrayFieldTemplate/templates/GroupObjectFieldTemplate.js
-function templates_GroupObjectFieldTemplate_extends() { templates_GroupObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return templates_GroupObjectFieldTemplate_extends.apply(this, arguments); }
+function templates_GroupObjectFieldTemplate_extends() { return templates_GroupObjectFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, templates_GroupObjectFieldTemplate_extends.apply(null, arguments); }
 
 
 var GroupObjectFieldTemplate_GroupObjectFieldTemplate = function GroupObjectFieldTemplate(props) {
@@ -19998,8 +20000,8 @@ var DialogObjectFieldTemplate_DialogObjectFieldTemplate = function DialogObjectF
 });
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/templates/ArrayFieldTemplate/ArrayFieldTemplate.js
 var ArrayFieldTemplate_excluded = ["withNoContainer"];
-function ArrayFieldTemplate_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-function ArrayFieldTemplate_extends() { ArrayFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ArrayFieldTemplate_extends.apply(this, arguments); }
+function ArrayFieldTemplate_objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
+function ArrayFieldTemplate_extends() { return ArrayFieldTemplate_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, ArrayFieldTemplate_extends.apply(null, arguments); }
 
 
 
@@ -20179,7 +20181,7 @@ var ArrayFieldTemplate_DefaultNormalArrayFieldTemplate = function DefaultNormalA
 
 
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/components/Theme/Theme.js
-function Theme_extends() { Theme_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return Theme_extends.apply(this, arguments); }
+function Theme_extends() { return Theme_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, Theme_extends.apply(null, arguments); }
 
 
 
@@ -20445,8 +20447,8 @@ var JsonField = function JsonField(props) {
   JsonFieldTemplate: JsonFieldTemplate
 });
 ;// CONCATENATED MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/framework/mantine/components/Form/Form.js
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
-function Form_Form_extends() { Form_Form_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return Form_Form_extends.apply(this, arguments); }
+function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
+function Form_Form_extends() { return Form_Form_extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, Form_Form_extends.apply(null, arguments); }
 
 
 
@@ -61479,7 +61481,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"http://json-schema.org/dra
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("8182485ef9c6bfcb1445")
+/******/ 		__webpack_require__.h = () => ("73fa0620d20d4e5ed24e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -38,7 +38,7 @@ const uiSchema_namespaceObject = /*#__PURE__*/JSON.parse('{"labels":{"ui:options
 var Store = __webpack_require__(91342);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const I18nAddon_module = ({"panel":"m","actionToolbar":"n"});
+/* harmony default export */ const I18nAddon_module = ({"panel":"o","actionToolbar":"p"});
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.jsx
 
 
