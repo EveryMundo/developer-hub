@@ -300,7 +300,7 @@ var Divider = __webpack_require__(98048);
 var Button = __webpack_require__(67859);
 ;// CONCATENATED MODULE: ./src/addons/SettingsAddon/SettingsAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const SettingsAddon_module = ({"panel":"m","actionToolbar":"n"});
+/* harmony default export */ const SettingsAddon_module = ({"panel":"j","actionToolbar":"k"});
 ;// CONCATENATED MODULE: ./src/addons/SettingsAddon/SettingsAddon.jsx
 
 

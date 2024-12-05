@@ -36,7 +36,7 @@ var Divider = __webpack_require__(98048);
 var Button = __webpack_require__(67859);
 ;// CONCATENATED MODULE: ./src/addons/SettingsAddon/SettingsAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const SettingsAddon_module = ({"panel":"a","actionToolbar":"b"});
+/* harmony default export */ const SettingsAddon_module = ({"panel":"f","actionToolbar":"g"});
 ;// CONCATENATED MODULE: ./src/addons/SettingsAddon/SettingsAddon.jsx
 
 
