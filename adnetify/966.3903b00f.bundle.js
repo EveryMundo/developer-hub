@@ -999,7 +999,7 @@ var merge = __webpack_require__(55364);
 var merge_default = /*#__PURE__*/__webpack_require__.n(merge);
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/TestAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const TestAddon_module = ({"panel":"a","modulePayloadBar":"b"});
+/* harmony default export */ const TestAddon_module = ({"panel":"h","modulePayloadBar":"i"});
 // EXTERNAL MODULE: ./config/constants.js
 var constants = __webpack_require__(62246);
 ;// CONCATENATED MODULE: ./src/addons/TestAddon/TestAddon.jsx
