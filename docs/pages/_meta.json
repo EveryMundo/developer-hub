@@ -26,6 +26,9 @@
   "migration-guide": {
     "display": "hidden"
   },
+  "tracking-migration-guide": {
+    "display": "hidden"
+  },
   "tutorial": {
     "title": "Tutorial",
     "type": "page",

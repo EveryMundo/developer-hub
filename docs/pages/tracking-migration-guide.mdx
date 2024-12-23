@@ -1,0 +1,114 @@
+---
+---
+
+import {
+  Callout,
+  Tab,
+  Tabs,
+  Steps,
+  Cards,
+  Card,
+  FileTree,
+} from "nextra-theme-docs";
+
+# Tracking Migration Guide
+
+![Tracking Migration Guide Cover](@/assets/images/migration-guide/cover.jpg)
+
+## Get Started
+
+This is a simple guide to migrate the way you use tracking in existing modules of the **Developer Hub Ecosystem**.
+
+### Existing processes/disadvantages
+
+Currently modules use the _Tracking Package_, but this mechanism in the context of the **Developer Hub Ecosystem** modules brings a series of disadvantages listed below and we want to simplify this process.
+
+- The _Tracking Package_ is a library that must be imported and used directly by the module, which increases the size of the bundle, when in many cases the module does not need to activate tracking.
+- The _Tracking Package_ currently has in its code, and by design, configurations of the available tenants and each time a tenant is added an update of the library is needed.
+- The _Tracking Package_ currently uses microservices endpoints and has saved an `API Key` within the code for this. If this `API Key` expires, all modules would have to be massively updated, causing new deployments.
+- The _Tracking Package_ currently follows frequent update cycles which would cause unnecessary module deployments.
+- Currently the responsibility of installing/importing/updating the _Tracking Library_ is assumed by the partners and it should not be that way.
+- Currently it is a bit complicated to do QA when using _Tracking Package_ by modules.
+
+For these reasons we have been looking for alternative solutions that reduce all these problems and also simplify the ease of QA reviews.
+
+### Alternative proposal
+
+Since all modules, regardless of the technology in which their code is developed (say React, Angular, Vue...), must import **Registry Script** by obligation, we have developed a solution in which the call to the tracking events is the responsibility of that **Registry Script** library.
+
+For this purpose, a new function `trackEvent` has been created, whose implementation is basically an empty code that receives the `eventObject` that have been defined when using the _Tracking Package_. It would no longer be necessary to import or install the _Tracking Package_, just use this new function defined in **Registry Script**.
+
+This new function would be practically empty code by definition. Its job is to redirect calls to the _Tracking Package_, and this would only work when the tracking resources are dynamically inserted into the Iframe and for a tenant/module combination. This dynamic insertion would be done by the platform and would be outside the partner context. We repeat: it will no longer be necessary to import/install the _Tracking Package_.
+
+Advantages:
+
+- The module's bundle size is reduced, it no longer needs the Tracking Package.
+- The partner does not need to take responsibility for installing/importing/updating the Tracking Package.
+- Tracking resources will be dynamically inserted by the platform in situations where they are needed.
+- The need for frequent updates to modules and deployments related to updates to the Tracking Package is no longer necessary.
+- Improved ability to do QA reviews to the tracking system: Now visible in the Playground
+
+A detailed explanation with examples and the steps required to perform the migration will be explored in the next section.
+
+<Callout>
+  In this guide, **Developer Hub** and **Registry** are used to refer to the same concept.
+</Callout>
+
+## Concepts/Some examples
+
+Industries
+
+- Airlines: `flights`
+- Hospitality: `hospitality`
+- Events: `events`
+
+
+Current invocation of tracking by the Registry modules
+
+```js
+import formatter from '@everymundo/airmodules-event-datalayer';
+
+// For Vertical Airlines
+formatter.formatAirlines(eventObject);
+
+// For Vertical Hospitality
+formatter.formatHotels(eventObject);
+
+// For Vertical Events
+formatter.formatEvents(eventObject);
+```
+
+New tracking invocation by Registry modules
+
+```js
+import { trackEvent } from '@everymundo/registry-script'
+
+// For Vertical Airlines
+trackEvent('flights', eventObject);
+
+// For Vertical Hospitality
+trackEvent('hospitality', eventObject);
+
+// For Vertical Events
+trackEvent('events', eventObject);
+```
+
+<Callout>
+  The `eventObject` remains the same as before
+</Callout>
+
+## Migration step by step
+
+<Steps>
+
+### Update **Registry Script** to `v0.6.0` or higher
+
+
+### Remove Tracking Package
+
+
+### Update the function call to fire the tracking event
+
+
+</Steps>
+
