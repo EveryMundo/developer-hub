@@ -13,7 +13,7 @@ import { Cards, Card } from "nextra-theme-docs";
   />
 </Cards>
 
-**Playground** is a tool that allows the development and QA of a module without the need for the real environment. This tool creates a _module payload_ (input config for Module) with mock data using the configuration specified in [**Setup JSON**](/learning/setup-file).
+**Playground** is a preview tool on a sandbox environment that enables the development and QA of a Registry airModule. This tool creates a module payload (input config for the airModule) with mock data using the configuration specified in the [**Setup JSON**](/learning/setup-file).
 
 ![Playground](@/assets/images/learning/playground-cover.png)
 
@@ -26,46 +26,70 @@ The **Module Preview** shows how the module responds to the combinations that ha
 
 ## Tabs
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
 ### Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+The overview tab shows the details of the module displayed. 
+
+- **Module URL 
+
+- **Setup.JSON URL used for the module rendering
+
+- **Viewport - adjustable settings to render the module based on changing  viewports
+
+- **Template - render the module in various positions within a page
+
+- **Context - the context of the module currently rendered. The context can be changed, by Editing the Module Payload
 
 #### Module Payload
+
+The Module Payload, displays the payload used to render the module. This is the information defined within the Setup.JSON. 
+
+The Module Payload can be edited, to adjust the module context and details, in order to change the module rendering based on changing Module Payloads. 
 
 ![Playground Addon Overview - Module Payload](@/assets/images/learning/playground-module-payload.png)
 
 #### Template
 
+Select a page template to review the module as it will appear within a web page. 
+
 ![Playground Addon Overview - Template](@/assets/images/learning/playground-sample-page.png)
 
 #### Viewport
+
+Select the viewport of the module preview. 
 
 ![Playground Addon Overview - Viewport](@/assets/images/learning/playground-mobile-viewport.png)
 
 ### Settings
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+The Settings tab allows configuring the module, using the available configuration available for the modules. For example, if a module allows adjusting the filters within the module, those settings can be set within the Settings tab, to test the module based on changing configurations. 
 
 ![Playground Addon Settings](@/assets/images/learning/playground-addon-settings.png)
 
 ### Styles
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-![Playground Addon Styles - High Contrast](@/assets/images/learning/playground-addon-styles-high-contrast.png)
+The Styles tab, allows updating the style of the module to preview any desired change to the module styling. The user can manually set the objects styling or select between a few generic themes.
 
 ![Playground Addon Styles - Dark](@/assets/images/learning/playground-addon-styles-dark.png)
 
 ### I18N
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+In the I18n tab, the module labels can be set to update and preview the module components verbiage and language.  
 
 ![Playground Addon I18N](@/assets/images/learning/playground-addon-i18n.png)
 
+### Test
+
+The Test Tab can be used to render the module just as it will appear on a live airTRFX page. 
+
+This includes any page of a valid tenant, site edition, page slug, and defined theme. 
+
+The user can either manually enter test scenarios, or upload a JSON file, to populate pre-set scenarios. 
+
+*The test scenarios parameters are case sensitive*
+
 ### Logs
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+This tab can be used to troubleshoot and get visibility over the API calls used to load data. 
 
 ![Playground Addon Logs](@/assets/images/learning/playground-addon-logs.png)
