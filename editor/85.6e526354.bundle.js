@@ -21,24 +21,24 @@ var slicedToArray = __webpack_require__(80296);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
 var regenerator = __webpack_require__(54756);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
+var compat_module = __webpack_require__(88763);
 // EXTERNAL MODULE: ./node_modules/lodash/set.js
 var set = __webpack_require__(63560);
 var set_default = /*#__PURE__*/__webpack_require__.n(set);
 // EXTERNAL MODULE: ./node_modules/@mantine/core/esm/Button/Button.js + 3 modules
 var Button = __webpack_require__(67859);
-// EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 269 modules
-var es = __webpack_require__(45267);
+// EXTERNAL MODULE: ./node_modules/@everymundo/registry-json-schema-form/es/index.js + 280 modules
+var es = __webpack_require__(91352);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/form/schema.json
 const schema_namespaceObject = /*#__PURE__*/JSON.parse('{"type":"object","properties":{"direction":{"type":"string","title":"Direction","description":"Test the module with different text direction.","enum":["LTR","RTL"],"enumNames":["LTR (Left to Right)","RTL (Right to Left)"],"default":"LTR"},"showLabels":{"type":"boolean","title":"Show labels","help":"Uncheck to not send labels to the module","default":true},"labels":{"type":"array","description":"List of all module labels","format":"collapse:closed","title":"Labels","items":{"type":"object","properties":{"key":{"type":"string","title":"Key","placeholder":"some-unique-key"},"value":{"type":"string","title":"Value","placeholder":"some-value"}},"default":{}},"showIf":{"showLabels":true}}}}');
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/form/uiSchema.json
 const uiSchema_namespaceObject = /*#__PURE__*/JSON.parse('{"labels":{"ui:options":{"addable":true,"orderable":false,"removable":true}}}');
-// EXTERNAL MODULE: ./src/store/Store.js + 11 modules
-var Store = __webpack_require__(62361);
+// EXTERNAL MODULE: ./src/store/Store.js + 7 modules
+var Store = __webpack_require__(91342);
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const I18nAddon_module = ({"panel":"f","actionToolbar":"g"});
+/* harmony default export */ const I18nAddon_module = ({"panel":"o","actionToolbar":"p"});
 ;// CONCATENATED MODULE: ./src/addons/I18nAddon/I18nAddon.jsx
 
 
@@ -81,7 +81,7 @@ var I18nAddon = function I18nAddon(_ref) {
   var labels = (payload === null || payload === void 0 || (_payload$i18n = payload.i18n) === null || _payload$i18n === void 0 ? void 0 : _payload$i18n.labels) || null;
   schema_namespaceObject.properties.direction.showIf = (setupJson === null || setupJson === void 0 || (_setupJson$i18n = setupJson.i18n) === null || _setupJson$i18n === void 0 ? void 0 : _setupJson$i18n.rtl) || false;
   schema_namespaceObject.properties.showLabels.showIf = ((setupJson === null || setupJson === void 0 || (_setupJson$i18n2 = setupJson.i18n) === null || _setupJson$i18n2 === void 0 ? void 0 : _setupJson$i18n2.language) === "*" || setupJson !== null && setupJson !== void 0 && (_setupJson$i18n3 = setupJson.i18n) !== null && _setupJson$i18n3 !== void 0 && _setupJson$i18n3.labels) && !withRealTimeUpdates ? true : false;
-  var _useState = (0,react.useState)({
+  var _useState = (0,compat_module.useState)({
       direction: payload !== null && payload !== void 0 && (_payload$context = payload.context) !== null && _payload$context !== void 0 && (_payload$context = _payload$context.geo) !== null && _payload$context !== void 0 && (_payload$context = _payload$context.language) !== null && _payload$context !== void 0 && _payload$context.textDirection ? payload === null || payload === void 0 || (_payload$context2 = payload.context) === null || _payload$context2 === void 0 || (_payload$context2 = _payload$context2.geo) === null || _payload$context2 === void 0 || (_payload$context2 = _payload$context2.language) === null || _payload$context2 === void 0 ? void 0 : _payload$context2.textDirection.toUpperCase() : "LTR",
       showLabels: labels && Object.keys(labels).length !== 0,
       labels: normalizeLabels(labels)
@@ -145,25 +145,25 @@ var I18nAddon = function I18nAddon(_ref) {
       return _ref4.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/compat_module["default"].createElement("div", {
     className: I18nAddon_module.panel,
     style: withRealTimeUpdates ? {
       paddingBottom: 0
     } : {}
-  }, /*#__PURE__*/react.createElement(es/* default */.A, {
+  }, /*#__PURE__*/compat_module["default"].createElement(es/* default */.A, {
     schema: schema_namespaceObject,
     uiSchema: uiSchema_namespaceObject,
     formData: formData,
     onSubmit: handleOnSubmit,
     onChange: handleFormUpdate
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/compat_module["default"].createElement("div", {
     className: I18nAddon_module.actionToolbar
-  }, /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     type: "submit",
     style: {
       marginRight: 12
     }
-  }, "Update"), /*#__PURE__*/react.createElement(Button/* Button */.$, {
+  }, "Update"), /*#__PURE__*/compat_module["default"].createElement(Button/* Button */.$, {
     type: "button",
     variant: "default",
     onClick: handleOnReset
