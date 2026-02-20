@@ -275,7 +275,7 @@ var getQueryParams = __webpack_require__(46729);
 var SETUP_JSON_URL_SELECTOR = function SETUP_JSON_URL_SELECTOR(state) {
   return state.model.setupJsonUrl;
 };
-var EDITOR_URL = "https://everymundo.github.io/registry/editor";
+var EDITOR_URL = "https://everymundo.github.io/developer-hub/editor";
 var SetupJsonSummary = function SetupJsonSummary(props) {
   var setupJsonUrl = (0,Store/* useStore */.P)(SETUP_JSON_URL_SELECTOR);
   var _useState = (0,compat_module.useState)(setupJsonUrl),
