@@ -36683,12 +36683,12 @@ var constants = __webpack_require__(62246);
 
 var ENV_MM = {
   dev: {
-    mmEndpoint: "https://openair-dev.airtrfx.com/module-manager-service/v1/multi-ad-context",
-    mmApiKey: "BI6YTjWfcj8/IDOtpCjpLrJmLSKtCx2+AAQEpdggtgvNnrZhlDztX3/EwDfS16j4"
+    mmEndpoint: "https://api-dev.everymundo.io/module-manager-service/v2/context/multi-ad",
+    mmApiKey: "GIIO8t/guh9eSIV7NZaebCfF+9BYPQwVPHJkKdrXCuewNjuqxOfHxbQ0ghwZYCtk"
   },
   prod: {
-    mmEndpoint: "https://openair-california.airtrfx.com/module-manager-service/v1/multi-ad-context",
-    mmApiKey: "HeQpRjsFI5xlAaSx2onkjc1HTK0ukqA1IrVvd5fvaMhNtzLTxInTpeYB1MK93pah"
+    mmEndpoint: "https://openair-california.airtrfx.com/module-manager-service/v2/context/multi-ad",
+    mmApiKey: "7HpoP4hoS8GJ8fK0tXwbfoFMkiB7jg0hTHuudOvMZVB8/Y3bDEvJtZZ3UmusA3UF"
   }
 };
 var DEFAULT_ENV = "dev";
